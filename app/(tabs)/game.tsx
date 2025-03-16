@@ -1,147 +1,200 @@
-import { useState, useEffect } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { ThemedView } from '@/components/ThemedView';
-import kannadaData from "../../data/kannada_letters.json";
+import React, { useState, useEffect, useCallback } from "react";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  SafeAreaView,
+} from "react-native";
+import { useFocusEffect } from "@react-navigation/native";
+import kannadaLetters from "../../data/kannada_letters.json";
 
-export default function GameScreen() {
-  const [lives, setLives] = useState(3);
-  const [currentCharacter, setCurrentCharacter] = useState<any>(null);
-  const [options, setOptions] = useState<string[]>([]);
+const KannadaQuiz = () => {
+  const [question, setQuestion] = useState(null);
+  const [options, setOptions] = useState([]);
   const [score, setScore] = useState(0);
+  const [wrongCount, setWrongCount] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [gameOver, setGameOver] = useState(false);
+  const [showCorrect, setShowCorrect] = useState(false);
+
+  const getRandomLetter = (list) =>
+    list[Math.floor(Math.random() * list.length)];
 
   const generateQuestion = () => {
-    // Randomly select category (Vowels or Consonants)
-    const categories = Object.keys(kannadaData);
-    const randomCategory = categories[Math.floor(Math.random() * categories.length)];
-    const characters = kannadaData[randomCategory];
-    
-    // Select random character
-    const randomChar = characters[Math.floor(Math.random() * characters.length)];
-    
-    // Generate 4 options (1 correct, 3 wrong)
-    let optionsArray = [randomChar.romanized];
-    while (optionsArray.length < 4) {
-      const randomOption = characters[Math.floor(Math.random() * characters.length)].romanized;
-      if (!optionsArray.includes(randomOption)) {
-        optionsArray.push(randomOption);
+    if (wrongCount >= 4) {
+      setGameOver(true);
+      return;
+    }
+
+    setSelectedAnswer(null);
+    setShowCorrect(false);
+
+    const allLetters = [...kannadaLetters.Vowels, ...kannadaLetters.Consonants];
+    const correct = getRandomLetter(allLetters);
+    const incorrectOptions = allLetters
+      .filter((l) => l.letter !== correct.letter)
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 3);
+
+    const choices = [...incorrectOptions, correct].sort(
+      () => Math.random() - 0.5
+    );
+
+    setQuestion(correct);
+    setOptions(choices);
+  };
+
+  const handleAnswer = (answer) => {
+    setSelectedAnswer(answer);
+    if (answer === question.transliteration) {
+      setScore(score + 1);
+      setTimeout(() => generateQuestion(), 1000);
+    } else {
+      setWrongCount(wrongCount + 1);
+      setShowCorrect(true);
+
+      if (wrongCount + 1 >= 4) {
+        setTimeout(() => setGameOver(true), 1000);
+      } else {
+        setTimeout(() => generateQuestion(), 1000);
       }
     }
-    
-    // Shuffle options
-    optionsArray = optionsArray.sort(() => Math.random() - 0.5);
-    
-    setCurrentCharacter(randomChar);
-    setOptions(optionsArray);
   };
 
-  const handleAnswer = (selected: string) => {
-    if (selected === currentCharacter.romanized) {
-      setScore(score + 1);
-    } else {
-      setLives(lives - 1);
-    }
+  const restartGame = () => {
+    setScore(0);
+    setWrongCount(0);
+    setGameOver(false);
     generateQuestion();
   };
 
-  useEffect(() => {
-    generateQuestion();
-  }, []);
-
-  if (lives === 0) {
-    return (
-      <ThemedView style={styles.container}>
-        <Text style={styles.gameOver}>Game Over!</Text>
-        <Text style={styles.score}>Final Score: {score}</Text>
-        <TouchableOpacity 
-          style={styles.button}
-          onPress={() => {
-            setLives(3);
-            setScore(0);
-            generateQuestion();
-          }}>
-          <Text style={styles.buttonText}>Play Again</Text>
-        </TouchableOpacity>
-      </ThemedView>
-    );
-  }
+  // 🚀 Reset the game each time the screen is visited
+  useFocusEffect(
+    useCallback(() => {
+      restartGame();
+    }, [])
+  );
 
   return (
-    <ThemedView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.lives}>❤️ {lives}</Text>
-        <Text style={styles.score}>Score: {score}</Text>
-      </View>
-      
-      <Text style={styles.question}>
-        What is the reading of {currentCharacter?.character}?
-      </Text>
-      
-      <View style={styles.optionsGrid}>
-        {options.map((option, index) => (
-          <TouchableOpacity
-            key={index}
-            style={styles.optionButton}
-            onPress={() => handleAnswer(option)}>
-            <Text style={styles.optionText}>{option}</Text>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>Kannada Quiz</Text>
+
+      {gameOver ? (
+        <View style={styles.gameOverContainer}>
+          <Text style={styles.gameOverText}>Game Over! 😢</Text>
+          <Text style={styles.finalScore}>Final Score: {score}</Text>
+          <TouchableOpacity style={styles.restartBtn} onPress={restartGame}>
+            <Text style={styles.restartText}>Restart</Text>
           </TouchableOpacity>
-        ))}
-      </View>
-    </ThemedView>
+        </View>
+      ) : (
+        <>
+          <Text style={styles.question}>{question?.letter}</Text>
+          <View style={styles.optionsContainer}>
+            {options.map((option) => (
+              <TouchableOpacity
+                key={option.transliteration}
+                style={[
+                  styles.option,
+                  selectedAnswer === option.transliteration &&
+                    (option.transliteration === question.transliteration
+                      ? styles.correct
+                      : styles.wrong),
+                  showCorrect &&
+                    option.transliteration === question.transliteration &&
+                    styles.flashCorrect,
+                ]}
+                onPress={() => handleAnswer(option.transliteration)}
+                disabled={selectedAnswer !== null}
+              >
+                <Text style={styles.optionText}>{option.transliteration}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+          <Text style={styles.score}>
+            Score: {score} | Wrong Attempts: {wrongCount}/4
+          </Text>
+        </>
+      )}
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#181C14",
   },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 40,
+  title: {
+    fontSize: 28,
+    color: "white",
+    fontWeight: "bold",
+    marginBottom: 20,
   },
-  lives: {
+  question: {
+    fontSize: 50,
+    fontWeight: "bold",
+    marginBottom: 20,
+    color: "white",
+  },
+  optionsContainer: {
+    width: "80%",
+    alignItems: "center",
+  },
+  option: {
+    backgroundColor: "#ddd",
+    padding: 15,
+    borderRadius: 10,
+    width: "100%",
+    alignItems: "center",
+    marginVertical: 10,
+  },
+  correct: {
+    backgroundColor: "#4CAF50",
+  },
+  wrong: {
+    backgroundColor: "#E53935",
+  },
+  flashCorrect: {
+    backgroundColor: "#4CAF50",
+  },
+  optionText: {
     fontSize: 20,
+    fontWeight: "600",
   },
   score: {
     fontSize: 20,
+    marginTop: 20,
+    fontWeight: "bold",
+    color: "white",
   },
-  question: {
-    fontSize: 24,
-    textAlign: 'center',
-    marginBottom: 40,
+  gameOverContainer: {
+    alignItems: "center",
   },
-  optionsGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    gap: 10,
+  gameOverText: {
+    fontSize: 28,
+    fontWeight: "bold",
+    color: "#D32F2F",
   },
-  optionButton: {
-    width: '48%',
-    aspectRatio: 2,
-    backgroundColor: '#1D3D47',
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
+  finalScore: {
+    fontSize: 22,
+    fontWeight: "bold",
+    marginVertical: 10,
   },
-  optionText: {
-    color: 'white',
-    fontSize: 20,
-  },
-  gameOver: {
-    fontSize: 32,
-    textAlign: 'center',
-    marginBottom: 20,
-  },
-  button: {
-    backgroundColor: '#1D3D47',
+  restartBtn: {
+    backgroundColor: "#007BFF",
     padding: 15,
     borderRadius: 10,
-    alignItems: 'center',
+    marginTop: 10,
   },
-  buttonText: {
-    color: 'white',
-    fontSize: 18,
+  restartText: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#fff",
   },
-}); 
+});
+
+export default KannadaQuiz;

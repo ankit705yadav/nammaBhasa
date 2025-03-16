@@ -9,7 +9,7 @@ import {
   TextInput,
   Pressable,
 } from "react-native";
-import { useRouter } from 'expo-router';
+import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { Searchbar } from "react-native-paper";
@@ -28,7 +28,7 @@ type LetterItem = {
 
 export default function HomeScreen() {
   const router = useRouter();
-  
+
   const [activeTab, setActiveTab] = useState("Vowels");
   const vowels = kannadaData.Vowels;
   const consonants = kannadaData.Consonants;
@@ -42,7 +42,8 @@ export default function HomeScreen() {
 
   const handleSwitch = (selectedOption: string) => {
     console.log("Selected:", selectedOption);
-    setActiveTab(activeTab === "Vowels" ? "Consonants" : "Vowels");
+    // Update the active tab based on the selected option directly
+    setActiveTab(selectedOption);
   };
 
   const handleItemPress = (item: LetterItem) => {
@@ -70,7 +71,7 @@ export default function HomeScreen() {
         numColumns={4}
         renderItem={({ item }) => (
           <Pressable
-            onPress={() => handleItemPress(item)}
+            // onPress={() => handleItemPress(item)}
             style={({ pressed }) => [
               styles.item,
               pressed && styles.itemPressed,
@@ -91,11 +92,11 @@ export default function HomeScreen() {
       <CustomSwitch
         options={["Vowels", "Consonants"]}
         onSwitch={handleSwitch}
-        onLeft={() => router.push('/game')}
+        onLeft={() => router.push("/game")}
         onRight={() => setShowTransliteration(!showTransliteration)}
       />
 
-      <Modal
+      {/* <Modal
         isVisible={isModalVisible}
         onSwipeComplete={() => {
           setModalVisible(false);
@@ -119,7 +120,7 @@ export default function HomeScreen() {
             </View>
           )}
         </View>
-      </Modal>
+      </Modal> */}
     </SafeAreaView>
   );
 }

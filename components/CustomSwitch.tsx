@@ -1,12 +1,27 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Dimensions,
+} from "react-native";
 import { BlurView } from "expo-blur";
-import Animated, { useSharedValue, useAnimatedStyle, withSpring } from "react-native-reanimated";
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withSpring,
+} from "react-native-reanimated";
 import { Ionicons } from "@expo/vector-icons";
 
 const { width } = Dimensions.get("window");
 
-const CustomSwitch = ({ options = ["Option 1", "Option 2"], onSwitch,onLeft,onRight }) => {
+const CustomSwitch = ({
+  options = ["Option 1", "Option 2"],
+  onSwitch,
+  onLeft,
+  onRight,
+}) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const translateX = useSharedValue(0);
 
@@ -30,8 +45,19 @@ const CustomSwitch = ({ options = ["Option 1", "Option 2"], onSwitch,onLeft,onRi
       <BlurView intensity={30} style={styles.container}>
         <Animated.View style={[styles.slider, animatedStyle]} />
         {options.map((option, index) => (
-          <TouchableOpacity key={index} style={styles.option} onPress={() => handleSwitch(index)}>
-            <Text style={[styles.text, selectedIndex === index && styles.textSelected]}>{option}</Text>
+          <TouchableOpacity
+            key={index}
+            style={styles.option}
+            onPress={() => handleSwitch(index)}
+          >
+            <Text
+              style={[
+                styles.text,
+                selectedIndex === index && styles.textSelected,
+              ]}
+            >
+              {option}
+            </Text>
           </TouchableOpacity>
         ))}
       </BlurView>

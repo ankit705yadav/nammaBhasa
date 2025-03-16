@@ -12,7 +12,10 @@
       { "letter": "ಐ", "transliteration": "ai", "strokes": ["ai_1.png", "ai_2.png"] },
       { "letter": "ಒ", "transliteration": "o", "strokes": ["o_1.png", "o_2.png"] },
       { "letter": "ಓ", "transliteration": "oo", "strokes": ["oo_1.png", "oo_2.png"] },
-      { "letter": "ಔ", "transliteration": "au", "strokes": ["au_1.png", "au_2.png"] }
+      { "letter": "ಔ", "transliteration": "au", "strokes": ["au_1.png", "au_2.png"] },
+      { "letter": "ಅಂ", "transliteration": "am", "strokes": ["am_1.png", "am_2.png"] },
+      { "letter": "ಅಃ", "transliteration": "ah", "strokes": ["ah_1.png", "ah_2.png"] }
+
     ],
     "Consonants": [
       { "letter": "ಕ", "transliteration": "ka", "strokes": ["ka_1.png", "ka_2.png"] },
