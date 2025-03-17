@@ -4,10 +4,12 @@ import {
   Text,
   TouchableOpacity,
   StyleSheet,
-  SafeAreaView,
 } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
 import kannadaLetters from "../../data/kannada_letters.json";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { LinearGradient } from "expo-linear-gradient";
+
 
 const KannadaQuiz = () => {
   const [question, setQuestion] = useState(null);
@@ -77,7 +79,12 @@ const KannadaQuiz = () => {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={{flex: 1,backgroundColor: "#e0be21"}}>
+
+    <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
+
+    
+
       <Text style={styles.title}>Kannada Quiz</Text>
 
       {gameOver ? (
@@ -117,16 +124,23 @@ const KannadaQuiz = () => {
           </Text>
         </>
       )}
+      </LinearGradient>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  wrapper: {
+    // flex: 1,
+    // justifyContent: "center",
+    // alignItems: "center",
+    // backgroundColor: "#181C14",
+     // borderWidth:4,
+    // borderColor:"yellow",
     flex: 1,
+    backgroundColor: "#181C14",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#181C14",
   },
   title: {
     fontSize: 28,

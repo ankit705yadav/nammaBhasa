@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { LinearGradient } from "expo-linear-gradient";
 
 import { Searchbar } from "react-native-paper";
 import Modal from "react-native-modal";
@@ -52,78 +53,88 @@ export default function HomeScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.wrapper}>
-      {/* Header */}
-      <Text style={styles.headerText}>Kannada</Text>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
+      <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
+        {/* Header */}
+        <Text style={styles.headerText}>Kannada</Text>
 
-      {/* search-bar */}
-      <Searchbar
-        placeholder="Search"
-        onChangeText={setSearchQuery}
-        value={searchQuery}
-        style={{ marginHorizontal: 30, marginBottom: 12 }}
-      />
+        {/* search-bar */}
+        <Searchbar
+          placeholder="Search"
+          onChangeText={setSearchQuery}
+          value={searchQuery}
+          style={{ marginHorizontal: 30, marginBottom: 12 }}
+        />
 
-      {/* Container */}
-      <FlatList
-        data={activeTab === "Vowels" ? vowels : consonants}
-        keyExtractor={(item, index) => index.toString()}
-        numColumns={4}
-        renderItem={({ item }) => (
-          <Pressable onPress={() => handleItemPress(item)} style={styles.item}>
-            <View style={styles.itemContent}>
-              <Text style={styles.letter}>{item.letter}</Text>
-              {showTransliteration && (
-                <Text style={styles.translit}>{item.transliteration}</Text>
+        {/* Container */}
+        <FlatList
+          data={activeTab === "Vowels" ? vowels : consonants}
+          keyExtractor={(item, index) => index.toString()}
+          numColumns={4}
+          renderItem={({ item }) => (
+            <LinearGradient
+              colors={["pink", "#e0be21"]} // Gradient colors for the border
+              style={styles.borderContainer} // Outer gradient border
+            >
+              <Pressable
+                onPress={() => handleItemPress(item)}
+                style={styles.item} // Inner content
+              >
+                <View style={styles.itemContent}>
+                  <Text style={styles.letter}>{item.letter}</Text>
+                  {showTransliteration && (
+                    <Text style={styles.translit}>{item.transliteration}</Text>
+                  )}
+                </View>
+              </Pressable>
+            </LinearGradient>
+          )}
+          contentContainerStyle={styles.gridContainer}
+        />
+
+        {/* tab-switch */}
+        <CustomSwitch
+          options={["Vowels", "Consonants"]}
+          onSwitch={handleSwitch}
+          onLeft={() => router.push("/game")}
+          onRight={() => setShowTransliteration(!showTransliteration)}
+        />
+
+        <View
+          style={{
+            width: "100%",
+            height: "40%",
+            position: "absolute",
+            bottom: 0,
+          }}
+        >
+          <Modal
+            isVisible={isModalVisible}
+            onSwipeComplete={() => {
+              setModalVisible(false);
+              setSelectedItem(null);
+            }}
+            onBackdropPress={() => {
+              setModalVisible(false);
+              setSelectedItem(null);
+            }}
+            swipeDirection={["down"]}
+            style={styles.modal}
+          >
+            <View style={styles.modalContent}>
+              <View style={styles.bar} />
+              {selectedItem && (
+                <View style={styles.modalLetterContainer}>
+                  <Text style={styles.modalLetter}>{selectedItem.letter}</Text>
+                  <Text style={styles.modalTranslit}>
+                    {selectedItem.transliteration}
+                  </Text>
+                </View>
               )}
             </View>
-          </Pressable>
-        )}
-        contentContainerStyle={styles.gridContainer}
-      />
-
-      {/* tab-switch */}
-      <CustomSwitch
-        options={["Vowels", "Consonants"]}
-        onSwitch={handleSwitch}
-        onLeft={() => router.push("/game")}
-        onRight={() => setShowTransliteration(!showTransliteration)}
-      />
-
-      <View
-        style={{
-          width: "100%",
-          height: "40%",
-          position: "absolute",
-          bottom: 0,
-        }}
-      >
-        <Modal
-          isVisible={isModalVisible}
-          onSwipeComplete={() => {
-            setModalVisible(false);
-            setSelectedItem(null);
-          }}
-          onBackdropPress={() => {
-            setModalVisible(false);
-            setSelectedItem(null);
-          }}
-          swipeDirection={["down"]}
-          style={styles.modal}
-        >
-          <View style={styles.modalContent}>
-            <View style={styles.bar} />
-            {selectedItem && (
-              <View style={styles.modalLetterContainer}>
-                <Text style={styles.modalLetter}>{selectedItem.letter}</Text>
-                <Text style={styles.modalTranslit}>
-                  {selectedItem.transliteration}
-                </Text>
-              </View>
-            )}
-          </View>
-        </Modal>
-      </View>
+          </Modal>
+        </View>
+      </LinearGradient>
     </SafeAreaView>
   );
 }
@@ -153,14 +164,23 @@ const styles = StyleSheet.create({
   gridContainer: {
     padding: 10,
   },
-  item: {
-    width: width / 4 - 32, // Divide screen width by 4
-    aspectRatio: 1, // Makes it a square
+  borderContainer: {
+    backgroundColor: "grey",
     margin: 5,
+    borderRadius: 12,
+    padding: 3, // Creates space for the border effect
+    width: width / 4 - 23, // Keeps the width same as before
+    height: 80,
+    zIndex: 100,
+  },
+  item: {
+    aspectRatio: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "grey",
+    backgroundColor: "rgb(68, 50, 12)", // Set inner background color
     borderRadius: 10,
+    width: "100%",
+    height: "100%",
     shadowColor: "#000",
     shadowOpacity: 0.1,
     shadowRadius: 5,
@@ -182,7 +202,8 @@ const styles = StyleSheet.create({
     margin: 0,
   },
   modalContent: {
-    backgroundColor: "white",
+    // backgroundColor: "#1b212a",
+    backgroundColor:'rgb(68, 50, 12)',
     padding: 22,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
@@ -215,6 +236,7 @@ const styles = StyleSheet.create({
   },
 
   modalLetter: {
+    color: "#dad8de",
     fontSize: 120,
     fontWeight: "bold",
     marginBottom: 10,
@@ -222,6 +244,6 @@ const styles = StyleSheet.create({
 
   modalTranslit: {
     fontSize: 24,
-    color: "#666",
+    color: "#dad8de",
   },
 });

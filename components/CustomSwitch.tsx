@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: width * 0.6, // 60% of screen width
     height: 50,
-    backgroundColor: "rgba(0, 0, 0, 0.2)", // Dark semi-transparent
+    // backgroundColor: "rgba(0, 0, 0, 0.2)", // Dark semi-transparent
+    backgroundColor:"#262626",
     borderRadius: 25,
     overflow: "hidden",
     alignItems: "center",
@@ -115,6 +116,9 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor:"#292929",
+    borderRadius:'50%',
+    marginHorizontal:10
   },
 });
 
