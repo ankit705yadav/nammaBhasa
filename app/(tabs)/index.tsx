@@ -70,13 +70,7 @@ export default function HomeScreen() {
         keyExtractor={(item, index) => index.toString()}
         numColumns={4}
         renderItem={({ item }) => (
-          <Pressable
-            // onPress={() => handleItemPress(item)}
-            style={({ pressed }) => [
-              styles.item,
-              pressed && styles.itemPressed,
-            ]}
-          >
+          <Pressable onPress={() => handleItemPress(item)} style={styles.item}>
             <View style={styles.itemContent}>
               <Text style={styles.letter}>{item.letter}</Text>
               {showTransliteration && (
@@ -96,31 +90,40 @@ export default function HomeScreen() {
         onRight={() => setShowTransliteration(!showTransliteration)}
       />
 
-      {/* <Modal
-        isVisible={isModalVisible}
-        onSwipeComplete={() => {
-          setModalVisible(false);
-          setSelectedItem(null);
+      <View
+        style={{
+          width: "100%",
+          height: "40%",
+          position: "absolute",
+          bottom: 0,
         }}
-        onBackdropPress={() => {
-          setModalVisible(false);
-          setSelectedItem(null);
-        }}
-        swipeDirection={["down"]}
-        style={styles.modal}
       >
-        <View style={styles.modalContent}>
-          <View style={styles.bar} />
-          {selectedItem && (
-            <View style={styles.modalLetterContainer}>
-              <Text style={styles.modalLetter}>{selectedItem.letter}</Text>
-              <Text style={styles.modalTranslit}>
-                {selectedItem.transliteration}
-              </Text>
-            </View>
-          )}
-        </View>
-      </Modal> */}
+        <Modal
+          isVisible={isModalVisible}
+          onSwipeComplete={() => {
+            setModalVisible(false);
+            setSelectedItem(null);
+          }}
+          onBackdropPress={() => {
+            setModalVisible(false);
+            setSelectedItem(null);
+          }}
+          swipeDirection={["down"]}
+          style={styles.modal}
+        >
+          <View style={styles.modalContent}>
+            <View style={styles.bar} />
+            {selectedItem && (
+              <View style={styles.modalLetterContainer}>
+                <Text style={styles.modalLetter}>{selectedItem.letter}</Text>
+                <Text style={styles.modalTranslit}>
+                  {selectedItem.transliteration}
+                </Text>
+              </View>
+            )}
+          </View>
+        </Modal>
+      </View>
     </SafeAreaView>
   );
 }
@@ -212,7 +215,7 @@ const styles = StyleSheet.create({
   },
 
   modalLetter: {
-    fontSize: 48,
+    fontSize: 120,
     fontWeight: "bold",
     marginBottom: 10,
   },
