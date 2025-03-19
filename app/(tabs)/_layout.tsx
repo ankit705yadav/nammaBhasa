@@ -32,20 +32,19 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          title: "Character",
           tabBarIcon: ({ color }) => (
             <IconSymbol size={28} name="house.fill" color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="game"
+        name="word"
         options={{
-          title: "Game",
+          title: "Word",
           tabBarIcon: ({ color }) => (
-            <Ionicons size={28} name="game-controller" color="white" />
+            <Ionicons size={28} name="add-circle" color="white" />
           ),
-          tabBarStyle: { display: "none" }, // 🚀 Hide the bottom tab in the "Game" screen
         }}
       />
     </Tabs>

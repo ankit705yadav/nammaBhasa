@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import {
   View,
   Text,
@@ -6,7 +6,7 @@ import {
   StyleSheet,
 } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
-import kannadaLetters from "../../data/kannada_letters.json";
+import kannadaLetters from "../../../data/kannada_letters.json";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 

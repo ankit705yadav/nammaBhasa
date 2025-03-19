@@ -1,12 +1,10 @@
 import { useState } from "react";
 import {
-  Image,
   StyleSheet,
   Dimensions,
   FlatList,
   Text,
   View,
-  TextInput,
   Pressable,
 } from "react-native";
 import { useRouter } from "expo-router";
@@ -17,46 +15,78 @@ import { Searchbar } from "react-native-paper";
 import Modal from "react-native-modal";
 
 import CustomSwitch from "@/components/CustomSwitch";
-import kannadaData from "../../data/kannada_letters.json"; // Importing JSON
+import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
 
 const { width } = Dimensions.get("window"); // Get screen width
 
-type LetterItem = {
-  letter: string;
+type WordItem = {
+  word: string;
   transliteration: string;
-  // add other properties if they exist in your data
+  translation: string;
+  breakdown: string[];
+  strokes: string[];
 };
 
-export default function HomeScreen() {
+export default function WordScreen() {
   const router = useRouter();
 
-  const [activeTab, setActiveTab] = useState("Vowels");
-  const vowels = kannadaData.Vowels;
-  const consonants = kannadaData.Consonants;
+  const [activeLevel, setActiveLevel] = useState("Lvl 1");
+  // Get words from the updated structure
+  const level1Words = kannadaData.Words?.Level1 || [];
+  const level2Words = kannadaData.Words?.Level2 || [];
+  const level3Words = kannadaData.Words?.Level3 || [];
+
+  console.log("LLL", level1Words);
 
   const [searchQuery, setSearchQuery] = useState("");
 
   const [isModalVisible, setModalVisible] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<LetterItem | null>(null);
+  const [selectedItem, setSelectedItem] = useState<WordItem | null>(null);
 
-  const [showTransliteration, setShowTransliteration] = useState(true);
+  const [showTranslation, setShowTranslation] = useState(true);
 
   const handleSwitch = (selectedOption: string) => {
     console.log("Selected:", selectedOption);
-    // Update the active tab based on the selected option directly
-    setActiveTab(selectedOption);
+    setActiveLevel(selectedOption);
   };
 
-  const handleItemPress = (item: LetterItem) => {
+  const handleItemPress = (item: WordItem) => {
     setSelectedItem(item);
     setModalVisible(true);
   };
+
+  // Get the active words based on the selected level
+  const getActiveWords = () => {
+    switch (activeLevel) {
+      case "Lvl 1":
+        return level1Words;
+      case "Lvl 2":
+        return level2Words;
+      case "Lvl 3":
+        return level3Words;
+      default:
+        return level1Words;
+    }
+  };
+
+  // Filter words based on search query
+  const filteredWords = getActiveWords().filter(
+    (item) =>
+      item.word.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.transliteration.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (item.translation &&
+        item.translation.toLowerCase().includes(searchQuery.toLowerCase()))
+  );
+
+  console.log("filteredWords:", filteredWords);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
         {/* Header */}
-        <Text style={styles.headerText}>Kannada</Text>
+        <Text style={styles.headerText}>
+          ಪದ<Text style={{ fontSize: 14 }}> | word</Text>
+        </Text>
 
         {/* search-bar */}
         <Searchbar
@@ -68,9 +98,9 @@ export default function HomeScreen() {
 
         {/* Container */}
         <FlatList
-          data={activeTab === "Vowels" ? vowels : consonants}
+          data={filteredWords}
           keyExtractor={(item, index) => index.toString()}
-          numColumns={4}
+          numColumns={2}
           renderItem={({ item }) => (
             <LinearGradient
               colors={["pink", "#e0be21"]} // Gradient colors for the border
@@ -81,9 +111,11 @@ export default function HomeScreen() {
                 style={styles.item} // Inner content
               >
                 <View style={styles.itemContent}>
-                  <Text style={styles.letter}>{item.letter}</Text>
-                  {showTransliteration && (
-                    <Text style={styles.translit}>{item.transliteration}</Text>
+                  <Text style={styles.word}>{item.word}</Text>
+                  {showTranslation && (
+                    <Text style={styles.translation}>
+                      {item.transliteration}
+                    </Text>
                   )}
                 </View>
               </Pressable>
@@ -94,10 +126,10 @@ export default function HomeScreen() {
 
         {/* tab-switch */}
         <CustomSwitch
-          options={["Vowels", "Consonants"]}
+          options={["Lvl 1", "Lvl 2", "Lvl 3"]}
           onSwitch={handleSwitch}
-          onLeft={() => router.push("/game")}
-          onRight={() => setShowTransliteration(!showTransliteration)}
+          onLeft={() => router.push("/(tabs)/index/game")}
+          onRight={() => setShowTranslation(!showTranslation)}
         />
 
         <View
@@ -124,10 +156,10 @@ export default function HomeScreen() {
             <View style={styles.modalContent}>
               <View style={styles.bar} />
               {selectedItem && (
-                <View style={styles.modalLetterContainer}>
-                  <Text style={styles.modalLetter}>{selectedItem.letter}</Text>
-                  <Text style={styles.modalTranslit}>
-                    {selectedItem.transliteration}
+                <View style={styles.modalWordContainer}>
+                  <Text style={styles.modalWord}>{selectedItem.word}</Text>
+                  <Text style={styles.modalTranslation}>
+                    {selectedItem.translation || selectedItem.transliteration}
                   </Text>
                 </View>
               )}
@@ -141,8 +173,6 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   wrapper: {
-    // borderWidth:4,
-    // borderColor:"yellow",
     flex: 1,
     backgroundColor: "#181C14",
     justifyContent: "center",
@@ -154,7 +184,7 @@ const styles = StyleSheet.create({
     marginTop: "20%",
     marginBottom: "5%",
     textAlign: "left",
-    fontSize: 34,
+    fontSize: 44,
     fontWeight: "bold",
     color: "white",
     paddingHorizontal: 24,
@@ -169,12 +199,12 @@ const styles = StyleSheet.create({
     margin: 5,
     borderRadius: 12,
     padding: 3, // Creates space for the border effect
-    width: width / 4 - 23, // Keeps the width same as before
-    height: 80,
+    width: width / 2 - 58, // Two columns instead of four
+    height: 100, // Taller for words
     zIndex: 100,
   },
   item: {
-    aspectRatio: 1,
+    aspectRatio: 1.5, // Changed from 1 to accommodate words better
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "rgb(68, 50, 12)", // Set inner background color
@@ -186,14 +216,17 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     elevation: 3,
   },
-  letter: {
-    fontSize: 24,
+  word: {
+    fontSize: 22,
     fontWeight: "bold",
     color: "#E2DFE0",
+    textAlign: "center",
   },
-  translit: {
+  translation: {
     fontSize: 14,
     color: "#E2DFE0",
+    textAlign: "center",
+    marginTop: 5,
   },
 
   // modal
@@ -202,8 +235,7 @@ const styles = StyleSheet.create({
     margin: 0,
   },
   modalContent: {
-    // backgroundColor: "#1b212a",
-    backgroundColor:'rgb(68, 50, 12)',
+    backgroundColor: "rgb(68, 50, 12)",
     padding: 22,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
@@ -223,6 +255,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
+    padding: 5,
   },
 
   itemPressed: {
@@ -230,20 +263,22 @@ const styles = StyleSheet.create({
     transform: [{ scale: 0.98 }],
   },
 
-  modalLetterContainer: {
+  modalWordContainer: {
     alignItems: "center",
     padding: 20,
   },
 
-  modalLetter: {
+  modalWord: {
     color: "#dad8de",
-    fontSize: 120,
+    fontSize: 60,
     fontWeight: "bold",
-    marginBottom: 10,
+    marginBottom: 20,
+    textAlign: "center",
   },
 
-  modalTranslit: {
+  modalTranslation: {
     fontSize: 24,
     color: "#dad8de",
+    textAlign: "center",
   },
 });
