@@ -1,4 +1,4 @@
-import React, { useState, useCallback,useEffect } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import {
   View,
   Text,
@@ -11,17 +11,16 @@ import kannadaLetters from "../../../data/kannada_letters.json";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 
-// Define a type for the word objects in our data
-type WordItem = {
-  word: string;
+// Define a type for the sentence objects in our data
+type SentenceItem = {
+  sentence: string;
   transliteration: string;
   translation: string;
   breakdown: string[];
-  strokes: string[];
 };
 
-const WordQuiz = () => {
-  const [question, setQuestion] = useState<WordItem | null>(null);
+const SentenceQuiz = () => {
+  const [question, setQuestion] = useState<SentenceItem | null>(null);
   const [options, setOptions] = useState<string[]>([]);
   const [score, setScore] = useState(0);
   const [wrongCount, setWrongCount] = useState(0);
@@ -44,25 +43,25 @@ const WordQuiz = () => {
     });
   }, [navigation]);
 
-  // Get a random word from the specified level
-  const getRandomWord = (words: WordItem[]): WordItem => 
-    words[Math.floor(Math.random() * words.length)];
+  // Get a random sentence from the specified level
+  const getRandomSentence = (sentences: SentenceItem[]): SentenceItem => 
+    sentences[Math.floor(Math.random() * sentences.length)];
 
-  // Get all words across all levels
-  const getAllWords = (): WordItem[] => {
+  // Get all sentences across all levels
+  const getAllSentences = (): SentenceItem[] => {
     return [
-      ...(kannadaLetters.Words?.Level1 || []),
-      ...(kannadaLetters.Words?.Level2 || []),
-      ...(kannadaLetters.Words?.Level3 || [])
+      ...(kannadaLetters.Sentences?.Level1 || []),
+      ...(kannadaLetters.Sentences?.Level2 || []),
+      ...(kannadaLetters.Sentences?.Level3 || [])
     ];
   };
 
-  // Get words for the current difficulty level
-  const getWordsByLevel = (): WordItem[] => {
-    return kannadaLetters.Words?.[difficulty] || [];
+  // Get sentences for the current difficulty level
+  const getSentencesByLevel = (): SentenceItem[] => {
+    return kannadaLetters.Sentences?.[difficulty] || [];
   };
 
-  const generateQuestion = () => {
+  const generateQuestionWithMode = (mode: 'translation' | 'transliteration') => {
     if (wrongCount >= 4) {
       setGameOver(true);
       return;
@@ -71,33 +70,25 @@ const WordQuiz = () => {
     setSelectedAnswer(null);
     setShowCorrect(false);
 
-    const wordsForLevel = getWordsByLevel();
-    const allWords = getAllWords();
+    const sentencesForLevel = getSentencesByLevel();
+    const allSentences = getAllSentences();
     
-    if (wordsForLevel.length === 0) {
-      console.error("No words found for the selected level");
+    if (sentencesForLevel.length === 0) {
+      console.error("No sentences found for the selected level");
       return;
     }
 
-    const correct = getRandomWord(wordsForLevel);
+    const correct = getRandomSentence(sentencesForLevel);
     
-    // Create incorrect options based on quiz mode
-    let incorrectPool = allWords.filter(w => w.word !== correct.word);
+    // Create incorrect options based on the passed mode parameter
+    let incorrectPool = allSentences.filter(s => s.sentence !== correct.sentence);
     const incorrectOptions = incorrectPool
       .sort(() => Math.random() - 0.5)
       .slice(0, 3)
-      .map(word => {
-        const option = quizMode === 'translation' ? word.translation : word.transliteration;
-        return option.trim();
-      });
+      .map(sentence => mode === 'translation' ? sentence.translation : sentence.transliteration);
 
-    // Correct answer based on quiz mode - trim to avoid whitespace issues
-    const correctAnswer = (quizMode === 'translation' ? correct.translation : correct.transliteration).trim();
-    
-    // Log for debugging
-    console.log("Current mode:", quizMode);
-    console.log("Correct word:", correct.word);
-    console.log("Correct answer for this mode:", correctAnswer);
+    // Correct answer based on the passed mode parameter
+    const correctAnswer = mode === 'translation' ? correct.translation : correct.transliteration;
     
     // Combine and shuffle all options
     const choices = [...incorrectOptions, correctAnswer].sort(() => Math.random() - 0.5);
@@ -106,21 +97,16 @@ const WordQuiz = () => {
     setOptions(choices);
   };
 
+  const generateQuestion = () => {
+    generateQuestionWithMode(quizMode);
+  };
+
   const handleAnswer = (answer: string) => {
     setSelectedAnswer(answer);
     if (question) {
-      // Ensure we're comparing trimmed strings to avoid whitespace issues
-      const correctAnswer = (quizMode === 'translation' ? question.translation : question.transliteration).trim();
-      const trimmedAnswer = answer.trim();
+      const correctAnswer = quizMode === 'translation' ? question.translation : question.transliteration;
       
-      // Case-insensitive comparison for transliteration mode
-      const isCorrect = quizMode === 'translation' 
-        ? trimmedAnswer === correctAnswer
-        : trimmedAnswer.toLowerCase() === correctAnswer.toLowerCase();
-      
-      console.log("Comparing:", trimmedAnswer, "with correct answer:", correctAnswer, "Result:", isCorrect); // Debugging
-      
-      if (isCorrect) {
+      if (answer === correctAnswer) {
         setScore(score + 1);
         setTimeout(() => generateQuestion(), 1000);
       } else {
@@ -154,72 +140,30 @@ const WordQuiz = () => {
 
   // Toggle between translation and transliteration modes
   const toggleQuizMode = () => {
-    // Update quizMode first, then restart with the new mode
-    setQuizMode(prevMode => {
-      const newMode = prevMode === 'translation' ? 'transliteration' : 'translation';
-      console.log("Switching quiz mode to:", newMode);
-      return newMode;
-    });
-    // Don't call restartGame() here - we'll use useEffect instead
+    const newMode = quizMode === 'translation' ? 'transliteration' : 'translation';
+    setQuizMode(newMode);
+    
+    // Reset game with the new mode
+    setScore(0);
+    setWrongCount(0);
+    setGameOver(false);
+    
+    // We need to explicitly use the new mode here instead of relying on the state
+    generateQuestionWithMode(newMode);
   };
 
-  // Add effect to handle mode changes
-  useEffect(() => {
-    console.log("Quiz mode changed to:", quizMode);
-    if (score > 0 || wrongCount > 0) {
-      // Only restart if a game is already in progress
-      restartGame();
-    } else {
-      // Just generate a new question
-      generateQuestion();
-    }
-  }, [quizMode, difficulty]);
-
-  // 🚀 Reset the game each time the screen is visited
+  // Reset the game each time the screen is visited
   useFocusEffect(
     useCallback(() => {
       restartGame();
     }, [])
   );
 
-  // Render options with better comparison logic
-  const renderOptions = () => {
-    return options.map((option, index) => {
-      const isSelected = selectedAnswer === option;
-      const trimmedOption = option.trim();
-      const correctAnswer = question ? 
-        (quizMode === 'translation' ? question.translation : question.transliteration).trim() : 
-        '';
-      
-      // Use the same comparison logic as handleAnswer
-      const isCorrect = quizMode === 'translation'
-        ? trimmedOption === correctAnswer
-        : trimmedOption.toLowerCase() === correctAnswer.toLowerCase();
-        
-      const shouldHighlightCorrect = showCorrect && isCorrect;
-      
-      return (
-        <TouchableOpacity
-          key={index}
-          style={[
-            styles.option,
-            isSelected && (isCorrect ? styles.correct : styles.wrong),
-            shouldHighlightCorrect && styles.flashCorrect,
-          ]}
-          onPress={() => handleAnswer(option)}
-          disabled={selectedAnswer !== null}
-        >
-          <Text style={styles.optionText}>{option}</Text>
-        </TouchableOpacity>
-      );
-    });
-  };
-
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: "#e0be21"}}>
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
         <Text style={styles.title}>
-          Kannada Word Quiz {difficulty.replace('Level', 'Lvl ')}
+          Kannada Sentence Quiz {difficulty.replace('Level', 'Lvl ')}
         </Text>
 
         {gameOver ? (
@@ -236,11 +180,31 @@ const WordQuiz = () => {
               What is the {quizMode === 'translation' ? 'meaning' : 'transliteration'} of:
             </Text>
             <Text style={styles.question}>
-              {question?.word}
+              {question?.sentence}
             </Text>
             
             <View style={styles.optionsContainer}>
-              {renderOptions()}
+              {options.map((option, index) => (
+                <TouchableOpacity
+                  key={index}
+                  style={[
+                    styles.option,
+                    selectedAnswer === option &&
+                      (question && 
+                       (option === (quizMode === 'translation' ? question.translation : question.transliteration)
+                        ? styles.correct
+                        : styles.wrong)),
+                    showCorrect &&
+                      question && 
+                      option === (quizMode === 'translation' ? question.translation : question.transliteration) &&
+                      styles.flashCorrect,
+                  ]}
+                  onPress={() => handleAnswer(option)}
+                  disabled={selectedAnswer !== null}
+                >
+                  <Text style={styles.optionText}>{option}</Text>
+                </TouchableOpacity>
+              ))}
             </View>
             
             <Text style={styles.score}>
@@ -292,7 +256,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   question: {
-    fontSize: 40,
+    fontSize: 32,
     fontWeight: "bold",
     marginBottom: 30,
     color: "white",
@@ -377,4 +341,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WordQuiz;
+export default SentenceQuiz;

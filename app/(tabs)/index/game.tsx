@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback,useEffect } from "react";
 import {
   View,
   Text,
@@ -6,6 +6,7 @@ import {
   StyleSheet,
 } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
+import { useNavigation } from '@react-navigation/native';
 import kannadaLetters from "../../../data/kannada_letters.json";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
@@ -19,6 +20,19 @@ const KannadaQuiz = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [showCorrect, setShowCorrect] = useState(false);
+
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    // Hide the tab bar when component mounts
+    navigation.getParent()?.setOptions({
+      tabBarStyle: { display: 'none' }
+    });
+    // Show the tab bar when component unmounts
+    return () => navigation.getParent()?.setOptions({
+      tabBarStyle: undefined
+    });
+  }, [navigation]);
 
   const getRandomLetter = (list) =>
     list[Math.floor(Math.random() * list.length)];

@@ -9,7 +9,10 @@ export default function HomeStack() {
       }}
     >
       <Stack.Screen name="index" />
-      <Stack.Screen name="game" />
+      <Stack.Screen 
+        name="game" 
+        options={{ tabBarStyle: { display: "none" } }}
+      />
     </Stack>
   );
 } 

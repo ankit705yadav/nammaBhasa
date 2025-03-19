@@ -300,6 +300,20 @@
         "translation": "tree",
         "breakdown": ["ಮ", "ರ"],
         "strokes": ["ma_1.png", "ra_1.png"]
+      },
+      {
+        "word": "ನೀರು",
+        "transliteration": "neeru",
+        "translation": "water",
+        "breakdown": ["ನ", "ೀ", "ರು"],
+        "strokes": ["na_1.png", "ii_1.png", "ru_1.png"]
+      },
+      {
+        "word": "ಪುಸ್ತಕ",
+        "transliteration": "pustaka",
+        "translation": "book",
+        "breakdown": ["ಪು", "ಸ್", "ತ", "ಕ"],
+        "strokes": ["pu_1.png", "sa_1.png", "ta_1.png", "ka_1.png"]
       }
     ],
     "Level3": [
@@ -330,6 +344,64 @@
         "translation": "friendship",
         "breakdown": ["ಸ", "್ನ", "ೇ", "ಹ"],
         "strokes": ["sa_1.png", "na_1.png", "e_1.png", "ha_1.png"]
+      },
+      {
+        "word": "ಶಿಕ್ಷಣ",
+        "transliteration": "shikshana",
+        "translation": "education",
+        "breakdown": ["ಶಿ", "ಕ್ಷ", "ಣ"],
+        "strokes": ["shi_1.png", "ksha_1.png", "ṇa_1.png"]
+      },
+      {
+        "word": "ವಿದ್ಯಾಲಯ",
+        "transliteration": "vidyālaya",
+        "translation": "school",
+        "breakdown": ["ವಿ", "ದ್", "ಯಾ", "ಲ", "ಯ"],
+        "strokes": ["vi_1.png", "dya_1.png", "la_1.png", "ya_1.png"]
+      }
+    ]
+  },
+  "Sentences": {
+    "Level1": [
+      {
+        "sentence": "ಇದು ಮನೆ.",
+        "transliteration": "Idu mane.",
+        "translation": "This is a house.",
+        "breakdown": ["ಇದು", "ಮನೆ"]
+      },
+      {
+        "sentence": "ನಾನು ಹಣ್ಣು ತಿನ್ನುತ್ತೇನೆ.",
+        "transliteration": "Nānu hannu tinnuttēne.",
+        "translation": "I eat a fruit.",
+        "breakdown": ["ನಾನು", "ಹಣ್ಣು", "ತಿನ್ನುತ್ತೇನೆ"]
+      }
+    ],
+    "Level2": [
+      {
+        "sentence": "ನಾನು ನೀರು ಕುಡಿಯುತ್ತೇನೆ.",
+        "transliteration": "Nānu neeru kudiyuttēne.",
+        "translation": "I drink water.",
+        "breakdown": ["ನಾನು", "ನೀರು", "ಕುಡಿಯುತ್ತೇನೆ"]
+      },
+      {
+        "sentence": "ಪುಸ್ತಕ ಟೇಬಲ್ ಮೇಲೆ ಇದೆ.",
+        "transliteration": "Pustaka tēbal mēle ide.",
+        "translation": "The book is on the table.",
+        "breakdown": ["ಪುಸ್ತಕ", "ಟೇಬಲ್", "ಮೇಲೆ", "ಇದೆ"]
+      }
+    ],
+    "Level3": [
+      {
+        "sentence": "ಶಿಕ್ಷಣ ಬಹುಮುಖ್ಯವಾಗಿದೆ.",
+        "transliteration": "Shikshana bahumukhya vāgide.",
+        "translation": "Education is very important.",
+        "breakdown": ["ಶಿಕ್ಷಣ", "ಬಹುಮುಖ್ಯ", "ವಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ನಾನು ವಿದ್ಯಾಲಯಕ್ಕೆ ಹೋಗುತ್ತೇನೆ.",
+        "transliteration": "Nānu vidyālaya kke hōguttēne.",
+        "translation": "I go to school.",
+        "breakdown": ["ನಾನು", "ವಿದ್ಯಾಲಯ", "ಹೋಗುತ್ತೇನೆ"]
       }
     ]
   }

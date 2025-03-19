@@ -34,7 +34,7 @@ export default function TabLayout() {
         options={{
           title: "Character",
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="house.fill" color={color} />
+            <Ionicons size={28} name="git-commit-sharp" color={color} />
           ),
         }}
       />
@@ -43,7 +43,17 @@ export default function TabLayout() {
         options={{
           title: "Word",
           tabBarIcon: ({ color }) => (
-            <Ionicons size={28} name="add-circle" color="white" />
+            <Ionicons size={28} name="unlink" color="white" />
+          ),
+        }}
+      />
+      
+      <Tabs.Screen
+        name="sentence"
+        options={{
+          title: "Sentence",
+          tabBarIcon: ({ color }) => (
+            <Ionicons size={28} name="filter" color="white" />
           ),
         }}
       />

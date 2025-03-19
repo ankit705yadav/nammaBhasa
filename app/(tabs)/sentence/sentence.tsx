@@ -19,29 +19,28 @@ import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
 
 const { width } = Dimensions.get("window"); // Get screen width
 
-type WordItem = {
-  word: string;
+type SentenceItem = {
+  sentence: string;
   transliteration: string;
   translation: string;
   breakdown: string[];
-  strokes: string[];
 };
 
-export default function WordScreen() {
+export default function SentenceScreen() {
   const router = useRouter();
 
   const [activeLevel, setActiveLevel] = useState("Lvl 1");
-  // Get words from the updated structure
-  const level1Words = kannadaData.Words?.Level1 || [];
-  const level2Words = kannadaData.Words?.Level2 || [];
-  const level3Words = kannadaData.Words?.Level3 || [];
+  // Get sentences from the updated structure
+  const level1Sentences = kannadaData.Sentences?.Level1 || [];
+  const level2Sentences = kannadaData.Sentences?.Level2 || [];
+  const level3Sentences = kannadaData.Sentences?.Level3 || [];
 
-  console.log("LLL", level1Words);
+  console.log("Sentences Level 1:", level1Sentences);
 
   const [searchQuery, setSearchQuery] = useState("");
 
   const [isModalVisible, setModalVisible] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<WordItem | null>(null);
+  const [selectedItem, setSelectedItem] = useState<SentenceItem | null>(null);
 
   const [showTranslation, setShowTranslation] = useState(true);
 
@@ -50,42 +49,42 @@ export default function WordScreen() {
     setActiveLevel(selectedOption);
   };
 
-  const handleItemPress = (item: WordItem) => {
+  const handleItemPress = (item: SentenceItem) => {
     setSelectedItem(item);
     setModalVisible(true);
   };
 
-  // Get the active words based on the selected level
-  const getActiveWords = () => {
+  // Get the active sentences based on the selected level
+  const getActiveSentences = () => {
     switch (activeLevel) {
       case "Lvl 1":
-        return level1Words;
+        return level1Sentences;
       case "Lvl 2":
-        return level2Words;
+        return level2Sentences;
       case "Lvl 3":
-        return level3Words;
+        return level3Sentences;
       default:
-        return level1Words;
+        return level1Sentences;
     }
   };
 
-  // Filter words based on search query
-  const filteredWords = getActiveWords().filter(
+  // Filter sentences based on search query
+  const filteredSentences = getActiveSentences().filter(
     (item) =>
-      item.word.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.sentence.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.transliteration.toLowerCase().includes(searchQuery.toLowerCase()) ||
       (item.translation &&
         item.translation.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
-  console.log("filteredWords:", filteredWords);
+  console.log("filteredSentences:", filteredSentences);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
         {/* Header */}
         <Text style={styles.headerText}>
-          ಪದ<Text style={{ fontSize: 14 }}> | word</Text>
+          ವಾಕ್ಯ<Text style={{ fontSize: 14 }}> | sentence</Text>
         </Text>
 
         {/* search-bar */}
@@ -96,11 +95,11 @@ export default function WordScreen() {
           style={{ marginHorizontal: 30, marginBottom: 12 }}
         />
 
-        {/* Container */}
+        {/* Container - Changed to a single column for sentences */}
         <FlatList
-          data={filteredWords}
+          data={filteredSentences}
           keyExtractor={(item, index) => index.toString()}
-          numColumns={2}
+          numColumns={1}
           renderItem={({ item }) => (
             <LinearGradient
               colors={["pink", "#e0be21"]} // Gradient colors for the border
@@ -111,24 +110,24 @@ export default function WordScreen() {
                 style={styles.item} // Inner content
               >
                 <View style={styles.itemContent}>
-                  <Text style={styles.word}>{item.word}</Text>
+                  <Text style={styles.sentence}>{item.sentence}</Text>
                   {showTranslation && (
                     <Text style={styles.translation}>
-                      {item.transliteration}
+                      {item.translation}
                     </Text>
                   )}
                 </View>
               </Pressable>
             </LinearGradient>
           )}
-          contentContainerStyle={styles.gridContainer}
+          contentContainerStyle={styles.listContainer}
         />
 
         {/* tab-switch */}
         <CustomSwitch
           options={["Lvl 1", "Lvl 2", "Lvl 3"]}
           onSwitch={handleSwitch}
-          onLeft={() => router.push("/(tabs)/word/wordGame")}
+          onLeft={() => router.push("/(tabs)/sentence/sentenceGame")}
           onRight={() => setShowTranslation(!showTranslation)}
         />
 
@@ -156,10 +155,13 @@ export default function WordScreen() {
             <View style={styles.modalContent}>
               <View style={styles.bar} />
               {selectedItem && (
-                <View style={styles.modalWordContainer}>
-                  <Text style={styles.modalWord}>{selectedItem.word}</Text>
+                <View style={styles.modalSentenceContainer}>
+                  <Text style={styles.modalSentence}>{selectedItem.sentence}</Text>
+                  <Text style={styles.modalTransliteration}>
+                    {selectedItem.transliteration}
+                  </Text>
                   <Text style={styles.modalTranslation}>
-                    {selectedItem.translation || selectedItem.transliteration}
+                    {selectedItem.translation}
                   </Text>
                 </View>
               )}
@@ -191,20 +193,20 @@ const styles = StyleSheet.create({
   },
 
   // container
-  gridContainer: {
+  listContainer: {
     padding: 10,
+    width: "100%",
   },
   borderContainer: {
     backgroundColor: "grey",
     margin: 5,
     borderRadius: 12,
     padding: 3, // Creates space for the border effect
-    width: width / 2 - 58, // Two columns instead of four
-    height: 100, // Taller for words
+    width: width - 60, // Full width with padding
+    minHeight: 100, // Taller for sentences
     zIndex: 100,
   },
   item: {
-    aspectRatio: 1.5, // Changed from 1 to accommodate words better
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "rgb(68, 50, 12)", // Set inner background color
@@ -215,12 +217,14 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 5,
     elevation: 3,
+    padding: 15,
   },
-  word: {
-    fontSize: 22,
+  sentence: {
+    fontSize: 20,
     fontWeight: "bold",
     color: "#E2DFE0",
     textAlign: "center",
+    marginBottom: 5,
   },
   translation: {
     fontSize: 14,
@@ -263,17 +267,25 @@ const styles = StyleSheet.create({
     transform: [{ scale: 0.98 }],
   },
 
-  modalWordContainer: {
+  modalSentenceContainer: {
     alignItems: "center",
     padding: 20,
   },
 
-  modalWord: {
+  modalSentence: {
     color: "#dad8de",
-    fontSize: 60,
+    fontSize: 36,
     fontWeight: "bold",
     marginBottom: 20,
     textAlign: "center",
+  },
+
+  modalTransliteration: {
+    fontSize: 20,
+    color: "#dad8de",
+    textAlign: "center",
+    marginBottom: 15,
+    fontStyle: "italic",
   },
 
   modalTranslation: {
