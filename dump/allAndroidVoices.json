@@ -1,0 +1,2834 @@
+[
+  {
+    "quality": "Enhanced",
+    "name": "hi-in-x-hia-local",
+    "language": "hi-IN",
+    "identifier": "hi-in-x-hia-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ru-ru-x-rud-local",
+    "language": "ru-RU",
+    "identifier": "ru-ru-x-rud-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "it-it-x-itd-local",
+    "language": "it-IT",
+    "identifier": "it-it-x-itd-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-AU-language",
+    "language": "en-AU",
+    "identifier": "en-AU-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-be-x-bec-local",
+    "language": "nl-BE",
+    "identifier": "nl-be-x-bec-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "mni-IN-language",
+    "language": "mni-IN",
+    "identifier": "mni-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ur-pk-x-cfn-local",
+    "language": "ur-PK",
+    "identifier": "ur-pk-x-cfn-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-tpf-local",
+    "language": "en-US",
+    "identifier": "en-us-x-tpf-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "de-de-x-deb-network",
+    "language": "de-DE",
+    "identifier": "de-de-x-deb-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sv-se-x-afp-network",
+    "language": "sv-SE",
+    "identifier": "sv-se-x-afp-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pl-pl-x-afb-local",
+    "language": "pl-PL",
+    "identifier": "pl-pl-x-afb-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-us-x-sfb-network",
+    "language": "es-US",
+    "identifier": "es-us-x-sfb-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "yue-hk-x-yud-local",
+    "language": "yue-HK",
+    "identifier": "yue-hk-x-yud-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-ca-x-cab-local",
+    "language": "fr-CA",
+    "identifier": "fr-ca-x-cab-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-NL-language",
+    "language": "nl-NL",
+    "identifier": "nl-NL-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "da-dk-x-sfp-network",
+    "language": "da-DK",
+    "identifier": "da-dk-x-sfp-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-US-language",
+    "language": "es-US",
+    "identifier": "es-US-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-in-x-ene-network",
+    "language": "en-IN",
+    "identifier": "en-in-x-ene-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "zh-TW-language",
+    "language": "zh-TW",
+    "identifier": "zh-TW-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hi-in-x-hie-network",
+    "language": "hi-IN",
+    "identifier": "hi-in-x-hie-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-au-x-aua-network",
+    "language": "en-AU",
+    "identifier": "en-au-x-aua-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-GB-language",
+    "language": "en-GB",
+    "identifier": "en-GB-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-us-x-esc-network",
+    "language": "es-US",
+    "identifier": "es-us-x-esc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ko-kr-x-koc-network",
+    "language": "ko-KR",
+    "identifier": "ko-kr-x-koc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-gb-x-gba-network",
+    "language": "en-GB",
+    "identifier": "en-gb-x-gba-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pl-pl-x-bmg-network",
+    "language": "pl-PL",
+    "identifier": "pl-pl-x-bmg-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "id-id-x-dfz-network",
+    "language": "in-ID",
+    "identifier": "id-id-x-dfz-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hi-in-x-hic-network",
+    "language": "hi-IN",
+    "identifier": "hi-in-x-hic-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cmn-cn-x-cce-local",
+    "language": "zh-CN",
+    "identifier": "cmn-cn-x-cce-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-sfg-network",
+    "language": "en-US",
+    "identifier": "en-us-x-sfg-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-au-x-aud-local",
+    "language": "en-AU",
+    "identifier": "en-au-x-aud-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "uk-ua-x-hfd-local",
+    "language": "uk-UA",
+    "identifier": "uk-ua-x-hfd-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pl-pl-x-zfg-network",
+    "language": "pl-PL",
+    "identifier": "pl-pl-x-zfg-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-es-x-eee-local",
+    "language": "es-ES",
+    "identifier": "es-es-x-eee-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hi-IN-language",
+    "language": "hi-IN",
+    "identifier": "hi-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "he-il-x-hec-local",
+    "language": "iw-IL",
+    "identifier": "he-il-x-hec-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "tr-tr-x-tmc-local",
+    "language": "tr-TR",
+    "identifier": "tr-tr-x-tmc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-fr-x-vlf-network",
+    "language": "fr-FR",
+    "identifier": "fr-fr-x-vlf-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-au-x-aua-local",
+    "language": "en-AU",
+    "identifier": "en-au-x-aua-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cmn-cn-x-ssa-local",
+    "language": "zh-CN",
+    "identifier": "cmn-cn-x-ssa-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ar-language",
+    "language": "ar",
+    "identifier": "ar-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "et-ee-x-tms-network",
+    "language": "et-EE",
+    "identifier": "et-ee-x-tms-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ml-in-x-mle-local",
+    "language": "ml-IN",
+    "identifier": "ml-in-x-mle-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-CA-language",
+    "language": "fr-CA",
+    "identifier": "fr-CA-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hi-in-x-hid-local",
+    "language": "hi-IN",
+    "identifier": "hi-in-x-hid-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "vi-VN-language",
+    "language": "vi-VN",
+    "identifier": "vi-VN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ms-my-x-msc-local",
+    "language": "ms-MY",
+    "identifier": "ms-my-x-msc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "it-IT-language",
+    "language": "it-IT",
+    "identifier": "it-IT-language"
+  },
+  {
+    "quality": "Default",
+    "name": "bs-ba-x-bsm-local",
+    "language": "bs-BA",
+    "identifier": "bs-ba-x-bsm-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "jv-id-x-jvf-local",
+    "language": "jv-ID",
+    "identifier": "jv-id-x-jvf-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-gb-x-gbc-network",
+    "language": "en-GB",
+    "identifier": "en-gb-x-gbc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ar-xa-x-ard-network",
+    "language": "ar",
+    "identifier": "ar-xa-x-ard-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "th-th-x-thc-network",
+    "language": "th-TH",
+    "identifier": "th-th-x-thc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "el-GR-language",
+    "language": "el-GR",
+    "identifier": "el-GR-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sat-IN-language",
+    "language": "sat-IN",
+    "identifier": "sat-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-sfg-local",
+    "language": "en-US",
+    "identifier": "en-us-x-sfg-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fil-PH-language",
+    "language": "fil-PH",
+    "identifier": "fil-PH-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pl-pl-x-jmk-network",
+    "language": "pl-PL",
+    "identifier": "pl-pl-x-jmk-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "vi-vn-x-gft-network",
+    "language": "vi-VN",
+    "identifier": "vi-vn-x-gft-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ru-ru-x-rue-network",
+    "language": "ru-RU",
+    "identifier": "ru-ru-x-rue-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "doi-IN-language",
+    "language": "doi-IN",
+    "identifier": "doi-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hi-in-x-hia-network",
+    "language": "hi-IN",
+    "identifier": "hi-in-x-hia-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fi-FI-language",
+    "language": "fi-FI",
+    "identifier": "fi-FI-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-ca-x-cab-network",
+    "language": "fr-CA",
+    "identifier": "fr-ca-x-cab-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hu-HU-language",
+    "language": "hu-HU",
+    "identifier": "hu-HU-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-FR-language",
+    "language": "fr-FR",
+    "identifier": "fr-FR-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "vi-vn-x-vie-network",
+    "language": "vi-VN",
+    "identifier": "vi-vn-x-vie-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fil-ph-x-fie-local",
+    "language": "fil-PH",
+    "identifier": "fil-ph-x-fie-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "da-DK-language",
+    "language": "da-DK",
+    "identifier": "da-DK-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fil-ph-x-fid-network",
+    "language": "fil-PH",
+    "identifier": "fil-ph-x-fid-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "kn-in-x-knc-local",
+    "language": "kn-IN",
+    "identifier": "kn-in-x-knc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "yue-hk-x-yue-network",
+    "language": "yue-HK",
+    "identifier": "yue-hk-x-yue-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "si-lk-x-sin-local",
+    "language": "si-LK",
+    "identifier": "si-lk-x-sin-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sk-sk-x-sfk-local",
+    "language": "sk-SK",
+    "identifier": "sk-sk-x-sfk-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-iob-local",
+    "language": "en-US",
+    "identifier": "en-us-x-iob-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "bg-bg-x-ifk-local",
+    "language": "bg-BG",
+    "identifier": "bg-bg-x-ifk-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "km-KH-language",
+    "language": "km-KH",
+    "identifier": "km-KH-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "bs-ba-language",
+    "language": "bs-BA",
+    "identifier": "bs-ba-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "mr-in-x-mra-network",
+    "language": "mr-IN",
+    "identifier": "mr-in-x-mra-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sv-SE-language",
+    "language": "sv-SE",
+    "identifier": "sv-SE-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cmn-tw-x-ctd-network",
+    "language": "zh-TW",
+    "identifier": "cmn-tw-x-ctd-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "kn-in-x-knd-network",
+    "language": "kn-IN",
+    "identifier": "kn-in-x-knd-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pa-in-x-pac-local",
+    "language": "pa-IN",
+    "identifier": "pa-in-x-pac-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ar-xa-x-are-local",
+    "language": "ar",
+    "identifier": "ar-xa-x-are-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "mr-in-x-mrd-local",
+    "language": "mr-IN",
+    "identifier": "mr-in-x-mrd-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hu-hu-x-kfl-network",
+    "language": "hu-HU",
+    "identifier": "hu-hu-x-kfl-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-pt-x-jmn-network",
+    "language": "pt-PT",
+    "identifier": "pt-pt-x-jmn-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-fr-x-frc-network",
+    "language": "fr-FR",
+    "identifier": "fr-fr-x-frc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "he-il-x-hee-network",
+    "language": "iw-IL",
+    "identifier": "he-il-x-hee-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "vi-vn-x-vid-local",
+    "language": "vi-VN",
+    "identifier": "vi-vn-x-vid-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cs-cz-x-jfs-local",
+    "language": "cs-CZ",
+    "identifier": "cs-cz-x-jfs-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "tr-tr-x-efu-network",
+    "language": "tr-TR",
+    "identifier": "tr-tr-x-efu-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "et-ee-x-tms-local",
+    "language": "et-EE",
+    "identifier": "et-ee-x-tms-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-in-x-enc-network",
+    "language": "en-IN",
+    "identifier": "en-in-x-enc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-au-x-auc-network",
+    "language": "en-AU",
+    "identifier": "en-au-x-auc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-gb-x-gbc-local",
+    "language": "en-GB",
+    "identifier": "en-gb-x-gbc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-us-x-esd-local",
+    "language": "es-US",
+    "identifier": "es-us-x-esd-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-nl-x-bmh-network",
+    "language": "nl-NL",
+    "identifier": "nl-nl-x-bmh-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "gu-in-x-gud-local",
+    "language": "gu-IN",
+    "identifier": "gu-in-x-gud-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "bn-in-x-bnd-network",
+    "language": "bn-IN",
+    "identifier": "bn-in-x-bnd-network"
+  },
+  {
+    "quality": "Default",
+    "name": "sw-ke-x-swm-local",
+    "language": "sw-KE",
+    "identifier": "sw-ke-x-swm-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "tr-tr-x-mfm-local",
+    "language": "tr-TR",
+    "identifier": "tr-tr-x-mfm-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "is-is-x-isf-local",
+    "language": "is-IS",
+    "identifier": "is-is-x-isf-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-in-x-enc-local",
+    "language": "en-IN",
+    "identifier": "en-in-x-enc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-nl-x-lfc-local",
+    "language": "nl-NL",
+    "identifier": "nl-nl-x-lfc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ms-my-x-msg-network",
+    "language": "ms-MY",
+    "identifier": "ms-my-x-msg-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "he-il-language",
+    "language": "iw-IL",
+    "identifier": "he-il-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fi-fi-x-afi-local",
+    "language": "fi-FI",
+    "identifier": "fi-fi-x-afi-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ca-ES-language",
+    "language": "ca-ES",
+    "identifier": "ca-ES-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-tpd-network",
+    "language": "en-US",
+    "identifier": "en-us-x-tpd-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nb-no-x-cfl-local",
+    "language": "nb-NO",
+    "identifier": "nb-no-x-cfl-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "id-id-x-ide-local",
+    "language": "in-ID",
+    "identifier": "id-id-x-ide-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-es-x-eef-local",
+    "language": "es-ES",
+    "identifier": "es-es-x-eef-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "gu-in-x-gud-network",
+    "language": "gu-IN",
+    "identifier": "gu-in-x-gud-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ko-kr-x-kod-local",
+    "language": "ko-KR",
+    "identifier": "ko-kr-x-kod-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ta-IN-language",
+    "language": "ta-IN",
+    "identifier": "ta-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "is-is-x-isf-network",
+    "language": "is-IS",
+    "identifier": "is-is-x-isf-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sr-rs-x-gfg-network",
+    "language": "sr-RS",
+    "identifier": "sr-rs-x-gfg-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-tpc-network",
+    "language": "en-US",
+    "identifier": "en-us-x-tpc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-fr-x-frb-local",
+    "language": "fr-FR",
+    "identifier": "fr-fr-x-frb-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-es-x-eec-network",
+    "language": "es-ES",
+    "identifier": "es-es-x-eec-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-au-x-aub-local",
+    "language": "en-AU",
+    "identifier": "en-au-x-aub-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "el-gr-x-vfz-local",
+    "language": "el-GR",
+    "identifier": "el-gr-x-vfz-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pl-pl-x-afb-network",
+    "language": "pl-PL",
+    "identifier": "pl-pl-x-afb-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ur-pk-x-cfn-network",
+    "language": "ur-PK",
+    "identifier": "ur-pk-x-cfn-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-in-x-end-local",
+    "language": "en-IN",
+    "identifier": "en-in-x-end-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-PT-language",
+    "language": "pt-PT",
+    "identifier": "pt-PT-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-es-x-eea-local",
+    "language": "es-ES",
+    "identifier": "es-es-x-eea-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cmn-cn-x-ccd-network",
+    "language": "zh-CN",
+    "identifier": "cmn-cn-x-ccd-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "yue-hk-x-yuc-network",
+    "language": "yue-HK",
+    "identifier": "yue-hk-x-yuc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ar-xa-x-arc-local",
+    "language": "ar",
+    "identifier": "ar-xa-x-arc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "uk-ua-x-hfd-network",
+    "language": "uk-UA",
+    "identifier": "uk-ua-x-hfd-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ko-kr-x-ism-local",
+    "language": "ko-KR",
+    "identifier": "ko-kr-x-ism-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "gu-IN-language",
+    "language": "gu-IN",
+    "identifier": "gu-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "bn-in-x-bnc-network",
+    "language": "bn-IN",
+    "identifier": "bn-in-x-bnc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-in-x-ena-network",
+    "language": "en-IN",
+    "identifier": "en-in-x-ena-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "or-IN-language",
+    "language": "or-IN",
+    "identifier": "or-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "or-in-x-end-local",
+    "language": "or-IN",
+    "identifier": "or-in-x-end-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-br-x-pte-local",
+    "language": "pt-BR",
+    "identifier": "pt-br-x-pte-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nb-no-x-rfj-network",
+    "language": "nb-NO",
+    "identifier": "nb-no-x-rfj-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "de-DE-language",
+    "language": "de-DE",
+    "identifier": "de-DE-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ms-my-x-msg-local",
+    "language": "ms-MY",
+    "identifier": "ms-my-x-msg-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-fr-x-frd-network",
+    "language": "fr-FR",
+    "identifier": "fr-fr-x-frd-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "bg-bg-x-ifk-network",
+    "language": "bg-BG",
+    "identifier": "bg-bg-x-ifk-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-nl-x-dma-network",
+    "language": "nl-NL",
+    "identifier": "nl-nl-x-dma-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-nl-x-lfc-network",
+    "language": "nl-NL",
+    "identifier": "nl-nl-x-lfc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "brx-IN-language",
+    "language": "brx-IN",
+    "identifier": "brx-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "gu-in-x-guc-network",
+    "language": "gu-IN",
+    "identifier": "gu-in-x-guc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pl-pl-x-jmk-local",
+    "language": "pl-PL",
+    "identifier": "pl-pl-x-jmk-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ms-MY-language",
+    "language": "ms-MY",
+    "identifier": "ms-MY-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fil-ph-x-fid-local",
+    "language": "fil-PH",
+    "identifier": "fil-ph-x-fid-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fil-ph-x-fie-network",
+    "language": "fil-PH",
+    "identifier": "fil-ph-x-fie-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "mr-in-x-mrc-local",
+    "language": "mr-IN",
+    "identifier": "mr-in-x-mrc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "yue-hk-x-yuf-local",
+    "language": "yue-HK",
+    "identifier": "yue-hk-x-yuf-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ar-xa-x-ard-local",
+    "language": "ar",
+    "identifier": "ar-xa-x-ard-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "vi-vn-x-vic-local",
+    "language": "vi-VN",
+    "identifier": "vi-vn-x-vic-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "he-il-x-hec-network",
+    "language": "iw-IL",
+    "identifier": "he-il-x-hec-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "su-id-x-suf-network",
+    "language": "su-ID",
+    "identifier": "su-id-x-suf-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "te-in-x-teg-local",
+    "language": "te-IN",
+    "identifier": "te-in-x-teg-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nb-no-x-cfl-network",
+    "language": "nb-NO",
+    "identifier": "nb-no-x-cfl-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "id-id-x-idd-network",
+    "language": "in-ID",
+    "identifier": "id-id-x-idd-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-gb-x-gbb-local",
+    "language": "en-GB",
+    "identifier": "en-gb-x-gbb-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sv-se-x-dmc-network",
+    "language": "sv-SE",
+    "identifier": "sv-se-x-dmc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ur-in-x-urb-local",
+    "language": "ur-IN",
+    "identifier": "ur-in-x-urb-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "yue-HK-language",
+    "language": "yue-HK",
+    "identifier": "yue-HK-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "it-it-x-itb-local",
+    "language": "it-IT",
+    "identifier": "it-it-x-itb-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "vi-vn-x-gft-local",
+    "language": "vi-VN",
+    "identifier": "vi-vn-x-gft-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "su-ID-language",
+    "language": "su-ID",
+    "identifier": "su-ID-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ur-PK-language",
+    "language": "ur-PK",
+    "identifier": "ur-PK-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "zh-CN-language",
+    "language": "zh-CN",
+    "identifier": "zh-CN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ru-RU-language",
+    "language": "ru-RU",
+    "identifier": "ru-RU-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-iob-network",
+    "language": "en-US",
+    "identifier": "en-us-x-iob-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "he-il-x-heb-network",
+    "language": "iw-IL",
+    "identifier": "he-il-x-heb-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nb-no-x-cmj-network",
+    "language": "nb-NO",
+    "identifier": "nb-no-x-cmj-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-iol-network",
+    "language": "en-US",
+    "identifier": "en-us-x-iol-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ja-JP-language",
+    "language": "ja-JP",
+    "identifier": "ja-JP-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ar-xa-x-arz-local",
+    "language": "ar",
+    "identifier": "ar-xa-x-arz-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "id-id-x-ide-network",
+    "language": "in-ID",
+    "identifier": "id-id-x-ide-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pl-pl-x-zfg-local",
+    "language": "pl-PL",
+    "identifier": "pl-pl-x-zfg-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ru-ru-x-ruc-network",
+    "language": "ru-RU",
+    "identifier": "ru-ru-x-ruc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-BR-language",
+    "language": "pt-BR",
+    "identifier": "pt-BR-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ru-ru-x-rue-local",
+    "language": "ru-RU",
+    "identifier": "ru-ru-x-rue-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pa-in-x-pag-local",
+    "language": "pa-IN",
+    "identifier": "pa-in-x-pag-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "bn-BD-language",
+    "language": "bn-BD",
+    "identifier": "bn-BD-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-be-x-bed-network",
+    "language": "nl-BE",
+    "identifier": "nl-be-x-bed-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hr-hr-x-hra-local",
+    "language": "hr-HR",
+    "identifier": "hr-hr-x-hra-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pa-IN-language",
+    "language": "pa-IN",
+    "identifier": "pa-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "he-il-x-hee-local",
+    "language": "iw-IL",
+    "identifier": "he-il-x-hee-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-iom-network",
+    "language": "en-US",
+    "identifier": "en-us-x-iom-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ks-IN-language",
+    "language": "ks-IN",
+    "identifier": "ks-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cmn-cn-x-ccc-local",
+    "language": "zh-CN",
+    "identifier": "cmn-cn-x-ccc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-nl-x-tfb-network",
+    "language": "nl-NL",
+    "identifier": "nl-nl-x-tfb-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "lv-LV-language",
+    "language": "lv-LV",
+    "identifier": "lv-LV-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-es-x-eea-network",
+    "language": "es-ES",
+    "identifier": "es-es-x-eea-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-ca-x-cac-local",
+    "language": "fr-CA",
+    "identifier": "fr-ca-x-cac-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "tr-tr-x-tmc-network",
+    "language": "tr-TR",
+    "identifier": "tr-tr-x-tmc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-pt-x-jfb-network",
+    "language": "pt-PT",
+    "identifier": "pt-pt-x-jfb-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "it-it-x-kda-network",
+    "language": "it-IT",
+    "identifier": "it-it-x-kda-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cmn-cn-x-ccc-network",
+    "language": "zh-CN",
+    "identifier": "cmn-cn-x-ccc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-fr-x-fra-local",
+    "language": "fr-FR",
+    "identifier": "fr-fr-x-fra-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ko-kr-x-kob-network",
+    "language": "ko-KR",
+    "identifier": "ko-kr-x-kob-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "mr-IN-language",
+    "language": "mr-IN",
+    "identifier": "mr-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "tr-tr-x-efu-local",
+    "language": "tr-TR",
+    "identifier": "tr-tr-x-efu-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nb-no-x-tfs-local",
+    "language": "nb-NO",
+    "identifier": "nb-no-x-tfs-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "jv-id-x-jvf-network",
+    "language": "jv-ID",
+    "identifier": "jv-id-x-jvf-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hr-hr-x-hra-network",
+    "language": "hr-HR",
+    "identifier": "hr-hr-x-hra-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "et-EE-language",
+    "language": "et-EE",
+    "identifier": "et-EE-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ko-KR-language",
+    "language": "ko-KR",
+    "identifier": "ko-KR-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-br-x-afs-local",
+    "language": "pt-BR",
+    "identifier": "pt-br-x-afs-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-NG-language",
+    "language": "en-NG",
+    "identifier": "en-NG-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ja-jp-x-jab-network",
+    "language": "ja-JP",
+    "identifier": "ja-jp-x-jab-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "te-IN-language",
+    "language": "te-IN",
+    "identifier": "te-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hr-hr-x-hrb-network",
+    "language": "hr-HR",
+    "identifier": "hr-hr-x-hrb-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ml-in-x-mlc-network",
+    "language": "ml-IN",
+    "identifier": "ml-in-x-mlc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "de-de-x-dea-network",
+    "language": "de-DE",
+    "identifier": "de-de-x-dea-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hi-in-x-hid-network",
+    "language": "hi-IN",
+    "identifier": "hi-in-x-hid-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "vi-vn-x-vie-local",
+    "language": "vi-VN",
+    "identifier": "vi-vn-x-vie-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-nl-x-bmh-local",
+    "language": "nl-NL",
+    "identifier": "nl-nl-x-bmh-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ca-es-x-caf-network",
+    "language": "ca-ES",
+    "identifier": "ca-es-x-caf-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "da-dk-x-nmm-network",
+    "language": "da-DK",
+    "identifier": "da-dk-x-nmm-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "tr-tr-x-cfs-local",
+    "language": "tr-TR",
+    "identifier": "tr-tr-x-cfs-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-us-x-esf-local",
+    "language": "es-US",
+    "identifier": "es-us-x-esf-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cmn-tw-x-cte-network",
+    "language": "zh-TW",
+    "identifier": "cmn-tw-x-cte-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-gb-x-gbd-local",
+    "language": "en-GB",
+    "identifier": "en-gb-x-gbd-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-us-x-esc-local",
+    "language": "es-US",
+    "identifier": "es-us-x-esc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pl-pl-x-oda-network",
+    "language": "pl-PL",
+    "identifier": "pl-pl-x-oda-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-gb-x-gbg-local",
+    "language": "en-GB",
+    "identifier": "en-gb-x-gbg-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "doi-in-x-end-local",
+    "language": "doi-IN",
+    "identifier": "doi-in-x-end-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "mr-in-x-mrd-network",
+    "language": "mr-IN",
+    "identifier": "mr-in-x-mrd-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-gb-x-rjs-local",
+    "language": "en-GB",
+    "identifier": "en-gb-x-rjs-local"
+  },
+  {
+    "quality": "Default",
+    "name": "sq-al-x-sqm-network",
+    "language": "sq-AL",
+    "identifier": "sq-al-x-sqm-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-iom-local",
+    "language": "en-US",
+    "identifier": "en-us-x-iom-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "it-it-x-kda-local",
+    "language": "it-IT",
+    "identifier": "it-it-x-kda-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "bn-bd-x-ban-network",
+    "language": "bn-BD",
+    "identifier": "bn-bd-x-ban-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fil-ph-x-fic-local",
+    "language": "fil-PH",
+    "identifier": "fil-ph-x-fic-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ko-kr-x-kod-network",
+    "language": "ko-KR",
+    "identifier": "ko-kr-x-kod-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-pt-x-sfs-local",
+    "language": "pt-PT",
+    "identifier": "pt-pt-x-sfs-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "si-lk-x-sin-network",
+    "language": "si-LK",
+    "identifier": "si-lk-x-sin-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-au-x-aub-network",
+    "language": "en-AU",
+    "identifier": "en-au-x-aub-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-ca-x-caa-network",
+    "language": "fr-CA",
+    "identifier": "fr-ca-x-caa-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-in-x-end-network",
+    "language": "en-IN",
+    "identifier": "en-in-x-end-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pa-in-x-pag-network",
+    "language": "pa-IN",
+    "identifier": "pa-in-x-pag-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sv-se-x-afp-local",
+    "language": "sv-SE",
+    "identifier": "sv-se-x-afp-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "th-TH-language",
+    "language": "th-TH",
+    "identifier": "th-TH-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "mai-in-x-end-local",
+    "language": "mai-IN",
+    "identifier": "mai-in-x-end-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "yue-hk-x-jar-local",
+    "language": "yue-HK",
+    "identifier": "yue-hk-x-jar-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "lt-lt-language",
+    "language": "lt-LT",
+    "identifier": "lt-lt-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "as-IN-language",
+    "language": "as-IN",
+    "identifier": "as-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-ng-x-tfn-network",
+    "language": "en-NG",
+    "identifier": "en-ng-x-tfn-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "tr-tr-x-ama-network",
+    "language": "tr-TR",
+    "identifier": "tr-tr-x-ama-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "bn-IN-language",
+    "language": "bn-IN",
+    "identifier": "bn-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "yue-hk-x-yuf-network",
+    "language": "yue-HK",
+    "identifier": "yue-hk-x-yuf-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sa-IN-language",
+    "language": "sa-IN",
+    "identifier": "sa-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "da-dk-x-nmm-local",
+    "language": "da-DK",
+    "identifier": "da-dk-x-nmm-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "da-dk-x-vfb-network",
+    "language": "da-DK",
+    "identifier": "da-dk-x-vfb-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pl-pl-x-oda-local",
+    "language": "pl-PL",
+    "identifier": "pl-pl-x-oda-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "tr-TR-language",
+    "language": "tr-TR",
+    "identifier": "tr-TR-language"
+  },
+  {
+    "quality": "Default",
+    "name": "sw-ke-x-swm-network",
+    "language": "sw-KE",
+    "identifier": "sw-ke-x-swm-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ko-kr-x-koc-local",
+    "language": "ko-KR",
+    "identifier": "ko-kr-x-koc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cy-gb-x-cyf-local",
+    "language": "cy-GB",
+    "identifier": "cy-gb-x-cyf-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-US-language",
+    "language": "en-US",
+    "identifier": "en-US-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "lt-lt-x-amc-network",
+    "language": "lt-LT",
+    "identifier": "lt-lt-x-amc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "da-dk-x-kfm-network",
+    "language": "da-DK",
+    "identifier": "da-dk-x-kfm-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sq-al-language",
+    "language": "sq-AL",
+    "identifier": "sq-al-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cmn-tw-x-ctc-network",
+    "language": "zh-TW",
+    "identifier": "cmn-tw-x-ctc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-fr-x-frc-local",
+    "language": "fr-FR",
+    "identifier": "fr-fr-x-frc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "su-id-x-suf-local",
+    "language": "su-ID",
+    "identifier": "su-id-x-suf-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "uk-UA-language",
+    "language": "uk-UA",
+    "identifier": "uk-UA-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ja-jp-x-htm-network",
+    "language": "ja-JP",
+    "identifier": "ja-jp-x-htm-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ru-ru-x-rud-network",
+    "language": "ru-RU",
+    "identifier": "ru-ru-x-rud-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-gb-x-gba-local",
+    "language": "en-GB",
+    "identifier": "en-gb-x-gba-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "kn-in-x-knd-local",
+    "language": "kn-IN",
+    "identifier": "kn-in-x-knd-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-nl-x-yfr-network",
+    "language": "nl-NL",
+    "identifier": "nl-nl-x-yfr-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sd-IN-language",
+    "language": "sd-IN",
+    "identifier": "sd-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-in-x-ene-local",
+    "language": "en-IN",
+    "identifier": "en-in-x-ene-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pa-in-x-pae-local",
+    "language": "pa-IN",
+    "identifier": "pa-in-x-pae-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "he-il-x-hed-network",
+    "language": "iw-IL",
+    "identifier": "he-il-x-hed-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ja-jp-x-jad-network",
+    "language": "ja-JP",
+    "identifier": "ja-jp-x-jad-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cy-GB-language",
+    "language": "cy-GB",
+    "identifier": "cy-GB-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sat-in-x-end-local",
+    "language": "sat-IN",
+    "identifier": "sat-in-x-end-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "mni-in-x-end-local",
+    "language": "mni-IN",
+    "identifier": "mni-in-x-end-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-be-x-bec-network",
+    "language": "nl-BE",
+    "identifier": "nl-be-x-bec-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ru-ru-x-ruf-local",
+    "language": "ru-RU",
+    "identifier": "ru-ru-x-ruf-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ml-IN-language",
+    "language": "ml-IN",
+    "identifier": "ml-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-ng-x-tfn-local",
+    "language": "en-NG",
+    "identifier": "en-ng-x-tfn-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hi-in-x-hic-local",
+    "language": "hi-IN",
+    "identifier": "hi-in-x-hic-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-es-x-eed-local",
+    "language": "es-ES",
+    "identifier": "es-es-x-eed-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-au-x-aud-network",
+    "language": "en-AU",
+    "identifier": "en-au-x-aud-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cmn-cn-x-ccd-local",
+    "language": "zh-CN",
+    "identifier": "cmn-cn-x-ccd-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hr-hr-x-hrb-local",
+    "language": "hr-HR",
+    "identifier": "hr-hr-x-hrb-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "brx-in-x-end-local",
+    "language": "brx-IN",
+    "identifier": "brx-in-x-end-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-br-x-ptd-local",
+    "language": "pt-BR",
+    "identifier": "pt-br-x-ptd-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "he-il-x-hed-local",
+    "language": "iw-IL",
+    "identifier": "he-il-x-hed-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ja-jp-x-jab-local",
+    "language": "ja-JP",
+    "identifier": "ja-jp-x-jab-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "da-dk-x-kfm-local",
+    "language": "da-DK",
+    "identifier": "da-dk-x-kfm-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-tpd-local",
+    "language": "en-US",
+    "identifier": "en-us-x-tpd-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ro-ro-x-vfv-network",
+    "language": "ro-RO",
+    "identifier": "ro-ro-x-vfv-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sv-se-x-lfs-local",
+    "language": "sv-SE",
+    "identifier": "sv-se-x-lfs-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nb-NO-language",
+    "language": "nb-NO",
+    "identifier": "nb-NO-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-ca-x-caa-local",
+    "language": "fr-CA",
+    "identifier": "fr-ca-x-caa-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-us-x-esf-network",
+    "language": "es-US",
+    "identifier": "es-us-x-esf-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hu-hu-x-kfl-local",
+    "language": "hu-HU",
+    "identifier": "hu-hu-x-kfl-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-ca-x-cad-local",
+    "language": "fr-CA",
+    "identifier": "fr-ca-x-cad-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-us-x-sfb-local",
+    "language": "es-US",
+    "identifier": "es-us-x-sfb-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ml-in-x-mle-network",
+    "language": "ml-IN",
+    "identifier": "ml-in-x-mle-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "is-is-language",
+    "language": "is-IS",
+    "identifier": "is-is-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-ES-language",
+    "language": "es-ES",
+    "identifier": "es-ES-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-pt-x-pmj-local",
+    "language": "pt-PT",
+    "identifier": "pt-pt-x-pmj-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sv-se-x-lfs-network",
+    "language": "sv-SE",
+    "identifier": "sv-se-x-lfs-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-nl-x-dma-local",
+    "language": "nl-NL",
+    "identifier": "nl-nl-x-dma-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cmn-cn-x-cce-network",
+    "language": "zh-CN",
+    "identifier": "cmn-cn-x-cce-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "vi-vn-x-vif-network",
+    "language": "vi-VN",
+    "identifier": "vi-vn-x-vif-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nb-no-x-rfj-local",
+    "language": "nb-NO",
+    "identifier": "nb-no-x-rfj-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-ca-x-cac-network",
+    "language": "fr-CA",
+    "identifier": "fr-ca-x-cac-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-gb-x-rjs-network",
+    "language": "en-GB",
+    "identifier": "en-gb-x-rjs-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ru-ru-x-ruc-local",
+    "language": "ru-RU",
+    "identifier": "ru-ru-x-ruc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "id-id-x-idc-network",
+    "language": "in-ID",
+    "identifier": "id-id-x-idc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ru-ru-x-ruf-network",
+    "language": "ru-RU",
+    "identifier": "ru-ru-x-ruf-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cy-gb-x-cyf-network",
+    "language": "cy-GB",
+    "identifier": "cy-gb-x-cyf-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-nl-x-yfr-local",
+    "language": "nl-NL",
+    "identifier": "nl-nl-x-yfr-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ks-in-x-end-local",
+    "language": "ks-IN",
+    "identifier": "ks-in-x-end-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-pt-x-sfs-network",
+    "language": "pt-PT",
+    "identifier": "pt-pt-x-sfs-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fil-ph-x-fic-network",
+    "language": "fil-PH",
+    "identifier": "fil-ph-x-fic-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-be-x-bed-local",
+    "language": "nl-BE",
+    "identifier": "nl-be-x-bed-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ru-ru-x-dfc-local",
+    "language": "ru-RU",
+    "identifier": "ru-ru-x-dfc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fil-ph-x-cfc-network",
+    "language": "fil-PH",
+    "identifier": "fil-ph-x-cfc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "kok-in-x-end-local",
+    "language": "kok-IN",
+    "identifier": "kok-in-x-end-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "id-ID-language",
+    "language": "in-ID",
+    "identifier": "id-ID-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cs-cz-x-jfs-network",
+    "language": "cs-CZ",
+    "identifier": "cs-cz-x-jfs-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "it-it-x-itc-local",
+    "language": "it-IT",
+    "identifier": "it-it-x-itc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "de-de-x-deg-network",
+    "language": "de-DE",
+    "identifier": "de-de-x-deg-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "bn-in-x-bnd-local",
+    "language": "bn-IN",
+    "identifier": "bn-in-x-bnd-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pa-in-x-pac-network",
+    "language": "pa-IN",
+    "identifier": "pa-in-x-pac-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ro-RO-language",
+    "language": "ro-RO",
+    "identifier": "ro-RO-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cmn-tw-x-ctc-local",
+    "language": "zh-TW",
+    "identifier": "cmn-tw-x-ctc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-es-x-eed-network",
+    "language": "es-ES",
+    "identifier": "es-es-x-eed-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ms-my-x-mse-network",
+    "language": "ms-MY",
+    "identifier": "ms-my-x-mse-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "yue-hk-x-yue-local",
+    "language": "yue-HK",
+    "identifier": "yue-hk-x-yue-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pl-PL-language",
+    "language": "pl-PL",
+    "identifier": "pl-PL-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ar-xa-x-are-network",
+    "language": "ar",
+    "identifier": "ar-xa-x-are-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "id-id-x-idd-local",
+    "language": "in-ID",
+    "identifier": "id-id-x-idd-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "th-th-x-thd-network",
+    "language": "th-TH",
+    "identifier": "th-th-x-thd-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ml-in-x-mlc-local",
+    "language": "ml-IN",
+    "identifier": "ml-in-x-mlc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sa-in-x-end-local",
+    "language": "sa-IN",
+    "identifier": "sa-in-x-end-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sr-rs-language",
+    "language": "sr-RS",
+    "identifier": "sr-rs-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-au-x-auc-local",
+    "language": "en-AU",
+    "identifier": "en-au-x-auc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ur-in-x-urc-local",
+    "language": "ur-IN",
+    "identifier": "ur-in-x-urc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hr-HR-language",
+    "language": "hr-HR",
+    "identifier": "hr-HR-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "yue-hk-x-yud-network",
+    "language": "yue-HK",
+    "identifier": "yue-hk-x-yud-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-gb-x-gbb-network",
+    "language": "en-GB",
+    "identifier": "en-gb-x-gbb-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ne-np-x-nep-local",
+    "language": "ne-NP",
+    "identifier": "ne-np-x-nep-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fil-ph-x-cfc-local",
+    "language": "fil-PH",
+    "identifier": "fil-ph-x-cfc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ne-np-x-nep-network",
+    "language": "ne-NP",
+    "identifier": "ne-np-x-nep-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-iog-network",
+    "language": "en-US",
+    "identifier": "en-us-x-iog-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ne-NP-language",
+    "language": "ne-NP",
+    "identifier": "ne-NP-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "de-de-x-deb-local",
+    "language": "de-DE",
+    "identifier": "de-de-x-deb-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "km-kh-x-khm-network",
+    "language": "km-KH",
+    "identifier": "km-kh-x-khm-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "si-LK-language",
+    "language": "si-LK",
+    "identifier": "si-LK-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "th-th-x-thd-local",
+    "language": "th-TH",
+    "identifier": "th-th-x-thd-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sk-sk-x-sfk-network",
+    "language": "sk-SK",
+    "identifier": "sk-sk-x-sfk-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "gu-in-x-guc-local",
+    "language": "gu-IN",
+    "identifier": "gu-in-x-guc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-br-x-pte-network",
+    "language": "pt-BR",
+    "identifier": "pt-br-x-pte-network"
+  },
+  {
+    "quality": "Default",
+    "name": "bs-ba-x-bsm-network",
+    "language": "bs-BA",
+    "identifier": "bs-ba-x-bsm-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fi-fi-x-afi-network",
+    "language": "fi-FI",
+    "identifier": "fi-fi-x-afi-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "lv-lv-x-imr-local",
+    "language": "lv-LV",
+    "identifier": "lv-lv-x-imr-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "it-it-x-itc-network",
+    "language": "it-IT",
+    "identifier": "it-it-x-itc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sk-SK-language",
+    "language": "sk-SK",
+    "identifier": "sk-SK-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "he-il-x-heb-local",
+    "language": "iw-IL",
+    "identifier": "he-il-x-heb-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ms-my-x-msd-local",
+    "language": "ms-MY",
+    "identifier": "ms-my-x-msd-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "tr-tr-x-ama-local",
+    "language": "tr-TR",
+    "identifier": "tr-tr-x-ama-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "te-in-x-teg-network",
+    "language": "te-IN",
+    "identifier": "te-in-x-teg-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-fr-x-frb-network",
+    "language": "fr-FR",
+    "identifier": "fr-fr-x-frb-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ja-jp-x-jad-local",
+    "language": "ja-JP",
+    "identifier": "ja-jp-x-jad-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sv-se-x-cfg-local",
+    "language": "sv-SE",
+    "identifier": "sv-se-x-cfg-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "te-in-x-tee-local",
+    "language": "te-IN",
+    "identifier": "te-in-x-tee-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "hi-in-x-hie-local",
+    "language": "hi-IN",
+    "identifier": "hi-in-x-hie-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-pt-x-jfb-local",
+    "language": "pt-PT",
+    "identifier": "pt-pt-x-jfb-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-gb-x-gbg-network",
+    "language": "en-GB",
+    "identifier": "en-gb-x-gbg-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sl-si-x-frm-local",
+    "language": "sl-SI",
+    "identifier": "sl-si-x-frm-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "mr-in-x-mra-local",
+    "language": "mr-IN",
+    "identifier": "mr-in-x-mra-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "it-it-x-itb-network",
+    "language": "it-IT",
+    "identifier": "it-it-x-itb-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "da-dk-x-vfb-local",
+    "language": "da-DK",
+    "identifier": "da-dk-x-vfb-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ta-in-x-tad-local",
+    "language": "ta-IN",
+    "identifier": "ta-in-x-tad-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-pt-x-pmj-network",
+    "language": "pt-PT",
+    "identifier": "pt-pt-x-pmj-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "id-id-x-dfz-local",
+    "language": "in-ID",
+    "identifier": "id-id-x-dfz-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sv-se-x-cfg-network",
+    "language": "sv-SE",
+    "identifier": "sv-se-x-cfg-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nb-no-x-tmg-local",
+    "language": "nb-NO",
+    "identifier": "nb-no-x-tmg-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "yue-hk-x-yuc-local",
+    "language": "yue-HK",
+    "identifier": "yue-hk-x-yuc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ru-ru-x-dfc-network",
+    "language": "ru-RU",
+    "identifier": "ru-ru-x-dfc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "mai-IN-language",
+    "language": "mai-IN",
+    "identifier": "mai-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "yue-hk-x-jar-network",
+    "language": "yue-HK",
+    "identifier": "yue-hk-x-jar-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "de-de-x-deg-local",
+    "language": "de-DE",
+    "identifier": "de-de-x-deg-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-ca-x-cad-network",
+    "language": "fr-CA",
+    "identifier": "fr-ca-x-cad-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "el-gr-x-vfz-network",
+    "language": "el-GR",
+    "identifier": "el-gr-x-vfz-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-tpf-network",
+    "language": "en-US",
+    "identifier": "en-us-x-tpf-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-gb-x-gbd-network",
+    "language": "en-GB",
+    "identifier": "en-gb-x-gbd-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-in-x-ena-local",
+    "language": "en-IN",
+    "identifier": "en-in-x-ena-local"
+  },
+  {
+    "quality": "Default",
+    "name": "sq-al-x-sqm-local",
+    "language": "sq-AL",
+    "identifier": "sq-al-x-sqm-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "kn-in-x-knc-network",
+    "language": "kn-IN",
+    "identifier": "kn-in-x-knc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sv-se-x-cmh-network",
+    "language": "sv-SE",
+    "identifier": "sv-se-x-cmh-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nb-no-x-tfs-network",
+    "language": "nb-NO",
+    "identifier": "nb-no-x-tfs-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "vi-vn-x-vif-local",
+    "language": "vi-VN",
+    "identifier": "vi-vn-x-vif-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ca-es-x-caf-local",
+    "language": "ca-ES",
+    "identifier": "ca-es-x-caf-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cmn-tw-x-ctd-local",
+    "language": "zh-TW",
+    "identifier": "cmn-tw-x-ctd-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "de-de-x-nfh-local",
+    "language": "de-DE",
+    "identifier": "de-de-x-nfh-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sv-se-x-cmh-local",
+    "language": "sv-SE",
+    "identifier": "sv-se-x-cmh-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "kn-IN-language",
+    "language": "kn-IN",
+    "identifier": "kn-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sd-in-x-end-local",
+    "language": "sd-IN",
+    "identifier": "sd-in-x-end-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "vi-vn-x-vid-network",
+    "language": "vi-VN",
+    "identifier": "vi-vn-x-vid-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ms-my-x-msd-network",
+    "language": "ms-MY",
+    "identifier": "ms-my-x-msd-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "te-in-x-tee-network",
+    "language": "te-IN",
+    "identifier": "te-in-x-tee-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-fr-x-fra-network",
+    "language": "fr-FR",
+    "identifier": "fr-fr-x-fra-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pa-in-x-pad-network",
+    "language": "pa-IN",
+    "identifier": "pa-in-x-pad-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-br-x-ptd-network",
+    "language": "pt-BR",
+    "identifier": "pt-br-x-ptd-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-nl-x-tfb-local",
+    "language": "nl-NL",
+    "identifier": "nl-nl-x-tfb-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ta-in-x-tac-local",
+    "language": "ta-IN",
+    "identifier": "ta-in-x-tac-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-pt-x-jmn-local",
+    "language": "pt-PT",
+    "identifier": "pt-pt-x-jmn-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "da-dk-x-sfp-local",
+    "language": "da-DK",
+    "identifier": "da-dk-x-sfp-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "tr-tr-x-cfs-network",
+    "language": "tr-TR",
+    "identifier": "tr-tr-x-cfs-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "bn-in-x-bnc-local",
+    "language": "bn-IN",
+    "identifier": "bn-in-x-bnc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pa-in-x-pae-network",
+    "language": "pa-IN",
+    "identifier": "pa-in-x-pae-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ms-my-x-msc-network",
+    "language": "ms-MY",
+    "identifier": "ms-my-x-msc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "lt-lt-x-amc-local",
+    "language": "lt-LT",
+    "identifier": "lt-lt-x-amc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "km-kh-x-khm-local",
+    "language": "km-KH",
+    "identifier": "km-kh-x-khm-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "id-id-x-idc-local",
+    "language": "in-ID",
+    "identifier": "id-id-x-idc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nb-no-x-cmj-local",
+    "language": "nb-NO",
+    "identifier": "nb-no-x-cmj-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ko-kr-x-kob-local",
+    "language": "ko-KR",
+    "identifier": "ko-kr-x-kob-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ta-in-x-tac-network",
+    "language": "ta-IN",
+    "identifier": "ta-in-x-tac-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-fr-x-vlf-local",
+    "language": "fr-FR",
+    "identifier": "fr-fr-x-vlf-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-iog-local",
+    "language": "en-US",
+    "identifier": "en-us-x-iog-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ar-xa-x-arz-network",
+    "language": "ar",
+    "identifier": "ar-xa-x-arz-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "bg-bg-language",
+    "language": "bg-BG",
+    "identifier": "bg-bg-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cmn-tw-x-cte-local",
+    "language": "zh-TW",
+    "identifier": "cmn-tw-x-cte-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ar-xa-x-arc-network",
+    "language": "ar",
+    "identifier": "ar-xa-x-arc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "de-de-x-nfh-network",
+    "language": "de-DE",
+    "identifier": "de-de-x-nfh-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nl-BE-language",
+    "language": "nl-BE",
+    "identifier": "nl-BE-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pl-pl-x-bmg-local",
+    "language": "pl-PL",
+    "identifier": "pl-pl-x-bmg-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sv-se-x-dmc-local",
+    "language": "sv-SE",
+    "identifier": "sv-se-x-dmc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ko-kr-x-ism-network",
+    "language": "ko-KR",
+    "identifier": "ko-kr-x-ism-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ur-in-x-urc-network",
+    "language": "ur-IN",
+    "identifier": "ur-in-x-urc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cs-CZ-language",
+    "language": "cs-CZ",
+    "identifier": "cs-CZ-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "fr-fr-x-frd-local",
+    "language": "fr-FR",
+    "identifier": "fr-fr-x-frd-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ur-IN-language",
+    "language": "ur-IN",
+    "identifier": "ur-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pa-in-x-pad-local",
+    "language": "pa-IN",
+    "identifier": "pa-in-x-pad-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "jv-ID-language",
+    "language": "jv-ID",
+    "identifier": "jv-ID-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "de-de-x-dea-local",
+    "language": "de-DE",
+    "identifier": "de-de-x-dea-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "kok-IN-language",
+    "language": "kok-IN",
+    "identifier": "kok-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "pt-br-x-afs-network",
+    "language": "pt-BR",
+    "identifier": "pt-br-x-afs-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "mr-in-x-mrc-network",
+    "language": "mr-IN",
+    "identifier": "mr-in-x-mrc-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "nb-no-x-tmg-network",
+    "language": "nb-NO",
+    "identifier": "nb-no-x-tmg-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-tpc-local",
+    "language": "en-US",
+    "identifier": "en-us-x-tpc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "vi-vn-x-vic-network",
+    "language": "vi-VN",
+    "identifier": "vi-vn-x-vic-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-es-x-eec-local",
+    "language": "es-ES",
+    "identifier": "es-es-x-eec-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "as-in-x-end-local",
+    "language": "as-IN",
+    "identifier": "as-in-x-end-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ro-ro-x-vfv-local",
+    "language": "ro-RO",
+    "identifier": "ro-ro-x-vfv-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "tr-tr-x-mfm-network",
+    "language": "tr-TR",
+    "identifier": "tr-tr-x-mfm-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "bn-bd-x-ban-local",
+    "language": "bn-BD",
+    "identifier": "bn-bd-x-ban-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "th-th-x-thc-local",
+    "language": "th-TH",
+    "identifier": "th-th-x-thc-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ja-jp-x-jac-local",
+    "language": "ja-JP",
+    "identifier": "ja-jp-x-jac-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-IN-language",
+    "language": "en-IN",
+    "identifier": "en-IN-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sw-ke-language",
+    "language": "sw-KE",
+    "identifier": "sw-ke-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ja-jp-x-jac-network",
+    "language": "ja-JP",
+    "identifier": "ja-jp-x-jac-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "es-us-x-esd-network",
+    "language": "es-US",
+    "identifier": "es-us-x-esd-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "sl-SI-language",
+    "language": "sl-SI",
+    "identifier": "sl-SI-language"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ms-my-x-mse-local",
+    "language": "ms-MY",
+    "identifier": "ms-my-x-mse-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ja-jp-x-htm-local",
+    "language": "ja-JP",
+    "identifier": "ja-jp-x-htm-local"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "cmn-cn-x-ssa-network",
+    "language": "zh-CN",
+    "identifier": "cmn-cn-x-ssa-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ur-in-x-urb-network",
+    "language": "ur-IN",
+    "identifier": "ur-in-x-urb-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "it-it-x-itd-network",
+    "language": "it-IT",
+    "identifier": "it-it-x-itd-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "ta-in-x-tad-network",
+    "language": "ta-IN",
+    "identifier": "ta-in-x-tad-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "lv-lv-x-imr-network",
+    "language": "lv-LV",
+    "identifier": "lv-lv-x-imr-network"
+  },
+  {
+    "quality": "Enhanced",
+    "name": "en-us-x-iol-local",
+    "language": "en-US",
+    "identifier": "en-us-x-iol-local"
+  }
+]
