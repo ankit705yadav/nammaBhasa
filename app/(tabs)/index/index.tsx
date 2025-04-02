@@ -1,26 +1,23 @@
 import { useState } from "react";
 import {
-  Image,
   StyleSheet,
   Dimensions,
   FlatList,
   Text,
   View,
-  TextInput,
   Pressable,
 } from "react-native";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
-import * as Speech from "expo-speech";
-import * as Haptics from "expo-haptics";
-import { Ionicons } from "@expo/vector-icons";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 import { Searchbar } from "react-native-paper";
 import Modal from "react-native-modal";
 
 import CustomSwitch from "@/components/CustomSwitch";
 import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
+import { speakText } from "../../../utils/utils";
 
 const { width } = Dimensions.get("window"); // Get screen width
 
@@ -28,13 +25,6 @@ type LetterItem = {
   letter: string;
   transliteration: string;
   // add other properties if they exist in your data
-};
-
-type VoiceInfo = {
-  identifier: string;
-  name: string;
-  quality: string;
-  language: string;
 };
 
 export default function HomeScreen() {
@@ -51,11 +41,6 @@ export default function HomeScreen() {
 
   const [showTransliteration, setShowTransliteration] = useState(true);
 
-  // New state for speech voices and language
-  const [availableVoices, setAvailableVoices] = useState<VoiceInfo[]>([]);
-  const [selectedVoiceIndex, setSelectedVoiceIndex] = useState(0);
-  const [currentLanguage, setCurrentLanguage] = useState("en");
-
   const handleSwitch = (selectedOption: string) => {
     console.log("Selected:", selectedOption);
     // Update the active tab based on the selected option directly
@@ -67,49 +52,11 @@ export default function HomeScreen() {
     setModalVisible(true);
   };
 
-  // Function to speak the selected character's transliteration
-  const speakText = (transliteration: string) => {
-    console.log("speak-Pressed:",transliteration);
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-
-    if (transliteration) {
-      // Use the currently selected voice if available
-      const options: Speech.SpeechOptions = {
-        language: currentLanguage,
-        pitch: 1.0,
-        rate: 0.9,
-      };
-
-      if (
-        availableVoices.length > 0 &&
-        selectedVoiceIndex < availableVoices.length
-      ) {
-        options.voice = availableVoices[selectedVoiceIndex].identifier;
-      }
-
-      Speech.speak(transliteration, options);
-    }
+  // Function to handle speaking text
+  const handleSpeak = (transliteration: string) => {
+    console.log("speak-Pressed:", transliteration);
+    speakText(transliteration);
   };
-
-
-
-  // Function to cycle to the next available language
-  const cycleLanguage = () => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-
-    if (availableVoices.length === 0) return;
-
-    const nextIndex = (selectedVoiceIndex + 1) % availableVoices.length;
-    setSelectedVoiceIndex(nextIndex);
-    setCurrentLanguage(availableVoices[nextIndex].language);
-
-    // Show feedback about the selected language
-    console.log(
-      `Language changed to: ${availableVoices[nextIndex].language} (${availableVoices[nextIndex].name})`
-    );
-  };
-
-
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
@@ -139,7 +86,7 @@ export default function HomeScreen() {
             >
               <Pressable
                 onPress={() => handleItemPress(item)}
-                onLongPress={() => speakText(item.transliteration)}
+                onLongPress={() => handleSpeak(item.transliteration)}
                 style={styles.item} // Inner content
               >
                 <View style={styles.itemContent}>
@@ -189,34 +136,19 @@ export default function HomeScreen() {
                 <View style={styles.modalLetterContainer}>
                   {/* speech */}
                   <Pressable
-                    onPress={cycleLanguage}
-                    onLongPress={() => speakText(selectedItem.transliteration)}
+                    onPress={() => handleSpeak(selectedItem.transliteration)}
                     style={styles.speakerButton}
                   >
-                    <Ionicons name="language" size={28} color="#dad8de" />
+                    <AntDesign name="sound" size={28} color="#dad8de" />
                   </Pressable>
 
-                  <Pressable
-                    onPress={() => speakText(selectedItem.transliteration)}
-                    onLongPress={() => speakText(selectedItem.transliteration)}
-                  >
-                    <Text style={styles.modalLetter}>
-                      {selectedItem.letter}
-                    </Text>
-                  </Pressable>
+                  <Text style={styles.modalLetter}>{selectedItem.letter}</Text>
+
                   <View style={styles.modalBottomRow}>
                     <Text style={styles.modalTranslit}>
                       {selectedItem.transliteration}
                     </Text>
                   </View>
-
-                  {/* Display current language */}
-                  {availableVoices.length > 0 && (
-                    <Text style={styles.languageIndicator}>
-                      Language:{" "}
-                      {availableVoices[selectedVoiceIndex]?.language || "en"}
-                    </Text>
-                  )}
                 </View>
               )}
             </View>
@@ -250,6 +182,7 @@ const styles = StyleSheet.create({
 
   // container
   gridContainer: {
+    paddingBottom: 80,
     padding: 10,
   },
   borderContainer: {
@@ -333,7 +266,6 @@ const styles = StyleSheet.create({
   modalTranslit: {
     fontSize: 24,
     color: "#dad8de",
-    marginRight: 10,
   },
 
   modalBottomRow: {
@@ -346,12 +278,5 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 10,
     padding: 8,
-  },
-
-  languageIndicator: {
-    color: "#dad8de",
-    fontSize: 16,
-    marginTop: 15,
-    opacity: 0.8,
   },
 });

@@ -10,12 +10,16 @@ import {
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
+import AntDesign from '@expo/vector-icons/AntDesign';
+
 
 import { Searchbar } from "react-native-paper";
 import Modal from "react-native-modal";
 
 import CustomSwitch from "@/components/CustomSwitch";
 import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
+
+import { speakText } from "../../../utils/utils";
 
 const { width } = Dimensions.get("window"); // Get screen width
 
@@ -79,6 +83,12 @@ export default function SentenceScreen() {
 
   console.log("filteredSentences:", filteredSentences);
 
+  // Function to handle speaking text
+  const handleSpeak = (transliteration: string) => {
+    console.log("speak-Pressed:", transliteration);
+    speakText(transliteration);
+  };
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
@@ -107,14 +117,13 @@ export default function SentenceScreen() {
             >
               <Pressable
                 onPress={() => handleItemPress(item)}
+                onLongPress={() => handleSpeak(item.transliteration)}
                 style={styles.item} // Inner content
               >
                 <View style={styles.itemContent}>
                   <Text style={styles.sentence}>{item.sentence}</Text>
                   {showTranslation && (
-                    <Text style={styles.translation}>
-                      {item.translation}
-                    </Text>
+                    <Text style={styles.translation}>{item.translation}</Text>
                   )}
                 </View>
               </Pressable>
@@ -156,7 +165,16 @@ export default function SentenceScreen() {
               <View style={styles.bar} />
               {selectedItem && (
                 <View style={styles.modalSentenceContainer}>
-                  <Text style={styles.modalSentence}>{selectedItem.sentence}</Text>
+                    <Pressable
+                    onPress={() => handleSpeak(selectedItem.transliteration)}
+                    style={styles.speakerButton}
+                  >
+                    <AntDesign name="sound" size={28} color="#dad8de" />
+                  </Pressable>
+
+                  <Text style={styles.modalSentence}>
+                    {selectedItem.sentence}
+                  </Text>
                   <Text style={styles.modalTransliteration}>
                     {selectedItem.transliteration}
                   </Text>
@@ -273,8 +291,9 @@ const styles = StyleSheet.create({
   },
 
   modalSentence: {
+    marginTop:20,
     color: "#dad8de",
-    fontSize: 36,
+    fontSize: 30,
     fontWeight: "bold",
     marginBottom: 20,
     textAlign: "center",
@@ -292,5 +311,11 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: "#dad8de",
     textAlign: "center",
+  },
+
+  speakerButton: {
+    position: "absolute",
+    right: 10,
+    padding: 8,
   },
 });
