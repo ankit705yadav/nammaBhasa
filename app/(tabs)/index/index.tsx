@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   StyleSheet,
   Dimensions,
@@ -35,11 +35,22 @@ export default function HomeScreen() {
   const consonants = kannadaData.Consonants;
 
   const [searchQuery, setSearchQuery] = useState("");
+  const [filteredVowels, setFilteredVowels] = useState<LetterItem[]>([]);
 
   const [isModalVisible, setModalVisible] = useState(false);
   const [selectedItem, setSelectedItem] = useState<LetterItem | null>(null);
 
   const [showTransliteration, setShowTransliteration] = useState(true);
+
+  useEffect(() => {
+    const data = activeTab === "Vowels" ? vowels : consonants;
+    const filtered = data.filter(
+      (item) =>
+        item.letter.includes(searchQuery) ||
+        item.transliteration.toLowerCase().includes(searchQuery.toLowerCase()),
+    );
+    setFilteredVowels(filtered);
+  }, [searchQuery, activeTab]);
 
   const handleSwitch = (selectedOption: string) => {
     console.log("Selected:", selectedOption);
@@ -76,7 +87,7 @@ export default function HomeScreen() {
 
         {/* Container */}
         <FlatList
-          data={activeTab === "Vowels" ? vowels : consonants}
+          data={filteredVowels}
           keyExtractor={(item, index) => index.toString()}
           numColumns={4}
           renderItem={({ item }) => (
