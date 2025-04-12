@@ -73,9 +73,14 @@ export default function HomeScreen() {
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
         {/* Header */}
-        <Text style={styles.headerText}>
-          ಕನ್ನಡ<Text style={{ fontSize: 14 }}>| kannada</Text>{" "}
-        </Text>
+        <Pressable
+          style={{ width: "100%" }}
+          onLongPress={() => handleSpeak("ಕನ್ನಡ")}
+        >
+          <Text style={styles.headerText}>
+            ಕನ್ನಡ<Text style={{ fontSize: 14 }}>| kannada</Text>{" "}
+          </Text>
+        </Pressable>
 
         {/* search-bar */}
         <Searchbar

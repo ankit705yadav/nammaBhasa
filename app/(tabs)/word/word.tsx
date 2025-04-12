@@ -78,7 +78,7 @@ export default function WordScreen() {
       item.word.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.transliteration.toLowerCase().includes(searchQuery.toLowerCase()) ||
       (item.translation &&
-        item.translation.toLowerCase().includes(searchQuery.toLowerCase()))
+        item.translation.toLowerCase().includes(searchQuery.toLowerCase())),
   );
 
   console.log("filteredWords:", filteredWords);
@@ -93,9 +93,14 @@ export default function WordScreen() {
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
         {/* Header */}
-        <Text style={styles.headerText}>
-          ಪದ<Text style={{ fontSize: 14 }}> | word</Text>
-        </Text>
+        <Pressable
+          style={{ width: "100%" }}
+          onLongPress={() => handleSpeak("ಪದ")}
+        >
+          <Text style={styles.headerText}>
+            ಪದ<Text style={{ fontSize: 14 }}> | word</Text>
+          </Text>
+        </Pressable>
 
         {/* search-bar */}
         <Searchbar
@@ -286,7 +291,7 @@ const styles = StyleSheet.create({
   },
 
   modalWord: {
-    marginTop:24,
+    marginTop: 24,
     color: "#dad8de",
     fontSize: 60,
     fontWeight: "bold",

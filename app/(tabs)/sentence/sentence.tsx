@@ -10,8 +10,7 @@ import {
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
-import AntDesign from '@expo/vector-icons/AntDesign';
-
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 import { Searchbar } from "react-native-paper";
 import Modal from "react-native-modal";
@@ -78,7 +77,7 @@ export default function SentenceScreen() {
       item.sentence.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.transliteration.toLowerCase().includes(searchQuery.toLowerCase()) ||
       (item.translation &&
-        item.translation.toLowerCase().includes(searchQuery.toLowerCase()))
+        item.translation.toLowerCase().includes(searchQuery.toLowerCase())),
   );
 
   console.log("filteredSentences:", filteredSentences);
@@ -93,9 +92,15 @@ export default function SentenceScreen() {
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
         {/* Header */}
-        <Text style={styles.headerText}>
-          ವಾಕ್ಯ<Text style={{ fontSize: 14 }}> | sentence</Text>
-        </Text>
+
+        <Pressable
+          style={{ width: "100%" }}
+          onLongPress={() => handleSpeak("ವಾಕ್ಯ")}
+        >
+          <Text style={styles.headerText}>
+            ವಾಕ್ಯ<Text style={{ fontSize: 14 }}> | sentence</Text>
+          </Text>
+        </Pressable>
 
         {/* search-bar */}
         <Searchbar
@@ -165,7 +170,7 @@ export default function SentenceScreen() {
               <View style={styles.bar} />
               {selectedItem && (
                 <View style={styles.modalSentenceContainer}>
-                    <Pressable
+                  <Pressable
                     onPress={() => handleSpeak(selectedItem.transliteration)}
                     style={styles.speakerButton}
                   >
@@ -291,7 +296,7 @@ const styles = StyleSheet.create({
   },
 
   modalSentence: {
-    marginTop:20,
+    marginTop: 20,
     color: "#dad8de",
     fontSize: 30,
     fontWeight: "bold",
