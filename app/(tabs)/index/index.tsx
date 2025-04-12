@@ -1,3 +1,4 @@
+// eas build -p android --profile preview
 import { useState, useEffect } from "react";
 import {
   StyleSheet,

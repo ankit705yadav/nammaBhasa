@@ -259,7 +259,7 @@
       },
       {
         "word": "ಹಣ್ಣು",
-        "transliteration": "hannu",
+        "transliteration": "haṇṇu",
         "translation": "fruit",
         "breakdown": ["ಹ", "ಣ", "್ಣ", "ು"],
         "strokes": ["ha_1.png", "ṇa_1.png", "ṇa_2.png", "u_1.png"]
@@ -270,29 +270,20 @@
         "translation": "path",
         "breakdown": ["ಪ", "ಥ"],
         "strokes": ["pa_1.png", "tha_1.png"]
-      }
-    ],
-    "Level2": [
-      {
-        "word": "ಅಕ್ಕ",
-        "transliteration": "akka",
-        "translation": "elder sister",
-        "breakdown": ["ಅ", "ಕ", "್ಕ"],
-        "strokes": ["a_1.png", "ka_1.png", "ka_2.png"]
       },
       {
-        "word": "ಬಳ್ಳಿ",
-        "transliteration": "balli",
-        "translation": "vine",
-        "breakdown": ["ಬ", "ಳ", "್ಳ", "ಿ"],
-        "strokes": ["ba_1.png", "ḷa_1.png", "ḷa_2.png", "i_1.png"]
+        "word": "ಅಮ್ಮ",
+        "transliteration": "amma",
+        "translation": "mother",
+        "breakdown": ["ಅ", "ಮ", "್ಮ"],
+        "strokes": ["a_1.png", "ma_1.png", "ma_2.png"]
       },
       {
-        "word": "ಕಪ್ಪು",
-        "transliteration": "kappu",
-        "translation": "black",
-        "breakdown": ["ಕ", "ಪ", "್ಪ", "ು"],
-        "strokes": ["ka_1.png", "pa_1.png", "pa_2.png", "u_1.png"]
+        "word": "ಅಪ್ಪ",
+        "transliteration": "appa",
+        "translation": "father",
+        "breakdown": ["ಅ", "ಪ", "್ಪ"],
+        "strokes": ["a_1.png", "pa_1.png", "pa_2.png"]
       },
       {
         "word": "ಮರ",
@@ -302,62 +293,2502 @@
         "strokes": ["ma_1.png", "ra_1.png"]
       },
       {
+        "word": "ಗಿಡ",
+        "transliteration": "giḍa",
+        "translation": "plant",
+        "breakdown": ["ಗ", "ಿ", "ಡ"],
+        "strokes": ["ga_1.png", "i_1.png", "ḍa_1.png"]
+      },
+      {
+        "word": "ಊಟ",
+        "transliteration": "ūṭa",
+        "translation": "meal",
+        "breakdown": ["ಊ", "ಟ"],
+        "strokes": ["ū_1.png", "ṭa_1.png"]
+      },
+      {
+        "word": "ಹಾಲು",
+        "transliteration": "hālu",
+        "translation": "milk",
+        "breakdown": ["ಹ", "ಾ", "ಲ", "ು"],
+        "strokes": ["ha_1.png", "ā_1.png", "la_1.png", "u_1.png"]
+      },
+      {
         "word": "ನೀರು",
-        "transliteration": "neeru",
+        "transliteration": "nīru",
         "translation": "water",
-        "breakdown": ["ನ", "ೀ", "ರು"],
-        "strokes": ["na_1.png", "ii_1.png", "ru_1.png"]
+        "breakdown": ["ನ", "ೀ", "ರ", "ು"],
+        "strokes": ["na_1.png", "ī_1.png", "ra_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಕಣ್ಣು",
+        "transliteration": "kaṇṇu",
+        "translation": "eye",
+        "breakdown": ["ಕ", "ಣ", "್ಣ", "ು"],
+        "strokes": ["ka_1.png", "ṇa_1.png", "ṇa_2.png", "u_1.png"]
+      },
+      {
+        "word": "ಬಾಯಿ",
+        "transliteration": "bāyi",
+        "translation": "mouth",
+        "breakdown": ["ಬ", "ಾ", "ಯ", "ಿ"],
+        "strokes": ["ba_1.png", "ā_1.png", "ya_1.png", "i_1.png"]
+      },
+      {
+        "word": "ನಾಯಿ",
+        "transliteration": "nāyi",
+        "translation": "dog",
+        "breakdown": ["ನ", "ಾ", "ಯ", "ಿ"],
+        "strokes": ["na_1.png", "ā_1.png", "ya_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಬೆಕ್ಕು",
+        "transliteration": "bekku",
+        "translation": "cat",
+        "breakdown": ["ಬ", "ೆ", "ಕ", "್ಕ", "ು"],
+        "strokes": ["ba_1.png", "e_1.png", "ka_1.png", "ka_2.png", "u_1.png"]
       },
       {
         "word": "ಪುಸ್ತಕ",
         "transliteration": "pustaka",
         "translation": "book",
-        "breakdown": ["ಪು", "ಸ್", "ತ", "ಕ"],
-        "strokes": ["pu_1.png", "sa_1.png", "ta_1.png", "ka_1.png"]
+        "breakdown": ["ಪ", "ು", "ಸ", "್ತ", "ಕ"],
+        "strokes": ["pa_1.png", "u_1.png", "sa_1.png", "ta_2.png", "ka_1.png"]
+      },
+      {
+        "word": "ಬರೆ",
+        "transliteration": "bare",
+        "translation": "write (imperative)",
+        "breakdown": ["ಬ", "ರ", "ೆ"],
+        "strokes": ["ba_1.png", "ra_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಓದು",
+        "transliteration": "ōdu",
+        "translation": "read (imperative)",
+        "breakdown": ["ಓ", "ದ", "ು"],
+        "strokes": ["ō_1.png", "da_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಕೆಂಪು",
+        "transliteration": "kempu",
+        "translation": "red",
+        "breakdown": ["ಕ", "ೆ", "ಂ", "ಪ", "ು"],
+        "strokes": ["ka_1.png", "e_1.png", "aṁ_1.png", "pa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಹಸಿರು",
+        "transliteration": "hasiru",
+        "translation": "green",
+        "breakdown": ["ಹ", "ಸ", "ಿ", "ರ", "ು"],
+        "strokes": ["ha_1.png", "sa_1.png", "i_1.png", "ra_1.png", "u_1.png"]
+      },
+      {
+        "word": "ದಿನ",
+        "transliteration": "dina",
+        "translation": "day",
+        "breakdown": ["ದ", "ಿ", "ನ"],
+        "strokes": ["da_1.png", "i_1.png", "na_1.png"]
+      },
+      {
+        "word": "ರಾತ್ರಿ",
+        "transliteration": "rātri",
+        "translation": "night",
+        "breakdown": ["ರ", "ಾ", "ತ", "್", "ರಿ"],
+        "strokes": ["ra_1.png", "ā_1.png", "ta_1.png", "ra_2.png", "i_1.png"]
+      },
+      {
+        "word": "ಹೂವು",
+        "transliteration": "hūvu",
+        "translation": "flower",
+        "breakdown": ["ಹ", "ೂ", "ವ", "ು"],
+        "strokes": ["ha_1.png", "ū_1.png", "va_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಕಲ್ಲು",
+        "transliteration": "kallu",
+        "translation": "stone",
+        "breakdown": ["ಕ", "ಲ", "್ಲ", "ು"],
+        "strokes": ["ka_1.png", "la_1.png", "la_2.png", "u_1.png"]
+      },
+      {
+        "word": "ಮಣ್ಣು",
+        "transliteration": "maṇṇu",
+        "translation": "soil / mud",
+        "breakdown": ["ಮ", "ಣ", "್ಣ", "ು"],
+        "strokes": ["ma_1.png", "ṇa_1.png", "ṇa_2.png", "u_1.png"]
+      },
+      {
+        "word": "ಬಾನು",
+        "transliteration": "bānu",
+        "translation": "sky",
+        "breakdown": ["ಬ", "ಾ", "ನ", "ು"],
+        "strokes": ["ba_1.png", "ā_1.png", "na_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಗಾಳಿ",
+        "transliteration": "gāḷi",
+        "translation": "wind / air",
+        "breakdown": ["ಗ", "ಾ", "ಳ", "ಿ"],
+        "strokes": ["ga_1.png", "ā_1.png", "ḷa_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಬೆಂಕಿ",
+        "transliteration": "benki",
+        "translation": "fire",
+        "breakdown": ["ಬ", "ೆ", "ಂ", "ಕ", "ಿ"],
+        "strokes": ["ba_1.png", "e_1.png", "aṁ_1.png", "ka_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಹೊಗೆ",
+        "transliteration": "hoge",
+        "translation": "smoke",
+        "breakdown": ["ಹ", "ೊ", "ಗ", "ೆ"],
+        "strokes": ["ha_1.png", "o_1.png", "ga_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಅಕ್ಕ",
+        "transliteration": "akka",
+        "translation": "elder sister",
+        "breakdown": ["ಅ", "ಕ", "್ಕ"],
+        "strokes": ["a_1.png", "ka_1.png", "ka_2.png"]
+      },
+      {
+        "word": "ತಂಗಿ",
+        "transliteration": "tangi",
+        "translation": "younger sister",
+        "breakdown": ["ತ", "ಂ", "ಗ", "ಿ"],
+        "strokes": ["ta_1.png", "aṁ_1.png", "ga_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಅಣ್ಣ",
+        "transliteration": "aṇṇa",
+        "translation": "elder brother",
+        "breakdown": ["ಅ", "ಣ", "್ಣ"],
+        "strokes": ["a_1.png", "ṇa_1.png", "ṇa_2.png"]
+      },
+      {
+        "word": "ತಮ್ಮ",
+        "transliteration": "tamma",
+        "translation": "younger brother",
+        "breakdown": ["ತ", "ಮ", "್ಮ"],
+        "strokes": ["ta_1.png", "ma_1.png", "ma_2.png"]
+      },
+      {
+        "word": "ಗೆಳೆಯ",
+        "transliteration": "geḷeya",
+        "translation": "friend (male)",
+        "breakdown": ["ಗ", "ೆ", "ಳ", "ೆ", "ಯ"],
+        "strokes": ["ga_1.png", "e_1.png", "ḷa_1.png", "e_1.png", "ya_1.png"]
+      },
+      {
+        "word": "ಗೆಳತಿ",
+        "transliteration": "geḷati",
+        "translation": "friend (female)",
+        "breakdown": ["ಗ", "ೆ", "ಳ", "ತ", "ಿ"],
+        "strokes": ["ga_1.png", "e_1.png", "ḷa_1.png", "ta_1.png", "i_1.png"]
+      },
+      {
+        "word": "ನಾನು",
+        "transliteration": "nānu",
+        "translation": "I",
+        "breakdown": ["ನ", "ಾ", "ನ", "ು"],
+        "strokes": ["na_1.png", "ā_1.png", "na_1.png", "u_1.png"]
+      },
+      {
+        "word": "ನೀನು",
+        "transliteration": "nīnu",
+        "translation": "you (singular/informal)",
+        "breakdown": ["ನ", "ೀ", "ನ", "ು"],
+        "strokes": ["na_1.png", "ī_1.png", "na_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಅವನು",
+        "transliteration": "avanu",
+        "translation": "he",
+        "breakdown": ["ಅ", "ವ", "ನ", "ು"],
+        "strokes": ["a_1.png", "va_1.png", "na_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಅವಳು",
+        "transliteration": "avaḷu",
+        "translation": "she",
+        "breakdown": ["ಅ", "ವ", "ಳ", "ು"],
+        "strokes": ["a_1.png", "va_1.png", "ḷa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಅದು",
+        "transliteration": "adu",
+        "translation": "it / that",
+        "breakdown": ["ಅ", "ದ", "ು"],
+        "strokes": ["a_1.png", "da_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಇದು",
+        "transliteration": "idu",
+        "translation": "this",
+        "breakdown": ["ಇ", "ದ", "ು"],
+        "strokes": ["i_1.png", "da_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಹೌದು",
+        "transliteration": "houdu",
+        "translation": "yes",
+        "breakdown": ["ಹ", "ೌ", "ದ", "ು"],
+        "strokes": ["ha_1.png", "au_1.png", "da_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಇಲ್ಲ",
+        "transliteration": "illa",
+        "translation": "no / not",
+        "breakdown": ["ಇ", "ಲ", "್ಲ"],
+        "strokes": ["i_1.png", "la_1.png", "la_2.png"]
+      },
+      {
+        "word": "ಬಾ",
+        "transliteration": "bā",
+        "translation": "come (imperative, informal)",
+        "breakdown": ["ಬ", "ಾ"],
+        "strokes": ["ba_1.png", "ā_1.png"]
+      },
+      {
+        "word": "ಹೋಗು",
+        "transliteration": "hōgu",
+        "translation": "go (imperative)",
+        "breakdown": ["ಹ", "ೋ", "ಗ", "ು"],
+        "strokes": ["ha_1.png", "ō_1.png", "ga_1.png", "u_1.png"]
+      },
+      {
+        "word": "ತಿನ್ನು",
+        "transliteration": "tinnu",
+        "translation": "eat (imperative)",
+        "breakdown": ["ತ", "ಿ", "ನ", "್ನ", "ು"],
+        "strokes": ["ta_1.png", "i_1.png", "na_1.png", "na_2.png", "u_1.png"]
+      },
+      {
+        "word": "ಕುಡಿ",
+        "transliteration": "kuḍi",
+        "translation": "drink (imperative)",
+        "breakdown": ["ಕ", "ು", "ಡ", "ಿ"],
+        "strokes": ["ka_1.png", "u_1.png", "ḍa_1.png", "i_1.png"]
+      },
+      {
+        "word": "ನೋಡು",
+        "transliteration": "nōḍu",
+        "translation": "see / look / watch (imperative)",
+        "breakdown": ["ನ", "ೋ", "ಡ", "ು"],
+        "strokes": ["na_1.png", "ō_1.png", "ḍa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಮಾಡು",
+        "transliteration": "māḍu",
+        "translation": "do (imperative)",
+        "breakdown": ["ಮ", "ಾ", "ಡ", "ು"],
+        "strokes": ["ma_1.png", "ā_1.png", "ḍa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಕೇಳು",
+        "transliteration": "kēḷu",
+        "translation": "listen / ask (imperative)",
+        "breakdown": ["ಕ", "ೇ", "ಳ", "ು"],
+        "strokes": ["ka_1.png", "ē_1.png", "ḷa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಹೇಳು",
+        "transliteration": "hēḷu",
+        "translation": "tell / say (imperative)",
+        "breakdown": ["ಹ", "ೇ", "ಳ", "ು"],
+        "strokes": ["ha_1.png", "ē_1.png", "ḷa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ನಗು",
+        "transliteration": "nagu",
+        "translation": "laugh (imperative)",
+        "breakdown": ["ನ", "ಗ", "ು"],
+        "strokes": ["na_1.png", "ga_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಅಳು",
+        "transliteration": "aḷu",
+        "translation": "cry (imperative)",
+        "breakdown": ["ಅ", "ಳ", "ು"],
+        "strokes": ["a_1.png", "ḷa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ನಡೆ",
+        "transliteration": "naḍe",
+        "translation": "walk (imperative)",
+        "breakdown": ["ನ", "ಡ", "ೆ"],
+        "strokes": ["na_1.png", "ḍa_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಓಡು",
+        "transliteration": "ōḍu",
+        "translation": "run (imperative)",
+        "breakdown": ["ಓ", "ಡ", "ು"],
+        "strokes": ["ō_1.png", "ḍa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಕುಳಿತುಕೊ",
+        "transliteration": "kuḷituko",
+        "translation": "sit (imperative)",
+        "breakdown": ["ಕ", "ು", "ಳ", "ಿ", "ತ", "ು", "ಕ", "ೊ"],
+        "strokes": [
+          "ka_1.png",
+          "u_1.png",
+          "ḷa_1.png",
+          "i_1.png",
+          "ta_1.png",
+          "u_1.png",
+          "ka_1.png",
+          "o_1.png"
+        ]
+      },
+      {
+        "word": "ನಿಲ್ಲು",
+        "transliteration": "nillu",
+        "translation": "stand / stop (imperative)",
+        "breakdown": ["ನ", "ಿ", "ಲ", "್ಲ", "ು"],
+        "strokes": ["na_1.png", "i_1.png", "la_1.png", "la_2.png", "u_1.png"]
+      },
+      {
+        "word": "ಕೊಡು",
+        "transliteration": "koḍu",
+        "translation": "give (imperative)",
+        "breakdown": ["ಕ", "ೊ", "ಡ", "ು"],
+        "strokes": ["ka_1.png", "o_1.png", "ḍa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ತೆಗೆದುಕೊ",
+        "transliteration": "tegeduko",
+        "translation": "take (imperative)",
+        "breakdown": ["ತ", "ೆ", "ಗ", "ೆ", "ದ", "ು", "ಕ", "ೊ"],
+        "strokes": [
+          "ta_1.png",
+          "e_1.png",
+          "ga_1.png",
+          "e_1.png",
+          "da_1.png",
+          "u_1.png",
+          "ka_1.png",
+          "o_1.png"
+        ]
+      },
+      {
+        "word": "ಒಂದು",
+        "transliteration": "ondu",
+        "translation": "one",
+        "breakdown": ["ಒ", "ಂ", "ದ", "ು"],
+        "strokes": ["o_1.png", "aṁ_1.png", "da_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಎರಡು",
+        "transliteration": "eraḍu",
+        "translation": "two",
+        "breakdown": ["ಎ", "ರ", "ಡ", "ು"],
+        "strokes": ["e_1.png", "ra_1.png", "ḍa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಮೂರು",
+        "transliteration": "mūru",
+        "translation": "three",
+        "breakdown": ["ಮ", "ೂ", "ರ", "ು"],
+        "strokes": ["ma_1.png", "ū_1.png", "ra_1.png", "u_1.png"]
+      },
+      {
+        "word": "ನಾಲ್ಕು",
+        "transliteration": "nālku",
+        "translation": "four",
+        "breakdown": ["ನ", "ಾ", "ಲ", "್ಕ", "ು"],
+        "strokes": ["na_1.png", "ā_1.png", "la_1.png", "ka_2.png", "u_1.png"]
+      },
+      {
+        "word": "ಐದು",
+        "transliteration": "aidu",
+        "translation": "five",
+        "breakdown": ["ಐ", "ದ", "ು"],
+        "strokes": ["ai_1.png", "da_1.png", "u_1.png"]
+      },
+      {
+        "word": "ದೊಡ್ಡ",
+        "transliteration": "doḍḍa",
+        "translation": "big / large",
+        "breakdown": ["ದ", "ೊ", "ಡ", "್ಡ"],
+        "strokes": ["da_1.png", "o_1.png", "ḍa_1.png", "ḍa_2.png"]
+      },
+      {
+        "word": "ಚಿಕ್ಕ",
+        "transliteration": "cikka",
+        "translation": "small / little",
+        "breakdown": ["ಚ", "ಿ", "ಕ", "್ಕ"],
+        "strokes": ["ca_1.png", "i_1.png", "ka_1.png", "ka_2.png"]
+      },
+      {
+        "word": "ಹೊಸ",
+        "transliteration": "hosa",
+        "translation": "new",
+        "breakdown": ["ಹ", "ೊ", "ಸ"],
+        "strokes": ["ha_1.png", "o_1.png", "sa_1.png"]
+      },
+      {
+        "word": "ಹಳೆ",
+        "transliteration": "haḷe",
+        "translation": "old",
+        "breakdown": ["ಹ", "ಳ", "ೆ"],
+        "strokes": ["ha_1.png", "ḷa_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಒಳ್ಳೆ",
+        "transliteration": "oḷḷe",
+        "translation": "good",
+        "breakdown": ["ಒ", "ಳ", "್ಳ", "ೆ"],
+        "strokes": ["o_1.png", "ḷa_1.png", "ḷa_2.png", "e_1.png"]
+      },
+      {
+        "word": "ಕೆಟ್ಟ",
+        "transliteration": "keṭṭa",
+        "translation": "bad",
+        "breakdown": ["ಕ", "ೆ", "ಟ", "್ಟ"],
+        "strokes": ["ka_1.png", "e_1.png", "ṭa_1.png", "ṭa_2.png"]
+      },
+      {
+        "word": "ಬಿಸಿ",
+        "transliteration": "bisi",
+        "translation": "hot",
+        "breakdown": ["ಬ", "ಿ", "ಸ", "ಿ"],
+        "strokes": ["ba_1.png", "i_1.png", "sa_1.png", "i_1.png"]
+      },
+      {
+        "word": "ತಣ್ಣಗೆ",
+        "transliteration": "taṇṇage",
+        "translation": "cold",
+        "breakdown": ["ತ", "ಣ", "್ಣ", "ಗ", "ೆ"],
+        "strokes": ["ta_1.png", "ṇa_1.png", "ṇa_2.png", "ga_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಬಿಳಿ",
+        "transliteration": "biḷi",
+        "translation": "white",
+        "breakdown": ["ಬ", "ಿ", "ಳ", "ಿ"],
+        "strokes": ["ba_1.png", "i_1.png", "ḷa_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಕಪ್ಪು",
+        "transliteration": "kappu",
+        "translation": "black",
+        "breakdown": ["ಕ", "ಪ", "್ಪ", "ು"],
+        "strokes": ["ka_1.png", "pa_1.png", "pa_2.png", "u_1.png"]
+      },
+      {
+        "word": "ನೀಲಿ",
+        "transliteration": "nīli",
+        "translation": "blue",
+        "breakdown": ["ನ", "ೀ", "ಲ", "ಿ"],
+        "strokes": ["na_1.png", "ī_1.png", "la_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಹಳದಿ",
+        "transliteration": "haḷadi",
+        "translation": "yellow",
+        "breakdown": ["ಹ", "ಳ", "ದ", "ಿ"],
+        "strokes": ["ha_1.png", "ḷa_1.png", "da_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಬಣ್ಣ",
+        "transliteration": "baṇṇa",
+        "translation": "color",
+        "breakdown": ["ಬ", "ಣ", "್ಣ"],
+        "strokes": ["ba_1.png", "ṇa_1.png", "ṇa_2.png"]
+      },
+      {
+        "word": "ಹಣ",
+        "transliteration": "haṇa",
+        "translation": "money",
+        "breakdown": ["ಹ", "ಣ"],
+        "strokes": ["ha_1.png", "ṇa_1.png"]
+      },
+      {
+        "word": "ಅಂಗಡಿ",
+        "transliteration": "angaḍi",
+        "translation": "shop",
+        "breakdown": ["ಅ", "ಂ", "ಗ", "ಡ", "ಿ"],
+        "strokes": ["a_1.png", "aṁ_1.png", "ga_1.png", "ḍa_1.png", "i_1.png"]
+      },
+      {
+        "word": "ದಾರ",
+        "transliteration": "dāra",
+        "translation": "thread",
+        "breakdown": ["ದ", "ಾ", "ರ"],
+        "strokes": ["da_1.png", "ā_1.png", "ra_1.png"]
+      },
+      {
+        "word": "ಬಟ್ಟೆ",
+        "transliteration": "baṭṭe",
+        "translation": "cloth / clothes",
+        "breakdown": ["ಬ", "ಟ", "್ಟ", "ೆ"],
+        "strokes": ["ba_1.png", "ṭa_1.png", "ṭa_2.png", "e_1.png"]
+      },
+      {
+        "word": "ಕೈ",
+        "transliteration": "kai",
+        "translation": "hand",
+        "breakdown": ["ಕ", "ೈ"],
+        "strokes": ["ka_1.png", "ai_1.png"]
+      },
+      {
+        "word": "ಕಾಲು",
+        "transliteration": "kālu",
+        "translation": "leg / foot",
+        "breakdown": ["ಕ", "ಾ", "ಲ", "ು"],
+        "strokes": ["ka_1.png", "ā_1.png", "la_1.png", "u_1.png"]
+      },
+      {
+        "word": "ತಲೆ",
+        "transliteration": "tale",
+        "translation": "head",
+        "breakdown": ["ತ", "ಲ", "ೆ"],
+        "strokes": ["ta_1.png", "la_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಹೊಟ್ಟೆ",
+        "transliteration": "hoṭṭe",
+        "translation": "stomach",
+        "breakdown": ["ಹ", "ೊ", "ಟ", "್ಟ", "ೆ"],
+        "strokes": ["ha_1.png", "o_1.png", "ṭa_1.png", "ṭa_2.png", "e_1.png"]
+      },
+      {
+        "word": "ಬೆನ್ನು",
+        "transliteration": "bennu",
+        "translation": "back",
+        "breakdown": ["ಬ", "ೆ", "ನ", "್ನ", "ು"],
+        "strokes": ["ba_1.png", "e_1.png", "na_1.png", "na_2.png", "u_1.png"]
+      },
+      {
+        "word": "ಕೂದಲು",
+        "transliteration": "kūdalu",
+        "translation": "hair",
+        "breakdown": ["ಕ", "ೂ", "ದ", "ಲ", "ು"],
+        "strokes": ["ka_1.png", "ū_1.png", "da_1.png", "la_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಮೂಗು",
+        "transliteration": "mūgu",
+        "translation": "nose",
+        "breakdown": ["ಮ", "ೂ", "ಗ", "ು"],
+        "strokes": ["ma_1.png", "ū_1.png", "ga_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಕಿವಿ",
+        "transliteration": "kivi",
+        "translation": "ear",
+        "breakdown": ["ಕ", "ಿ", "ವ", "ಿ"],
+        "strokes": ["ka_1.png", "i_1.png", "va_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಬೆರಳು",
+        "transliteration": "beraḷu",
+        "translation": "finger / toe",
+        "breakdown": ["ಬ", "ೆ", "ರ", "ಳ", "ು"],
+        "strokes": ["ba_1.png", "e_1.png", "ra_1.png", "ḷa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ನಗರ",
+        "transliteration": "nagara",
+        "translation": "city / town",
+        "breakdown": ["ನ", "ಗ", "ರ"],
+        "strokes": ["na_1.png", "ga_1.png", "ra_1.png"]
+      },
+      {
+        "word": "ಹಳ್ಳಿ",
+        "transliteration": "haḷḷi",
+        "translation": "village",
+        "breakdown": ["ಹ", "ಳ", "್ಳ", "ಿ"],
+        "strokes": ["ha_1.png", "ḷa_1.png", "ḷa_2.png", "i_1.png"]
+      },
+      {
+        "word": "ರಸ್ತೆ",
+        "transliteration": "raste",
+        "translation": "road / street",
+        "breakdown": ["ರ", "ಸ", "್ತ", "ೆ"],
+        "strokes": ["ra_1.png", "sa_1.png", "ta_2.png", "e_1.png"]
+      },
+      {
+        "word": "ಕಾರು",
+        "transliteration": "kāru",
+        "translation": "car",
+        "breakdown": ["ಕ", "ಾ", "ರ", "ು"],
+        "strokes": ["ka_1.png", "ā_1.png", "ra_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಬಸ್ಸು",
+        "transliteration": "bassu",
+        "translation": "bus",
+        "breakdown": ["ಬ", "ಸ", "್ಸ", "ು"],
+        "strokes": ["ba_1.png", "sa_1.png", "sa_2.png", "u_1.png"]
+      },
+      {
+        "word": "ದಾರಿ",
+        "transliteration": "dāri",
+        "translation": "way / path",
+        "breakdown": ["ದ", "ಾ", "ರ", "ಿ"],
+        "strokes": ["da_1.png", "ā_1.png", "ra_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಬಾಗಿಲು",
+        "transliteration": "bāgilu",
+        "translation": "door",
+        "breakdown": ["ಬ", "ಾ", "ಗ", "ಿ", "ಲ", "ು"],
+        "strokes": [
+          "ba_1.png",
+          "ā_1.png",
+          "ga_1.png",
+          "i_1.png",
+          "la_1.png",
+          "u_1.png"
+        ]
+      },
+      {
+        "word": "ಕಿಟಕಿ",
+        "transliteration": "kiṭaki",
+        "translation": "window",
+        "breakdown": ["ಕ", "ಿ", "ಟ", "ಕ", "ಿ"],
+        "strokes": ["ka_1.png", "i_1.png", "ṭa_1.png", "ka_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಮೇಜು",
+        "transliteration": "mēju",
+        "translation": "table",
+        "breakdown": ["ಮ", "ೇ", "ಜ", "ು"],
+        "strokes": ["ma_1.png", "ē_1.png", "ja_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಕುರ್ಚಿ",
+        "transliteration": "kurci",
+        "translation": "chair",
+        "breakdown": ["ಕ", "ು", "ರ", "್ಚ", "ಿ"],
+        "strokes": ["ka_1.png", "u_1.png", "ra_1.png", "ca_2.png", "i_1.png"]
+      },
+      {
+        "word": "ಹಾಸಿಗೆ",
+        "transliteration": "hāsige",
+        "translation": "bed / mattress",
+        "breakdown": ["ಹ", "ಾ", "ಸ", "ಿ", "ಗ", "ೆ"],
+        "strokes": [
+          "ha_1.png",
+          "ā_1.png",
+          "sa_1.png",
+          "i_1.png",
+          "ga_1.png",
+          "e_1.png"
+        ]
+      },
+      {
+        "word": "ಪೆನ್ನು",
+        "transliteration": "pennu",
+        "translation": "pen",
+        "breakdown": ["ಪ", "ೆ", "ನ", "್ನ", "ು"],
+        "strokes": ["pa_1.png", "e_1.png", "na_1.png", "na_2.png", "u_1.png"]
+      },
+      {
+        "word": "ಕಾಗದ",
+        "transliteration": "kāgada",
+        "translation": "paper",
+        "breakdown": ["ಕ", "ಾ", "ಗ", "ದ"],
+        "strokes": ["ka_1.png", "ā_1.png", "ga_1.png", "da_1.png"]
+      },
+      {
+        "word": "ಶಾಲೆ",
+        "transliteration": "śāle",
+        "translation": "school",
+        "breakdown": ["ಶ", "ಾ", "ಲ", "ೆ"],
+        "strokes": ["śa_1.png", "ā_1.png", "la_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಕೆಲಸ",
+        "transliteration": "kelasa",
+        "translation": "work / job",
+        "breakdown": ["ಕ", "ೆ", "ಲ", "ಸ"],
+        "strokes": ["ka_1.png", "e_1.png", "la_1.png", "sa_1.png"]
+      },
+      {
+        "word": "ಆಟ",
+        "transliteration": "āṭa",
+        "translation": "game / play",
+        "breakdown": ["ಆ", "ಟ"],
+        "strokes": ["ā_1.png", "ṭa_1.png"]
+      },
+      {
+        "word": "ಹಾಡು",
+        "transliteration": "hāḍu",
+        "translation": "song / sing (imperative)",
+        "breakdown": ["ಹ", "ಾ", "ಡ", "ು"],
+        "strokes": ["ha_1.png", "ā_1.png", "ḍa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಮಾತು",
+        "transliteration": "mātu",
+        "translation": "talk / speech / word",
+        "breakdown": ["ಮ", "ಾ", "ತ", "ು"],
+        "strokes": ["ma_1.png", "ā_1.png", "ta_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಸಂತೆ",
+        "transliteration": "sante",
+        "translation": "market (weekly fair)",
+        "breakdown": ["ಸ", "ಂ", "ತ", "ೆ"],
+        "strokes": ["sa_1.png", "aṁ_1.png", "ta_1.png", "e_1.png"]
+      },
+      {
+        "word": "ತಾಯಿ",
+        "transliteration": "tāyi",
+        "translation": "mother (alt)",
+        "breakdown": ["ತ", "ಾ", "ಯ", "ಿ"],
+        "strokes": ["ta_1.png", "ā_1.png", "ya_1.png", "i_1.png"]
+      },
+      {
+        "word": "ತಂದೆ",
+        "transliteration": "tande",
+        "translation": "father (alt)",
+        "breakdown": ["ತ", "ಂ", "ದ", "ೆ"],
+        "strokes": ["ta_1.png", "aṁ_1.png", "da_1.png", "e_1.png"]
+      }
+    ],
+    "Level2": [
+      {
+        "word": "ನದಿ",
+        "transliteration": "nadi",
+        "translation": "river",
+        "breakdown": ["ನ", "ದ", "ಿ"],
+        "strokes": ["na_1.png", "da_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಬೆಟ್ಟ",
+        "transliteration": "beṭṭa",
+        "translation": "hill / mountain",
+        "breakdown": ["ಬ", "ೆ", "ಟ", "್ಟ"],
+        "strokes": ["ba_1.png", "e_1.png", "ṭa_1.png", "ṭa_2.png"]
+      },
+      {
+        "word": "ಕಾಡು",
+        "transliteration": "kāḍu",
+        "translation": "forest",
+        "breakdown": ["ಕ", "ಾ", "ಡ", "ು"],
+        "strokes": ["ka_1.png", "ā_1.png", "ḍa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಸೂರ್ಯ",
+        "transliteration": "sūrya",
+        "translation": "sun",
+        "breakdown": ["ಸ", "ೂ", "ರ", "್ಯ"],
+        "strokes": ["sa_1.png", "ū_1.png", "ra_1.png", "ya_2.png"]
+      },
+      {
+        "word": "ಚಂದ್ರ",
+        "transliteration": "candra",
+        "translation": "moon",
+        "breakdown": ["ಚ", "ಂ", "ದ", "್ರ"],
+        "strokes": ["ca_1.png", "aṁ_1.png", "da_1.png", "ra_2.png"]
+      },
+      {
+        "word": "ನಕ್ಷತ್ರ",
+        "transliteration": "nakṣatra",
+        "translation": "star",
+        "breakdown": ["ನ", "ಕ", "್ಷ", "ತ", "್ರ"],
+        "strokes": ["na_1.png", "ka_1.png", "ṣa_2.png", "ta_1.png", "ra_2.png"]
+      },
+      {
+        "word": "ಮೋಡ",
+        "transliteration": "mōḍa",
+        "translation": "cloud",
+        "breakdown": ["ಮ", "ೋ", "ಡ"],
+        "strokes": ["ma_1.png", "ō_1.png", "ḍa_1.png"]
+      },
+      {
+        "word": "ಮಳೆ",
+        "transliteration": "maḷe",
+        "translation": "rain",
+        "breakdown": ["ಮ", "ಳ", "ೆ"],
+        "strokes": ["ma_1.png", "ḷa_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಗಂಟೆ",
+        "transliteration": "ganṭe",
+        "translation": "bell / hour",
+        "breakdown": ["ಗ", "ಂ", "ಟ", "ೆ"],
+        "strokes": ["ga_1.png", "aṁ_1.png", "ṭa_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಸಮಯ",
+        "transliteration": "samaya",
+        "translation": "time",
+        "breakdown": ["ಸ", "ಮ", "ಯ"],
+        "strokes": ["sa_1.png", "ma_1.png", "ya_1.png"]
+      },
+      {
+        "word": "ಇಂದು",
+        "transliteration": "indu",
+        "translation": "today",
+        "breakdown": ["ಇ", "ಂ", "ದ", "ು"],
+        "strokes": ["i_1.png", "aṁ_1.png", "da_1.png", "u_1.png"]
+      },
+      {
+        "word": "ನಾಳೆ",
+        "transliteration": "nāḷe",
+        "translation": "tomorrow",
+        "breakdown": ["ನ", "ಾ", "ಳ", "ೆ"],
+        "strokes": ["na_1.png", "ā_1.png", "ḷa_1.png", "e_1.png"]
+      },
+      {
+        "word": "ನಿನ್ನೆ",
+        "transliteration": "ninne",
+        "translation": "yesterday",
+        "breakdown": ["ನ", "ಿ", "ನ", "್ನ", "ೆ"],
+        "strokes": ["na_1.png", "i_1.png", "na_1.png", "na_2.png", "e_1.png"]
+      },
+      {
+        "word": "ವಾರ",
+        "transliteration": "vāra",
+        "translation": "week",
+        "breakdown": ["ವ", "ಾ", "ರ"],
+        "strokes": ["va_1.png", "ā_1.png", "ra_1.png"]
+      },
+      {
+        "word": "ತಿಂಗಳು",
+        "transliteration": "tingaḷu",
+        "translation": "month",
+        "breakdown": ["ತ", "ಿ", "ಂ", "ಗ", "ಳ", "ು"],
+        "strokes": [
+          "ta_1.png",
+          "i_1.png",
+          "aṁ_1.png",
+          "ga_1.png",
+          "ḷa_1.png",
+          "u_1.png"
+        ]
+      },
+      {
+        "word": "ವರ್ಷ",
+        "transliteration": "varṣa",
+        "translation": "year",
+        "breakdown": ["ವ", "ರ", "್ಷ"],
+        "strokes": ["va_1.png", "ra_1.png", "ṣa_2.png"]
+      },
+      {
+        "word": "ಬೆಳಿಗ್ಗೆ",
+        "transliteration": "beḷigge",
+        "translation": "morning",
+        "breakdown": ["ಬ", "ೆ", "ಳ", "ಿ", "ಗ", "್ಗ", "ೆ"],
+        "strokes": [
+          "ba_1.png",
+          "e_1.png",
+          "ḷa_1.png",
+          "i_1.png",
+          "ga_1.png",
+          "ga_2.png",
+          "e_1.png"
+        ]
+      },
+      {
+        "word": "ಸಂಜೆ",
+        "transliteration": "sanje",
+        "translation": "evening",
+        "breakdown": ["ಸ", "ಂ", "ಜ", "ೆ"],
+        "strokes": ["sa_1.png", "aṁ_1.png", "ja_1.png", "e_1.png"]
+      },
+      {
+        "word": "ದೇವರು",
+        "transliteration": "dēvaru",
+        "translation": "god",
+        "breakdown": ["ದ", "ೇ", "ವ", "ರ", "ು"],
+        "strokes": ["da_1.png", "ē_1.png", "va_1.png", "ra_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಗುಡಿ",
+        "transliteration": "guḍi",
+        "translation": "temple",
+        "breakdown": ["ಗ", "ು", "ಡ", "ಿ"],
+        "strokes": ["ga_1.png", "u_1.png", "ḍa_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಪ್ರಶ್ನೆ",
+        "transliteration": "praśne",
+        "translation": "question",
+        "breakdown": ["ಪ", "್ರ", "ಶ", "್ನ", "ೆ"],
+        "strokes": ["pa_1.png", "ra_2.png", "śa_1.png", "na_2.png", "e_1.png"]
+      },
+      {
+        "word": "ಉತ್ತರ",
+        "transliteration": "uttara",
+        "translation": "answer / north",
+        "breakdown": ["ಉ", "ತ", "್ತ", "ರ"],
+        "strokes": ["u_1.png", "ta_1.png", "ta_2.png", "ra_1.png"]
+      },
+      {
+        "word": "ಪ್ರೀತಿ",
+        "transliteration": "prīti",
+        "translation": "love",
+        "breakdown": ["ಪ", "್ರ", "ೀ", "ತ", "ಿ"],
+        "strokes": ["pa_1.png", "ra_2.png", "ī_1.png", "ta_1.png", "i_1.png"]
+      },
+      {
+        "word": "ದ್ವೇಷ",
+        "transliteration": "dvēṣa",
+        "translation": "hatred",
+        "breakdown": ["ದ", "್ವ", "ೇ", "ಷ"],
+        "strokes": ["da_1.png", "va_2.png", "ē_1.png", "ṣa_1.png"]
+      },
+      {
+        "word": "ಕೋಪ",
+        "transliteration": "kōpa",
+        "translation": "anger",
+        "breakdown": ["ಕ", "ೋ", "ಪ"],
+        "strokes": ["ka_1.png", "ō_1.png", "pa_1.png"]
+      },
+      {
+        "word": "ಶಾಂತಿ",
+        "transliteration": "śānti",
+        "translation": "peace",
+        "breakdown": ["ಶ", "ಾ", "ಂ", "ತ", "ಿ"],
+        "strokes": ["śa_1.png", "ā_1.png", "aṁ_1.png", "ta_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಧೈರ್ಯ",
+        "transliteration": "dhairya",
+        "translation": "courage",
+        "breakdown": ["ಧ", "ೈ", "ರ", "್ಯ"],
+        "strokes": ["dha_1.png", "ai_1.png", "ra_1.png", "ya_2.png"]
+      },
+      {
+        "word": "ಭಯ",
+        "transliteration": "bhaya",
+        "translation": "fear",
+        "breakdown": ["ಭ", "ಯ"],
+        "strokes": ["bha_1.png", "ya_1.png"]
+      },
+      {
+        "word": "ಸುಂದರ",
+        "transliteration": "sundara",
+        "translation": "beautiful / handsome",
+        "breakdown": ["ಸ", "ು", "ಂ", "ದ", "ರ"],
+        "strokes": ["sa_1.png", "u_1.png", "aṁ_1.png", "da_1.png", "ra_1.png"]
+      },
+      {
+        "word": "ಮುಖ",
+        "transliteration": "mukha",
+        "translation": "face",
+        "breakdown": ["ಮ", "ು", "ಖ"],
+        "strokes": ["ma_1.png", "u_1.png", "kha_1.png"]
+      },
+      {
+        "word": "ದೇಹ",
+        "transliteration": "dēha",
+        "translation": "body",
+        "breakdown": ["ದ", "ೇ", "ಹ"],
+        "strokes": ["da_1.png", "ē_1.png", "ha_1.png"]
+      },
+      {
+        "word": "ಆರೋಗ್ಯ",
+        "transliteration": "ārōgya",
+        "translation": "health",
+        "breakdown": ["ಆ", "ರ", "ೋ", "ಗ", "್ಯ"],
+        "strokes": ["ā_1.png", "ra_1.png", "ō_1.png", "ga_1.png", "ya_2.png"]
+      },
+      {
+        "word": "ಶಕ್ತಿ",
+        "transliteration": "śakti",
+        "translation": "strength / power",
+        "breakdown": ["ಶ", "ಕ", "್ತ", "ಿ"],
+        "strokes": ["śa_1.png", "ka_1.png", "ta_2.png", "i_1.png"]
+      },
+      {
+        "word": "ಜ್ಞಾನ",
+        "transliteration": "jñāna",
+        "translation": "knowledge",
+        "breakdown": ["ಜ", "್ಞ", "ಾ", "ನ"],
+        "strokes": ["ja_1.png", "ña_2.png", "ā_1.png", "na_1.png"]
+      },
+      {
+        "word": "ಭಾಷೆ",
+        "transliteration": "bhāṣe",
+        "translation": "language",
+        "breakdown": ["ಭ", "ಾ", "ಷ", "ೆ"],
+        "strokes": ["bha_1.png", "ā_1.png", "ṣa_1.png", "e_1.png"]
+      },
+      {
+        "word": "ದೇಶ",
+        "transliteration": "dēśa",
+        "translation": "country",
+        "breakdown": ["ದ", "ೇ", "ಶ"],
+        "strokes": ["da_1.png", "ē_1.png", "śa_1.png"]
+      },
+      {
+        "word": "ರಾಜ್ಯ",
+        "transliteration": "rājya",
+        "translation": "state / kingdom",
+        "breakdown": ["ರ", "ಾ", "ಜ", "್ಯ"],
+        "strokes": ["ra_1.png", "ā_1.png", "ja_1.png", "ya_2.png"]
+      },
+      {
+        "word": "ಜನ",
+        "transliteration": "jana",
+        "translation": "people",
+        "breakdown": ["ಜ", "ನ"],
+        "strokes": ["ja_1.png", "na_1.png"]
+      },
+      {
+        "word": "ಗಂಡ",
+        "transliteration": "gaṇḍa",
+        "translation": "husband",
+        "breakdown": ["ಗ", "ಂ", "ಡ"],
+        "strokes": ["ga_1.png", "aṁ_1.png", "ḍa_1.png"]
+      },
+      {
+        "word": "ಹೆಂಡತಿ",
+        "transliteration": "henḍati",
+        "translation": "wife",
+        "breakdown": ["ಹ", "ೆ", "ಂ", "ಡ", "ತ", "ಿ"],
+        "strokes": [
+          "ha_1.png",
+          "e_1.png",
+          "aṁ_1.png",
+          "ḍa_1.png",
+          "ta_1.png",
+          "i_1.png"
+        ]
+      },
+      {
+        "word": "ಮಗು",
+        "transliteration": "magu",
+        "translation": "child / baby",
+        "breakdown": ["ಮ", "ಗ", "ು"],
+        "strokes": ["ma_1.png", "ga_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಹುಡುಗ",
+        "transliteration": "huḍuga",
+        "translation": "boy",
+        "breakdown": ["ಹ", "ು", "ಡ", "ು", "ಗ"],
+        "strokes": ["ha_1.png", "u_1.png", "ḍa_1.png", "u_1.png", "ga_1.png"]
+      },
+      {
+        "word": "ಹುಡುಗಿ",
+        "transliteration": "huḍugi",
+        "translation": "girl",
+        "breakdown": ["ಹ", "ು", "ಡ", "ು", "ಗ", "ಿ"],
+        "strokes": [
+          "ha_1.png",
+          "u_1.png",
+          "ḍa_1.png",
+          "u_1.png",
+          "ga_1.png",
+          "i_1.png"
+        ]
+      },
+      {
+        "word": "ಸ್ನೇಹಿತ",
+        "transliteration": "snēhita",
+        "translation": "friend (male, formal)",
+        "breakdown": ["ಸ", "್ನ", "ೇ", "ಹ", "ಿ", "ತ"],
+        "strokes": [
+          "sa_1.png",
+          "na_2.png",
+          "ē_1.png",
+          "ha_1.png",
+          "i_1.png",
+          "ta_1.png"
+        ]
+      },
+      {
+        "word": "ಸ್ನೇಹಿತೆ",
+        "transliteration": "snēhite",
+        "translation": "friend (female, formal)",
+        "breakdown": ["ಸ", "್ನ", "ೇ", "ಹ", "ಿ", "ತ", "ೆ"],
+        "strokes": [
+          "sa_1.png",
+          "na_2.png",
+          "ē_1.png",
+          "ha_1.png",
+          "i_1.png",
+          "ta_1.png",
+          "e_1.png"
+        ]
+      },
+      {
+        "word": "ಶಿಕ್ಷಕ",
+        "transliteration": "śikṣaka",
+        "translation": "teacher (male)",
+        "breakdown": ["ಶ", "ಿ", "ಕ", "್ಷ", "ಕ"],
+        "strokes": ["śa_1.png", "i_1.png", "ka_1.png", "ṣa_2.png", "ka_1.png"]
+      },
+      {
+        "word": "ಶಿಕ್ಷಕಿ",
+        "transliteration": "śikṣaki",
+        "translation": "teacher (female)",
+        "breakdown": ["ಶ", "ಿ", "ಕ", "್ಷ", "ಕ", "ಿ"],
+        "strokes": [
+          "śa_1.png",
+          "i_1.png",
+          "ka_1.png",
+          "ṣa_2.png",
+          "ka_1.png",
+          "i_1.png"
+        ]
+      },
+      {
+        "word": "ವಿದ್ಯಾರ್ಥಿ",
+        "transliteration": "vidyārthi",
+        "translation": "student",
+        "breakdown": ["ವ", "ಿ", "ದ", "್ಯ", "ಾ", "ರ", "್ಥ", "ಿ"],
+        "strokes": [
+          "va_1.png",
+          "i_1.png",
+          "da_1.png",
+          "ya_2.png",
+          "ā_1.png",
+          "ra_1.png",
+          "tha_2.png",
+          "i_1.png"
+        ]
+      },
+      {
+        "word": "ವೈದ್ಯ",
+        "transliteration": "vaidya",
+        "translation": "doctor",
+        "breakdown": ["ವ", "ೈ", "ದ", "್ಯ"],
+        "strokes": ["va_1.png", "ai_1.png", "da_1.png", "ya_2.png"]
+      },
+      {
+        "word": "ಆಹಾರ",
+        "transliteration": "āhāra",
+        "translation": "food",
+        "breakdown": ["ಆ", "ಹಾ", "ರ"],
+        "strokes": ["ā_1.png", "ha_1.png", "ā_1.png", "ra_1.png"]
+      },
+      {
+        "word": "ತರಕಾರಿ",
+        "transliteration": "tarakāri",
+        "translation": "vegetable",
+        "breakdown": ["ತ", "ರ", "ಕ", "ಾ", "ರ", "ಿ"],
+        "strokes": [
+          "ta_1.png",
+          "ra_1.png",
+          "ka_1.png",
+          "ā_1.png",
+          "ra_1.png",
+          "i_1.png"
+        ]
+      },
+      {
+        "word": "ಅಕ್ಕಿ",
+        "transliteration": "akki",
+        "translation": "rice (uncooked)",
+        "breakdown": ["ಅ", "ಕ", "್ಕ", "ಿ"],
+        "strokes": ["a_1.png", "ka_1.png", "ka_2.png", "i_1.png"]
+      },
+      {
+        "word": "ಅನ್ನ",
+        "transliteration": "anna",
+        "translation": "rice (cooked)",
+        "breakdown": ["ಅ", "ನ", "್ನ"],
+        "strokes": ["a_1.png", "na_1.png", "na_2.png"]
+      },
+      {
+        "word": "ರುಚಿ",
+        "transliteration": "ruci",
+        "translation": "taste",
+        "breakdown": ["ರ", "ು", "ಚ", "ಿ"],
+        "strokes": ["ra_1.png", "u_1.png", "ca_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಸಿಹಿ",
+        "transliteration": "sihi",
+        "translation": "sweet",
+        "breakdown": ["ಸ", "ಿ", "ಹ", "ಿ"],
+        "strokes": ["sa_1.png", "i_1.png", "ha_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಹುಳಿ",
+        "transliteration": "huḷi",
+        "translation": "sour",
+        "breakdown": ["ಹ", "ು", "ಳ", "ಿ"],
+        "strokes": ["ha_1.png", "u_1.png", "ḷa_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಖಾರ",
+        "transliteration": "khāra",
+        "translation": "spicy / hot",
+        "breakdown": ["ಖ", "ಾ", "ರ"],
+        "strokes": ["kha_1.png", "ā_1.png", "ra_1.png"]
+      },
+      {
+        "word": "ಉಪ್ಪು",
+        "transliteration": "uppu",
+        "translation": "salt",
+        "breakdown": ["ಉ", "ಪ", "್ಪ", "ು"],
+        "strokes": ["u_1.png", "pa_1.png", "pa_2.png", "u_1.png"]
+      },
+      {
+        "word": "ಕಹಿ",
+        "transliteration": "kahi",
+        "translation": "bitter",
+        "breakdown": ["ಕ", "ಹ", "ಿ"],
+        "strokes": ["ka_1.png", "ha_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಹಸಿವು",
+        "transliteration": "hasivu",
+        "translation": "hunger",
+        "breakdown": ["ಹ", "ಸ", "ಿ", "ವ", "ು"],
+        "strokes": ["ha_1.png", "sa_1.png", "i_1.png", "va_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಬಾಯಾರಿಕೆ",
+        "transliteration": "bāyārike",
+        "translation": "thirst",
+        "breakdown": ["ಬ", "ಾ", "ಯ", "ಾ", "ರ", "ಿ", "ಕ", "ೆ"],
+        "strokes": [
+          "ba_1.png",
+          "ā_1.png",
+          "ya_1.png",
+          "ā_1.png",
+          "ra_1.png",
+          "i_1.png",
+          "ka_1.png",
+          "e_1.png"
+        ]
+      },
+      {
+        "word": "ನಿದ್ರೆ",
+        "transliteration": "nidre",
+        "translation": "sleep",
+        "breakdown": ["ನ", "ಿ", "ದ", "್ರ", "ೆ"],
+        "strokes": ["na_1.png", "i_1.png", "da_1.png", "ra_2.png", "e_1.png"]
+      },
+      {
+        "word": "ಬೇಗ",
+        "transliteration": "bēga",
+        "translation": "quickly / soon",
+        "breakdown": ["ಬ", "ೇ", "ಗ"],
+        "strokes": ["ba_1.png", "ē_1.png", "ga_1.png"]
+      },
+      {
+        "word": "ನಿಧಾನ",
+        "transliteration": "nidhāna",
+        "translation": "slowly",
+        "breakdown": ["ನ", "ಿ", "ಧ", "ಾ", "ನ"],
+        "strokes": ["na_1.png", "i_1.png", "dha_1.png", "ā_1.png", "na_1.png"]
+      },
+      {
+        "word": "ಇಲ್ಲಿ",
+        "transliteration": "illi",
+        "translation": "here",
+        "breakdown": ["ಇ", "ಲ", "್ಲ", "ಿ"],
+        "strokes": ["i_1.png", "la_1.png", "la_2.png", "i_1.png"]
+      },
+      {
+        "word": "ಅಲ್ಲಿ",
+        "transliteration": "alli",
+        "translation": "there",
+        "breakdown": ["ಅ", "ಲ", "್ಲ", "ಿ"],
+        "strokes": ["a_1.png", "la_1.png", "la_2.png", "i_1.png"]
+      },
+      {
+        "word": "ಎಲ್ಲಿ",
+        "transliteration": "elli",
+        "translation": "where",
+        "breakdown": ["ಎ", "ಲ", "್ಲ", "ಿ"],
+        "strokes": ["e_1.png", "la_1.png", "la_2.png", "i_1.png"]
+      },
+      {
+        "word": "ಹೇಗೆ",
+        "transliteration": "hēge",
+        "translation": "how",
+        "breakdown": ["ಹ", "ೇ", "ಗ", "ೆ"],
+        "strokes": ["ha_1.png", "ē_1.png", "ga_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಯಾಕೆ",
+        "transliteration": "yāke",
+        "translation": "why",
+        "breakdown": ["ಯ", "ಾ", "ಕ", "ೆ"],
+        "strokes": ["ya_1.png", "ā_1.png", "ka_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಯಾರು",
+        "transliteration": "yāru",
+        "translation": "who",
+        "breakdown": ["ಯ", "ಾ", "ರ", "ು"],
+        "strokes": ["ya_1.png", "ā_1.png", "ra_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಏನು",
+        "transliteration": "ēnu",
+        "translation": "what",
+        "breakdown": ["ಏ", "ನ", "ು"],
+        "strokes": ["ē_1.png", "na_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಯಾವಾಗ",
+        "transliteration": "yāvāga",
+        "translation": "when",
+        "breakdown": ["ಯ", "ಾ", "ವಾ", "ಗ"],
+        "strokes": ["ya_1.png", "ā_1.png", "va_1.png", "ā_1.png", "ga_1.png"]
+      },
+      {
+        "word": "ಎಷ್ಟು",
+        "transliteration": "eṣṭu",
+        "translation": "how much / how many",
+        "breakdown": ["ಎ", "ಷ", "್ಟ", "ು"],
+        "strokes": ["e_1.png", "ṣa_1.png", "ṭa_2.png", "u_1.png"]
+      },
+      {
+        "word": "ದೊಡ್ಡದು",
+        "transliteration": "doḍḍadu",
+        "translation": "big one",
+        "breakdown": ["ದ", "ೊ", "ಡ", "್ಡ", "ದ", "ು"],
+        "strokes": [
+          "da_1.png",
+          "o_1.png",
+          "ḍa_1.png",
+          "ḍa_2.png",
+          "da_1.png",
+          "u_1.png"
+        ]
+      },
+      {
+        "word": "ಚಿಕ್ಕದು",
+        "transliteration": "cikkadu",
+        "translation": "small one",
+        "breakdown": ["ಚ", "ಿ", "ಕ", "್ಕ", "ದ", "ು"],
+        "strokes": [
+          "ca_1.png",
+          "i_1.png",
+          "ka_1.png",
+          "ka_2.png",
+          "da_1.png",
+          "u_1.png"
+        ]
+      },
+      {
+        "word": "ಹತ್ತಿರ",
+        "transliteration": "hattira",
+        "translation": "near",
+        "breakdown": ["ಹ", "ತ", "್ತ", "ಿ", "ರ"],
+        "strokes": ["ha_1.png", "ta_1.png", "ta_2.png", "i_1.png", "ra_1.png"]
+      },
+      {
+        "word": "ದೂರ",
+        "transliteration": "dūra",
+        "translation": "far",
+        "breakdown": ["ದ", "ೂ", "ರ"],
+        "strokes": ["da_1.png", "ū_1.png", "ra_1.png"]
+      },
+      {
+        "word": "ಮೇಲೆ",
+        "transliteration": "mēle",
+        "translation": "on / above / up",
+        "breakdown": ["ಮ", "ೇ", "ಲ", "ೆ"],
+        "strokes": ["ma_1.png", "ē_1.png", "la_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಕೆಳಗೆ",
+        "transliteration": "keḷage",
+        "translation": "under / below / down",
+        "breakdown": ["ಕ", "ೆ", "ಳ", "ಗ", "ೆ"],
+        "strokes": ["ka_1.png", "e_1.png", "ḷa_1.png", "ga_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಒಳಗೆ",
+        "transliteration": "oḷage",
+        "translation": "inside",
+        "breakdown": ["ಒ", "ಳ", "ಗ", "ೆ"],
+        "strokes": ["o_1.png", "ḷa_1.png", "ga_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಹೊರಗೆ",
+        "transliteration": "horage",
+        "translation": "outside",
+        "breakdown": ["ಹ", "ೊ", "ರ", "ಗ", "ೆ"],
+        "strokes": ["ha_1.png", "o_1.png", "ra_1.png", "ga_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಮುಂದೆ",
+        "transliteration": "munde",
+        "translation": "in front / ahead",
+        "breakdown": ["ಮ", "ು", "ಂ", "ದ", "ೆ"],
+        "strokes": ["ma_1.png", "u_1.png", "aṁ_1.png", "da_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಹಿಂದೆ",
+        "transliteration": "hinde",
+        "translation": "behind / back",
+        "breakdown": ["ಹ", "ಿ", "ಂ", "ದ", "ೆ"],
+        "strokes": ["ha_1.png", "i_1.png", "aṁ_1.png", "da_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಪಕ್ಕ",
+        "transliteration": "pakka",
+        "translation": "beside / next to",
+        "breakdown": ["ಪ", "ಕ", "್ಕ"],
+        "strokes": ["pa_1.png", "ka_1.png", "ka_2.png"]
+      },
+      {
+        "word": "ಮಧ್ಯ",
+        "transliteration": "madhya",
+        "translation": "middle / center",
+        "breakdown": ["ಮ", "ಧ", "್ಯ"],
+        "strokes": ["ma_1.png", "dha_1.png", "ya_2.png"]
+      },
+      {
+        "word": "ಸುತ್ತ",
+        "transliteration": "sutta",
+        "translation": "around",
+        "breakdown": ["ಸ", "ು", "ತ", "್ತ"],
+        "strokes": ["sa_1.png", "u_1.png", "ta_1.png", "ta_2.png"]
+      },
+      {
+        "word": "ನೇರ",
+        "transliteration": "nēra",
+        "translation": "straight",
+        "breakdown": ["ನ", "ೇ", "ರ"],
+        "strokes": ["na_1.png", "ē_1.png", "ra_1.png"]
+      },
+      {
+        "word": "ಬಲ",
+        "transliteration": "bala",
+        "translation": "right (direction)",
+        "breakdown": ["ಬ", "ಲ"],
+        "strokes": ["ba_1.png", "la_1.png"]
+      },
+      {
+        "word": "ಎಡ",
+        "transliteration": "eḍa",
+        "translation": "left (direction)",
+        "breakdown": ["ಎ", "ಡ"],
+        "strokes": ["e_1.png", "ḍa_1.png"]
+      },
+      {
+        "word": "ತುಂಬಾ",
+        "transliteration": "tumbā",
+        "translation": "very / much / full",
+        "breakdown": ["ತ", "ು", "ಂ", "ಬ", "ಾ"],
+        "strokes": ["ta_1.png", "u_1.png", "aṁ_1.png", "ba_1.png", "ā_1.png"]
+      },
+      {
+        "word": "ಸ್ವಲ್ಪ",
+        "transliteration": "svalpa",
+        "translation": "a little / few",
+        "breakdown": ["ಸ", "್ವ", "ಲ", "್ಪ"],
+        "strokes": ["sa_1.png", "va_2.png", "la_1.png", "pa_2.png"]
+      },
+      {
+        "word": "ಹೆಚ್ಚು",
+        "transliteration": "heccu",
+        "translation": "more",
+        "breakdown": ["ಹ", "ೆ", "ಚ", "್ಚ", "ು"],
+        "strokes": ["ha_1.png", "e_1.png", "ca_1.png", "ca_2.png", "u_1.png"]
+      },
+      {
+        "word": "ಕಡಿಮೆ",
+        "transliteration": "kaḍime",
+        "translation": "less / low",
+        "breakdown": ["ಕ", "ಡ", "ಿ", "ಮ", "ೆ"],
+        "strokes": ["ka_1.png", "ḍa_1.png", "i_1.png", "ma_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಸುಲಭ",
+        "transliteration": "sulabha",
+        "translation": "easy",
+        "breakdown": ["ಸ", "ು", "ಲ", "ಭ"],
+        "strokes": ["sa_1.png", "u_1.png", "la_1.png", "bha_1.png"]
+      },
+      {
+        "word": "ಕಷ್ಟ",
+        "transliteration": "kaṣṭa",
+        "translation": "difficult / hard",
+        "breakdown": ["ಕ", "ಷ", "್ಟ"],
+        "strokes": ["ka_1.png", "ṣa_1.png", "ṭa_2.png"]
+      },
+      {
+        "word": "ಶುದ್ಧ",
+        "transliteration": "śuddha",
+        "translation": "pure / clean",
+        "breakdown": ["ಶ", "ು", "ದ", "್ಧ"],
+        "strokes": ["śa_1.png", "u_1.png", "da_1.png", "dha_2.png"]
+      },
+      {
+        "word": "ಪ್ರಾಣಿ",
+        "transliteration": "prāṇi",
+        "translation": "animal",
+        "breakdown": ["ಪ", "್ರ", "ಾ", "ಣ", "ಿ"],
+        "strokes": ["pa_1.png", "ra_2.png", "ā_1.png", "ṇa_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಪಕ್ಷಿ",
+        "transliteration": "pakṣi",
+        "translation": "bird",
+        "breakdown": ["ಪ", "ಕ", "್ಷ", "ಿ"],
+        "strokes": ["pa_1.png", "ka_1.png", "ṣa_2.png", "i_1.png"]
+      },
+      {
+        "word": "ಮೀನು",
+        "transliteration": "mīnu",
+        "translation": "fish",
+        "breakdown": ["ಮ", "ೀ", "ನ", "ು"],
+        "strokes": ["ma_1.png", "ī_1.png", "na_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಹಾವು",
+        "transliteration": "hāvu",
+        "translation": "snake",
+        "breakdown": ["ಹ", "ಾ", "ವ", "ು"],
+        "strokes": ["ha_1.png", "ā_1.png", "va_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಆನೆ",
+        "transliteration": "āne",
+        "translation": "elephant",
+        "breakdown": ["ಆ", "ನ", "ೆ"],
+        "strokes": ["ā_1.png", "na_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಕುದುರೆ",
+        "transliteration": "kudure",
+        "translation": "horse",
+        "breakdown": ["ಕ", "ು", "ದ", "ು", "ರ", "ೆ"],
+        "strokes": [
+          "ka_1.png",
+          "u_1.png",
+          "da_1.png",
+          "u_1.png",
+          "ra_1.png",
+          "e_1.png"
+        ]
+      },
+      {
+        "word": "ಹಸು",
+        "transliteration": "hasu",
+        "translation": "cow",
+        "breakdown": ["ಹ", "ಸ", "ು"],
+        "strokes": ["ha_1.png", "sa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಇರುವೆ",
+        "transliteration": "iruve",
+        "translation": "ant",
+        "breakdown": ["ಇ", "ರ", "ು", "ವ", "ೆ"],
+        "strokes": ["i_1.png", "ra_1.png", "u_1.png", "va_1.png", "e_1.png"]
       }
     ],
     "Level3": [
       {
-        "word": "ಬೆಳಕು",
-        "transliteration": "belaku",
-        "translation": "light",
-        "breakdown": ["ಬ", "ೆ", "ಳ", "ಕ", "ು"],
-        "strokes": ["ba_1.png", "e_1.png", "ḷa_1.png", "ka_1.png", "u_1.png"]
+        "word": "ವಿಮಾನ",
+        "transliteration": "vimāna",
+        "translation": "airplane",
+        "breakdown": ["ವ", "ಿ", "ಮ", "ಾ", "ನ"],
+        "strokes": ["va_1.png", "i_1.png", "ma_1.png", "ā_1.png", "na_1.png"]
+      },
+      {
+        "word": "ರೈಲು",
+        "transliteration": "railu",
+        "translation": "train",
+        "breakdown": ["ರ", "ೈ", "ಲ", "ು"],
+        "strokes": ["ra_1.png", "ai_1.png", "la_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಹಡಗು",
+        "transliteration": "haḍagu",
+        "translation": "ship",
+        "breakdown": ["ಹ", "ಡ", "ಗ", "ು"],
+        "strokes": ["ha_1.png", "ḍa_1.png", "ga_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಸಮುದ್ರ",
+        "transliteration": "samudra",
+        "translation": "sea / ocean",
+        "breakdown": ["ಸ", "ಮ", "ು", "ದ", "್ರ"],
+        "strokes": ["sa_1.png", "ma_1.png", "u_1.png", "da_1.png", "ra_2.png"]
+      },
+      {
+        "word": "ಪ್ರಯಾಣ",
+        "transliteration": "prayāṇa",
+        "translation": "journey / travel",
+        "breakdown": ["ಪ", "್ರ", "ಯ", "ಾ", "ಣ"],
+        "strokes": ["pa_1.png", "ra_2.png", "ya_1.png", "ā_1.png", "ṇa_1.png"]
+      },
+      {
+        "word": "ಗ್ರಾಮ",
+        "transliteration": "grāma",
+        "translation": "village (formal)",
+        "breakdown": ["ಗ", "್ರ", "ಾ", "ಮ"],
+        "strokes": ["ga_1.png", "ra_2.png", "ā_1.png", "ma_1.png"]
+      },
+      {
+        "word": "ನಕ್ಷೆ",
+        "transliteration": "nakṣe",
+        "translation": "map",
+        "breakdown": ["ನ", "ಕ", "್ಷ", "ೆ"],
+        "strokes": ["na_1.png", "ka_1.png", "ṣa_2.png", "e_1.png"]
+      },
+      {
+        "word": "ಸರ್ಕಾರ",
+        "transliteration": "sarkāra",
+        "translation": "government",
+        "breakdown": ["ಸ", "ರ", "್ಕಾ", "ರ"],
+        "strokes": ["sa_1.png", "ra_1.png", "kā_2.png", "ra_1.png"]
+      },
+      {
+        "word": "ಕಾನೂನು",
+        "transliteration": "kānūnu",
+        "translation": "law",
+        "breakdown": ["ಕ", "ಾ", "ನ", "ೂ", "ನ", "ು"],
+        "strokes": [
+          "ka_1.png",
+          "ā_1.png",
+          "na_1.png",
+          "ū_1.png",
+          "na_1.png",
+          "u_1.png"
+        ]
+      },
+      {
+        "word": "ನ್ಯಾಯ",
+        "transliteration": "nyāya",
+        "translation": "justice",
+        "breakdown": ["ನ", "್", "ಯಾ", "ಯ"],
+        "strokes": ["na_1.png", "ya_2.png", "ā_1.png", "ya_1.png"]
+      },
+      {
+        "word": "ಅಪರಾಧ",
+        "transliteration": "aparādha",
+        "translation": "crime",
+        "breakdown": ["ಅ", "ಪ", "ರ", "ಾ", "ಧ"],
+        "strokes": ["a_1.png", "pa_1.png", "ra_1.png", "ā_1.png", "dha_1.png"]
+      },
+      {
+        "word": "ಶಿಕ್ಷೆ",
+        "transliteration": "śikṣe",
+        "translation": "punishment",
+        "breakdown": ["ಶ", "ಿ", "ಕ", "್ಷ", "ೆ"],
+        "strokes": ["śa_1.png", "i_1.png", "ka_1.png", "ṣa_2.png", "e_1.png"]
+      },
+      {
+        "word": "ಸ್ವಾತಂತ್ರ್ಯ",
+        "transliteration": "svātantrya",
+        "translation": "freedom / independence",
+        "breakdown": ["ಸ", "್ವಾ", "ತ", "ಂ", "ತ", "್ರ", "್ಯ"],
+        "strokes": [
+          "sa_1.png",
+          "vā_2.png",
+          "ta_1.png",
+          "aṁ_1.png",
+          "ta_1.png",
+          "ra_2.png",
+          "ya_2.png"
+        ]
+      },
+      {
+        "word": "ಹೋರಾಟ",
+        "transliteration": "hōrāṭa",
+        "translation": "struggle / fight",
+        "breakdown": ["ಹ", "ೋ", "ರ", "ಾ", "ಟ"],
+        "strokes": ["ha_1.png", "ō_1.png", "ra_1.png", "ā_1.png", "ṭa_1.png"]
+      },
+      {
+        "word": "ಸಮಾಜ",
+        "transliteration": "samāja",
+        "translation": "society",
+        "breakdown": ["ಸ", "ಮ", "ಾ", "ಜ"],
+        "strokes": ["sa_1.png", "ma_1.png", "ā_1.png", "ja_1.png"]
+      },
+      {
+        "word": "ಸಂಸ್ಕೃತಿ",
+        "transliteration": "saṁskṛti",
+        "translation": "culture",
+        "breakdown": ["ಸ", "ಂ", "ಸ", "್ಕೃ", "ತ", "ಿ"],
+        "strokes": [
+          "sa_1.png",
+          "aṁ_1.png",
+          "sa_1.png",
+          "kṛ_2.png",
+          "ta_1.png",
+          "i_1.png"
+        ]
+      },
+      {
+        "word": "ಪರಂಪರೆ",
+        "transliteration": "parampare",
+        "translation": "tradition / heritage",
+        "breakdown": ["ಪ", "ರ", "ಂ", "ಪ", "ರ", "ೆ"],
+        "strokes": [
+          "pa_1.png",
+          "ra_1.png",
+          "aṁ_1.png",
+          "pa_1.png",
+          "ra_1.png",
+          "e_1.png"
+        ]
+      },
+      {
+        "word": "ಧರ್ಮ",
+        "transliteration": "dharma",
+        "translation": "religion / duty",
+        "breakdown": ["ಧ", "ರ", "್ಮ"],
+        "strokes": ["dha_1.png", "ra_1.png", "ma_2.png"]
+      },
+      {
+        "word": "ನಂಬಿಕೆ",
+        "transliteration": "nambike",
+        "translation": "belief / trust",
+        "breakdown": ["ನ", "ಂ", "ಬ", "ಿ", "ಕ", "ೆ"],
+        "strokes": [
+          "na_1.png",
+          "aṁ_1.png",
+          "ba_1.png",
+          "i_1.png",
+          "ka_1.png",
+          "e_1.png"
+        ]
+      },
+      {
+        "word": "ವಿಜ್ಞಾನ",
+        "transliteration": "vijñāna",
+        "translation": "science",
+        "breakdown": ["ವ", "ಿ", "ಜ", "್ಞ", "ಾ", "ನ"],
+        "strokes": [
+          "va_1.png",
+          "i_1.png",
+          "ja_1.png",
+          "ña_2.png",
+          "ā_1.png",
+          "na_1.png"
+        ]
+      },
+      {
+        "word": "ತಂತ್ರಜ್ಞಾನ",
+        "transliteration": "tantrajñāna",
+        "translation": "technology",
+        "breakdown": ["ತ", "ಂ", "ತ", "್ರ", "ಜ", "್ಞ", "ಾ", "ನ"],
+        "strokes": [
+          "ta_1.png",
+          "aṁ_1.png",
+          "ta_1.png",
+          "ra_2.png",
+          "ja_1.png",
+          "ña_2.png",
+          "ā_1.png",
+          "na_1.png"
+        ]
+      },
+      {
+        "word": "ಪರಿಸರ",
+        "transliteration": "parisara",
+        "translation": "environment",
+        "breakdown": ["ಪ", "ರ", "ಿ", "ಸ", "ರ"],
+        "strokes": ["pa_1.png", "ra_1.png", "i_1.png", "sa_1.png", "ra_1.png"]
+      },
+      {
+        "word": "ಭವಿಷ್ಯ",
+        "transliteration": "bhaviṣya",
+        "translation": "future",
+        "breakdown": ["ಭ", "ವ", "ಿ", "ಷ", "್ಯ"],
+        "strokes": ["bha_1.png", "va_1.png", "i_1.png", "ṣa_1.png", "ya_2.png"]
+      },
+      {
+        "word": "ಭೂತಕಾಲ",
+        "transliteration": "bhūtakāla",
+        "translation": "past tense",
+        "breakdown": ["ಭ", "ೂ", "ತ", "ಕ", "ಾ", "ಲ"],
+        "strokes": [
+          "bha_1.png",
+          "ū_1.png",
+          "ta_1.png",
+          "ka_1.png",
+          "ā_1.png",
+          "la_1.png"
+        ]
+      },
+      {
+        "word": "ವರ್ತಮಾನ",
+        "transliteration": "vartamāna",
+        "translation": "present",
+        "breakdown": ["ವ", "ರ", "್ತ", "ಮಾ", "ನ"],
+        "strokes": [
+          "va_1.png",
+          "ra_1.png",
+          "ta_2.png",
+          "ma_1.png",
+          "ā_1.png",
+          "na_1.png"
+        ]
+      },
+      {
+        "word": "ಕಲೆ",
+        "transliteration": "kale",
+        "translation": "art",
+        "breakdown": ["ಕ", "ಲ", "ೆ"],
+        "strokes": ["ka_1.png", "la_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಸಂಗೀತ",
+        "transliteration": "sangīta",
+        "translation": "music",
+        "breakdown": ["ಸ", "ಂ", "ಗ", "ೀ", "ತ"],
+        "strokes": ["sa_1.png", "aṁ_1.png", "ga_1.png", "ī_1.png", "ta_1.png"]
+      },
+      {
+        "word": "ನೃತ್ಯ",
+        "transliteration": "nṛtya",
+        "translation": "dance",
+        "breakdown": ["ನ", "ೃ", "ತ", "್ಯ"],
+        "strokes": ["na_1.png", "ṛ_1.png", "ta_1.png", "ya_2.png"]
+      },
+      {
+        "word": "ನಾಟಕ",
+        "transliteration": "nāṭaka",
+        "translation": "drama / play",
+        "breakdown": ["ನ", "ಾ", "ಟ", "ಕ"],
+        "strokes": ["na_1.png", "ā_1.png", "ṭa_1.png", "ka_1.png"]
+      },
+      {
+        "word": "ಚಿತ್ರ",
+        "transliteration": "citra",
+        "translation": "picture / painting / movie",
+        "breakdown": ["ಚ", "ಿ", "ತ", "್ರ"],
+        "strokes": ["ca_1.png", "i_1.png", "ta_1.png", "ra_2.png"]
+      },
+      {
+        "word": "ಸಾಹಿತ್ಯ",
+        "transliteration": "sāhitya",
+        "translation": "literature",
+        "breakdown": ["ಸ", "ಾ", "ಹ", "ಿ", "ತ", "್ಯ"],
+        "strokes": [
+          "sa_1.png",
+          "ā_1.png",
+          "ha_1.png",
+          "i_1.png",
+          "ta_1.png",
+          "ya_2.png"
+        ]
+      },
+      {
+        "word": "ಕವಿತೆ",
+        "transliteration": "kavite",
+        "translation": "poem",
+        "breakdown": ["ಕ", "ವ", "ಿ", "ತ", "ೆ"],
+        "strokes": ["ka_1.png", "va_1.png", "i_1.png", "ta_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಕಥೆ",
+        "transliteration": "kathe",
+        "translation": "story",
+        "breakdown": ["ಕ", "ಥ", "ೆ"],
+        "strokes": ["ka_1.png", "tha_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಲೇಖನ",
+        "transliteration": "lēkhana",
+        "translation": "article / writing",
+        "breakdown": ["ಲ", "ೇ", "ಖ", "ನ"],
+        "strokes": ["la_1.png", "ē_1.png", "kha_1.png", "na_1.png"]
+      },
+      {
+        "word": "ವ್ಯಾಪಾರ",
+        "transliteration": "vyāpāra",
+        "translation": "business / trade",
+        "breakdown": ["ವ", "್", "ಯಾ", "ಪಾ", "ರ"],
+        "strokes": [
+          "va_1.png",
+          "ya_2.png",
+          "ā_1.png",
+          "pa_1.png",
+          "ā_1.png",
+          "ra_1.png"
+        ]
+      },
+      {
+        "word": "ಉದ್ಯೋಗ",
+        "transliteration": "udyōga",
+        "translation": "employment / job",
+        "breakdown": ["ಉ", "ದ", "್ಯ", "ೋ", "ಗ"],
+        "strokes": ["u_1.png", "da_1.png", "ya_2.png", "ō_1.png", "ga_1.png"]
+      },
+      {
+        "word": "ಕೃಷಿ",
+        "transliteration": "kṛṣi",
+        "translation": "agriculture",
+        "breakdown": ["ಕ", "ೃ", "ಷ", "ಿ"],
+        "strokes": ["ka_1.png", "ṛ_1.png", "ṣa_1.png", "i_1.png"]
+      },
+      {
+        "word": "ರೈತ",
+        "transliteration": "raita",
+        "translation": "farmer",
+        "breakdown": ["ರ", "ೈ", "ತ"],
+        "strokes": ["ra_1.png", "ai_1.png", "ta_1.png"]
+      },
+      {
+        "word": "ಭೂಮಿ",
+        "transliteration": "bhūmi",
+        "translation": "earth / land",
+        "breakdown": ["ಭ", "ೂ", "ಮ", "ಿ"],
+        "strokes": ["bha_1.png", "ū_1.png", "ma_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಬೆಳೆ",
+        "transliteration": "beḷe",
+        "translation": "crop",
+        "breakdown": ["ಬ", "ೆ", "ಳ", "ೆ"],
+        "strokes": ["ba_1.png", "e_1.png", "ḷa_1.png", "e_1.png"]
+      },
+      {
+        "word": "ನೀರುಹಾಕು",
+        "transliteration": "nīruhāku",
+        "translation": "to water (plants)",
+        "breakdown": ["ನ", "ೀ", "ರ", "ು", "ಹಾ", "ಕ", "ು"],
+        "strokes": [
+          "na_1.png",
+          "ī_1.png",
+          "ra_1.png",
+          "u_1.png",
+          "ha_1.png",
+          "ā_1.png",
+          "ka_1.png",
+          "u_1.png"
+        ]
+      },
+      {
+        "word": "ಅಡುಗೆ",
+        "transliteration": "aḍuge",
+        "translation": "cooking / kitchen",
+        "breakdown": ["ಅ", "ಡು", "ಗ", "ೆ"],
+        "strokes": ["a_1.png", "ḍa_1.png", "u_1.png", "ga_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಪಾತ್ರೆ",
+        "transliteration": "pātre",
+        "translation": "vessel / container",
+        "breakdown": ["ಪಾ", "ತ", "್ರ", "ೆ"],
+        "strokes": ["pa_1.png", "ā_1.png", "ta_1.png", "ra_2.png", "e_1.png"]
+      },
+      {
+        "word": "ಚಮಚ",
+        "transliteration": "camaca",
+        "translation": "spoon",
+        "breakdown": ["ಚ", "ಮ", "ಚ"],
+        "strokes": ["ca_1.png", "ma_1.png", "ca_1.png"]
+      },
+      {
+        "word": "ತಟ್ಟೆ",
+        "transliteration": "taṭṭe",
+        "translation": "plate",
+        "breakdown": ["ತ", "ಟ", "್ಟ", "ೆ"],
+        "strokes": ["ta_1.png", "ṭa_1.png", "ṭa_2.png", "e_1.png"]
+      },
+      {
+        "word": "ಲೋಟ",
+        "transliteration": "lōṭa",
+        "translation": "glass / tumbler",
+        "breakdown": ["ಲೋ", "ಟ"],
+        "strokes": ["la_1.png", "ō_1.png", "ṭa_1.png"]
+      },
+      {
+        "word": "ಸ್ನೇಹ",
+        "transliteration": "snēha",
+        "translation": "friendship",
+        "breakdown": ["ಸ", "್ನ", "ೇ", "ಹ"],
+        "strokes": ["sa_1.png", "na_2.png", "ē_1.png", "ha_1.png"]
+      },
+      {
+        "word": "ಸಂಬಂಧ",
+        "transliteration": "sambandha",
+        "translation": "relationship",
+        "breakdown": ["ಸ", "ಂ", "ಬ", "ಂ", "ಧ"],
+        "strokes": ["sa_1.png", "aṁ_1.png", "ba_1.png", "aṁ_1.png", "dha_1.png"]
+      },
+      {
+        "word": "ಕುಟುಂಬ",
+        "transliteration": "kuṭumba",
+        "translation": "family",
+        "breakdown": ["ಕು", "ಟುಂ", "ಬ"],
+        "strokes": ["ka_1.png", "u_1.png", "ṭa_1.png", "uṁ_1.png", "ba_1.png"]
+      },
+      {
+        "word": "ನೆರೆಹೊರೆ",
+        "transliteration": "nerehore",
+        "translation": "neighborhood",
+        "breakdown": ["ನೆ", "ರೆ", "ಹೊ", "ರೆ"],
+        "strokes": [
+          "na_1.png",
+          "e_1.png",
+          "ra_1.png",
+          "e_1.png",
+          "ha_1.png",
+          "o_1.png",
+          "ra_1.png",
+          "e_1.png"
+        ]
+      },
+      {
+        "word": "ಸಹಾಯ",
+        "transliteration": "sahāya",
+        "translation": "help / assistance",
+        "breakdown": ["ಸ", "ಹಾ", "ಯ"],
+        "strokes": ["sa_1.png", "ha_1.png", "ā_1.png", "ya_1.png"]
+      },
+      {
+        "word": "ಉಡುಗೊರೆ",
+        "transliteration": "uḍugore",
+        "translation": "gift / present",
+        "breakdown": ["ಉ", "ಡು", "ಗೊ", "ರೆ"],
+        "strokes": [
+          "u_1.png",
+          "ḍa_1.png",
+          "u_1.png",
+          "ga_1.png",
+          "o_1.png",
+          "ra_1.png",
+          "e_1.png"
+        ]
+      },
+      {
+        "word": "ಹಬ್ಬ",
+        "transliteration": "habba",
+        "translation": "festival",
+        "breakdown": ["ಹ", "ಬ", "್ಬ"],
+        "strokes": ["ha_1.png", "ba_1.png", "ba_2.png"]
+      },
+      {
+        "word": "ಆಚರಣೆ",
+        "transliteration": "ācaraṇe",
+        "translation": "celebration / practice",
+        "breakdown": ["ಆ", "ಚ", "ರ", "ಣೆ"],
+        "strokes": ["ā_1.png", "ca_1.png", "ra_1.png", "ṇa_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಕಾರ್ಯಕ್ರಮ",
+        "transliteration": "kāryakrama",
+        "translation": "program / event",
+        "breakdown": ["ಕಾ", "ರ", "್ಯ", "ಕ್ರ", "ಮ"],
+        "strokes": [
+          "ka_1.png",
+          "ā_1.png",
+          "ra_1.png",
+          "ya_2.png",
+          "ka_1.png",
+          "ra_2.png",
+          "ma_1.png"
+        ]
+      },
+      {
+        "word": "ಆಹ್ವಾನ",
+        "transliteration": "āhvāna",
+        "translation": "invitation",
+        "breakdown": ["ಆ", "ಹ", "್ವಾ", "ನ"],
+        "strokes": ["ā_1.png", "ha_1.png", "vā_2.png", "na_1.png"]
+      },
+      {
+        "word": "ಪ್ರಾರ್ಥನೆ",
+        "transliteration": "prārthane",
+        "translation": "prayer",
+        "breakdown": ["ಪ್ರಾ", "ರ", "್ಥ", "ನೆ"],
+        "strokes": [
+          "pa_1.png",
+          "rā_2.png",
+          "ra_1.png",
+          "tha_2.png",
+          "na_1.png",
+          "e_1.png"
+        ]
+      },
+      {
+        "word": "ಆಶೀರ್ವಾದ",
+        "transliteration": "āśīrvāda",
+        "translation": "blessing",
+        "breakdown": ["ಆ", "ಶೀ", "ರ", "್ವಾ", "ದ"],
+        "strokes": [
+          "ā_1.png",
+          "śa_1.png",
+          "ī_1.png",
+          "ra_1.png",
+          "vā_2.png",
+          "da_1.png"
+        ]
+      },
+      {
+        "word": "ಸಂತೋಷ",
+        "transliteration": "santōṣa",
+        "translation": "happiness / joy",
+        "breakdown": ["ಸಂ", "ತೋ", "ಷ"],
+        "strokes": ["sa_1.png", "aṁ_1.png", "ta_1.png", "ō_1.png", "ṣa_1.png"]
+      },
+      {
+        "word": "ದುಃಖ",
+        "transliteration": "duḥkha",
+        "translation": "sadness / sorrow",
+        "breakdown": ["ದುಃ", "ಖ"],
+        "strokes": ["da_1.png", "uḥ_1.png", "kha_1.png"]
+      },
+      {
+        "word": "ಆಶ್ಚರ್ಯ",
+        "transliteration": "āścarya",
+        "translation": "surprise / wonder",
+        "breakdown": ["ಆ", "ಶ", "್ಚ", "ರ", "್ಯ"],
+        "strokes": ["ā_1.png", "śa_1.png", "ca_2.png", "ra_1.png", "ya_2.png"]
+      },
+      {
+        "word": "ಚಿಂತೆ",
+        "transliteration": "cinte",
+        "translation": "worry / anxiety",
+        "breakdown": ["ಚಿಂ", "ತೆ"],
+        "strokes": ["ca_1.png", "iṁ_1.png", "ta_1.png", "e_1.png"]
+      },
+      {
+        "word": "ನಗುಮುಖ",
+        "transliteration": "nagumukha",
+        "translation": "smiling face",
+        "breakdown": ["ನ", "ಗು", "ಮು", "ಖ"],
+        "strokes": [
+          "na_1.png",
+          "ga_1.png",
+          "u_1.png",
+          "ma_1.png",
+          "u_1.png",
+          "kha_1.png"
+        ]
+      },
+      {
+        "word": "ಕನಸು",
+        "transliteration": "kanasu",
+        "translation": "dream",
+        "breakdown": ["ಕ", "ನ", "ಸು"],
+        "strokes": ["ka_1.png", "na_1.png", "sa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ನೆನಪು",
+        "transliteration": "nenapu",
+        "translation": "memory",
+        "breakdown": ["ನೆ", "ನ", "ಪು"],
+        "strokes": ["na_1.png", "e_1.png", "na_1.png", "pa_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಯೋಚನೆ",
+        "transliteration": "yōcane",
+        "translation": "thought / thinking",
+        "breakdown": ["ಯೋ", "ಚ", "ನೆ"],
+        "strokes": ["ya_1.png", "ō_1.png", "ca_1.png", "na_1.png", "e_1.png"]
+      },
+      {
+        "word": "ನಿರ್ಧಾರ",
+        "transliteration": "nirdhāra",
+        "translation": "decision",
+        "breakdown": ["ನಿ", "ರ", "್ಧಾ", "ರ"],
+        "strokes": ["na_1.png", "i_1.png", "ra_1.png", "dhā_2.png", "ra_1.png"]
+      },
+      {
+        "word": "ಕಾರಣ",
+        "transliteration": "kāraṇa",
+        "translation": "reason / cause",
+        "breakdown": ["ಕಾ", "ರ", "ಣ"],
+        "strokes": ["ka_1.png", "ā_1.png", "ra_1.png", "ṇa_1.png"]
+      },
+      {
+        "word": "ಪರಿಣಾಮ",
+        "transliteration": "pariṇāma",
+        "translation": "result / consequence",
+        "breakdown": ["ಪ", "ರಿ", "ಣಾ", "ಮ"],
+        "strokes": [
+          "pa_1.png",
+          "ra_1.png",
+          "i_1.png",
+          "ṇa_1.png",
+          "ā_1.png",
+          "ma_1.png"
+        ]
+      },
+      {
+        "word": "ಬದಲಾವಣೆ",
+        "transliteration": "badalāvaṇe",
+        "translation": "change",
+        "breakdown": ["ಬ", "ದ", "ಲಾ", "ವ", "ಣೆ"],
+        "strokes": [
+          "ba_1.png",
+          "da_1.png",
+          "la_1.png",
+          "ā_1.png",
+          "va_1.png",
+          "ṇa_1.png",
+          "e_1.png"
+        ]
+      },
+      {
+        "word": "ಅಭಿವೃದ್ಧಿ",
+        "transliteration": "abhivṛddhi",
+        "translation": "development / progress",
+        "breakdown": ["ಅ", "ಭಿ", "ವೃ", "ದ", "್ಧಿ"],
+        "strokes": [
+          "a_1.png",
+          "bha_1.png",
+          "i_1.png",
+          "va_1.png",
+          "ṛ_1.png",
+          "da_1.png",
+          "dhi_2.png"
+        ]
+      },
+      {
+        "word": "ಸಮಸ್ಯೆ",
+        "transliteration": "samasye",
+        "translation": "problem",
+        "breakdown": ["ಸ", "ಮ", "ಸ", "್ಯ", "ೆ"],
+        "strokes": ["sa_1.png", "ma_1.png", "sa_1.png", "ya_2.png", "e_1.png"]
+      },
+      {
+        "word": "ಪರಿಹಾರ",
+        "transliteration": "parihāra",
+        "translation": "solution",
+        "breakdown": ["ಪ", "ರಿ", "ಹಾ", "ರ"],
+        "strokes": [
+          "pa_1.png",
+          "ra_1.png",
+          "i_1.png",
+          "ha_1.png",
+          "ā_1.png",
+          "ra_1.png"
+        ]
+      },
+      {
+        "word": "ಅವಕಾಶ",
+        "transliteration": "avakāśa",
+        "translation": "opportunity / chance",
+        "breakdown": ["ಅ", "ವ", "ಕಾ", "ಶ"],
+        "strokes": ["a_1.png", "va_1.png", "ka_1.png", "ā_1.png", "śa_1.png"]
+      },
+      {
+        "word": "ಪ್ರಯತ್ನ",
+        "transliteration": "prayatna",
+        "translation": "effort / attempt",
+        "breakdown": ["ಪ್ರ", "ಯ", "ತ", "್ನ"],
+        "strokes": ["pa_1.png", "ra_2.png", "ya_1.png", "ta_1.png", "na_2.png"]
+      },
+      {
+        "word": "ಯಶಸ್ಸು",
+        "transliteration": "yaśassu",
+        "translation": "success",
+        "breakdown": ["ಯ", "ಶ", "ಸ", "್ಸು"],
+        "strokes": ["ya_1.png", "śa_1.png", "sa_1.png", "su_2.png"]
+      },
+      {
+        "word": "ಸೋಲು",
+        "transliteration": "sōlu",
+        "translation": "defeat / failure",
+        "breakdown": ["ಸೋ", "ಲು"],
+        "strokes": ["sa_1.png", "ō_1.png", "la_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಗುರಿ",
+        "transliteration": "guri",
+        "translation": "goal / aim / target",
+        "breakdown": ["ಗು", "ರಿ"],
+        "strokes": ["ga_1.png", "u_1.png", "ra_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಮಾರ್ಗ",
+        "transliteration": "mārga",
+        "translation": "path / way (formal)",
+        "breakdown": ["ಮಾ", "ರ", "್ಗ"],
+        "strokes": ["ma_1.png", "ā_1.png", "ra_1.png", "ga_2.png"]
+      },
+      {
+        "word": "ಆಸೆ",
+        "transliteration": "āse",
+        "translation": "desire / wish",
+        "breakdown": ["ಆ", "ಸೆ"],
+        "strokes": ["ā_1.png", "sa_1.png", "e_1.png"]
       },
       {
         "word": "ಅನುಭವ",
         "transliteration": "anubhava",
         "translation": "experience",
         "breakdown": ["ಅ", "ನು", "ಭ", "ವ"],
-        "strokes": ["a_1.png", "nu_1.png", "bha_1.png", "va_1.png"]
+        "strokes": ["a_1.png", "na_1.png", "u_1.png", "bha_1.png", "va_1.png"]
       },
       {
-        "word": "ಶಕ್ತಿ",
-        "transliteration": "shakti",
-        "translation": "power",
-        "breakdown": ["ಶ", "ಕ", "್ತಿ"],
-        "strokes": ["sha_1.png", "ka_1.png", "ti_1.png"]
+        "word": "ಪ್ರಮುಖ",
+        "transliteration": "pramukha",
+        "translation": "important / prominent",
+        "breakdown": ["ಪ್ರ", "ಮು", "ಖ"],
+        "strokes": ["pa_1.png", "ra_2.png", "ma_1.png", "u_1.png", "kha_1.png"]
       },
       {
-        "word": "ಸ್ನೇಹ",
-        "transliteration": "sneha",
-        "translation": "friendship",
-        "breakdown": ["ಸ", "್ನ", "ೇ", "ಹ"],
-        "strokes": ["sa_1.png", "na_1.png", "e_1.png", "ha_1.png"]
+        "word": "ಸಾಮಾನ್ಯ",
+        "transliteration": "sāmānya",
+        "translation": "common / ordinary / general",
+        "breakdown": ["ಸಾ", "ಮಾ", "ನ", "್ಯ"],
+        "strokes": [
+          "sa_1.png",
+          "ā_1.png",
+          "ma_1.png",
+          "ā_1.png",
+          "na_1.png",
+          "ya_2.png"
+        ]
       },
       {
-        "word": "ಶಿಕ್ಷಣ",
-        "transliteration": "shikshana",
-        "translation": "education",
-        "breakdown": ["ಶಿ", "ಕ್ಷ", "ಣ"],
-        "strokes": ["shi_1.png", "ksha_1.png", "ṇa_1.png"]
+        "word": "ವಿಶೇಷ",
+        "transliteration": "viśēṣa",
+        "translation": "special",
+        "breakdown": ["ವಿ", "ಶೇ", "ಷ"],
+        "strokes": ["va_1.png", "i_1.png", "śa_1.png", "ē_1.png", "ṣa_1.png"]
       },
       {
-        "word": "ವಿದ್ಯಾಲಯ",
-        "transliteration": "vidyālaya",
-        "translation": "school",
-        "breakdown": ["ವಿ", "ದ್", "ಯಾ", "ಲ", "ಯ"],
-        "strokes": ["vi_1.png", "dya_1.png", "la_1.png", "ya_1.png"]
+        "word": "ವಿವಿಧ",
+        "transliteration": "vividha",
+        "translation": "various / diverse",
+        "breakdown": ["ವಿ", "ವಿ", "ಧ"],
+        "strokes": ["va_1.png", "i_1.png", "va_1.png", "i_1.png", "dha_1.png"]
+      },
+      {
+        "word": "ಉದಾಹರಣೆ",
+        "transliteration": "udāharaṇe",
+        "translation": "example",
+        "breakdown": ["ಉ", "ದಾ", "ಹ", "ರ", "ಣೆ"],
+        "strokes": [
+          "u_1.png",
+          "da_1.png",
+          "ā_1.png",
+          "ha_1.png",
+          "ra_1.png",
+          "ṇa_1.png",
+          "e_1.png"
+        ]
+      },
+      {
+        "word": "ಮಾಹಿತಿ",
+        "transliteration": "māhiti",
+        "translation": "information",
+        "breakdown": ["ಮಾ", "ಹಿ", "ತಿ"],
+        "strokes": [
+          "ma_1.png",
+          "ā_1.png",
+          "ha_1.png",
+          "i_1.png",
+          "ta_1.png",
+          "i_1.png"
+        ]
+      },
+      {
+        "word": "ಸುದ್ದಿ",
+        "transliteration": "suddi",
+        "translation": "news",
+        "breakdown": ["ಸು", "ದ", "್ದಿ"],
+        "strokes": ["sa_1.png", "u_1.png", "da_1.png", "di_2.png"]
+      },
+      {
+        "word": "ಪತ್ರಿಕೆ",
+        "transliteration": "patrike",
+        "translation": "newspaper / magazine",
+        "breakdown": ["ಪ", "ತ್ರಿ", "ಕೆ"],
+        "strokes": ["pa_1.png", "ta_1.png", "ri_2.png", "ka_1.png", "e_1.png"]
+      },
+      {
+        "word": "ದೂರದರ್ಶನ",
+        "transliteration": "dūradarśana",
+        "translation": "television",
+        "breakdown": ["ದೂ", "ರ", "ದ", "ರ", "್ಶ", "ನ"],
+        "strokes": [
+          "da_1.png",
+          "ū_1.png",
+          "ra_1.png",
+          "da_1.png",
+          "ra_1.png",
+          "śa_2.png",
+          "na_1.png"
+        ]
+      },
+      {
+        "word": "ದನಿ",
+        "transliteration": "dani",
+        "translation": "voice / sound",
+        "breakdown": ["ದ", "ನಿ"],
+        "strokes": ["da_1.png", "na_1.png", "i_1.png"]
+      },
+      {
+        "word": "ಶಬ್ದ",
+        "transliteration": "śabda",
+        "translation": "sound / word",
+        "breakdown": ["ಶ", "ಬ", "್ದ"],
+        "strokes": ["śa_1.png", "ba_1.png", "da_2.png"]
+      },
+      {
+        "word": "ಬೆಳಕು",
+        "transliteration": "beḷaku",
+        "translation": "light",
+        "breakdown": ["ಬೆ", "ಳ", "ಕು"],
+        "strokes": ["ba_1.png", "e_1.png", "ḷa_1.png", "ka_1.png", "u_1.png"]
+      },
+      {
+        "word": "ಕತ್ತಲೆ",
+        "transliteration": "kattale",
+        "translation": "darkness",
+        "breakdown": ["ಕ", "ತ್ತ", "ಲೆ"],
+        "strokes": ["ka_1.png", "ta_1.png", "ta_2.png", "la_1.png", "e_1.png"]
+      },
+      {
+        "word": "ಆಕಾರ",
+        "transliteration": "ākāra",
+        "translation": "shape / form",
+        "breakdown": ["ಆ", "ಕಾ", "ರ"],
+        "strokes": ["ā_1.png", "ka_1.png", "ā_1.png", "ra_1.png"]
+      },
+      {
+        "word": "ಗಾತ್ರ",
+        "transliteration": "gātra",
+        "translation": "size",
+        "breakdown": ["ಗಾ", "ತ", "್ರ"],
+        "strokes": ["ga_1.png", "ā_1.png", "ta_1.png", "ra_2.png"]
+      },
+      {
+        "word": "ಎತ್ತರ",
+        "transliteration": "ettara",
+        "translation": "height",
+        "breakdown": ["ಎ", "ತ್ತ", "ರ"],
+        "strokes": ["e_1.png", "ta_1.png", "ta_2.png", "ra_1.png"]
+      },
+      {
+        "word": "ತೂಕ",
+        "transliteration": "tūka",
+        "translation": "weight",
+        "breakdown": ["ತೂ", "ಕ"],
+        "strokes": ["ta_1.png", "ū_1.png", "ka_1.png"]
+      },
+      {
+        "word": "ಉದ್ದ",
+        "transliteration": "udda",
+        "translation": "length",
+        "breakdown": ["ಉ", "ದ", "್ದ"],
+        "strokes": ["u_1.png", "da_1.png", "da_2.png"]
+      },
+      {
+        "word": "ಅಗಲ",
+        "transliteration": "agala",
+        "translation": "width",
+        "breakdown": ["ಅ", "ಗ", "ಲ"],
+        "strokes": ["a_1.png", "ga_1.png", "la_1.png"]
+      },
+      {
+        "word": "ಆಳ",
+        "transliteration": "āḷa",
+        "translation": "depth",
+        "breakdown": ["ಆ", "ಳ"],
+        "strokes": ["ā_1.png", "ḷa_1.png"]
+      },
+      {
+        "word": "ವ್ಯತ್ಯಾಸ",
+        "transliteration": "vyatyāsa",
+        "translation": "difference",
+        "breakdown": ["ವ", "್ಯ", "ತ್ಯಾ", "ಸ"],
+        "strokes": ["va_1.png", "ya_2.png", "ta_1.png", "yā_2.png", "sa_1.png"]
       }
     ]
   },
@@ -371,37 +2802,1777 @@
       },
       {
         "sentence": "ನಾನು ಹಣ್ಣು ತಿನ್ನುತ್ತೇನೆ.",
-        "transliteration": "Nānu hannu tinnuttēne.",
+        "transliteration": "Nānu haṇṇu tinnuttēne.",
         "translation": "I eat a fruit.",
         "breakdown": ["ನಾನು", "ಹಣ್ಣು", "ತಿನ್ನುತ್ತೇನೆ"]
+      },
+      {
+        "sentence": "ಅದು ಮರ.",
+        "transliteration": "Adu mara.",
+        "translation": "That is a tree.",
+        "breakdown": ["ಅದು", "ಮರ"]
+      },
+      {
+        "sentence": "ನೀನು ಬಾ.",
+        "transliteration": "Nīnu bā.",
+        "translation": "You come.",
+        "breakdown": ["ನೀನು", "ಬಾ"]
+      },
+      {
+        "sentence": "ಅವನು ಹೋಗು.",
+        "transliteration": "Avanu hōgu.",
+        "translation": "He go.",
+        "breakdown": ["ಅವನು", "ಹೋಗು"]
+      },
+      {
+        "sentence": "ಅವಳು ಓದು.",
+        "transliteration": "Avaḷu ōdu.",
+        "translation": "She read.",
+        "breakdown": ["ಅವಳು", "ಓದು"]
+      },
+      {
+        "sentence": "ಇದು ನಾಯಿ.",
+        "transliteration": "Idu nāyi.",
+        "translation": "This is a dog.",
+        "breakdown": ["ಇದು", "ನಾಯಿ"]
+      },
+      {
+        "sentence": "ಅದು ಬೆಕ್ಕು.",
+        "transliteration": "Adu bekku.",
+        "translation": "That is a cat.",
+        "breakdown": ["ಅದು", "ಬೆಕ್ಕು"]
+      },
+      {
+        "sentence": "ನಾನು ಹಾಲು ಕುಡಿ.",
+        "transliteration": "Nānu hālu kuḍi.",
+        "translation": "I drink milk.",
+        "breakdown": ["ನಾನು", "ಹಾಲು", "ಕುಡಿ"]
+      },
+      {
+        "sentence": "ನೀನು ನೀರು ಕೊಡು.",
+        "transliteration": "Nīnu nīru koḍu.",
+        "translation": "You give water.",
+        "breakdown": ["ನೀನು", "ನೀರು", "ಕೊಡು"]
+      },
+      {
+        "sentence": "ಇದು ಕೆಂಪು ಹೂವು.",
+        "transliteration": "Idu kempu hūvu.",
+        "translation": "This is a red flower.",
+        "breakdown": ["ಇದು", "ಕೆಂಪು", "ಹೂವು"]
+      },
+      {
+        "sentence": "ಅದು ಹಸಿರು ಗಿಡ.",
+        "transliteration": "Adu hasiru giḍa.",
+        "translation": "That is a green plant.",
+        "breakdown": ["ಅದು", "ಹಸಿರು", "ಗಿಡ"]
+      },
+      {
+        "sentence": "ಅಮ್ಮ ಊಟ ಮಾಡು.",
+        "transliteration": "Amma ūṭa māḍu.",
+        "translation": "Mother make food / eat.",
+        "breakdown": ["ಅಮ್ಮ", "ಊಟ", "ಮಾಡು"]
+      },
+      {
+        "sentence": "ಅಪ್ಪ ಬಾ.",
+        "transliteration": "Appa bā.",
+        "translation": "Father come.",
+        "breakdown": ["ಅಪ್ಪ", "ಬಾ"]
+      },
+      {
+        "sentence": "ಇದು ಪುಸ್ತಕ.",
+        "transliteration": "Idu pustaka.",
+        "translation": "This is a book.",
+        "breakdown": ["ಇದು", "ಪುಸ್ತಕ"]
+      },
+      {
+        "sentence": "ನಾನು ಬರೆ.",
+        "transliteration": "Nānu bare.",
+        "translation": "I write.",
+        "breakdown": ["ನಾನು", "ಬರೆ"]
+      },
+      {
+        "sentence": "ನೀನು ನೋಡು.",
+        "transliteration": "Nīnu nōḍu.",
+        "translation": "You see.",
+        "breakdown": ["ನೀನು", "ನೋಡು"]
+      },
+      {
+        "sentence": "ಅವನು ನಗು.",
+        "transliteration": "Avanu nagu.",
+        "translation": "He laugh.",
+        "breakdown": ["ಅವನು", "ನಗು"]
+      },
+      {
+        "sentence": "ಅವಳು ಅಳು.",
+        "transliteration": "Avaḷu aḷu.",
+        "translation": "She cry.",
+        "breakdown": ["ಅವಳು", "ಅಳು"]
+      },
+      {
+        "sentence": "ಇದು ಕಲ್ಲು.",
+        "transliteration": "Idu kallu.",
+        "translation": "This is a stone.",
+        "breakdown": ["ಇದು", "ಕಲ್ಲು"]
+      },
+      {
+        "sentence": "ಅದು ಮಣ್ಣು.",
+        "transliteration": "Adu maṇṇu.",
+        "translation": "That is soil.",
+        "breakdown": ["ಅದು", "ಮಣ್ಣು"]
+      },
+      {
+        "sentence": "ನಾನು ನಡೆ.",
+        "transliteration": "Nānu naḍe.",
+        "translation": "I walk.",
+        "breakdown": ["ನಾನು", "ನಡೆ"]
+      },
+      {
+        "sentence": "ನೀನು ಓಡು.",
+        "transliteration": "Nīnu ōḍu.",
+        "translation": "You run.",
+        "breakdown": ["ನೀನು", "ಓಡು"]
+      },
+      {
+        "sentence": "ಅಕ್ಕ ಬಾ.",
+        "transliteration": "Akka bā.",
+        "translation": "Elder sister come.",
+        "breakdown": ["ಅಕ್ಕ", "ಬಾ"]
+      },
+      {
+        "sentence": "ತಮ್ಮ ಹೋಗು.",
+        "transliteration": "Tamma hōgu.",
+        "translation": "Younger brother go.",
+        "breakdown": ["ತಮ್ಮ", "ಹೋಗು"]
+      },
+      {
+        "sentence": "ಇದು ಕೈ.",
+        "transliteration": "Idu kai.",
+        "translation": "This is a hand.",
+        "breakdown": ["ಇದು", "ಕೈ"]
+      },
+      {
+        "sentence": "ಅದು ಕಾಲು.",
+        "transliteration": "Adu kālu.",
+        "translation": "That is a leg.",
+        "breakdown": ["ಅದು", "ಕಾಲು"]
+      },
+      {
+        "sentence": "ಇದು ತಲೆ.",
+        "transliteration": "Idu tale.",
+        "translation": "This is a head.",
+        "breakdown": ["ಇದು", "ತಲೆ"]
+      },
+      {
+        "sentence": "ಇದು ಮೂಗು.",
+        "transliteration": "Idu mūgu.",
+        "translation": "This is a nose.",
+        "breakdown": ["ಇದು", "ಮೂಗು"]
+      },
+      {
+        "sentence": "ಇದು ಕಣ್ಣು.",
+        "transliteration": "Idu kaṇṇu.",
+        "translation": "This is an eye.",
+        "breakdown": ["ಇದು", "ಕಣ್ಣು"]
+      },
+      {
+        "sentence": "ಇದು ಕಿವಿ.",
+        "transliteration": "Idu kivi.",
+        "translation": "This is an ear.",
+        "breakdown": ["ಇದು", "ಕಿವಿ"]
+      },
+      {
+        "sentence": "ಇದು ಬಾಯಿ.",
+        "transliteration": "Idu bayi.",
+        "translation": "This is a mouth.",
+        "breakdown": ["ಇದು", "ಬಾಯಿ"]
+      },
+      {
+        "sentence": "ನಾನು ಒಂದು ಹಣ್ಣು ಕೊಡು.",
+        "transliteration": "Nānu ondu haṇṇu koḍu.",
+        "translation": "I give one fruit.",
+        "breakdown": ["ನಾನು", "ಒಂದು", "ಹಣ್ಣು", "ಕೊಡು"]
+      },
+      {
+        "sentence": "ನೀನು ಎರಡು ಪುಸ್ತಕ ತೆಗೆದುಕೊ.",
+        "transliteration": "Nīnu eraḍu pustaka tegeduko.",
+        "translation": "You take two books.",
+        "breakdown": ["ನೀನು", "ಎರಡು", "ಪುಸ್ತಕ", "ತೆಗೆದುಕೊ"]
+      },
+      {
+        "sentence": "ಅದು ದೊಡ್ಡ ಮನೆ.",
+        "transliteration": "Adu doḍḍa mane.",
+        "translation": "That is a big house.",
+        "breakdown": ["ಅದು", "ದೊಡ್ಡ", "ಮನೆ"]
+      },
+      {
+        "sentence": "ಇದು ಚಿಕ್ಕ ಮರ.",
+        "transliteration": "Idu cikka mara.",
+        "translation": "This is a small tree.",
+        "breakdown": ["ಇದು", "ಚಿಕ್ಕ", "ಮರ"]
+      },
+      {
+        "sentence": "ಇದು ಹೊಸ ಬಟ್ಟೆ.",
+        "transliteration": "Idu hosa baṭṭe.",
+        "translation": "This is a new cloth.",
+        "breakdown": ["ಇದು", "ಹೊಸ", "ಬಟ್ಟೆ"]
+      },
+      {
+        "sentence": "ಅದು ಹಳೆ ಕಾರು.",
+        "transliteration": "Adu haḷe kāru.",
+        "translation": "That is an old car.",
+        "breakdown": ["ಅದು", "ಹಳೆ", "ಕಾರು"]
+      },
+      {
+        "sentence": "ಅವನು ಒಳ್ಳೆ ಹುಡುಗ.",
+        "transliteration": "Avanu oḷḷe huḍuga.",
+        "translation": "He is a good boy.",
+        "breakdown": ["ಅವನು", "ಒಳ್ಳೆ", "ಹುಡುಗ"]
+      },
+      {
+        "sentence": "ಅವಳು ಒಳ್ಳೆ ಹುಡುಗಿ.",
+        "transliteration": "Avaḷu oḷḷe huḍugi.",
+        "translation": "She is a good girl.",
+        "breakdown": ["ಅವಳು", "ಒಳ್ಳೆ", "ಹುಡುಗಿ"]
+      },
+      {
+        "sentence": "ಇದು ಬಿಸಿ ನೀರು.",
+        "transliteration": "Idu bisi nīru.",
+        "translation": "This is hot water.",
+        "breakdown": ["ಇದು", "ಬಿಸಿ", "ನೀರು"]
+      },
+      {
+        "sentence": "ಅದು ತಣ್ಣಗೆ ಇದೆ.",
+        "transliteration": "Adu taṇṇage ide.",
+        "translation": "That is cold.",
+        "breakdown": ["ಅದು", "ತಣ್ಣಗೆ", "ಇದೆ"]
+      },
+      {
+        "sentence": "ಇದು ಬಿಳಿ ಹಾಲು.",
+        "transliteration": "Idu biḷi hālu.",
+        "translation": "This is white milk.",
+        "breakdown": ["ಇದು", "ಬಿಳಿ", "ಹಾಲು"]
+      },
+      {
+        "sentence": "ಅದು ಕಪ್ಪು ಬೆಕ್ಕು.",
+        "transliteration": "Adu kappu bekku.",
+        "translation": "That is a black cat.",
+        "breakdown": ["ಅದು", "ಕಪ್ಪು", "ಬೆಕ್ಕು"]
+      },
+      {
+        "sentence": "ಬಾನು ನೀಲಿ ಇದೆ.",
+        "transliteration": "Bānu nīli ide.",
+        "translation": "The sky is blue.",
+        "breakdown": ["ಬಾನು", "ನೀಲಿ", "ಇದೆ"]
+      },
+      {
+        "sentence": "ಹೂವು ಹಳದಿ ಇದೆ.",
+        "transliteration": "Hūvu haḷadi ide.",
+        "translation": "The flower is yellow.",
+        "breakdown": ["ಹೂವು", "ಹಳದಿ", "ಇದೆ"]
+      },
+      {
+        "sentence": "ನಾನು ಹಣ ಕೊಡು.",
+        "transliteration": "Nānu haṇa koḍu.",
+        "translation": "I give money.",
+        "breakdown": ["ನಾನು", "ಹಣ", "ಕೊಡು"]
+      },
+      {
+        "sentence": "ನೀನು ಅಂಗಡಿಗೆ ಹೋಗು.",
+        "transliteration": "Nīnu angaḍige hōgu.",
+        "translation": "You go to the shop.",
+        "breakdown": ["ನೀನು", "ಅಂಗಡಿಗೆ", "ಹೋಗು"]
+      },
+      {
+        "sentence": "ಇದು ದಾರ.",
+        "transliteration": "Idu dāra.",
+        "translation": "This is thread.",
+        "breakdown": ["ಇದು", "ದಾರ"]
+      },
+      {
+        "sentence": "ಅವಳು ಬಟ್ಟೆ ಕೊಡು.",
+        "transliteration": "Avaḷu baṭṭe koḍu.",
+        "translation": "She give clothes.",
+        "breakdown": ["ಅವಳು", "ಬಟ್ಟೆ", "ಕೊಡು"]
+      },
+      {
+        "sentence": "ಅವನು ಕೈ ತೊಳಿ.",
+        "transliteration": "Avanu kai toḷi.",
+        "translation": "He wash hand.",
+        "breakdown": ["ಅವನು", "ಕೈ", "ತೊಳಿ"]
+      },
+      {
+        "sentence": "ಕಾಲು ನೋಡು.",
+        "transliteration": "Kālu nōḍu.",
+        "translation": "Look at the leg.",
+        "breakdown": ["ಕಾಲು", "ನೋಡು"]
+      },
+      {
+        "sentence": "ಇದು ಏನು?",
+        "transliteration": "Idu ēnu?",
+        "translation": "What is this?",
+        "breakdown": ["ಇದು", "ಏನು"]
+      },
+      {
+        "sentence": "ಅದು ಯಾರು?",
+        "transliteration": "Adu yāru?",
+        "translation": "Who is that?",
+        "breakdown": ["ಅದು", "ಯಾರು"]
+      },
+      {
+        "sentence": "ನೀನು ಎಲ್ಲಿ?",
+        "transliteration": "Nīnu elli?",
+        "translation": "Where are you?",
+        "breakdown": ["ನೀನು", "ಎಲ್ಲಿ"]
+      },
+      {
+        "sentence": "ಇಲ್ಲಿ ಬಾ.",
+        "transliteration": "Illi bā.",
+        "translation": "Come here.",
+        "breakdown": ["ಇಲ್ಲಿ", "ಬಾ"]
+      },
+      {
+        "sentence": "ಅಲ್ಲಿ ಹೋಗು.",
+        "transliteration": "Alli hōgu.",
+        "translation": "Go there.",
+        "breakdown": ["ಅಲ್ಲಿ", "ಹೋಗು"]
+      },
+      {
+        "sentence": "ಹೌದು, ಇದು ಮನೆ.",
+        "transliteration": "Houdhu, idu mane.",
+        "translation": "Yes, this is a house.",
+        "breakdown": ["ಹೌದು", "ಇದು", "ಮನೆ"]
+      },
+      {
+        "sentence": "ಇಲ್ಲ, ಅದು ಮರ.",
+        "transliteration": "Illa, adu mara.",
+        "translation": "No, that is a tree.",
+        "breakdown": ["ಇಲ್ಲ", "ಅದು", "ಮರ"]
+      },
+      {
+        "sentence": "ಇದು ನನ್ನ ಪುಸ್ತಕ.",
+        "transliteration": "Idu nanna pustaka.",
+        "translation": "This is my book.",
+        "breakdown": ["ಇದು", "ನನ್ನ", "ಪುಸ್ತಕ"]
+      },
+      {
+        "sentence": "ಅದು ನಿನ್ನ ಪೆನ್ನು.",
+        "transliteration": "Adu ninna pennu.",
+        "translation": "That is your pen.",
+        "breakdown": ["ಅದು", "ನಿನ್ನ", "ಪೆನ್ನು"]
+      },
+      {
+        "sentence": "ಅವನ ಹೆಸರು ರಾಮ.",
+        "transliteration": "Avana hesaru Rāma.",
+        "translation": "His name is Rama.",
+        "breakdown": ["ಅವನ", "ಹೆಸರು", "ರಾಮ"]
+      },
+      {
+        "sentence": "ಅವಳ ಹೆಸರು ಸೀತಾ.",
+        "transliteration": "Avaḷa hesaru Sītā.",
+        "translation": "Her name is Sita.",
+        "breakdown": ["ಅವಳ", "ಹೆಸರು", "ಸೀತಾ"]
+      },
+      {
+        "sentence": "ನಾಯಿ ಓಡು.",
+        "transliteration": "Nāyi ōḍu.",
+        "translation": "Dog run.",
+        "breakdown": ["ನಾಯಿ", "ಓಡು"]
+      },
+      {
+        "sentence": "ಬೆಕ್ಕು ಹಾಲು ಕುಡಿ.",
+        "transliteration": "Bekku hālu kuḍi.",
+        "translation": "Cat drink milk.",
+        "breakdown": ["ಬೆಕ್ಕು", "ಹಾಲು", "ಕುಡಿ"]
+      },
+      {
+        "sentence": "ಮರ ದೊಡ್ಡದು ಇದೆ.",
+        "transliteration": "Mara doḍḍadu ide.",
+        "translation": "The tree is big.",
+        "breakdown": ["ಮರ", "ದೊಡ್ಡದು", "ಇದೆ"]
+      },
+      {
+        "sentence": "ಹೂವು ಚಿಕ್ಕದು ಇದೆ.",
+        "transliteration": "Hūvu cikkadu ide.",
+        "translation": "The flower is small.",
+        "breakdown": ["ಹೂವು", "ಚಿಕ್ಕದು", "ಇದೆ"]
+      },
+      {
+        "sentence": "ಇದು ದಾರಿ.",
+        "transliteration": "Idu dāri.",
+        "translation": "This is the way.",
+        "breakdown": ["ಇದು", "ದಾರಿ"]
+      },
+      {
+        "sentence": "ಅದು ರಸ್ತೆ.",
+        "transliteration": "Adu raste.",
+        "translation": "That is the road.",
+        "breakdown": ["ಅದು", "ರಸ್ತೆ"]
+      },
+      {
+        "sentence": "ಇದು ನಗರ.",
+        "transliteration": "Idu nagara.",
+        "translation": "This is a city.",
+        "breakdown": ["ಇದು", "ನಗರ"]
+      },
+      {
+        "sentence": "ಅದು ಹಳ್ಳಿ.",
+        "transliteration": "Adu haḷḷi.",
+        "translation": "That is a village.",
+        "breakdown": ["ಅದು", "ಹಳ್ಳಿ"]
+      },
+      {
+        "sentence": "ನಾನು ಕೆಲಸ ಮಾಡು.",
+        "transliteration": "Nānu kelasa māḍu.",
+        "translation": "I do work.",
+        "breakdown": ["ನಾನು", "ಕೆಲಸ", "ಮಾಡು"]
+      },
+      {
+        "sentence": "ನೀನು ಆಟ ಆಡು.",
+        "transliteration": "Nīnu āṭa āḍu.",
+        "translation": "You play game.",
+        "breakdown": ["ನೀನು", "ಆಟ", "ಆಡು"]
+      },
+      {
+        "sentence": "ಅವಳು ಹಾಡು ಹಾಡು.",
+        "transliteration": "Avaḷu hāḍu hāḍu.",
+        "translation": "She sing song.",
+        "breakdown": ["ಅವಳು", "ಹಾಡು", "ಹಾಡು"]
+      },
+      {
+        "sentence": "ಅವನು ಮಾತು ಹೇಳು.",
+        "transliteration": "Avanu mātu hēḷu.",
+        "translation": "He speak word.",
+        "breakdown": ["ಅವನು", "ಮಾತು", "ಹೇಳು"]
+      },
+      {
+        "sentence": "ಇದು ಬೆಂಕಿ.",
+        "transliteration": "Idu benki.",
+        "translation": "This is fire.",
+        "breakdown": ["ಇದು", "ಬೆಂಕಿ"]
+      },
+      {
+        "sentence": "ಅದು ಹೊಗೆ.",
+        "transliteration": "Adu hoge.",
+        "translation": "That is smoke.",
+        "breakdown": ["ಅದು", "ಹೊಗೆ"]
+      },
+      {
+        "sentence": "ಗಾಳಿ ಬೀಸು.",
+        "transliteration": "Gāḷi bīsu.",
+        "translation": "Wind blow.",
+        "breakdown": ["ಗಾಳಿ", "ಬೀಸು"]
+      },
+      {
+        "sentence": "ಇದು ಬಣ್ಣ.",
+        "transliteration": "Idu baṇṇa.",
+        "translation": "This is color.",
+        "breakdown": ["ಇದು", "ಬಣ್ಣ"]
+      },
+      {
+        "sentence": "ಇದು ಐದು.",
+        "transliteration": "Idu aidu.",
+        "translation": "This is five.",
+        "breakdown": ["ಇದು", "ಐದು"]
+      },
+      {
+        "sentence": "ಅದು ನಾಲ್ಕು.",
+        "transliteration": "Adu nālku.",
+        "translation": "That is four.",
+        "breakdown": ["ಅದು", "ನಾಲ್ಕು"]
+      },
+      {
+        "sentence": "ಇದು ಮೂರು.",
+        "transliteration": "Idu mūru.",
+        "translation": "This is three.",
+        "breakdown": ["ಇದು", "ಮೂರು"]
+      },
+      {
+        "sentence": "ನಾನು ಕೇಳು.",
+        "transliteration": "Nānu kēḷu.",
+        "translation": "I listen/ask.",
+        "breakdown": ["ನಾನು", "ಕೇಳು"]
+      },
+      {
+        "sentence": "ನೀನು ಹೇಳು.",
+        "transliteration": "Nīnu hēḷu.",
+        "translation": "You tell.",
+        "breakdown": ["ನೀನು", "ಹೇಳು"]
+      },
+      {
+        "sentence": "ಕುಳಿತುಕೊ.",
+        "transliteration": "Kuḷituko.",
+        "translation": "Sit down.",
+        "breakdown": ["ಕುಳಿತುಕೊ"]
+      },
+      {
+        "sentence": "ನಿಲ್ಲು.",
+        "transliteration": "Nillu.",
+        "translation": "Stop/Stand.",
+        "breakdown": ["ನಿಲ್ಲು"]
+      },
+      {
+        "sentence": "ಇದು ಕಾಗದ.",
+        "transliteration": "Idu kāgada.",
+        "translation": "This is paper.",
+        "breakdown": ["ಇದು", "ಕಾಗದ"]
+      },
+      {
+        "sentence": "ಇದು ಮೇಜು.",
+        "transliteration": "Idu mēju.",
+        "translation": "This is a table.",
+        "breakdown": ["ಇದು", "ಮೇಜು"]
+      },
+      {
+        "sentence": "ಅದು ಕುರ್ಚಿ.",
+        "transliteration": "Adu kurci.",
+        "translation": "That is a chair.",
+        "breakdown": ["ಅದು", "ಕುರ್ಚಿ"]
+      },
+      {
+        "sentence": "ಇದು ಹಾಸಿಗೆ.",
+        "transliteration": "Idu hāsige.",
+        "translation": "This is a bed.",
+        "breakdown": ["ಇದು", "ಹಾಸಿಗೆ"]
+      },
+      {
+        "sentence": "ಬಾಗಿಲು ತೆರೆ.",
+        "transliteration": "Bāgilu tere.",
+        "translation": "Open the door.",
+        "breakdown": ["ಬಾಗಿಲು", "ತೆರೆ"]
+      },
+      {
+        "sentence": "ಕಿಟಕಿ ಮುಚ್ಚು.",
+        "transliteration": "Kiṭaki muccu.",
+        "translation": "Close the window.",
+        "breakdown": ["ಕಿಟಕಿ", "ಮುಚ್ಚು"]
+      },
+      {
+        "sentence": "ಇದು ದಿನ.",
+        "transliteration": "Idu dina.",
+        "translation": "This is day.",
+        "breakdown": ["ಇದು", "ದಿನ"]
+      },
+      {
+        "sentence": "ಅದು ರಾತ್ರಿ.",
+        "transliteration": "Adu rātri.",
+        "translation": "That is night.",
+        "breakdown": ["ಅದು", "ರಾತ್ರಿ"]
+      },
+      {
+        "sentence": "ತಂಗಿ ಬಾ.",
+        "transliteration": "Tangi bā.",
+        "translation": "Younger sister come.",
+        "breakdown": ["ತಂಗಿ", "ಬಾ"]
+      },
+      {
+        "sentence": "ಅಣ್ಣ ಹೋಗು.",
+        "transliteration": "Aṇṇa hōgu.",
+        "translation": "Elder brother go.",
+        "breakdown": ["ಅಣ್ಣ", "ಹೋಗು"]
+      },
+      {
+        "sentence": "ಗೆಳೆಯ ಯಾರು?",
+        "transliteration": "Geḷeya yāru?",
+        "translation": "Who is the friend (male)?",
+        "breakdown": ["ಗೆಳೆಯ", "ಯಾರು"]
+      },
+      {
+        "sentence": "ಗೆಳತಿ ಎಲ್ಲಿ?",
+        "transliteration": "Geḷati elli?",
+        "translation": "Where is the friend (female)?",
+        "breakdown": ["ಗೆಳತಿ", "ಎಲ್ಲಿ"]
+      },
+      {
+        "sentence": "ಇದು ಪಥ.",
+        "transliteration": "Idu patha.",
+        "translation": "This is a path.",
+        "breakdown": ["ಇದು", "ಪಥ"]
+      },
+      {
+        "sentence": "ನಾನು ಶಾಲೆಗೆ ಹೋಗು.",
+        "transliteration": "Nānu śālege hōgu.",
+        "translation": "I go to school.",
+        "breakdown": ["ನಾನು", "ಶಾಲೆಗೆ", "ಹೋಗು"]
       }
     ],
     "Level2": [
       {
         "sentence": "ನಾನು ನೀರು ಕುಡಿಯುತ್ತೇನೆ.",
-        "transliteration": "Nānu neeru kudiyuttēne.",
+        "transliteration": "Nānu nīru kuḍiyuttēne.",
         "translation": "I drink water.",
         "breakdown": ["ನಾನು", "ನೀರು", "ಕುಡಿಯುತ್ತೇನೆ"]
       },
       {
         "sentence": "ಪುಸ್ತಕ ಟೇಬಲ್ ಮೇಲೆ ಇದೆ.",
-        "transliteration": "Pustaka tēbal mēle ide.",
+        "transliteration": "Pustaka ṭēbal mēle ide.",
         "translation": "The book is on the table.",
         "breakdown": ["ಪುಸ್ತಕ", "ಟೇಬಲ್", "ಮೇಲೆ", "ಇದೆ"]
+      },
+      {
+        "sentence": "ಅವನು ನಿಧಾನವಾಗಿ ನಡೆಯುತ್ತಾನೆ.",
+        "transliteration": "Avanu nidhānavāgi naḍeyuttāne.",
+        "translation": "He walks slowly.",
+        "breakdown": ["ಅವನು", "ನಿಧಾನವಾಗಿ", "ನಡೆಯುತ್ತಾನೆ"]
+      },
+      {
+        "sentence": "ಅವಳು ಬೇಗ ಓಡುತ್ತಾಳೆ.",
+        "transliteration": "Avaḷu bēga ōḍuttāḷe.",
+        "translation": "She runs quickly.",
+        "breakdown": ["ಅವಳು", "ಬೇಗ", "ಓಡುತ್ತಾಳೆ"]
+      },
+      {
+        "sentence": "ಸೂರ್ಯ ಪೂರ್ವದಲ್ಲಿ ಉದಯಿಸುತ್ತಾನೆ.",
+        "transliteration": "Sūrya pūrvadalli udayisuttāne.",
+        "translation": "The sun rises in the east.",
+        "breakdown": ["ಸೂರ್ಯ", "ಪೂರ್ವದಲ್ಲಿ", "ಉದಯಿಸುತ್ತಾನೆ"]
+      },
+      {
+        "sentence": "ಚಂದ್ರ ರಾತ್ರಿ ಕಾಣಿಸುತ್ತಾನೆ.",
+        "transliteration": "Candra rātri kāṇisuttāne.",
+        "translation": "The moon appears at night.",
+        "breakdown": ["ಚಂದ್ರ", "ರಾತ್ರಿ", "ಕಾಣಿಸುತ್ತಾನೆ"]
+      },
+      {
+        "sentence": "ಆಕಾಶದಲ್ಲಿ ನಕ್ಷತ್ರಗಳು ಇವೆ.",
+        "transliteration": "Ākāśadalli nakṣatragaḷu ive.",
+        "translation": "There are stars in the sky.",
+        "breakdown": ["ಆಕಾಶದಲ್ಲಿ", "ನಕ್ಷತ್ರಗಳು", "ಇವೆ"]
+      },
+      {
+        "sentence": "ಇಂದು ಮಳೆ ಬರಬಹುದು.",
+        "transliteration": "Indu maḷe barabahudu.",
+        "translation": "It might rain today.",
+        "breakdown": ["ಇಂದು", "ಮಳೆ", "ಬರಬಹುದು"]
+      },
+      {
+        "sentence": "ಮೋಡಗಳು ಕಪ್ಪಾಗಿವೆ.",
+        "transliteration": "Mōḍagaḷu kappāgive.",
+        "translation": "The clouds are black.",
+        "breakdown": ["ಮೋಡಗಳು", "ಕಪ್ಪಾಗಿವೆ"]
+      },
+      {
+        "sentence": "ನದಿ ಹರಿಯುತ್ತಿದೆ.",
+        "transliteration": "Nadi hariyuttide.",
+        "translation": "The river is flowing.",
+        "breakdown": ["ನದಿ", "ಹರಿಯುತ್ತಿದೆ"]
+      },
+      {
+        "sentence": "ಬೆಟ್ಟ ಎತ್ತರವಾಗಿದೆ.",
+        "transliteration": "Beṭṭa ettaravāgide.",
+        "translation": "The hill is high.",
+        "breakdown": ["ಬೆಟ್ಟ", "ಎತ್ತರವಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ಕಾಡಿನಲ್ಲಿ ಪ್ರಾಣಿಗಳಿವೆ.",
+        "transliteration": "Kāḍinalli prāṇigaḷive.",
+        "translation": "There are animals in the forest.",
+        "breakdown": ["ಕಾಡಿನಲ್ಲಿ", "ಪ್ರಾಣಿಗಳಿವೆ"]
+      },
+      {
+        "sentence": "ಈಗ ಸಮಯ ಎಷ್ಟು?",
+        "transliteration": "Īga samaya eṣṭu?",
+        "translation": "What time is it now?",
+        "breakdown": ["ಈಗ", "ಸಮಯ", "ಎಷ್ಟು"]
+      },
+      {
+        "sentence": "ನಾಳೆ ವಾರ.",
+        "transliteration": "Nāḷe vāra.",
+        "translation": "Tomorrow is the weekly market.",
+        "breakdown": ["ನಾಳೆ", "ವಾರ"]
+      },
+      {
+        "sentence": "ನಿನ್ನೆ ನಾನು ಶಾಲೆಗೆ ಹೋಗಿದ್ದೆ.",
+        "transliteration": "Ninne nānu śālege hōgidde.",
+        "translation": "Yesterday I had gone to school.",
+        "breakdown": ["ನಿನ್ನೆ", "ನಾನು", "ಶಾಲೆಗೆ", "ಹೋಗಿದ್ದೆ"]
+      },
+      {
+        "sentence": "ಈ ತಿಂಗಳು ತುಂಬಾ ಬಿಸಿಲಿದೆ.",
+        "transliteration": "Ī tingaḷu tumbā bisilide.",
+        "translation": "This month is very sunny/hot.",
+        "breakdown": ["ಈ", "ತಿಂಗಳು", "ತುಂಬಾ", "ಬಿಸಿಲಿದೆ"]
+      },
+      {
+        "sentence": "ಕಳೆದ ವರ್ಷ ನಾನು ಇಲ್ಲಿ ಇರಲಿಲ್ಲ.",
+        "transliteration": "Kaḷeda varṣa nānu illi iralilla.",
+        "translation": "Last year I was not here.",
+        "breakdown": ["ಕಳೆದ", "ವರ್ಷ", "ನಾನು", "ಇಲ್ಲಿ", "ಇರಲಿಲ್ಲ"]
+      },
+      {
+        "sentence": "ಬೆಳಿಗ್ಗೆ ಬೇಗ ಏಳು.",
+        "transliteration": "Beḷigge bēga ēḷu.",
+        "translation": "Wake up early in the morning.",
+        "breakdown": ["ಬೆಳಿಗ್ಗೆ", "ಬೇಗ", "ಏಳು"]
+      },
+      {
+        "sentence": "ಸಂಜೆ ಆಟ ಆಡೋಣ.",
+        "transliteration": "Sanje āṭa āḍōṇa.",
+        "translation": "Let's play in the evening.",
+        "breakdown": ["ಸಂಜೆ", "ಆಟ", "ಆಡೋಣ"]
+      },
+      {
+        "sentence": "ದೇವರು ಎಲ್ಲರನ್ನು ರಕ್ಷಿಸಲಿ.",
+        "transliteration": "Dēvaru ellarannu rakṣisali.",
+        "translation": "May God protect everyone.",
+        "breakdown": ["ದೇವರು", "ಎಲ್ಲರನ್ನು", "ರಕ್ಷಿಸಲಿ"]
+      },
+      {
+        "sentence": "ಗುಡಿಯಲ್ಲಿ ಪೂಜೆ ನಡೆಯುತ್ತಿದೆ.",
+        "transliteration": "Guḍiyalli pūje naḍeyuttide.",
+        "translation": "Worship is happening in the temple.",
+        "breakdown": ["ಗುಡಿಯಲ್ಲಿ", "ಪೂಜೆ", "ನಡೆಯುತ್ತಿದೆ"]
+      },
+      {
+        "sentence": "ನನ್ನ ಪ್ರಶ್ನೆಗೆ ಉತ್ತರ ಕೊಡು.",
+        "transliteration": "Nanna praśnege uttara koḍu.",
+        "translation": "Give the answer to my question.",
+        "breakdown": ["ನನ್ನ", "ಪ್ರಶ್ನೆಗೆ", "ಉತ್ತರ", "ಕೊಡು"]
+      },
+      {
+        "sentence": "ಅವನಿಗೆ ಉತ್ತರ ಗೊತ್ತಿಲ್ಲ.",
+        "transliteration": "Avanige uttara gottilla.",
+        "translation": "He doesn't know the answer.",
+        "breakdown": ["ಅವನಿಗೆ", "ಉತ್ತರ", "ಗೊತ್ತಿಲ್ಲ"]
+      },
+      {
+        "sentence": "ಪ್ರೀತಿ ಜೀವನದ ಭಾಗ.",
+        "transliteration": "Prīti jīvanada bhāga.",
+        "translation": "Love is a part of life.",
+        "breakdown": ["ಪ್ರೀತಿ", "ಜೀವನದ", "ಭಾಗ"]
+      },
+      {
+        "sentence": "ಯಾರನ್ನೂ ದ್ವೇಷಿಸಬೇಡ.",
+        "transliteration": "Yārannū dvēṣisabēḍa.",
+        "translation": "Don't hate anyone.",
+        "breakdown": ["ಯಾರನ್ನೂ", "ದ್ವೇಷಿಸಬೇಡ"]
+      },
+      {
+        "sentence": "ಕೋಪ ಒಳ್ಳೆಯದಲ್ಲ.",
+        "transliteration": "Kōpa oḷḷeyadalla.",
+        "translation": "Anger is not good.",
+        "breakdown": ["ಕೋಪ", "ಒಳ್ಳೆಯದಲ್ಲ"]
+      },
+      {
+        "sentence": "ಶಾಂತಿಯಿಂದ ಇರಿ.",
+        "transliteration": "Śāntiyinda iri.",
+        "translation": "Be peaceful.",
+        "breakdown": ["ಶಾಂತಿಯಿಂದ", "ಇರಿ"]
+      },
+      {
+        "sentence": "ಧೈರ್ಯವಾಗಿ ಮುಂದೆ ಸಾಗು.",
+        "transliteration": "Dhairyavāgi munde sāgu.",
+        "translation": "Move forward courageously.",
+        "breakdown": ["ಧೈರ್ಯವಾಗಿ", "ಮುಂದೆ", "ಸಾಗು"]
+      },
+      {
+        "sentence": "ನಿನಗೆ ಭಯ ಏಕೆ?",
+        "transliteration": "Ninage bhaya ēke?",
+        "translation": "Why are you afraid?",
+        "breakdown": ["ನಿನಗೆ", "ಭಯ", "ಏಕೆ"]
+      },
+      {
+        "sentence": "ಈ ಹೂವು ಸುಂದರವಾಗಿದೆ.",
+        "transliteration": "Ī hūvu sundaravāgide.",
+        "translation": "This flower is beautiful.",
+        "breakdown": ["ಈ", "ಹೂವು", "ಸುಂದರವಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ಅವಳ ಮುಖ ನೋಡಿದೆ.",
+        "transliteration": "Avaḷa mukha nōḍide.",
+        "translation": "I saw her face.",
+        "breakdown": ["ಅವಳ", "ಮುಖ", "ನೋಡಿದೆ"]
+      },
+      {
+        "sentence": "ದೇಹ ಆರೋಗ್ಯವಾಗಿರಲಿ.",
+        "transliteration": "Dēha ārōgyavāgirali.",
+        "translation": "May the body be healthy.",
+        "breakdown": ["ದೇಹ", "ಆರೋಗ್ಯವಾಗಿರಲಿ"]
+      },
+      {
+        "sentence": "ಅವನಿಗೆ ಬಹಳ ಶಕ್ತಿ ಇದೆ.",
+        "transliteration": "Avanige bahaḷa śakti ide.",
+        "translation": "He has a lot of strength.",
+        "breakdown": ["ಅವನಿಗೆ", "ಬಹಳ", "ಶಕ್ತಿ", "ಇದೆ"]
+      },
+      {
+        "sentence": "ಜ್ಞಾನ ಶಕ್ತಿ ಇದ್ದಂತೆ.",
+        "transliteration": "Jñāna śakti iddante.",
+        "translation": "Knowledge is like power.",
+        "breakdown": ["ಜ್ಞಾನ", "ಶಕ್ತಿ", "ಇದ್ದಂತೆ"]
+      },
+      {
+        "sentence": "ಕನ್ನಡ ಒಂದು ಸುಂದರ ಭಾಷೆ.",
+        "transliteration": "Kannaḍa ondu sundara bhāṣe.",
+        "translation": "Kannada is a beautiful language.",
+        "breakdown": ["ಕನ್ನಡ", "ಒಂದು", "ಸುಂದರ", "ಭಾಷೆ"]
+      },
+      {
+        "sentence": "ನಮ್ಮ ದೇಶ ಭಾರತ.",
+        "transliteration": "Namma dēśa Bhārata.",
+        "translation": "Our country is India.",
+        "breakdown": ["ನಮ್ಮ", "ದೇಶ", "ಭಾರತ"]
+      },
+      {
+        "sentence": "ಕರ್ನಾಟಕ ಒಂದು ರಾಜ್ಯ.",
+        "transliteration": "Karnāṭaka ondu rājya.",
+        "translation": "Karnataka is a state.",
+        "breakdown": ["ಕರ್ನಾಟಕ", "ಒಂದು", "ರಾಜ್ಯ"]
+      },
+      {
+        "sentence": "ಜನ ಸಂತೋಷವಾಗಿದ್ದಾರೆ.",
+        "transliteration": "Jana santoṣavāgiddāre.",
+        "translation": "The people are happy.",
+        "breakdown": ["ಜನ", "ಸಂತೋಷವಾಗಿದ್ದಾರೆ"]
+      },
+      {
+        "sentence": "ಅವಳು ಅವನ ಹೆಂಡತಿ.",
+        "transliteration": "Avaḷu avana henḍati.",
+        "translation": "She is his wife.",
+        "breakdown": ["ಅವಳು", "ಅವನ", "ಹೆಂಡತಿ"]
+      },
+      {
+        "sentence": "ಅವನು ಅವಳ ಗಂಡ.",
+        "transliteration": "Avanu avaḷa gaṇḍa.",
+        "translation": "He is her husband.",
+        "breakdown": ["ಅವನು", "ಅವಳ", "ಗಂಡ"]
+      },
+      {
+        "sentence": "ಮಗು ನಗುತ್ತಿದೆ.",
+        "transliteration": "Magu naguttide.",
+        "translation": "The child is laughing.",
+        "breakdown": ["ಮಗು", "ನಗುತ್ತಿದೆ"]
+      },
+      {
+        "sentence": "ಆ ಹುಡುಗ ಯಾರು?",
+        "transliteration": "Ā huḍuga yāru?",
+        "translation": "Who is that boy?",
+        "breakdown": ["ಆ", "ಹುಡುಗ", "ಯಾರು"]
+      },
+      {
+        "sentence": "ಈ ಹುಡುಗಿ ಚೆನ್ನಾಗಿ ಓದುತ್ತಾಳೆ.",
+        "transliteration": "Ī huḍugi cennāgi ōduttāḷe.",
+        "translation": "This girl studies well.",
+        "breakdown": ["ಈ", "ಹುಡುಗಿ", "ಚೆನ್ನಾಗಿ", "ಓದುತ್ತಾಳೆ"]
+      },
+      {
+        "sentence": "ಅವನು ನನ್ನ ಸ್ನೇಹಿತ.",
+        "transliteration": "Avanu nanna snēhita.",
+        "translation": "He is my friend.",
+        "breakdown": ["ಅವನು", "ನನ್ನ", "ಸ್ನೇಹಿತ"]
+      },
+      {
+        "sentence": "ಅವಳು ನನ್ನ ಸ್ನೇಹಿತೆ.",
+        "transliteration": "Avaḷu nanna snēhite.",
+        "translation": "She is my friend.",
+        "breakdown": ["ಅವಳು", "ನನ್ನ", "ಸ್ನೇಹಿತೆ"]
+      },
+      {
+        "sentence": "ಶಿಕ್ಷಕ ಪಾಠ ಹೇಳುತ್ತಿದ್ದಾರೆ.",
+        "transliteration": "Śikṣaka pāṭha hēḷuttiddāre.",
+        "translation": "The teacher is teaching a lesson.",
+        "breakdown": ["ಶಿಕ್ಷಕ", "ಪಾಠ", "ಹೇಳುತ್ತಿದ್ದಾರೆ"]
+      },
+      {
+        "sentence": "ಶಿಕ್ಷಕಿ ಪ್ರಶ್ನೆ ಕೇಳಿದರು.",
+        "transliteration": "Śikṣaki praśne kēḷidaru.",
+        "translation": "The teacher (female) asked a question.",
+        "breakdown": ["ಶಿಕ್ಷಕಿ", "ಪ್ರಶ್ನೆ", "ಕೇಳಿದರು"]
+      },
+      {
+        "sentence": "ವಿದ್ಯಾರ್ಥಿ ಗಮನವಿಟ್ಟು ಕೇಳುತ್ತಿದ್ದಾನೆ.",
+        "transliteration": "Vidyārthi gamanaviṭṭu kēḷuttiddāne.",
+        "translation": "The student is listening attentively.",
+        "breakdown": ["ವಿದ್ಯಾರ್ಥಿ", "ಗಮನವಿಟ್ಟು", "ಕೇಳುತ್ತಿದ್ದಾನೆ"]
+      },
+      {
+        "sentence": "ವೈದ್ಯರು ಆಸ್ಪತ್ರೆಯಲ್ಲಿದ್ದಾರೆ.",
+        "transliteration": "Vaidyaru āspatreyalliddāre.",
+        "translation": "The doctor is in the hospital.",
+        "breakdown": ["ವೈದ್ಯರು", "ಆಸ್ಪತ್ರೆಯಲ್ಲಿದ್ದಾರೆ"]
+      },
+      {
+        "sentence": "ಆಹಾರ ರುಚಿಕರವಾಗಿದೆ.",
+        "transliteration": "Āhāra rucikaravāgide.",
+        "translation": "The food is tasty.",
+        "breakdown": ["ಆಹಾರ", "ರುಚಿಕರವಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ತರಕಾರಿ ಆರೋಗ್ಯಕ್ಕೆ ಒಳ್ಳೆಯದು.",
+        "transliteration": "Tarakāri ārōgyakke oḷḷeyadu.",
+        "translation": "Vegetables are good for health.",
+        "breakdown": ["ತರಕಾರಿ", "ಆರೋಗ್ಯಕ್ಕೆ", "ಒಳ್ಳೆಯದು"]
+      },
+      {
+        "sentence": "ಅಕ್ಕಿ ಅಂಗಡಿಯಲ್ಲಿ ಸಿಗುತ್ತದೆ.",
+        "transliteration": "Akki angaḍiyalli siguttade.",
+        "translation": "Rice (uncooked) is available in the shop.",
+        "breakdown": ["ಅಕ್ಕಿ", "ಅಂಗಡಿಯಲ್ಲಿ", "ಸಿಗುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ಅನ್ನ ಬಿಸಿಯಾಗಿದೆ.",
+        "transliteration": "Anna bisiyāgide.",
+        "translation": "The rice (cooked) is hot.",
+        "breakdown": ["ಅನ್ನ", "ಬಿಸಿಯಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ಈ ಹಣ್ಣು ಸಿಹಿಯಾಗಿದೆ.",
+        "transliteration": "Ī haṇṇu sihiyāgide.",
+        "translation": "This fruit is sweet.",
+        "breakdown": ["ಈ", "ಹಣ್ಣು", "ಸಿಹಿಯಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ನಿಂಬೆ ಹಣ್ಣು ಹುಳಿಯಾಗಿದೆ.",
+        "transliteration": "Nimbe haṇṇu huḷiyāgide.",
+        "translation": "The lemon is sour.",
+        "breakdown": ["ನಿಂಬೆ", "ಹಣ್ಣು", "ಹುಳಿಯಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ಊಟ ತುಂಬಾ ಖಾರವಾಗಿತ್ತು.",
+        "transliteration": "Ūṭa tumbā khāravāgittu.",
+        "translation": "The meal was very spicy.",
+        "breakdown": ["ಊಟ", "ತುಂಬಾ", "ಖಾರವಾಗಿತ್ತು"]
+      },
+      {
+        "sentence": "ನನಗೆ ಸ್ವಲ್ಪ ಉಪ್ಪು ಕೊಡು.",
+        "transliteration": "Nanage svalpa uppu koḍu.",
+        "translation": "Give me a little salt.",
+        "breakdown": ["ನನಗೆ", "ಸ್ವಲ್ಪ", "ಉಪ್ಪು", "ಕೊಡು"]
+      },
+      {
+        "sentence": "ಈ ಸೊಪ್ಪು ಕಹಿಯಾಗಿದೆ.",
+        "transliteration": "Ī soppu kahiyāgide.",
+        "translation": "These greens are bitter.",
+        "breakdown": ["ಈ", "ಸೊಪ್ಪು", "ಕಹಿಯಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ನನಗೆ ಹಸಿವಾಗಿದೆ.",
+        "transliteration": "Nanage hasivāgide.",
+        "translation": "I am hungry.",
+        "breakdown": ["ನನಗೆ", "ಹಸಿವಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ಅವನಿಗೆ ಬಾಯಾರಿಕೆಯಾಗಿದೆ.",
+        "transliteration": "Avanige bāyārikeyāgide.",
+        "translation": "He is thirsty.",
+        "breakdown": ["ಅವನಿಗೆ", "ಬಾಯಾರಿಕೆಯಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ರಾತ್ರಿ ಬೇಗ ನಿದ್ರೆ ಮಾಡು.",
+        "transliteration": "Rātri bēga nidre māḍu.",
+        "translation": "Sleep early at night.",
+        "breakdown": ["ರಾತ್ರಿ", "ಬೇಗ", "ನಿದ್ರೆ", "ಮಾಡು"]
+      },
+      {
+        "sentence": "ಇಲ್ಲಿ ಹತ್ತಿರ ಬಾ.",
+        "transliteration": "Illi hattira bā.",
+        "translation": "Come near here.",
+        "breakdown": ["ಇಲ್ಲಿ", "ಹತ್ತಿರ", "ಬಾ"]
+      },
+      {
+        "sentence": "ಅಲ್ಲಿ ದೂರ ಹೋಗು.",
+        "transliteration": "Alli dūra hōgu.",
+        "translation": "Go far there.",
+        "breakdown": ["ಅಲ್ಲಿ", "ದೂರ", "ಹೋಗು"]
+      },
+      {
+        "sentence": "ಮನೆಯ ಒಳಗೆ ಬಾ.",
+        "transliteration": "Maneya oḷage bā.",
+        "translation": "Come inside the house.",
+        "breakdown": ["ಮನೆಯ", "ಒಳಗೆ", "ಬಾ"]
+      },
+      {
+        "sentence": "ಮನೆಯ ಹೊರಗೆ ಹೋಗು.",
+        "transliteration": "Maneya horage hōgu.",
+        "translation": "Go outside the house.",
+        "breakdown": ["ಮನೆಯ", "ಹೊರಗೆ", "ಹೋಗು"]
+      },
+      {
+        "sentence": "ಕಾರು ಮನೆಯ ಮುಂದೆ ಇದೆ.",
+        "transliteration": "Kāru maneya munde ide.",
+        "translation": "The car is in front of the house.",
+        "breakdown": ["ಕಾರು", "ಮನೆಯ", "ಮುಂದೆ", "ಇದೆ"]
+      },
+      {
+        "sentence": "ಮರ ಮನೆಯ ಹಿಂದೆ ಇದೆ.",
+        "transliteration": "Mara maneya hinde ide.",
+        "translation": "The tree is behind the house.",
+        "breakdown": ["ಮರ", "ಮನೆಯ", "ಹಿಂದೆ", "ಇದೆ"]
+      },
+      {
+        "sentence": "ಅವನು ನನ್ನ ಪಕ್ಕ ಕುಳಿತಿದ್ದಾನೆ.",
+        "transliteration": "Avanu nanna pakka kuḷitiddāne.",
+        "translation": "He is sitting beside me.",
+        "breakdown": ["ಅವನು", "ನನ್ನ", "ಪಕ್ಕ", "ಕುಳಿತಿದ್ದಾನೆ"]
+      },
+      {
+        "sentence": "ರಸ್ತೆಯ ಮಧ್ಯ ನಡೆಯಬೇಡ.",
+        "transliteration": "Rasteya madhya naḍeyabēḍa.",
+        "translation": "Don't walk in the middle of the road.",
+        "breakdown": ["ರಸ್ತೆಯ", "ಮಧ್ಯ", "ನಡೆಯಬೇಡ"]
+      },
+      {
+        "sentence": "ಮನೆಯ ಸುತ್ತ ಗಿಡಗಳಿವೆ.",
+        "transliteration": "Maneya sutta giḍagaḷive.",
+        "translation": "There are plants around the house.",
+        "breakdown": ["ಮನೆಯ", "ಸುತ್ತ", "ಗಿಡಗಳಿವೆ"]
+      },
+      {
+        "sentence": "ನೇರವಾಗಿ ಹೋಗು.",
+        "transliteration": "Nēravāgi hōgu.",
+        "translation": "Go straight.",
+        "breakdown": ["ನೇರವಾಗಿ", "ಹೋಗು"]
+      },
+      {
+        "sentence": "ಬಲಕ್ಕೆ ತಿರುಗು.",
+        "transliteration": "Balakke tirugu.",
+        "translation": "Turn right.",
+        "breakdown": ["ಬಲಕ್ಕೆ", "ತಿರುಗು"]
+      },
+      {
+        "sentence": "ಎಡಕ್ಕೆ ನೋಡು.",
+        "transliteration": "Eḍakke nōḍu.",
+        "translation": "Look left.",
+        "breakdown": ["ಎಡಕ್ಕೆ", "ನೋಡು"]
+      },
+      {
+        "sentence": "ಅವಳಿಗೆ ತುಂಬಾ ಕೆಲಸ ಇದೆ.",
+        "transliteration": "Avaḷige tumbā kelasa ide.",
+        "translation": "She has a lot of work.",
+        "breakdown": ["ಅವಳಿಗೆ", "ತುಂಬಾ", "ಕೆಲಸ", "ಇದೆ"]
+      },
+      {
+        "sentence": "ನನಗೆ ಸ್ವಲ್ಪ ನೀರು ಬೇಕು.",
+        "transliteration": "Nanage svalpa nīru bēku.",
+        "translation": "I need a little water.",
+        "breakdown": ["ನನಗೆ", "ಸ್ವಲ್ಪ", "ನೀರು", "ಬೇಕು"]
+      },
+      {
+        "sentence": "ಇನ್ನೂ ಹೆಚ್ಚು ಅನ್ನ ಹಾಕು.",
+        "transliteration": "Innū heccu anna hāku.",
+        "translation": "Serve more rice.",
+        "breakdown": ["ಇನ್ನೂ", "ಹೆಚ್ಚು", "ಅನ್ನ", "ಹಾಕು"]
+      },
+      {
+        "sentence": "ಶಬ್ದ ಕಡಿಮೆ ಮಾಡು.",
+        "transliteration": "Śabda kaḍime māḍu.",
+        "translation": "Reduce the noise.",
+        "breakdown": ["ಶಬ್ದ", "ಕಡಿಮೆ", "ಮಾಡು"]
+      },
+      {
+        "sentence": "ಈ ಕೆಲಸ ಸುಲಭವಾಗಿದೆ.",
+        "transliteration": "Ī kelasa sulabhavāgide.",
+        "translation": "This work is easy.",
+        "breakdown": ["ಈ", "ಕೆಲಸ", "ಸುಲಭವಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ಆ ಪರೀಕ್ಷೆ ಕಷ್ಟವಾಗಿತ್ತು.",
+        "transliteration": "Ā parīkṣe kaṣṭavāgittu.",
+        "translation": "That exam was difficult.",
+        "breakdown": ["ಆ", "ಪರೀಕ್ಷೆ", "ಕಷ್ಟವಾಗಿತ್ತು"]
+      },
+      {
+        "sentence": "ನೀರು ಶುದ್ಧವಾಗಿದೆ.",
+        "transliteration": "Nīru śuddhavāgide.",
+        "translation": "The water is pure.",
+        "breakdown": ["ನೀರು", "ಶುದ್ಧವಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ಆನೆ ದೊಡ್ಡ ಪ್ರಾಣಿ.",
+        "transliteration": "Āne doḍḍa prāṇi.",
+        "translation": "Elephant is a big animal.",
+        "breakdown": ["ಆನೆ", "ದೊಡ್ಡ", "ಪ್ರಾಣಿ"]
+      },
+      {
+        "sentence": "ಗಿಳಿ ಹಸಿರು ಪಕ್ಷಿ.",
+        "transliteration": "Giḷi hasiru pakṣi.",
+        "translation": "Parrot is a green bird.",
+        "breakdown": ["ಗಿಳಿ", "ಹಸಿರು", "ಪಕ್ಷಿ"]
+      },
+      {
+        "sentence": "ಮೀನು ನೀರಿನಲ್ಲಿ ವಾಸಿಸುತ್ತದೆ.",
+        "transliteration": "Mīnu nīrinalli vāsisuttade.",
+        "translation": "Fish lives in water.",
+        "breakdown": ["ಮೀನು", "ನೀರಿನಲ್ಲಿ", "ವಾಸಿಸುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ಹಾವು ಹುತ್ತದಲ್ಲಿದೆ.",
+        "transliteration": "Hāvu huttadallide.",
+        "translation": "The snake is in the anthill.",
+        "breakdown": ["ಹಾವು", "ಹುತ್ತದಲ್ಲಿದೆ"]
+      },
+      {
+        "sentence": "ಕುದುರೆ ವೇಗವಾಗಿ ಓಡುತ್ತದೆ.",
+        "transliteration": "Kudure vēgavāgi ōḍuttade.",
+        "translation": "The horse runs fast.",
+        "breakdown": ["ಕುದುರೆ", "ವೇಗವಾಗಿ", "ಓಡುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ಹಸು ಹಾಲು ಕೊಡುತ್ತದೆ.",
+        "transliteration": "Hasu hālu koḍuttade.",
+        "translation": "The cow gives milk.",
+        "breakdown": ["ಹಸು", "ಹಾಲು", "ಕೊಡುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ಇರುವೆ ಸಾಲಿನಲ್ಲಿ ಹೋಗುತ್ತಿದೆ.",
+        "transliteration": "Iruve sālinalli hōguttide.",
+        "translation": "The ant is going in a line.",
+        "breakdown": ["ಇರುವೆ", "ಸಾಲಿನಲ್ಲಿ", "ಹೋಗುತ್ತಿದೆ"]
+      },
+      {
+        "sentence": "ನಾನು ಹೇಗೆ ಬರಲಿ?",
+        "transliteration": "Nānu hēge barali?",
+        "translation": "How should I come?",
+        "breakdown": ["ನಾನು", "ಹೇಗೆ", "ಬರಲಿ"]
+      },
+      {
+        "sentence": "ನೀನು ಯಾಕೆ ಅಳುತ್ತಿರುವೆ?",
+        "transliteration": "Nīnu yāke aḷuttiruve?",
+        "translation": "Why are you crying?",
+        "breakdown": ["ನೀನು", "ಯಾಕೆ", "ಅಳುತ್ತಿರುವೆ"]
+      },
+      {
+        "sentence": "ಅವರು ಯಾವಾಗ ಬರುತ್ತಾರೆ?",
+        "transliteration": "Avaru yāvāga baruttāre?",
+        "translation": "When will they come?",
+        "breakdown": ["ಅವರು", "ಯಾವಾಗ", "ಬರುತ್ತಾರೆ"]
+      },
+      {
+        "sentence": "ಈ ಪುಸ್ತಕದ ಬೆಲೆ ಎಷ್ಟು?",
+        "transliteration": "Ī pustakada bele eṣṭu?",
+        "translation": "How much is the price of this book?",
+        "breakdown": ["ಈ", "ಪುಸ್ತಕದ", "ಬೆಲೆ", "ಎಷ್ಟು"]
+      },
+      {
+        "sentence": "ಅದು ದೊಡ್ಡದು, ಇದು ಚಿಕ್ಕದು.",
+        "transliteration": "Adu doḍḍadu, idu cikkadu.",
+        "translation": "That is big, this is small.",
+        "breakdown": ["ಅದು", "ದೊಡ್ಡದು", "ಇದು", "ಚಿಕ್ಕದು"]
+      },
+      {
+        "sentence": "ಪೆನ್ ಮೇಜಿನ ಕೆಳಗೆ ಬಿದ್ದಿದೆ.",
+        "transliteration": "Pen mējina keḷage biddide.",
+        "translation": "The pen has fallen under the table.",
+        "breakdown": ["ಪೆನ್", "ಮೇಜಿನ", "ಕೆಳಗೆ", "ಬಿದ್ದಿದೆ"]
+      },
+      {
+        "sentence": "ಗಂಟೆ ಶಬ್ದ ಕೇಳಿಸಿತು.",
+        "transliteration": "Ganṭe śabda kēḷisitu.",
+        "translation": "The sound of the bell was heard.",
+        "breakdown": ["ಗಂಟೆ", "ಶಬ್ದ", "ಕೇಳಿಸಿತು"]
       }
     ],
     "Level3": [
       {
         "sentence": "ಶಿಕ್ಷಣ ಬಹುಮುಖ್ಯವಾಗಿದೆ.",
-        "transliteration": "Shikshana bahumukhya vāgide.",
+        "transliteration": "Śikṣaṇa bahumukhyavāgide.",
         "translation": "Education is very important.",
         "breakdown": ["ಶಿಕ್ಷಣ", "ಬಹುಮುಖ್ಯ", "ವಾಗಿದೆ"]
       },
       {
         "sentence": "ನಾನು ವಿದ್ಯಾಲಯಕ್ಕೆ ಹೋಗುತ್ತೇನೆ.",
-        "transliteration": "Nānu vidyālaya kke hōguttēne.",
+        "transliteration": "Nānu vidyālayakke hōguttēne.",
         "translation": "I go to school.",
-        "breakdown": ["ನಾನು", "ವಿದ್ಯಾಲಯ", "ಹೋಗುತ್ತೇನೆ"]
+        "breakdown": ["ನಾನು", "ವಿದ್ಯಾಲಯಕ್ಕೆ", "ಹೋಗುತ್ತೇನೆ"]
+      },
+      {
+        "sentence": "ವಿಮಾನ ವೇಗವಾಗಿ ಚಲಿಸುತ್ತದೆ.",
+        "transliteration": "Vimāna vēgavāgi calisuttade.",
+        "translation": "The airplane moves fast.",
+        "breakdown": ["ವಿಮಾನ", "ವೇಗವಾಗಿ", "ಚಲಿಸುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ರೈಲು ನಿಲ್ದಾಣಕ್ಕೆ ಬಂದಿತು.",
+        "transliteration": "Railu nildāṇakke banditu.",
+        "translation": "The train arrived at the station.",
+        "breakdown": ["ರೈಲು", "ನಿಲ್ದಾಣಕ್ಕೆ", "ಬಂದಿತು"]
+      },
+      {
+        "sentence": "ಹಡಗು ಸಮುದ್ರದಲ್ಲಿ ಪ್ರಯಾಣಿಸುತ್ತದೆ.",
+        "transliteration": "Haḍagu samudradalli prayāṇisuttade.",
+        "translation": "The ship travels on the sea.",
+        "breakdown": ["ಹಡಗು", "ಸಮುದ್ರದಲ್ಲಿ", "ಪ್ರಯಾಣಿಸುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ಸಮುದ್ರ ತೀರದಲ್ಲಿ ಅಲೆಗಳಿವೆ.",
+        "transliteration": "Samudra tīradalli alegaḷive.",
+        "translation": "There are waves on the seashore.",
+        "breakdown": ["ಸಮುದ್ರ", "ತೀರದಲ್ಲಿ", "ಅಲೆಗಳಿವೆ"]
+      },
+      {
+        "sentence": "ನನ್ನ ಪ್ರಯಾಣ ಸುಖಕರವಾಗಿತ್ತು.",
+        "transliteration": "Nanna prayāṇa sukhakaravāgittu.",
+        "translation": "My journey was comfortable.",
+        "breakdown": ["ನನ್ನ", "ಪ್ರಯಾಣ", "ಸುಖಕರವಾಗಿತ್ತು"]
+      },
+      {
+        "sentence": "ಗ್ರಾಮ ಜೀವನ ಶಾಂತವಾಗಿರುತ್ತದೆ.",
+        "transliteration": "Grāma jīvana śāntavāgiruttade.",
+        "translation": "Village life is peaceful.",
+        "breakdown": ["ಗ್ರಾಮ", "ಜೀವನ", "ಶಾಂತವಾಗಿರುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ನಕ್ಷೆ ದಾರಿ ತೋರಿಸುತ್ತದೆ.",
+        "transliteration": "Nakṣe dāri tōrisuttade.",
+        "translation": "The map shows the way.",
+        "breakdown": ["ನಕ್ಷೆ", "ದಾರಿ", "ತೋರಿಸುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ಸರ್ಕಾರ ಜನರಿಗಾಗಿ ಕೆಲಸ ಮಾಡುತ್ತದೆ.",
+        "transliteration": "Sarkāra janarigāgi kelasa māḍuttade.",
+        "translation": "The government works for the people.",
+        "breakdown": ["ಸರ್ಕಾರ", "ಜನರಿಗಾಗಿ", "ಕೆಲಸ", "ಮಾಡುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ಕಾನೂನು ಎಲ್ಲರಿಗೂ ಸಮಾನ.",
+        "transliteration": "Kānūnu ellarigū samāna.",
+        "translation": "The law is equal for everyone.",
+        "breakdown": ["ಕಾನೂನು", "ಎಲ್ಲರಿಗೂ", "ಸಮಾನ"]
+      },
+      {
+        "sentence": "ನ್ಯಾಯ ಎಲ್ಲರಿಗೂ ಸಿಗಬೇಕು.",
+        "transliteration": "Nyāya ellarigū sigabēku.",
+        "translation": "Justice should be available to everyone.",
+        "breakdown": ["ನ್ಯಾಯ", "ಎಲ್ಲರಿಗೂ", "ಸಿಗಬೇಕು"]
+      },
+      {
+        "sentence": "ಅಪರಾಧ ಮಾಡುವುದು ತಪ್ಪು.",
+        "transliteration": "Aparādha māḍuvudu tappu.",
+        "translation": "Committing a crime is wrong.",
+        "breakdown": ["ಅಪರಾಧ", "ಮಾಡುವುದು", "ತಪ್ಪು"]
+      },
+      {
+        "sentence": "ತಪ್ಪು ಮಾಡಿದರೆ ಶಿಕ್ಷೆ ಆಗುತ್ತದೆ.",
+        "transliteration": "Tappu māḍidare śikṣe āguttade.",
+        "translation": "If you do wrong, you will be punished.",
+        "breakdown": ["ತಪ್ಪು", "ಮಾಡಿದರೆ", "ಶಿಕ್ಷೆ", "ಆಗುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ಭಾರತಕ್ಕೆ ೧೯೪೭ ರಲ್ಲಿ ಸ್ವಾತಂತ್ರ್ಯ ಸಿಕ್ಕಿತು.",
+        "transliteration": "Bhāratakke 1947 ralli svātantrya sikkitu.",
+        "translation": "India got independence in 1947.",
+        "breakdown": ["ಭಾರತಕ್ಕೆ", "೧೯೪೭ ರಲ್ಲಿ", "ಸ್ವಾತಂತ್ರ್ಯ", "ಸಿಕ್ಕಿತು"]
+      },
+      {
+        "sentence": "ಸ್ವಾತಂತ್ರ್ಯಕ್ಕಾಗಿ ಅನೇಕರು ಹೋರಾಟ ಮಾಡಿದರು.",
+        "transliteration": "Svātantryakkāgi anēkaru hōrāṭa māḍidaru.",
+        "translation": "Many people struggled for freedom.",
+        "breakdown": ["ಸ್ವಾತಂತ್ರ್ಯಕ್ಕಾಗಿ", "ಅನೇಕರು", "ಹೋರಾಟ", "ಮಾಡಿದರು"]
+      },
+      {
+        "sentence": "ನಾವು ಸಮಾಜದಲ್ಲಿ ಒಟ್ಟಿಗೆ ಬಾಳುತ್ತೇವೆ.",
+        "transliteration": "Nāvu samājadalli oṭṭige bāḷuttēve.",
+        "translation": "We live together in society.",
+        "breakdown": ["ನಾವು", "ಸಮಾಜದಲ್ಲಿ", "ಒಟ್ಟಿಗೆ", "ಬಾಳುತ್ತೇವೆ"]
+      },
+      {
+        "sentence": "ಭಾರತೀಯ ಸಂಸ್ಕೃತಿ ವೈವಿಧ್ಯಮಯವಾಗಿದೆ.",
+        "transliteration": "Bhāratīya saṁskṛti vaividhyamayavāgide.",
+        "translation": "Indian culture is diverse.",
+        "breakdown": ["ಭಾರತೀಯ", "ಸಂಸ್ಕೃತಿ", "ವೈವಿಧ್ಯಮಯವಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ಹಬ್ಬಗಳು ನಮ್ಮ ಪರಂಪರೆಯ ಭಾಗ.",
+        "transliteration": "Habbagaḷu namma parampareya bhāga.",
+        "translation": "Festivals are part of our tradition.",
+        "breakdown": ["ಹಬ್ಬಗಳು", "ನಮ್ಮ", "ಪರಂಪರೆಯ", "ಭಾಗ"]
+      },
+      {
+        "sentence": "ಧರ್ಮ ಸನ್ಮಾರ್ಗವನ್ನು ತೋರಿಸುತ್ತದೆ.",
+        "transliteration": "Dharma sanmārgavannu tōrisuttade.",
+        "translation": "Religion shows the right path.",
+        "breakdown": ["ಧರ್ಮ", "ಸನ್ಮಾರ್ಗವನ್ನು", "ತೋರಿಸುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ನನಗೆ ನಿನ್ನ ಮೇಲೆ ನಂಬಿಕೆ ಇದೆ.",
+        "transliteration": "Nanage ninna mēle nambike ide.",
+        "translation": "I have trust in you.",
+        "breakdown": ["ನನಗೆ", "ನಿನ್ನ", "ಮೇಲೆ", "ನಂಬಿಕೆ", "ಇದೆ"]
+      },
+      {
+        "sentence": "ವಿಜ್ಞಾನ ಪ್ರಗತಿಗೆ ಕಾರಣವಾಗಿದೆ.",
+        "transliteration": "Vijñāna pragatige kāraṇavāgide.",
+        "translation": "Science is the reason for progress.",
+        "breakdown": ["ವಿಜ್ಞಾನ", "ಪ್ರಗತಿಗೆ", "ಕಾರಣವಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ತಂತ್ರಜ್ಞಾನ ನಮ್ಮ ಜೀವನವನ್ನು ಸುಲಭಗೊಳಿಸಿದೆ.",
+        "transliteration": "Tantrajñāna namma jīvanavannu sulabhagoḷiside.",
+        "translation": "Technology has made our lives easier.",
+        "breakdown": ["ತಂತ್ರಜ್ಞಾನ", "ನಮ್ಮ", "ಜೀವನವನ್ನು", "ಸುಲಭಗೊಳಿಸಿದೆ"]
+      },
+      {
+        "sentence": "ನಾವು ಪರಿಸರವನ್ನು ರಕ್ಷಿಸಬೇಕು.",
+        "transliteration": "Nāvu parisaravannu rakṣisabēku.",
+        "translation": "We must protect the environment.",
+        "breakdown": ["ನಾವು", "ಪರಿಸರವನ್ನು", "ರಕ್ಷಿಸಬೇಕು"]
+      },
+      {
+        "sentence": "ಭವಿಷ್ಯದ ಬಗ್ಗೆ ಯೋಚಿಸು.",
+        "transliteration": "Bhaviṣyada bagge yōcisu.",
+        "translation": "Think about the future.",
+        "breakdown": ["ಭವಿಷ್ಯದ", "ಬಗ್ಗೆ", "ಯೋಚಿಸು"]
+      },
+      {
+        "sentence": "ಭೂತಕಾಲವನ್ನು ಮರೆಯಬಾರದು.",
+        "transliteration": "Bhūtakālavannu mareyabāradu.",
+        "translation": "One should not forget the past.",
+        "breakdown": ["ಭೂತಕಾಲವನ್ನು", "ಮರೆಯಬಾರದು"]
+      },
+      {
+        "sentence": "ವರ್ತಮಾನದಲ್ಲಿ ಜೀವಿಸು.",
+        "transliteration": "Vartamānadalli jīvisu.",
+        "translation": "Live in the present.",
+        "breakdown": ["ವರ್ತಮಾನದಲ್ಲಿ", "ಜೀವಿಸು"]
+      },
+      {
+        "sentence": "ಕಲೆ ಮನಸ್ಸಿಗೆ ಆನಂದ ನೀಡುತ್ತದೆ.",
+        "transliteration": "Kale manassige ānanda nīḍuttade.",
+        "translation": "Art gives joy to the mind.",
+        "breakdown": ["ಕಲೆ", "ಮನಸ್ಸಿಗೆ", "ಆನಂದ", "ನೀಡುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ಸಂಗೀತ ಕೇಳಲು ನನಗೆ ಇಷ್ಟ.",
+        "transliteration": "Sangīta kēḷalu nanage iṣṭa.",
+        "translation": "I like to listen to music.",
+        "breakdown": ["ಸಂಗೀತ", "ಕೇಳಲು", "ನನಗೆ", "ಇಷ್ಟ"]
+      },
+      {
+        "sentence": "ಅವಳು ಚೆನ್ನಾಗಿ ನೃತ್ಯ ಮಾಡುತ್ತಾಳೆ.",
+        "transliteration": "Avaḷu cennāgi nṛtya māḍuttāḷe.",
+        "translation": "She dances well.",
+        "breakdown": ["ಅವಳು", "ಚೆನ್ನಾಗಿ", "ನೃತ್ಯ", "ಮಾಡುತ್ತಾಳೆ"]
+      },
+      {
+        "sentence": "ನಾವು ನಿನ್ನೆ ನಾಟಕ ನೋಡಿದೆವು.",
+        "transliteration": "Nāvu ninne nāṭaka nōḍidevu.",
+        "translation": "We watched a play yesterday.",
+        "breakdown": ["ನಾವು", "ನಿನ್ನೆ", "ನಾಟಕ", "ನೋಡಿದೆವು"]
+      },
+      {
+        "sentence": "ಈ ಚಿತ್ರ ಬಹಳ ಸುಂದರವಾಗಿದೆ.",
+        "transliteration": "Ī citra bahaḷa sundaravāgide.",
+        "translation": "This picture is very beautiful.",
+        "breakdown": ["ಈ", "ಚಿತ್ರ", "ಬಹಳ", "ಸುಂದರವಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ಕನ್ನಡ ಸಾಹಿತ್ಯ ಶ್ರೀಮಂತವಾಗಿದೆ.",
+        "transliteration": "Kannaḍa sāhitya śrīmantavāgide.",
+        "translation": "Kannada literature is rich.",
+        "breakdown": ["ಕನ್ನಡ", "ಸಾಹಿತ್ಯ", "ಶ್ರೀಮಂತವಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ಅವರು ಒಂದು ಕವಿತೆ ಬರೆದರು.",
+        "transliteration": "Avaru ondu kavite baredaru.",
+        "translation": "He/She wrote a poem.",
+        "breakdown": ["ಅವರು", "ಒಂದು", "ಕವಿತೆ", "ಬರೆದರು"]
+      },
+      {
+        "sentence": "ಅಜ್ಜಿ ನಮಗೆ ಕಥೆ ಹೇಳಿದರು.",
+        "transliteration": "Ajji namage kathe hēḷidaru.",
+        "translation": "Grandmother told us a story.",
+        "breakdown": ["ಅಜ್ಜಿ", "ನಮಗೆ", "ಕಥೆ", "ಹೇಳಿದರು"]
+      },
+      {
+        "sentence": "ಈ ಲೇಖನ ಉಪಯುಕ್ತವಾಗಿದೆ.",
+        "transliteration": "Ī lēkhana upayuktavāgide.",
+        "translation": "This article is useful.",
+        "breakdown": ["ಈ", "ಲೇಖನ", "ಉಪಯುಕ್ತವಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ಅವನು ವ್ಯಾಪಾರ ಮಾಡುತ್ತಾನೆ.",
+        "transliteration": "Avanu vyāpāra māḍuttāne.",
+        "translation": "He does business.",
+        "breakdown": ["ಅವನು", "ವ್ಯಾಪಾರ", "ಮಾಡುತ್ತಾನೆ"]
+      },
+      {
+        "sentence": "ಅವಳಿಗೆ ಒಳ್ಳೆಯ ಉದ್ಯೋಗ ಸಿಕ್ಕಿದೆ.",
+        "transliteration": "Avaḷige oḷḷeya udyōga sikkide.",
+        "translation": "She has got a good job.",
+        "breakdown": ["ಅವಳಿಗೆ", "ಒಳ್ಳೆಯ", "ಉದ್ಯೋಗ", "ಸಿಕ್ಕಿದೆ"]
+      },
+      {
+        "sentence": "ಕೃಷಿ ಭಾರತದ ಆರ್ಥಿಕತೆಗೆ ಮುಖ್ಯ.",
+        "transliteration": "Kṛṣi bhāratada ārthikatege mukhya.",
+        "translation": "Agriculture is important to India's economy.",
+        "breakdown": ["ಕೃಷಿ", "ಭಾರತದ", "ಆರ್ಥಿಕತೆಗೆ", "ಮುಖ್ಯ"]
+      },
+      {
+        "sentence": "ರೈತ ಹೊಲದಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತಾನೆ.",
+        "transliteration": "Raita holadalli kelasa māḍuttāne.",
+        "translation": "The farmer works in the field.",
+        "breakdown": ["ರೈತ", "ಹೊಲದಲ್ಲಿ", "ಕೆಲಸ", "ಮಾಡುತ್ತಾನೆ"]
+      },
+      {
+        "sentence": "ಭೂಮಿ ಫಲವತ್ತಾಗಿದೆ.",
+        "transliteration": "Bhūmi phalavattāgide.",
+        "translation": "The land is fertile.",
+        "breakdown": ["ಭೂಮಿ", "ಫಲವತ್ತಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ಈ ವರ್ಷ ಬೆಳೆ ಚೆನ್ನಾಗಿ ಬಂದಿದೆ.",
+        "transliteration": "Ī varṣa beḷe cennāgi bandide.",
+        "translation": "The crop has come well this year.",
+        "breakdown": ["ಈ", "ವರ್ಷ", "ಬೆಳೆ", "ಚೆನ್ನಾಗಿ", "ಬಂದಿದೆ"]
+      },
+      {
+        "sentence": "ಗಿಡಗಳಿಗೆ ಪ್ರತಿದಿನ ನೀರುಹಾಕು.",
+        "transliteration": "Giḍagaḷige pratidina nīruhāku.",
+        "translation": "Water the plants daily.",
+        "breakdown": ["ಗಿಡಗಳಿಗೆ", "ಪ್ರತಿದಿನ", "ನೀರುಹಾಕು"]
+      },
+      {
+        "sentence": "ಅಮ್ಮ ಅಡುಗೆ ಮಾಡುತ್ತಿದ್ದಾರೆ.",
+        "transliteration": "Amma aḍuge māḍuttiddāre.",
+        "translation": "Mother is cooking.",
+        "breakdown": ["ಅಮ್ಮ", "ಅಡುಗೆ", "ಮಾಡುತ್ತಿದ್ದಾರೆ"]
+      },
+      {
+        "sentence": "ಪಾತ್ರೆಯನ್ನು ಸ್ವಚ್ಛವಾಗಿ ತೊಳೆ.",
+        "transliteration": "Pātreyannu svacchavāgi toḷe.",
+        "translation": "Wash the vessel cleanly.",
+        "breakdown": ["ಪಾತ್ರೆಯನ್ನು", "ಸ್ವಚ್ಛವಾಗಿ", "ತೊಳೆ"]
+      },
+      {
+        "sentence": "ಚಮಚದಿಂದ ತಿನ್ನು.",
+        "transliteration": "Camacadinda tinnu.",
+        "translation": "Eat with a spoon.",
+        "breakdown": ["ಚಮಚದಿಂದ", "ತಿನ್ನು"]
+      },
+      {
+        "sentence": "ತಟ್ಟೆಯಲ್ಲಿ ಊಟ ಬಡಿಸು.",
+        "transliteration": "Taṭṭeyalli ūṭa baḍisu.",
+        "translation": "Serve the meal on the plate.",
+        "breakdown": ["ತಟ್ಟೆಯಲ್ಲಿ", "ಊಟ", "ಬಡಿಸು"]
+      },
+      {
+        "sentence": "ಲೋಟದಲ್ಲಿ ನೀರು ತುಂಬಿಸು.",
+        "transliteration": "Lōṭadalli nīru tumbisu.",
+        "translation": "Fill water in the glass.",
+        "breakdown": ["ಲೋಟದಲ್ಲಿ", "ನೀರು", "ತುಂಬಿಸು"]
+      },
+      {
+        "sentence": "ನಿಜವಾದ ಸ್ನೇಹ ಅಮೂಲ್ಯ.",
+        "transliteration": "Nijavāda snēha amūlya.",
+        "translation": "True friendship is precious.",
+        "breakdown": ["ನಿಜವಾದ", "ಸ್ನೇಹ", "ಅಮೂಲ್ಯ"]
+      },
+      {
+        "sentence": "ಅವರ ಸಂಬಂಧ ಗಟ್ಟಿಯಾಗಿದೆ.",
+        "transliteration": "Avara sambandha gaṭṭiyāgide.",
+        "translation": "Their relationship is strong.",
+        "breakdown": ["ಅವರ", "ಸಂಬಂಧ", "ಗಟ್ಟಿಯಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ನನ್ನ ಕುಟುಂಬ ದೊಡ್ಡದು.",
+        "transliteration": "Nanna kuṭumba doḍḍadu.",
+        "translation": "My family is large.",
+        "breakdown": ["ನನ್ನ", "ಕುಟುಂಬ", "ದೊಡ್ಡದು"]
+      },
+      {
+        "sentence": "ನೆರೆಹೊರೆಯವರೊಂದಿಗೆ ಚೆನ್ನಾಗಿರು.",
+        "transliteration": "Nerehoreyavarondige cennāgiru.",
+        "translation": "Be good with neighbors.",
+        "breakdown": ["ನೆರೆಹೊರೆಯವರೊಂದಿಗೆ", "ಚೆನ್ನಾಗಿರು"]
+      },
+      {
+        "sentence": "ಅವನು ನನಗೆ ಸಹಾಯ ಮಾಡಿದನು.",
+        "transliteration": "Avanu nanage sahāya māḍidanu.",
+        "translation": "He helped me.",
+        "breakdown": ["ಅವನು", "ನನಗೆ", "ಸಹಾಯ", "ಮಾಡಿದನು"]
+      },
+      {
+        "sentence": "ನಾನು ನಿನಗೆ ಉಡುಗೊರೆ ತಂದಿದ್ದೇನೆ.",
+        "transliteration": "Nānu ninage uḍugore tandiddēne.",
+        "translation": "I have brought a gift for you.",
+        "breakdown": ["ನಾನು", "ನಿನಗೆ", "ಉಡುಗೊರೆ", "ತಂದಿದ್ದೇನೆ"]
+      },
+      {
+        "sentence": "ನಾವು ದೀಪಾವಳಿ ಹಬ್ಬ ಆಚರಿಸುತ್ತೇವೆ.",
+        "transliteration": "Nāvu dīpāvaḷi habba ācarisuttēve.",
+        "translation": "We celebrate the Diwali festival.",
+        "breakdown": ["ನಾವು", "ದೀಪಾವಳಿ", "ಹಬ್ಬ", "ಆಚರಿಸುತ್ತೇವೆ"]
+      },
+      {
+        "sentence": "ಆಚರಣೆ ಸಂಭ್ರಮದಿಂದ ಕೂಡಿತ್ತು.",
+        "transliteration": "Ācaraṇe sambhramadinda kūḍittu.",
+        "translation": "The celebration was full of joy.",
+        "breakdown": ["ಆಚರಣೆ", "ಸಂಭ್ರಮದಿಂದ", "ಕೂಡಿತ್ತು"]
+      },
+      {
+        "sentence": "ಶಾಲೆಯಲ್ಲಿ ವಾರ್ಷಿಕ ಕಾರ್ಯಕ್ರಮವಿದೆ.",
+        "transliteration": "Śāleyalli vārṣika kāryakramavide.",
+        "translation": "There is an annual program at the school.",
+        "breakdown": ["ಶಾಲೆಯಲ್ಲಿ", "ವಾರ್ಷಿಕ", "ಕಾರ್ಯಕ್ರಮವಿದೆ"]
+      },
+      {
+        "sentence": "ಮದುವೆಗೆ ಆಹ್ವಾನ ಬಂದಿದೆ.",
+        "transliteration": "Maduvēge āhvāna bandide.",
+        "translation": "An invitation for the wedding has come.",
+        "breakdown": ["ಮದುವೆಗೆ", "ಆಹ್ವಾನ", "ಬಂದಿದೆ"]
+      },
+      {
+        "sentence": "ನಾವು ಪ್ರತಿದಿನ ಪ್ರಾರ್ಥನೆ ಮಾಡುತ್ತೇವೆ.",
+        "transliteration": "Nāvu pratidina prārthane māḍuttēve.",
+        "translation": "We pray every day.",
+        "breakdown": ["ನಾವು", "ಪ್ರತಿದಿನ", "ಪ್ರಾರ್ಥನೆ", "ಮಾಡುತ್ತೇವೆ"]
+      },
+      {
+        "sentence": "ಹಿರಿಯರ ಆಶೀರ್ವಾದ ಪಡೆಯಬೇಕು.",
+        "transliteration": "Hiriyara āśīrvāda paḍeyabēku.",
+        "translation": "One should get blessings from elders.",
+        "breakdown": ["ಹಿರಿಯರ", "ಆಶೀರ್ವಾದ", "ಪಡೆಯಬೇಕು"]
+      },
+      {
+        "sentence": "ಅವನು ತುಂಬಾ ಸಂತೋಷವಾಗಿದ್ದನು.",
+        "transliteration": "Avanu tumbā santoṣavāgiddanu.",
+        "translation": "He was very happy.",
+        "breakdown": ["ಅವನು", "ತುಂಬಾ", "ಸಂತೋಷವಾಗಿದ್ದನು"]
+      },
+      {
+        "sentence": "ದುಃಖ ಪಡಬೇಡ, ಎಲ್ಲವೂ ಸರಿಹೋಗುತ್ತದೆ.",
+        "transliteration": "Duḥkha paḍabēḍa, ellavū sarihōguttade.",
+        "translation": "Don't be sad, everything will be alright.",
+        "breakdown": ["ದುಃಖ", "ಪಡಬೇಡ", "ಎಲ್ಲವೂ", "ಸರಿಹೋಗುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ಅವನಿಗೆ ಆಶ್ಚರ್ಯವಾಯಿತು.",
+        "transliteration": "Avanige āścaryavāyitu.",
+        "translation": "He was surprised.",
+        "breakdown": ["ಅವನಿಗೆ", "ಆಶ್ಚರ್ಯವಾಯಿತು"]
+      },
+      {
+        "sentence": "ಯಾವುದಕ್ಕೂ ಚಿಂತೆ ಮಾಡಬೇಡ.",
+        "transliteration": "Yāvudakkū cinte māḍabēḍa.",
+        "translation": "Don't worry about anything.",
+        "breakdown": ["ಯಾವುದಕ್ಕೂ", "ಚಿಂತೆ", "ಮಾಡಬೇಡ"]
+      },
+      {
+        "sentence": "ಅವಳ ನಗುಮುಖ ಎಲ್ಲರಿಗೂ ಇಷ್ಟ.",
+        "transliteration": "Avaḷa nagumukha ellarigū iṣṭa.",
+        "translation": "Everyone likes her smiling face.",
+        "breakdown": ["ಅವಳ", "ನಗುಮುಖ", "ಎಲ್ಲರಿಗೂ", "ಇಷ್ಟ"]
+      },
+      {
+        "sentence": "ನಾನು ನಿನ್ನೆ ಒಂದು ಕನಸು ಕಂಡೆ.",
+        "transliteration": "Nānu ninne ondu kanasu kaṇḍe.",
+        "translation": "I saw a dream yesterday.",
+        "breakdown": ["ನಾನು", "ನಿನ್ನೆ", "ಒಂದು", "ಕನಸು", "ಕಂಡೆ"]
+      },
+      {
+        "sentence": "ಹಳೆಯ ನೆನಪುಗಳು ಮರುಕಳಿಸಿದವು.",
+        "transliteration": "Haḷeya nenapugaḷu marukaḷisidavu.",
+        "translation": "Old memories recurred.",
+        "breakdown": ["ಹಳೆಯ", "ನೆನಪುಗಳು", "ಮರುಕಳಿಸಿದವು"]
+      },
+      {
+        "sentence": "ಒಳ್ಳೆಯ ಯೋಚನೆಗಳನ್ನು ಮಾಡು.",
+        "transliteration": "Oḷḷeya yōcanegaḷannu māḍu.",
+        "translation": "Think good thoughts.",
+        "breakdown": ["ಒಳ್ಳೆಯ", "ಯೋಚನೆಗಳನ್ನು", "ಮಾಡು"]
+      },
+      {
+        "sentence": "ನಾವು ಸರಿಯಾದ ನಿರ್ಧಾರ ತೆಗೆದುಕೊಳ್ಳಬೇಕು.",
+        "transliteration": "Nāvu sariyāda nirdhāra tegedukoḷḷabēku.",
+        "translation": "We must take the right decision.",
+        "breakdown": ["ನಾವು", "ಸರಿಯಾದ", "ನಿರ್ಧಾರ", "ತೆಗೆದುಕೊಳ್ಳಬೇಕು"]
+      },
+      {
+        "sentence": "ಇದಕ್ಕೆ ಕಾರಣ ಏನು?",
+        "transliteration": "Idakke kāraṇa ēnu?",
+        "translation": "What is the reason for this?",
+        "breakdown": ["ಇದಕ್ಕೆ", "ಕಾರಣ", "ಏನು"]
+      },
+      {
+        "sentence": "ಪ್ರತಿ ಕ್ರಿಯೆಗೆ ಒಂದು ಪರಿಣಾಮ ಇರುತ್ತದೆ.",
+        "transliteration": "Prati kriyege ondu pariṇāma iruttade.",
+        "translation": "Every action has a result.",
+        "breakdown": ["ಪ್ರತಿ", "ಕ್ರಿಯೆಗೆ", "ಒಂದು", "ಪರಿಣಾಮ", "ಇರುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ಜಗತ್ತಿನಲ್ಲಿ ಬದಲಾವಣೆ ನಿರಂತರ.",
+        "transliteration": "Jagattinalli badalāvaṇe nirantara.",
+        "translation": "Change is constant in the world.",
+        "breakdown": ["ಜಗತ್ತಿನಲ್ಲಿ", "ಬದಲಾವಣೆ", "ನಿರಂತರ"]
+      },
+      {
+        "sentence": "ದೇಶದ ಅಭಿವೃದ್ಧಿ ಮುಖ್ಯ.",
+        "transliteration": "Dēśada abhivṛddhi mukhya.",
+        "translation": "The country's development is important.",
+        "breakdown": ["ದೇಶದ", "ಅಭಿವೃದ್ಧಿ", "ಮುಖ್ಯ"]
+      },
+      {
+        "sentence": "ಪ್ರತಿಯೊಂದು ಸಮಸ್ಯೆಗೆ ಪರಿಹಾರವಿದೆ.",
+        "transliteration": "Pratiyondu samasyege parihāravide.",
+        "translation": "There is a solution to every problem.",
+        "breakdown": ["ಪ್ರತಿಯೊಂದು", "ಸಮಸ್ಯೆಗೆ", "ಪರಿಹಾರವಿದೆ"]
+      },
+      {
+        "sentence": "ನಮಗೆ ಒಳ್ಳೆಯ ಅವಕಾಶ ಸಿಕ್ಕಿದೆ.",
+        "transliteration": "Namage oḷḷeya avakāśa sikkide.",
+        "translation": "We have got a good opportunity.",
+        "breakdown": ["ನಮಗೆ", "ಒಳ್ಳೆಯ", "ಅವಕಾಶ", "ಸಿಕ್ಕಿದೆ"]
+      },
+      {
+        "sentence": "ಪ್ರಯತ್ನ ಪಟ್ಟರೆ ಯಶಸ್ಸು ಖಂಡಿತ.",
+        "transliteration": "Prayatna paṭṭare yaśassu khaṇḍita.",
+        "translation": "If you make an effort, success is definite.",
+        "breakdown": ["ಪ್ರಯತ್ನ", "ಪಟ್ಟರೆ", "ಯಶಸ್ಸು", "ಖಂಡಿತ"]
+      },
+      {
+        "sentence": "ಸೋಲನ್ನು ಒಪ್ಪಿಕೊಳ್ಳಲು ಕಲಿ.",
+        "transliteration": "Sōlannu oppikoḷḷalu kali.",
+        "translation": "Learn to accept defeat.",
+        "breakdown": ["ಸೋಲನ್ನು", "ಒಪ್ಪಿಕೊಳ್ಳಲು", "ಕಲಿ"]
+      },
+      {
+        "sentence": "ನನ್ನ ಗುರಿ ವೈದ್ಯನಾಗುವುದು.",
+        "transliteration": "Nanna guri vaidyanāguvudu.",
+        "translation": "My goal is to become a doctor.",
+        "breakdown": ["ನನ್ನ", "ಗುರಿ", "ವೈದ್ಯನಾಗುವುದು"]
+      },
+      {
+        "sentence": "ಸರಿಯಾದ ಮಾರ್ಗವನ್ನು ಅನುಸರಿಸು.",
+        "transliteration": "Sariyāda mārgavannu anusarisu.",
+        "translation": "Follow the right path.",
+        "breakdown": ["ಸರಿಯಾದ", "ಮಾರ್ಗವನ್ನು", "ಅನುಸರಿಸು"]
+      },
+      {
+        "sentence": "ಅವಳಿಗೆ ವಿದೇಶಕ್ಕೆ ಹೋಗುವ ಆಸೆ.",
+        "transliteration": "Avaḷige vidēśakke hōguva āse.",
+        "translation": "She desires to go abroad.",
+        "breakdown": ["ಅವಳಿಗೆ", "ವಿದೇಶಕ್ಕೆ", "ಹೋಗುವ", "ಆಸೆ"]
+      },
+      {
+        "sentence": "ಪ್ರಯಾಣದಿಂದ ಹೊಸ ಅನುಭವ ಸಿಗುತ್ತದೆ.",
+        "transliteration": "Prayāṇadinda hosa anubhava siguttade.",
+        "translation": "One gets new experiences from traveling.",
+        "breakdown": ["ಪ್ರಯಾಣದಿಂದ", "ಹೊಸ", "ಅನುಭವ", "ಸಿಗುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ಇದು ಪ್ರಮುಖ ವಿಷಯ.",
+        "transliteration": "Idu pramukha viṣaya.",
+        "translation": "This is an important matter.",
+        "breakdown": ["ಇದು", "ಪ್ರಮುಖ", "ವಿಷಯ"]
+      },
+      {
+        "sentence": "ಇದು ಸಾಮಾನ್ಯ ಸಂಗತಿ.",
+        "transliteration": "Idu sāmānya sangati.",
+        "translation": "This is a common thing.",
+        "breakdown": ["ಇದು", "ಸಾಮಾನ್ಯ", "ಸಂಗತಿ"]
+      },
+      {
+        "sentence": "ಇಂದು ವಿಶೇಷ ದಿನ.",
+        "transliteration": "Indu viśēṣa dina.",
+        "translation": "Today is a special day.",
+        "breakdown": ["ಇಂದು", "ವಿಶೇಷ", "ದಿನ"]
+      },
+      {
+        "sentence": "ಇಲ್ಲಿ ವಿವಿಧ ರೀತಿಯ ಹಣ್ಣುಗಳಿವೆ.",
+        "transliteration": "Illi vividha rītiya haṇṇugaḷive.",
+        "translation": "There are various types of fruits here.",
+        "breakdown": ["ಇಲ್ಲಿ", "ವಿವಿಧ", "ರೀತಿಯ", "ಹಣ್ಣುಗಳಿವೆ"]
+      },
+      {
+        "sentence": "ಒಂದು ಉದಾಹರಣೆ ಕೊಡು.",
+        "transliteration": "Ondu udāharaṇe koḍu.",
+        "translation": "Give an example.",
+        "breakdown": ["ಒಂದು", "ಉದಾಹರಣೆ", "ಕೊಡು"]
+      },
+      {
+        "sentence": "ದಯವಿಟ್ಟು ನನಗೆ ಮಾಹಿತಿ ನೀಡಿ.",
+        "transliteration": "Dayaviṭṭu nanage māhiti nīḍi.",
+        "translation": "Please give me information.",
+        "breakdown": ["ದಯವಿಟ್ಟು", "ನನಗೆ", "ಮಾಹಿತಿ", "ನೀಡಿ"]
+      },
+      {
+        "sentence": "ಇಂದಿನ ಮುಖ್ಯ ಸುದ್ದಿ ಏನು?",
+        "transliteration": "Indina mukhya suddi ēnu?",
+        "translation": "What is today's main news?",
+        "breakdown": ["ಇಂದಿನ", "ಮುಖ್ಯ", "ಸುದ್ದಿ", "ಏನು"]
+      },
+      {
+        "sentence": "ನಾನು ಪ್ರತಿದಿನ ಪತ್ರಿಕೆ ಓದುತ್ತೇನೆ.",
+        "transliteration": "Nānu pratidina patrike ōduttēne.",
+        "translation": "I read the newspaper every day.",
+        "breakdown": ["ನಾನು", "ಪ್ರತಿದಿನ", "ಪತ್ರಿಕೆ", "ಓದುತ್ತೇನೆ"]
+      },
+      {
+        "sentence": "ದೂರದರ್ಶನದಲ್ಲಿ ಚಲನಚಿತ್ರ ನೋಡಿದೆ.",
+        "transliteration": "Dūradarśanadalli calanacitra nōḍide.",
+        "translation": "I watched a movie on television.",
+        "breakdown": ["ದೂರದರ್ಶನದಲ್ಲಿ", "ಚಲನಚಿತ್ರ", "ನೋಡಿದೆ"]
+      },
+      {
+        "sentence": "ಅವಳ ದನಿ ಮಧುರವಾಗಿದೆ.",
+        "transliteration": "Avaḷa dani madhuravāgide.",
+        "translation": "Her voice is sweet.",
+        "breakdown": ["ಅವಳ", "ದನಿ", "ಮಧುರವಾಗಿದೆ"]
+      },
+      {
+        "sentence": "ಹೊರಗಿನಿಂದ ಶಬ್ದ ಬರುತ್ತಿದೆ.",
+        "transliteration": "Horagininda śabda baruttide.",
+        "translation": "Noise is coming from outside.",
+        "breakdown": ["ಹೊರಗಿನಿಂದ", "ಶಬ್ದ", "ಬರುತ್ತಿದೆ"]
+      },
+      {
+        "sentence": "ಕೋಣೆಯಲ್ಲಿ ಬೆಳಕು ಕಡಿಮೆಯಿದೆ.",
+        "transliteration": "Kōṇeyalli beḷaku kaḍimeyide.",
+        "translation": "The light in the room is low.",
+        "breakdown": ["ಕೋಣೆಯಲ್ಲಿ", "ಬೆಳಕು", "ಕಡಿಮೆಯಿದೆ"]
+      },
+      {
+        "sentence": "ಕತ್ತಲೆಯಲ್ಲಿ ನಡೆಯುವುದು ಕಷ್ಟ.",
+        "transliteration": "Kattaleyalli naḍeyuvudu kaṣṭa.",
+        "translation": "It is difficult to walk in the dark.",
+        "breakdown": ["ಕತ್ತಲೆಯಲ್ಲಿ", "ನಡೆಯುವುದು", "ಕಷ್ಟ"]
+      },
+      {
+        "sentence": "ಚಂದ್ರನ ಆಕಾರ ಬದಲಾಗುತ್ತದೆ.",
+        "transliteration": "Candrana ākāra badalāguttade.",
+        "translation": "The shape of the moon changes.",
+        "breakdown": ["ಚಂದ್ರನ", "ಆಕಾರ", "ಬದಲಾಗುತ್ತದೆ"]
+      },
+      {
+        "sentence": "ಈ ಪೆಟ್ಟಿಗೆಯ ಗಾತ್ರ ದೊಡ್ಡದಿದೆ.",
+        "transliteration": "Ī peṭṭigeya gātra doḍḍadide.",
+        "translation": "The size of this box is big.",
+        "breakdown": ["ಈ", "ಪೆಟ್ಟಿಗೆಯ", "ಗಾತ್ರ", "ದೊಡ್ಡದಿದೆ"]
+      },
+      {
+        "sentence": "ಆ ಮರ ತುಂಬಾ ಎತ್ತರವಿದೆ.",
+        "transliteration": "Ā mara tumbā ettaravide.",
+        "translation": "That tree is very tall.",
+        "breakdown": ["ಆ", "ಮರ", "ತುಂಬಾ", "ಎತ್ತರವಿದೆ"]
+      },
+      {
+        "sentence": "ನನ್ನ ತೂಕ ೬೦ ಕೆಜಿ ಇದೆ.",
+        "transliteration": "Nanna tūka 60 keji ide.",
+        "translation": "My weight is 60 kg.",
+        "breakdown": ["ನನ್ನ", "ತೂಕ", "೬೦ ಕೆಜಿ", "ಇದೆ"]
+      },
+      {
+        "sentence": "ಈ ಹಗ್ಗದ ಉದ್ದ ಎಷ್ಟು?",
+        "transliteration": "Ī haggada udda eṣṭu?",
+        "translation": "What is the length of this rope?",
+        "breakdown": ["ಈ", "ಹಗ್ಗದ", "ಉದ್ದ", "ಎಷ್ಟು"]
+      },
+      {
+        "sentence": "ರಸ್ತೆಯ ಅಗಲ ಸಾಕಷ್ಟಿದೆ.",
+        "transliteration": "Rasteya agala sākṣṭide.",
+        "translation": "The width of the road is sufficient.",
+        "breakdown": ["ರಸ್ತೆಯ", "ಅಗಲ", "ಸಾಕಷ್ಟಿದೆ"]
+      },
+      {
+        "sentence": "ಬಾವಿಯ ಆಳ ಹೆಚ್ಚಿದೆ.",
+        "transliteration": "Bāviya āḷa heccide.",
+        "translation": "The depth of the well is more.",
+        "breakdown": ["ಬಾವಿಯ", "ಆಳ", "ಹೆಚ್ಚಿದೆ"]
+      },
+      {
+        "sentence": "ಈ ಎರಡರ ನಡುವೆ ವ್ಯತ್ಯಾಸವಿದೆ.",
+        "transliteration": "Ī eraḍara naḍuve vyatyāsavide.",
+        "translation": "There is a difference between these two.",
+        "breakdown": ["ಈ", "ಎರಡರ", "ನಡುವೆ", "ವ್ಯತ್ಯಾಸವಿದೆ"]
       }
     ]
   }

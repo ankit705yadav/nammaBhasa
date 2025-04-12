@@ -180,8 +180,11 @@ export default function WordScreen() {
                   </Pressable>
 
                   <Text style={styles.modalWord}>{selectedItem.word}</Text>
+                  <Text style={styles.modalTransliteration}>
+                    {selectedItem.transliteration}
+                  </Text>
                   <Text style={styles.modalTranslation}>
-                    {selectedItem.translation || selectedItem.transliteration}
+                    {selectedItem.translation}
                   </Text>
                 </View>
               )}
@@ -296,6 +299,14 @@ const styles = StyleSheet.create({
     fontSize: 60,
     fontWeight: "bold",
     marginBottom: 10,
+  },
+
+  modalTransliteration: {
+    fontSize: 20,
+    color: "#dad8de",
+    textAlign: "center",
+    marginBottom: 15,
+    fontStyle: "italic",
   },
 
   modalTranslation: {

@@ -226,6 +226,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: 3, // Creates space for the border effect
     width: width - 60, // Full width with padding
+    height: 100,
     minHeight: 100, // Taller for sentences
     zIndex: 100,
   },
