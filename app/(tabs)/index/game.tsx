@@ -185,9 +185,6 @@ const KannadaQuiz = () => {
                 </TouchableOpacity>
               ))}
             </View>
-            <Text style={styles.score}>
-              Score: {score} | Wrong Attempts: {wrongCount}/4
-            </Text>
           </>
         )}
       </LinearGradient>
@@ -245,12 +242,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "600",
   },
-  score: {
-    fontSize: 20,
-    marginTop: 20,
-    fontWeight: "bold",
-    color: "white",
-  },
+
   gameOverContainer: {
     alignItems: "center",
   },

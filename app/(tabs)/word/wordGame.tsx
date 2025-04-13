@@ -309,10 +309,6 @@ const WordQuiz = () => {
 
             <View style={styles.optionsContainer}>{renderOptions()}</View>
 
-            <Text style={styles.score}>
-              Score: {score} | Wrong Attempts: {wrongCount}/4
-            </Text>
-
             <View style={styles.controlsContainer}>
               <TouchableOpacity
                 style={styles.controlButton}
@@ -390,12 +386,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "600",
     textAlign: "center",
-  },
-  score: {
-    fontSize: 18,
-    marginTop: 20,
-    fontWeight: "bold",
-    color: "white",
   },
   gameOverContainer: {
     alignItems: "center",
