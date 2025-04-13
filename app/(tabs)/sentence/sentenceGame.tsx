@@ -1,15 +1,17 @@
-import React, { useState, useCallback, useEffect } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
+import { LinearGradient } from "expo-linear-gradient";
+import React, { useCallback, useEffect, useState } from "react";
 import {
-  View,
+  Pressable,
+  StyleSheet,
   Text,
   TouchableOpacity,
-  StyleSheet,
+  View,
 } from "react-native";
-import { useFocusEffect } from "@react-navigation/native";
-import { useNavigation } from '@react-navigation/native';
-import kannadaLetters from "../../../data/kannada_letters.json";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { LinearGradient } from "expo-linear-gradient";
+import kannadaLetters from "../../../data/kannada_letters.json";
+import { speakText } from "../../../utils/utils";
 
 // Define a type for the sentence objects in our data
 type SentenceItem = {
@@ -23,28 +25,54 @@ const SentenceQuiz = () => {
   const [question, setQuestion] = useState<SentenceItem | null>(null);
   const [options, setOptions] = useState<string[]>([]);
   const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
   const [wrongCount, setWrongCount] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [gameOver, setGameOver] = useState(false);
   const [showCorrect, setShowCorrect] = useState(false);
-  const [quizMode, setQuizMode] = useState<'translation' | 'transliteration'>('translation');
-  const [difficulty, setDifficulty] = useState<'Level1' | 'Level2' | 'Level3'>('Level1');
+  const [quizMode, setQuizMode] = useState<"translation" | "transliteration">(
+    "translation",
+  );
+  const [difficulty, setDifficulty] = useState<"Level1" | "Level2" | "Level3">(
+    "Level1",
+  );
 
   const navigation = useNavigation();
 
   useEffect(() => {
     // Hide the tab bar when component mounts
     navigation.getParent()?.setOptions({
-      tabBarStyle: { display: 'none' }
+      tabBarStyle: { display: "none" },
     });
     // Show the tab bar when component unmounts
-    return () => navigation.getParent()?.setOptions({
-      tabBarStyle: undefined
-    });
+    return () =>
+      navigation.getParent()?.setOptions({
+        tabBarStyle: undefined,
+      });
   }, [navigation]);
 
+  useFocusEffect(
+    useCallback(() => {
+      const init = async () => {
+        try {
+          // await AsyncStorage.removeItem("HIGH_SCORE_SENTENCE");
+          const storedHighScore = await AsyncStorage.getItem(
+            "HIGH_SCORE_SENTENCE",
+          );
+          if (storedHighScore !== null) {
+            setHighScore(parseInt(storedHighScore));
+          }
+        } catch (e) {
+          console.error("Error loading high score:", e);
+        }
+        restartGame();
+      };
+      init();
+    }, []),
+  );
+
   // Get a random sentence from the specified level
-  const getRandomSentence = (sentences: SentenceItem[]): SentenceItem => 
+  const getRandomSentence = (sentences: SentenceItem[]): SentenceItem =>
     sentences[Math.floor(Math.random() * sentences.length)];
 
   // Get all sentences across all levels
@@ -52,7 +80,7 @@ const SentenceQuiz = () => {
     return [
       ...(kannadaLetters.Sentences?.Level1 || []),
       ...(kannadaLetters.Sentences?.Level2 || []),
-      ...(kannadaLetters.Sentences?.Level3 || [])
+      ...(kannadaLetters.Sentences?.Level3 || []),
     ];
   };
 
@@ -61,7 +89,9 @@ const SentenceQuiz = () => {
     return kannadaLetters.Sentences?.[difficulty] || [];
   };
 
-  const generateQuestionWithMode = (mode: 'translation' | 'transliteration') => {
+  const generateQuestionWithMode = (
+    mode: "translation" | "transliteration",
+  ) => {
     if (wrongCount >= 4) {
       setGameOver(true);
       return;
@@ -72,26 +102,45 @@ const SentenceQuiz = () => {
 
     const sentencesForLevel = getSentencesByLevel();
     const allSentences = getAllSentences();
-    
+
     if (sentencesForLevel.length === 0) {
       console.error("No sentences found for the selected level");
       return;
     }
 
     const correct = getRandomSentence(sentencesForLevel);
-    
+
     // Create incorrect options based on the passed mode parameter
-    let incorrectPool = allSentences.filter(s => s.sentence !== correct.sentence);
+    let incorrectPool = allSentences.filter(
+      (s) => s.sentence !== correct.sentence,
+    );
     const incorrectOptions = incorrectPool
       .sort(() => Math.random() - 0.5)
       .slice(0, 3)
-      .map(sentence => mode === 'translation' ? sentence.translation : sentence.transliteration);
+      .map((sentence) =>
+        mode === "translation"
+          ? sentence.translation
+          : sentence.transliteration,
+      );
 
     // Correct answer based on the passed mode parameter
-    const correctAnswer = mode === 'translation' ? correct.translation : correct.transliteration;
-    
+    const correctAnswer =
+      mode === "translation" ? correct.translation : correct.transliteration;
+
+    // ✅ Debug log
+    console.log(
+      "Correct Answer:",
+      correctAnswer,
+      " | Mode:",
+      mode,
+      " | Sentence:",
+      correct.sentence,
+    );
+
     // Combine and shuffle all options
-    const choices = [...incorrectOptions, correctAnswer].sort(() => Math.random() - 0.5);
+    const choices = [...incorrectOptions, correctAnswer].sort(
+      () => Math.random() - 0.5,
+    );
 
     setQuestion(correct);
     setOptions(choices);
@@ -101,19 +150,37 @@ const SentenceQuiz = () => {
     generateQuestionWithMode(quizMode);
   };
 
-  const handleAnswer = (answer: string) => {
+  const handleAnswer = async (answer: string) => {
     setSelectedAnswer(answer);
     if (question) {
-      const correctAnswer = quizMode === 'translation' ? question.translation : question.transliteration;
-      
+      const correctAnswer =
+        quizMode === "translation"
+          ? question.translation
+          : question.transliteration;
+
       if (answer === correctAnswer) {
-        setScore(score + 1);
+        const newScore = score + 1;
+        setScore(newScore);
+
+        if (newScore > highScore) {
+          setHighScore(newScore);
+          try {
+            await AsyncStorage.setItem(
+              "HIGH_SCORE_SENTENCE",
+              newScore.toString(),
+            );
+          } catch (e) {
+            console.error("Failed to save high score", e);
+          }
+        }
+
         setTimeout(() => generateQuestion(), 1000);
       } else {
-        setWrongCount(wrongCount + 1);
+        const newWrongCount = wrongCount + 1;
+        setWrongCount(newWrongCount);
         setShowCorrect(true);
 
-        if (wrongCount + 1 >= 4) {
+        if (newWrongCount >= 4) {
           setTimeout(() => setGameOver(true), 1000);
         } else {
           setTimeout(() => generateQuestion(), 1000);
@@ -131,23 +198,24 @@ const SentenceQuiz = () => {
 
   // Change difficulty level
   const cycleDifficulty = () => {
-    if (difficulty === 'Level1') setDifficulty('Level2');
-    else if (difficulty === 'Level2') setDifficulty('Level3');
-    else setDifficulty('Level1');
-    
+    if (difficulty === "Level1") setDifficulty("Level2");
+    else if (difficulty === "Level2") setDifficulty("Level3");
+    else setDifficulty("Level1");
+
     restartGame();
   };
 
   // Toggle between translation and transliteration modes
   const toggleQuizMode = () => {
-    const newMode = quizMode === 'translation' ? 'transliteration' : 'translation';
+    const newMode =
+      quizMode === "translation" ? "transliteration" : "translation";
     setQuizMode(newMode);
-    
+
     // Reset game with the new mode
     setScore(0);
     setWrongCount(0);
     setGameOver(false);
-    
+
     // We need to explicitly use the new mode here instead of relying on the state
     generateQuestionWithMode(newMode);
   };
@@ -156,14 +224,37 @@ const SentenceQuiz = () => {
   useFocusEffect(
     useCallback(() => {
       restartGame();
-    }, [])
+    }, []),
   );
 
+  // Function to handle speaking text
+  const handleSpeak = (transliteration: string) => {
+    console.log("speak-Pressed:", transliteration);
+    speakText(transliteration);
+  };
+
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: "#e0be21"}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
+        {/* Scores */}
+        <View
+          style={{
+            position: "absolute",
+            top: 20,
+            right: 20,
+            backgroundColor: "rgba(0,0,0,0.7)",
+            paddingVertical: 6,
+            paddingHorizontal: 10,
+            borderRadius: 8,
+          }}
+        >
+          <Text style={{ color: "white", fontWeight: "bold", fontSize: 14 }}>
+            Score: {score} | High Score: {highScore} | Wrong: {wrongCount}/4
+          </Text>
+        </View>
+
         <Text style={styles.title}>
-          Kannada Sentence Quiz {difficulty.replace('Level', 'Lvl ')}
+          Kannada Sentence Quiz {difficulty.replace("Level", "Lvl ")}
         </Text>
 
         {gameOver ? (
@@ -177,12 +268,16 @@ const SentenceQuiz = () => {
         ) : (
           <>
             <Text style={styles.questionPrompt}>
-              What is the {quizMode === 'translation' ? 'meaning' : 'transliteration'} of:
+              What is the{" "}
+              {quizMode === "translation" ? "meaning" : "transliteration"} of:
             </Text>
-            <Text style={styles.question}>
-              {question?.sentence}
-            </Text>
-            
+            <Pressable
+              onLongPress={() => handleSpeak(question?.sentence)}
+              style={{ width: "100%" }} // Inner content
+            >
+              <Text style={styles.question}>{question?.sentence}</Text>
+            </Pressable>
+
             <View style={styles.optionsContainer}>
               {options.map((option, index) => (
                 <TouchableOpacity
@@ -190,13 +285,19 @@ const SentenceQuiz = () => {
                   style={[
                     styles.option,
                     selectedAnswer === option &&
-                      (question && 
-                       (option === (quizMode === 'translation' ? question.translation : question.transliteration)
+                      question &&
+                      (option ===
+                      (quizMode === "translation"
+                        ? question.translation
+                        : question.transliteration)
                         ? styles.correct
-                        : styles.wrong)),
+                        : styles.wrong),
                     showCorrect &&
-                      question && 
-                      option === (quizMode === 'translation' ? question.translation : question.transliteration) &&
+                      question &&
+                      option ===
+                        (quizMode === "translation"
+                          ? question.translation
+                          : question.transliteration) &&
                       styles.flashCorrect,
                   ]}
                   onPress={() => handleAnswer(option)}
@@ -206,27 +307,27 @@ const SentenceQuiz = () => {
                 </TouchableOpacity>
               ))}
             </View>
-            
+
             <Text style={styles.score}>
               Score: {score} | Wrong Attempts: {wrongCount}/4
             </Text>
-            
+
             <View style={styles.controlsContainer}>
-              <TouchableOpacity 
-                style={styles.controlButton} 
+              <TouchableOpacity
+                style={styles.controlButton}
                 onPress={cycleDifficulty}
               >
-                <Text style={styles.controlButtonText}>
-                  Change Level
-                </Text>
+                <Text style={styles.controlButtonText}>Change Level</Text>
               </TouchableOpacity>
-              
-              <TouchableOpacity 
-                style={styles.controlButton} 
+
+              <TouchableOpacity
+                style={styles.controlButton}
                 onPress={toggleQuizMode}
               >
                 <Text style={styles.controlButtonText}>
-                  {quizMode === 'translation' ? 'Switch to Transliteration' : 'Switch to Translation'}
+                  {quizMode === "translation"
+                    ? "Switch to Transliteration"
+                    : "Switch to Translation"}
                 </Text>
               </TouchableOpacity>
             </View>

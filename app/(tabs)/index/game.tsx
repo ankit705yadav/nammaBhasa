@@ -1,21 +1,16 @@
-import React, { useState, useCallback,useEffect } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-} from "react-native";
-import { useFocusEffect } from "@react-navigation/native";
-import { useNavigation } from '@react-navigation/native';
-import kannadaLetters from "../../../data/kannada_letters.json";
-import { SafeAreaView } from "react-native-safe-area-context";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
-
+import React, { useCallback, useEffect, useState } from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import kannadaLetters from "../../../data/kannada_letters.json";
 
 const KannadaQuiz = () => {
   const [question, setQuestion] = useState(null);
   const [options, setOptions] = useState([]);
   const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
   const [wrongCount, setWrongCount] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [gameOver, setGameOver] = useState(false);
@@ -26,13 +21,32 @@ const KannadaQuiz = () => {
   useEffect(() => {
     // Hide the tab bar when component mounts
     navigation.getParent()?.setOptions({
-      tabBarStyle: { display: 'none' }
+      tabBarStyle: { display: "none" },
     });
     // Show the tab bar when component unmounts
-    return () => navigation.getParent()?.setOptions({
-      tabBarStyle: undefined
-    });
+    return () =>
+      navigation.getParent()?.setOptions({
+        tabBarStyle: undefined,
+      });
   }, [navigation]);
+
+  useFocusEffect(
+    useCallback(() => {
+      const init = async () => {
+        try {
+          // await AsyncStorage.removeItem("HIGH_SCORE");
+          const storedHighScore = await AsyncStorage.getItem("HIGH_SCORE");
+          if (storedHighScore !== null) {
+            setHighScore(parseInt(storedHighScore));
+          }
+        } catch (e) {
+          console.error("Error loading high score:", e);
+        }
+        restartGame();
+      };
+      init();
+    }, []),
+  );
 
   const getRandomLetter = (list) =>
     list[Math.floor(Math.random() * list.length)];
@@ -48,23 +62,46 @@ const KannadaQuiz = () => {
 
     const allLetters = [...kannadaLetters.Vowels, ...kannadaLetters.Consonants];
     const correct = getRandomLetter(allLetters);
+
+    // ✅ Debug log
+    console.log(
+      "Correct Letter:",
+      correct.letter,
+      "| Transliteration:",
+      correct.transliteration,
+      "| Translation:",
+      correct.translation,
+    );
+
     const incorrectOptions = allLetters
       .filter((l) => l.letter !== correct.letter)
       .sort(() => Math.random() - 0.5)
       .slice(0, 3);
 
     const choices = [...incorrectOptions, correct].sort(
-      () => Math.random() - 0.5
+      () => Math.random() - 0.5,
     );
 
     setQuestion(correct);
     setOptions(choices);
   };
 
-  const handleAnswer = (answer) => {
+  const handleAnswer = async (answer) => {
     setSelectedAnswer(answer);
     if (answer === question.transliteration) {
-      setScore(score + 1);
+      const newScore = score + 1;
+      setScore(newScore);
+
+      if (newScore > highScore) {
+        // Update high score state & save it
+        setHighScore(newScore);
+        try {
+          await AsyncStorage.setItem("HIGH_SCORE", newScore.toString());
+        } catch (e) {
+          console.error("Failed to save high score", e);
+        }
+      }
+
       setTimeout(() => generateQuestion(), 1000);
     } else {
       setWrongCount(wrongCount + 1);
@@ -89,55 +126,70 @@ const KannadaQuiz = () => {
   useFocusEffect(
     useCallback(() => {
       restartGame();
-    }, [])
+    }, []),
   );
 
   return (
-    <SafeAreaView style={{flex: 1,backgroundColor: "#e0be21"}}>
-
-    <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
-
-    
-
-      <Text style={styles.title}>Kannada Quiz</Text>
-
-      {gameOver ? (
-        <View style={styles.gameOverContainer}>
-          <Text style={styles.gameOverText}>Game Over! 😢</Text>
-          <Text style={styles.finalScore}>Final Score: {score}</Text>
-          <TouchableOpacity style={styles.restartBtn} onPress={restartGame}>
-            <Text style={styles.restartText}>Restart</Text>
-          </TouchableOpacity>
-        </View>
-      ) : (
-        <>
-          <Text style={styles.question}>{question?.letter}</Text>
-          <View style={styles.optionsContainer}>
-            {options.map((option) => (
-              <TouchableOpacity
-                key={option.transliteration}
-                style={[
-                  styles.option,
-                  selectedAnswer === option.transliteration &&
-                    (option.transliteration === question.transliteration
-                      ? styles.correct
-                      : styles.wrong),
-                  showCorrect &&
-                    option.transliteration === question.transliteration &&
-                    styles.flashCorrect,
-                ]}
-                onPress={() => handleAnswer(option.transliteration)}
-                disabled={selectedAnswer !== null}
-              >
-                <Text style={styles.optionText}>{option.transliteration}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-          <Text style={styles.score}>
-            Score: {score} | Wrong Attempts: {wrongCount}/4
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
+      <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
+        {/* Scores */}
+        <View
+          style={{
+            position: "absolute",
+            top: 20,
+            right: 20,
+            backgroundColor: "rgba(0,0,0,0.7)",
+            paddingVertical: 6,
+            paddingHorizontal: 10,
+            borderRadius: 8,
+          }}
+        >
+          <Text style={{ color: "white", fontWeight: "bold", fontSize: 14 }}>
+            Score: {score} | High Score: {highScore} | Wrong: {wrongCount}/4
           </Text>
-        </>
-      )}
+        </View>
+
+        <Text style={styles.title}>Kannada Quiz</Text>
+
+        {gameOver ? (
+          <View style={styles.gameOverContainer}>
+            <Text style={styles.gameOverText}>Game Over! 😢</Text>
+            <Text style={styles.finalScore}>Final Score: {score}</Text>
+            <TouchableOpacity style={styles.restartBtn} onPress={restartGame}>
+              <Text style={styles.restartText}>Restart</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <>
+            <Text style={styles.question}>{question?.letter}</Text>
+            <View style={styles.optionsContainer}>
+              {options.map((option) => (
+                <TouchableOpacity
+                  key={option.transliteration}
+                  style={[
+                    styles.option,
+                    selectedAnswer === option.transliteration &&
+                      (option.transliteration === question.transliteration
+                        ? styles.correct
+                        : styles.wrong),
+                    showCorrect &&
+                      option.transliteration === question.transliteration &&
+                      styles.flashCorrect,
+                  ]}
+                  onPress={() => handleAnswer(option.transliteration)}
+                  disabled={selectedAnswer !== null}
+                >
+                  <Text style={styles.optionText}>
+                    {option.transliteration}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+            <Text style={styles.score}>
+              Score: {score} | Wrong Attempts: {wrongCount}/4
+            </Text>
+          </>
+        )}
       </LinearGradient>
     </SafeAreaView>
   );
@@ -149,7 +201,7 @@ const styles = StyleSheet.create({
     // justifyContent: "center",
     // alignItems: "center",
     // backgroundColor: "#181C14",
-     // borderWidth:4,
+    // borderWidth:4,
     // borderColor:"yellow",
     flex: 1,
     backgroundColor: "#181C14",

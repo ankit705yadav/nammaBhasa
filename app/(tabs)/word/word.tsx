@@ -39,8 +39,6 @@ export default function WordScreen() {
   const level2Words = kannadaData.Words?.Level2 || [];
   const level3Words = kannadaData.Words?.Level3 || [];
 
-  console.log("LLL", level1Words);
-
   const [searchQuery, setSearchQuery] = useState("");
 
   const [isModalVisible, setModalVisible] = useState(false);
