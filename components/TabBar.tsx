@@ -1,12 +1,47 @@
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { Colors } from "react-native/Libraries/NewAppScreen";
+import { StyleSheet, View, LayoutChangeEvent } from "react-native";
 import TabBarButton from "./TabBarButton";
+import { useState } from "react";
+import {
+  useSharedValue,
+  useAnimatedStyle,
+  withSpring,
+} from "react-native-reanimated";
+import Animated from "react-native-reanimated";
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
+  const [dimensions, setDimensions] = useState({ height: 20, width: 100 });
+
+  const buttonWidth = dimensions.width / state.routes.length;
+
+  const onTabbarLayout = (event: LayoutChangeEvent) => {
+    setDimensions({
+      height: event.nativeEvent.layout.height,
+      width: event.nativeEvent.layout.width,
+    });
+  };
+
+  const tabPositionX = useSharedValue(0);
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ translateX: tabPositionX.value }],
+  }));
+
   return (
-    <View style={styles.tabbar}>
+    <View onLayout={onTabbarLayout} style={styles.tabbar}>
+      <Animated.View
+        style={[
+          {
+            position: "absolute",
+            backgroundColor: "red",
+            borderRadius: 30,
+            marginHorizontal: 12,
+            height: dimensions.height - 15,
+            width: buttonWidth - 25,
+          },
+          animatedStyle,
+        ]}
+      ></Animated.View>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const label =
@@ -19,6 +54,10 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
         const isFocused = state.index === index;
 
         const onPress = () => {
+          tabPositionX.value = withSpring(index * buttonWidth, {
+            duration: 1500,
+          });
+
           const event = navigation.emit({
             type: "tabPress",
             target: route.key,
@@ -47,24 +86,6 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
             color={isFocused ? "red" : "yellow"}
             label={label}
           />
-
-          // <TouchableOpacity
-          //   key={route.name}
-          //   accessibilityRole="button"
-          //   accessibilityState={isFocused ? { selected: true } : {}}
-          //   accessibilityLabel={options.tabBarAccessibilityLabel}
-          //   testID={options.tabBarTestID}
-          //   onPress={onPress}
-          //   onLongPress={onLongPress}
-          //   style={styles.tabBarItem}
-          // >
-          //   {icon[route.name]({
-          //     color: isFocused ? "red" : "yellow",
-          //   })}
-          //   <Text style={{ color: isFocused ? "#673ab7" : "#222" }}>
-          //     {label}
-          //   </Text>
-          // </TouchableOpacity>
         );
       })}
     </View>
@@ -88,10 +109,4 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     elevation: 5,
   },
-  // tabBarItem: {
-  //   flex: 1,
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  //   gap: 5,
-  // },
 });
