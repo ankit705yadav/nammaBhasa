@@ -2,12 +2,13 @@ import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { StyleSheet, View, LayoutChangeEvent } from "react-native";
 import TabBarButton from "./TabBarButton";
 import { useState } from "react";
-import {
+import Animated, {
   useSharedValue,
   useAnimatedStyle,
-  withSpring,
+  withTiming,
+  withSequence,
+  runOnJS,
 } from "react-native-reanimated";
-import Animated from "react-native-reanimated";
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   const [dimensions, setDimensions] = useState({ height: 20, width: 100 });
@@ -21,11 +22,34 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
     });
   };
 
-  const tabPositionX = useSharedValue(0);
+  const indicatorX = useSharedValue(0);
+  const indicatorWidth = useSharedValue(buttonWidth - 25);
 
   const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ translateX: tabPositionX.value }],
+    transform: [{ translateX: indicatorX.value }],
+    width: indicatorWidth.value,
   }));
+
+  const moveTab = (index: number) => {
+    const targetX = index * buttonWidth;
+
+    const currentX = indicatorX.value;
+    const minX = Math.min(currentX, targetX);
+    const maxX = Math.max(currentX, targetX);
+    const distance = Math.abs(currentX - targetX);
+
+    // Step 1: Stretch from current to target
+    indicatorX.value = withTiming(minX, { duration: 150 });
+    indicatorWidth.value = withTiming(
+      distance + (buttonWidth - 25),
+      { duration: 300 },
+      () => {
+        // Step 2: After stretch, move and shrink
+        indicatorX.value = withTiming(targetX, { duration: 300 });
+        indicatorWidth.value = withTiming(buttonWidth - 25, { duration: 300 });
+      },
+    );
+  };
 
   return (
     <View onLayout={onTabbarLayout} style={styles.tabbar}>
@@ -33,15 +57,14 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
         style={[
           {
             position: "absolute",
-            backgroundColor: "red",
-            borderRadius: 30,
+            backgroundColor: "violet",
+            borderRadius: 5,
             marginHorizontal: 12,
             height: dimensions.height - 15,
-            width: buttonWidth - 25,
           },
           animatedStyle,
         ]}
-      ></Animated.View>
+      />
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const label =
@@ -54,9 +77,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
         const isFocused = state.index === index;
 
         const onPress = () => {
-          tabPositionX.value = withSpring(index * buttonWidth, {
-            duration: 1500,
-          });
+          moveTab(index);
 
           const event = navigation.emit({
             type: "tabPress",
@@ -102,7 +123,7 @@ const styles = StyleSheet.create({
     backgroundColor: "pink",
     marginHorizontal: 80,
     paddingVertical: 15,
-    borderRadius: 35,
+    borderRadius: 5,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 10 },
     shadowRadius: 10,
