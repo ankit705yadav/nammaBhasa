@@ -65,11 +65,11 @@ const TabBarButton = ({
           color: isFocused ? "yellow" : "black",
         })}
       </Animated.View>
-      <Animated.Text
+      {/* <Animated.Text
         style={[{ color: isFocused ? "white" : "#222" }, animatedTextStyle]}
       >
         {label}
-      </Animated.Text>
+      </Animated.Text> */}
     </Pressable>
   );
 };

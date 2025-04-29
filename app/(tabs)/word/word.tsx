@@ -88,7 +88,9 @@ export default function WordScreen() {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
+    <SafeAreaView
+      style={{ flex: 1, backgroundColor: "#e0be21", marginBottom: 50 }}
+    >
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
         {/* Header */}
         <Pressable
