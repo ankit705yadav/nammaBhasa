@@ -22,6 +22,11 @@ const ANIMATION_DURATION = 600;
 const ANIMATION_DELAY = 0;
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
+  const focusedOptions = descriptors[state.routes[state.index].key].options;
+  if (focusedOptions.tabBarVisible === false) {
+    return null;
+  }
+
   const [dimensions, setDimensions] = useState({ height: 20, width: 100 });
   const [tabLayouts, setTabLayouts] = useState([]);
   const tabLayoutsRef = useRef([]);
@@ -256,8 +261,8 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
         style={[
           {
             position: "absolute",
-            backgroundColor: "violet",
-            borderRadius: 5,
+            backgroundColor: "#e0be21",
+            borderRadius: dimensions.height / 2,
             height: dimensions.height - 15,
             top: 7.5, // Center vertically
           },
@@ -304,7 +309,6 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
             <TabBarButton
               isFocused={isFocused}
               routeName={route.name}
-              color={isFocused ? "red" : "yellow"}
               label={label}
               onPress={() => onTabPress(index, route.name, route.params)}
               onLongPress={onLongPress}
@@ -323,9 +327,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "pink",
+    backgroundColor: "#272627",
     paddingVertical: 15,
     maxHeight: 50,
+    borderRadius: 50,
+    marginHorizontal: 10,
+    marginBottom: 2,
+
     // shadowColor: "#000",
     // shadowOffset: { width: 0, height: 10 },
     // shadowRadius: 10,

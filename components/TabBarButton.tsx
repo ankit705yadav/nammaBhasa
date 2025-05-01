@@ -15,7 +15,6 @@ type TabBarButtonProps = {
   onLongPress: () => void;
   isFocused: boolean;
   routeName: string;
-  color: string;
   label: string;
 };
 
@@ -24,7 +23,6 @@ const TabBarButton = ({
   onLongPress,
   isFocused,
   routeName,
-  color,
   label,
 }: TabBarButtonProps) => {
   const scale = useSharedValue(0);
@@ -62,7 +60,7 @@ const TabBarButton = ({
     >
       <Animated.View style={animatedIconStyle}>
         {icon[routeName]({
-          color: isFocused ? "yellow" : "black",
+          color: isFocused ? "black" : "white",
         })}
       </Animated.View>
       {/* <Animated.Text

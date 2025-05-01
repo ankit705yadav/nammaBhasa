@@ -23,6 +23,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => (
             <Ionicons size={28} name="git-commit-sharp" color={color} />
           ),
+          headerShown: false,
         }}
       />
       <Tabs.Screen
@@ -32,6 +33,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => (
             <Ionicons size={28} name="unlink" color="white" />
           ),
+          headerShown: false,
         }}
       />
 
@@ -42,6 +44,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => (
             <Ionicons size={28} name="filter" color="white" />
           ),
+          headerShown: false,
         }}
       />
     </Tabs>

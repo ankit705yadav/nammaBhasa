@@ -19,15 +19,16 @@ const KannadaQuiz = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
-    // Hide the tab bar when component mounts
-    navigation.getParent()?.setOptions({
-      tabBarStyle: { display: "none" },
+    const parent = navigation.getParent();
+    parent?.setOptions({
+      tabBarVisible: false,
     });
-    // Show the tab bar when component unmounts
-    return () =>
-      navigation.getParent()?.setOptions({
-        tabBarStyle: undefined,
+
+    return () => {
+      parent?.setOptions({
+        tabBarVisible: true,
       });
+    };
   }, [navigation]);
 
   useFocusEffect(
