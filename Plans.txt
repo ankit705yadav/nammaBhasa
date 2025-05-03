@@ -1,0 +1,11 @@
+    TODO:
+1.DarkMode
+2.OffScrollView press fix
+3.Word of day feature(noti)
+4.Profile feature
+5.LeaderBoard
+6.Help feature in games (trimDown options)
+7.hapticFeedback when choosing wrightwrong answer in games
+8.Screen to show scored score after each game with animted elements
+9.hapticFeedback in navBar
+10.

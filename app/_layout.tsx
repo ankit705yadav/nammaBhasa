@@ -3,7 +3,7 @@ import {
   DefaultTheme,
   ThemeProvider,
 } from "@react-navigation/native";
-import { useFonts } from "expo-font";
+import { useFonts, Poppins_100Thin as popIn } from "@expo-google-fonts/poppins";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
@@ -19,6 +19,10 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    "PlaywriteRomania-Regular": require("../assets/fonts/PlaywriteRO-Regular.ttf"),
+    "PlaywriteRomania-ExtraLight": require("../assets/fonts/PlaywriteRO-ExtraLight.ttf"),
+    AnekKannada: require("../assets/fonts/AnekKannada.ttf"),
+    popIn,
   });
 
   useEffect(() => {
@@ -37,7 +41,7 @@ export default function RootLayout() {
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
-      <StatusBar style="auto" />
+      <StatusBar backgroundColor="#e0be21" style="light" />
     </ThemeProvider>
   );
 }

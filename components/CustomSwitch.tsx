@@ -198,7 +198,7 @@ const CustomSwitch = ({
 
       <BlurView
         intensity={30}
-        style={[styles.container, { width: containerWidth }]}
+        style={[styles.optionContainer, { width: containerWidth }]}
       >
         <Animated.View style={[styles.slider, animatedStyle]} />
         {options.map((option, index) => (
@@ -235,13 +235,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    position: "absolute",
-    bottom: 12,
-    left: 0,
-    right: 0,
     paddingHorizontal: 10,
   },
-  container: {
+  optionContainer: {
     flexDirection: "row",
     height: CONTAINER_HEIGHT,
     backgroundColor: "rgba(38, 38, 38, 1)",

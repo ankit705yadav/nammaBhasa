@@ -6,7 +6,6 @@ import {
   Text,
   View,
   Pressable,
-  StatusBar,
 } from "react-native";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -93,8 +92,6 @@ export default function SentenceScreen() {
     <SafeAreaView
       style={{ flex: 1, backgroundColor: "black", paddingBottom: 50 }}
     >
-      <StatusBar backgroundColor="#e0be21" barStyle="light-content" />
-
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
         {/* Header */}
 
