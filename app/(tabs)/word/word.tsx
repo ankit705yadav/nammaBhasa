@@ -111,43 +111,38 @@ export default function WordScreen() {
         />
 
         {/* Container */}
-        <FlatList
-          data={filteredWords}
-          keyExtractor={(item, index) => index.toString()}
-          numColumns={2}
-          renderItem={({ item }) => (
-            <LinearGradient
-              colors={["pink", "#e0be21"]} // Gradient colors for the border
-              style={styles.borderContainer} // Outer gradient border
-            >
-              <Pressable
-                onPress={() => handleItemPress(item)}
-                onLongPress={() => handleSpeak(item.transliteration)}
-                style={styles.item} // Inner content
+        <View style={{ flex: 1 }}>
+          <FlatList
+            data={filteredWords}
+            keyExtractor={(item, index) => index.toString()}
+            numColumns={2}
+            renderItem={({ item }) => (
+              <LinearGradient
+                colors={["pink", "#e0be21"]} // Gradient colors for the border
+                style={styles.borderContainer} // Outer gradient border
               >
-                <View style={styles.itemContent}>
-                  <Text style={styles.word}>{item.word}</Text>
-                  {showTranslation && (
-                    <Text style={styles.translation}>
-                      {item.transliteration}
-                    </Text>
-                  )}
-                </View>
-              </Pressable>
-            </LinearGradient>
-          )}
-          contentContainerStyle={styles.gridContainer}
-        />
+                <Pressable
+                  onPress={() => handleItemPress(item)}
+                  onLongPress={() => handleSpeak(item.transliteration)}
+                  style={styles.item} // Inner content
+                >
+                  <View style={styles.itemContent}>
+                    <Text style={styles.word}>{item.word}</Text>
+                    {showTranslation && (
+                      <Text style={styles.translation}>
+                        {item.transliteration}
+                      </Text>
+                    )}
+                  </View>
+                </Pressable>
+              </LinearGradient>
+            )}
+            contentContainerStyle={styles.gridContainer}
+          />
+        </View>
 
         {/* tab-switch */}
-        <View
-          style={{
-            position: "absolute",
-            bottom: 12,
-            left: 0,
-            right: 0,
-          }}
-        >
+        <View style={styles.customSwitchContainer}>
           <CustomSwitch
             options={["Lvl 1", "Lvl 2", "Lvl 3"]}
             onSwitch={handleSwitch}
@@ -338,5 +333,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 10,
     padding: 8,
+  },
+
+  customSwitchContainer: {
+    position: "absolute",
+    bottom: 12,
+    left: 0,
+    right: 0,
   },
 });

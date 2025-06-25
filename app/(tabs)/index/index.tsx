@@ -48,7 +48,7 @@ export default function HomeScreen() {
     const filtered = data.filter(
       (item) =>
         item.letter.includes(searchQuery) ||
-        item.transliteration.toLowerCase().includes(searchQuery.toLowerCase()),
+        item.transliteration.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredVowels(filtered);
   }, [searchQuery, activeTab]);
@@ -94,41 +94,38 @@ export default function HomeScreen() {
         />
 
         {/* Container */}
-        <FlatList
-          data={filteredVowels}
-          keyExtractor={(item, index) => index.toString()}
-          numColumns={4}
-          contentContainerStyle={styles.gridContainer}
-          renderItem={({ item }) => (
-            <LinearGradient
-              colors={["pink", "#e0be21"]} // Gradient colors for the border
-              style={styles.borderContainer} // Outer gradient border
-            >
-              <Pressable
-                onPress={() => handleItemPress(item)}
-                onLongPress={() => handleSpeak(item.transliteration)}
-                style={styles.item} // Inner content
+        <View style={{ flex: 1 }}>
+          <FlatList
+            data={filteredVowels}
+            keyExtractor={(item, index) => index.toString()}
+            numColumns={4}
+            contentContainerStyle={styles.gridContainer}
+            renderItem={({ item }) => (
+              <LinearGradient
+                colors={["pink", "#e0be21"]} // Gradient colors for the border
+                style={styles.borderContainer} // Outer gradient border
               >
-                <View style={styles.itemContent}>
-                  <Text style={styles.letter}>{item.letter}</Text>
-                  {showTransliteration && (
-                    <Text style={styles.translit}>{item.transliteration}</Text>
-                  )}
-                </View>
-              </Pressable>
-            </LinearGradient>
-          )}
-        />
+                <Pressable
+                  onPress={() => handleItemPress(item)}
+                  onLongPress={() => handleSpeak(item.transliteration)}
+                  style={styles.item} // Inner content
+                >
+                  <View style={styles.itemContent}>
+                    <Text style={styles.letter}>{item.letter}</Text>
+                    {showTransliteration && (
+                      <Text style={styles.translit}>
+                        {item.transliteration}
+                      </Text>
+                    )}
+                  </View>
+                </Pressable>
+              </LinearGradient>
+            )}
+          />
+        </View>
 
         {/* tab-switch */}
-        <View
-          style={{
-            position: "absolute",
-            bottom: 12,
-            left: 0,
-            right: 0,
-          }}
-        >
+        <View style={styles.customSwitchContainer}>
           <CustomSwitch
             options={["Vowels", "Consonants"]}
             onSwitch={handleSwitch}
@@ -306,5 +303,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 10,
     padding: 8,
+  },
+
+  customSwitchContainer: {
+    position: "absolute",
+    bottom: 12,
+    left: 0,
+    right: 0,
   },
 });

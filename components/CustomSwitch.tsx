@@ -153,13 +153,13 @@ const CustomSwitch = ({
         progress,
         inputRange,
         [fromX, fromX, toX],
-        Extrapolation.CLAMP,
+        Extrapolation.CLAMP
       );
       pillWidth = interpolate(
         progress,
         inputRange,
         [fromW, toX + toW - fromX, toW],
-        Extrapolation.CLAMP,
+        Extrapolation.CLAMP
       );
     } else if (toX < fromX) {
       // Moving Left
@@ -167,13 +167,13 @@ const CustomSwitch = ({
         progress,
         inputRange,
         [fromX, toX, toX],
-        Extrapolation.CLAMP,
+        Extrapolation.CLAMP
       );
       pillWidth = interpolate(
         progress,
         inputRange,
         [fromW, fromX + fromW - toX, toW],
-        Extrapolation.CLAMP,
+        Extrapolation.CLAMP
       );
     } else {
       // No movement (should be handled by progress === 1 check above)
@@ -245,6 +245,15 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     alignItems: "center",
     paddingHorizontal: CONTAINER_PADDING, // Use horizontal padding
+
+    // shadow
+    // iOS
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    // Android
+    elevation: 5,
   },
   option: {
     // width is dynamic
@@ -280,6 +289,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#292929",
     borderRadius: 20,
     marginHorizontal: 10,
+
+    // shadow
+    // iOS
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    // Android
+    elevation: 5,
   },
 });
 
