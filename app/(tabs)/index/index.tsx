@@ -19,6 +19,7 @@ import Modal from "react-native-modal";
 import CustomSwitch from "@/components/CustomSwitch";
 import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
 import { speakText } from "../../../utils/utils";
+import { globalStyles } from "@/assets/theme/globalStyles";
 
 const { width } = Dimensions.get("window"); // Get screen width
 
@@ -125,7 +126,7 @@ export default function HomeScreen() {
         </View>
 
         {/* tab-switch */}
-        <View style={styles.customSwitchContainer}>
+        <View style={globalStyles.customSwitchContainer}>
           <CustomSwitch
             options={["Vowels", "Consonants"]}
             onSwitch={handleSwitch}
@@ -153,24 +154,26 @@ export default function HomeScreen() {
               setSelectedItem(null);
             }}
             swipeDirection={["down"]}
-            style={styles.modal}
+            style={globalStyles.modal}
           >
-            <View style={styles.modalContent}>
-              <View style={styles.bar} />
+            <View style={globalStyles.modalContent}>
+              <View style={globalStyles.bar} />
               {selectedItem && (
-                <View style={styles.modalLetterContainer}>
+                <View style={globalStyles.modalLetterContainer}>
                   {/* speech */}
                   <Pressable
                     onPress={() => handleSpeak(selectedItem.transliteration)}
-                    style={styles.speakerButton}
+                    style={globalStyles.speakerButton}
                   >
                     <AntDesign name="sound" size={28} color="#dad8de" />
                   </Pressable>
 
-                  <Text style={styles.modalLetter}>{selectedItem.letter}</Text>
+                  <Text style={globalStyles.modalLetter}>
+                    {selectedItem.letter}
+                  </Text>
 
-                  <View style={styles.modalBottomRow}>
-                    <Text style={styles.modalTranslit}>
+                  <View style={globalStyles.modalBottomRow}>
+                    <Text style={globalStyles.modalTranslit}>
                       {selectedItem.transliteration}
                     </Text>
                   </View>
@@ -240,75 +243,5 @@ const styles = StyleSheet.create({
   translit: {
     fontSize: 14,
     color: "#E2DFE0",
-  },
-
-  // modal
-  modal: {
-    justifyContent: "flex-end",
-    margin: 0,
-  },
-  modalContent: {
-    // backgroundColor: "#1b212a",
-    backgroundColor: "rgb(68, 50, 12)",
-    padding: 22,
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    minHeight: 300,
-  },
-  bar: {
-    width: 60,
-    height: 5,
-    backgroundColor: "#bbb",
-    alignSelf: "center",
-    marginBottom: 10,
-    borderRadius: 5,
-  },
-
-  itemContent: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    width: "100%",
-  },
-
-  itemPressed: {
-    opacity: 0.7,
-    transform: [{ scale: 0.98 }],
-  },
-
-  modalLetterContainer: {
-    alignItems: "center",
-    padding: 20,
-  },
-
-  modalLetter: {
-    color: "#dad8de",
-    fontSize: 120,
-    fontWeight: "bold",
-    marginBottom: 10,
-  },
-
-  modalTranslit: {
-    fontSize: 24,
-    color: "#dad8de",
-  },
-
-  modalBottomRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  speakerButton: {
-    position: "absolute",
-    right: 10,
-    padding: 8,
-  },
-
-  customSwitchContainer: {
-    position: "absolute",
-    bottom: 12,
-    left: 0,
-    right: 0,
   },
 });

@@ -19,6 +19,7 @@ import CustomSwitch from "@/components/CustomSwitch";
 import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
 
 import { speakText } from "../../../utils/utils";
+import { globalStyles } from "@/assets/theme/globalStyles";
 
 const { width } = Dimensions.get("window"); // Get screen width
 
@@ -142,7 +143,7 @@ export default function SentenceScreen() {
         </View>
 
         {/* tab-switch */}
-        <View style={styles.customSwitchContainer}>
+        <View style={globalStyles.customSwitchContainer}>
           <CustomSwitch
             options={["Lvl 1", "Lvl 2", "Lvl 3"]}
             onSwitch={handleSwitch}
@@ -170,26 +171,26 @@ export default function SentenceScreen() {
               setSelectedItem(null);
             }}
             swipeDirection={["down"]}
-            style={styles.modal}
+            style={globalStyles.modal}
           >
-            <View style={styles.modalContent}>
-              <View style={styles.bar} />
+            <View style={globalStyles.modalContent}>
+              <View style={globalStyles.bar} />
               {selectedItem && (
-                <View style={styles.modalSentenceContainer}>
+                <View style={globalStyles.modalSentenceContainer}>
                   <Pressable
                     onPress={() => handleSpeak(selectedItem.transliteration)}
-                    style={styles.speakerButton}
+                    style={globalStyles.speakerButton}
                   >
                     <AntDesign name="sound" size={28} color="#dad8de" />
                   </Pressable>
 
-                  <Text style={styles.modalSentence}>
+                  <Text style={globalStyles.modalSentence}>
                     {selectedItem.sentence}
                   </Text>
-                  <Text style={styles.modalTransliteration}>
+                  <Text style={globalStyles.modalTransliteration}>
                     {selectedItem.transliteration}
                   </Text>
-                  <Text style={styles.modalTranslation}>
+                  <Text style={globalStyles.modalTranslation}>
                     {selectedItem.translation}
                   </Text>
                 </View>
@@ -262,79 +263,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 5,
   },
-
-  // modal
-  modal: {
-    justifyContent: "flex-end",
-    margin: 0,
-  },
-  modalContent: {
-    backgroundColor: "rgb(68, 50, 12)",
-    padding: 22,
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    minHeight: 300,
-  },
-  bar: {
-    width: 60,
-    height: 5,
-    backgroundColor: "#bbb",
-    alignSelf: "center",
-    marginBottom: 10,
-    borderRadius: 5,
-  },
-
   itemContent: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
     padding: 5,
-  },
-
-  itemPressed: {
-    opacity: 0.7,
-    transform: [{ scale: 0.98 }],
-  },
-
-  modalSentenceContainer: {
-    alignItems: "center",
-    padding: 20,
-  },
-
-  modalSentence: {
-    marginTop: 20,
-    color: "#dad8de",
-    fontSize: 30,
-    fontWeight: "bold",
-    marginBottom: 20,
-    textAlign: "center",
-  },
-
-  modalTransliteration: {
-    fontSize: 20,
-    color: "#dad8de",
-    textAlign: "center",
-    marginBottom: 15,
-    fontStyle: "italic",
-  },
-
-  modalTranslation: {
-    fontSize: 24,
-    color: "#dad8de",
-    textAlign: "center",
-  },
-
-  speakerButton: {
-    position: "absolute",
-    right: 10,
-    padding: 8,
-  },
-
-  customSwitchContainer: {
-    position: "absolute",
-    bottom: 12,
-    left: 0,
-    right: 0,
   },
 });
