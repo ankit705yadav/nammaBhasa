@@ -77,7 +77,7 @@ export default function SentenceScreen() {
       item.sentence.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.transliteration.toLowerCase().includes(searchQuery.toLowerCase()) ||
       (item.translation &&
-        item.translation.toLowerCase().includes(searchQuery.toLowerCase())),
+        item.translation.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
   console.log("filteredSentences:", filteredSentences);
@@ -140,12 +140,22 @@ export default function SentenceScreen() {
         />
 
         {/* tab-switch */}
-        <CustomSwitch
-          options={["Lvl 1", "Lvl 2", "Lvl 3"]}
-          onSwitch={handleSwitch}
-          onLeft={() => router.push("/(tabs)/sentence/sentenceGame")}
-          onRight={() => setShowTranslation(!showTranslation)}
-        />
+
+        <View
+          style={{
+            position: "absolute",
+            bottom: 12,
+            left: 0,
+            right: 0,
+          }}
+        >
+          <CustomSwitch
+            options={["Lvl 1", "Lvl 2", "Lvl 3"]}
+            onSwitch={handleSwitch}
+            onLeft={() => router.push("/(tabs)/sentence/sentenceGame")}
+            onRight={() => setShowTranslation(!showTranslation)}
+          />
+        </View>
 
         <View
           style={{
