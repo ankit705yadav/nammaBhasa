@@ -2,9 +2,16 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useCallback, useEffect, useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import kannadaLetters from "../../../data/kannada_letters.json";
+import { speakText } from "../../../utils/utils";
 
 // Define a type for the word objects in our data
 type WordItem = {
@@ -25,10 +32,10 @@ const WordQuiz = () => {
   const [gameOver, setGameOver] = useState(false);
   const [showCorrect, setShowCorrect] = useState(false);
   const [quizMode, setQuizMode] = useState<"translation" | "transliteration">(
-    "translation",
+    "translation"
   );
   const [difficulty, setDifficulty] = useState<"Level1" | "Level2" | "Level3">(
-    "Level1",
+    "Level1"
   );
 
   const navigation = useNavigation();
@@ -61,7 +68,7 @@ const WordQuiz = () => {
         restartGame();
       };
       init();
-    }, []),
+    }, [])
   );
 
   // Get a random word from the specified level
@@ -124,7 +131,7 @@ const WordQuiz = () => {
 
     // Combine and shuffle all options
     const choices = [...incorrectOptions, correctAnswer].sort(
-      () => Math.random() - 0.5,
+      () => Math.random() - 0.5
     );
 
     setQuestion(correct);
@@ -154,7 +161,7 @@ const WordQuiz = () => {
         "with correct answer:",
         correctAnswer,
         "Result:",
-        isCorrect,
+        isCorrect
       ); // Debugging
 
       if (isCorrect) {
@@ -228,7 +235,7 @@ const WordQuiz = () => {
   useFocusEffect(
     useCallback(() => {
       restartGame();
-    }, []),
+    }, [])
   );
 
   // Render options with better comparison logic
@@ -266,6 +273,12 @@ const WordQuiz = () => {
         </TouchableOpacity>
       );
     });
+  };
+
+  // Function to handle speaking text
+  const handleSpeak = (sentence: string) => {
+    console.log("speak-Pressed:", sentence);
+    speakText(sentence);
   };
 
   return (
@@ -306,8 +319,12 @@ const WordQuiz = () => {
               What is the{" "}
               {quizMode === "translation" ? "meaning" : "transliteration"} of:
             </Text>
-            <Text style={styles.question}>{question?.word}</Text>
-
+            <Pressable
+              onLongPress={() => handleSpeak(question?.word)}
+              style={{ width: "100%" }} // Inner content
+            >
+              <Text style={styles.question}>{question?.word}</Text>
+            </Pressable>
             <View style={styles.optionsContainer}>{renderOptions()}</View>
 
             <View style={styles.controlsContainer}>

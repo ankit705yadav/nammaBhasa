@@ -66,9 +66,9 @@ export default function HomeScreen() {
   };
 
   // Function to handle speaking text
-  const handleSpeak = (transliteration: string) => {
-    console.log("speak-Pressed:", transliteration);
-    speakText(transliteration);
+  const handleSpeak = (letter: string) => {
+    console.log("speak-Pressed:", letter);
+    speakText(letter);
   };
 
   return (
@@ -108,7 +108,7 @@ export default function HomeScreen() {
               >
                 <Pressable
                   onPress={() => handleItemPress(item)}
-                  onLongPress={() => handleSpeak(item.transliteration)}
+                  onLongPress={() => handleSpeak(item.letter)}
                   style={styles.item} // Inner content
                 >
                   <View style={styles.itemContent}>
@@ -162,7 +162,7 @@ export default function HomeScreen() {
                 <View style={globalStyles.modalLetterContainer}>
                   {/* speech */}
                   <Pressable
-                    onPress={() => handleSpeak(selectedItem.transliteration)}
+                    onPress={() => handleSpeak(selectedItem.letter)}
                     style={globalStyles.speakerButton}
                   >
                     <AntDesign name="sound" size={28} color="#dad8de" />

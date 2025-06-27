@@ -84,9 +84,9 @@ export default function SentenceScreen() {
   console.log("filteredSentences:", filteredSentences);
 
   // Function to handle speaking text
-  const handleSpeak = (transliteration: string) => {
-    console.log("speak-Pressed:", transliteration);
-    speakText(transliteration);
+  const handleSpeak = (sentence: string) => {
+    console.log("speak-Pressed:", sentence);
+    speakText(sentence);
   };
 
   return (
@@ -126,7 +126,7 @@ export default function SentenceScreen() {
               >
                 <Pressable
                   onPress={() => handleItemPress(item)}
-                  onLongPress={() => handleSpeak(item.transliteration)}
+                  onLongPress={() => handleSpeak(item.sentence)}
                   style={styles.item} // Inner content
                 >
                   <View style={styles.itemContent}>
@@ -178,7 +178,7 @@ export default function SentenceScreen() {
               {selectedItem && (
                 <View style={globalStyles.modalSentenceContainer}>
                   <Pressable
-                    onPress={() => handleSpeak(selectedItem.transliteration)}
+                    onPress={() => handleSpeak(selectedItem.sentence)}
                     style={globalStyles.speakerButton}
                   >
                     <AntDesign name="sound" size={28} color="#dad8de" />

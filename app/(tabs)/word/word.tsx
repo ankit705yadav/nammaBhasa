@@ -83,9 +83,9 @@ export default function WordScreen() {
   console.log("filteredWords:", filteredWords);
 
   // Function to handle speaking text
-  const handleSpeak = (transliteration: string) => {
-    console.log("speak-Pressed:", transliteration);
-    speakText(transliteration);
+  const handleSpeak = (word: string) => {
+    console.log("speak-Pressed:", word);
+    speakText(word);
   };
 
   return (
@@ -124,7 +124,7 @@ export default function WordScreen() {
               >
                 <Pressable
                   onPress={() => handleItemPress(item)}
-                  onLongPress={() => handleSpeak(item.transliteration)}
+                  onLongPress={() => handleSpeak(item.word)}
                   style={styles.item} // Inner content
                 >
                   <View style={styles.itemContent}>
@@ -178,7 +178,7 @@ export default function WordScreen() {
               {selectedItem && (
                 <View style={globalStyles.modalWordContainer}>
                   <Pressable
-                    onPress={() => handleSpeak(selectedItem.transliteration)}
+                    onPress={() => handleSpeak(selectedItem.word)}
                     style={globalStyles.speakerButton}
                   >
                     <AntDesign name="sound" size={28} color="#dad8de" />

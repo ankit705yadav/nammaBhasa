@@ -2,9 +2,16 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useCallback, useEffect, useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import kannadaLetters from "../../../data/kannada_letters.json";
+import { speakText } from "../../../utils/utils";
 
 const KannadaQuiz = () => {
   const [question, setQuestion] = useState(null);
@@ -46,7 +53,7 @@ const KannadaQuiz = () => {
         restartGame();
       };
       init();
-    }, []),
+    }, [])
   );
 
   const getRandomLetter = (list) =>
@@ -71,7 +78,7 @@ const KannadaQuiz = () => {
       "| Transliteration:",
       correct.transliteration,
       "| Translation:",
-      correct.translation,
+      correct.translation
     );
 
     const incorrectOptions = allLetters
@@ -80,7 +87,7 @@ const KannadaQuiz = () => {
       .slice(0, 3);
 
     const choices = [...incorrectOptions, correct].sort(
-      () => Math.random() - 0.5,
+      () => Math.random() - 0.5
     );
 
     setQuestion(correct);
@@ -127,8 +134,14 @@ const KannadaQuiz = () => {
   useFocusEffect(
     useCallback(() => {
       restartGame();
-    }, []),
+    }, [])
   );
+
+  // Function to handle speaking text
+  const handleSpeak = (letter: string) => {
+    console.log("speak-Pressed:", letter);
+    speakText(letter);
+  };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
@@ -162,7 +175,12 @@ const KannadaQuiz = () => {
           </View>
         ) : (
           <>
-            <Text style={styles.question}>{question?.letter}</Text>
+            <Pressable
+              onLongPress={() => handleSpeak(question?.letter)}
+              style={{ width: "100%" }} // Inner content
+            >
+              <Text style={styles.question}>{question?.letter}</Text>
+            </Pressable>
             <View style={styles.optionsContainer}>
               {options.map((option) => (
                 <TouchableOpacity
@@ -216,6 +234,7 @@ const styles = StyleSheet.create({
     fontSize: 50,
     fontWeight: "bold",
     marginBottom: 20,
+    textAlign: "center",
     color: "white",
   },
   optionsContainer: {

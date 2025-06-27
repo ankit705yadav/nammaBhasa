@@ -31,10 +31,10 @@ const SentenceQuiz = () => {
   const [gameOver, setGameOver] = useState(false);
   const [showCorrect, setShowCorrect] = useState(false);
   const [quizMode, setQuizMode] = useState<"translation" | "transliteration">(
-    "translation",
+    "translation"
   );
   const [difficulty, setDifficulty] = useState<"Level1" | "Level2" | "Level3">(
-    "Level1",
+    "Level1"
   );
 
   const navigation = useNavigation();
@@ -58,7 +58,7 @@ const SentenceQuiz = () => {
         try {
           // await AsyncStorage.removeItem("HIGH_SCORE_SENTENCE");
           const storedHighScore = await AsyncStorage.getItem(
-            "HIGH_SCORE_SENTENCE",
+            "HIGH_SCORE_SENTENCE"
           );
           if (storedHighScore !== null) {
             setHighScore(parseInt(storedHighScore));
@@ -69,7 +69,7 @@ const SentenceQuiz = () => {
         restartGame();
       };
       init();
-    }, []),
+    }, [])
   );
 
   // Get a random sentence from the specified level
@@ -91,7 +91,7 @@ const SentenceQuiz = () => {
   };
 
   const generateQuestionWithMode = (
-    mode: "translation" | "transliteration",
+    mode: "translation" | "transliteration"
   ) => {
     if (wrongCount >= 4) {
       setGameOver(true);
@@ -113,15 +113,13 @@ const SentenceQuiz = () => {
 
     // Create incorrect options based on the passed mode parameter
     let incorrectPool = allSentences.filter(
-      (s) => s.sentence !== correct.sentence,
+      (s) => s.sentence !== correct.sentence
     );
     const incorrectOptions = incorrectPool
       .sort(() => Math.random() - 0.5)
       .slice(0, 3)
       .map((sentence) =>
-        mode === "translation"
-          ? sentence.translation
-          : sentence.transliteration,
+        mode === "translation" ? sentence.translation : sentence.transliteration
       );
 
     // Correct answer based on the passed mode parameter
@@ -135,12 +133,12 @@ const SentenceQuiz = () => {
       " | Mode:",
       mode,
       " | Sentence:",
-      correct.sentence,
+      correct.sentence
     );
 
     // Combine and shuffle all options
     const choices = [...incorrectOptions, correctAnswer].sort(
-      () => Math.random() - 0.5,
+      () => Math.random() - 0.5
     );
 
     setQuestion(correct);
@@ -168,7 +166,7 @@ const SentenceQuiz = () => {
           try {
             await AsyncStorage.setItem(
               "HIGH_SCORE_SENTENCE",
-              newScore.toString(),
+              newScore.toString()
             );
           } catch (e) {
             console.error("Failed to save high score", e);
@@ -225,13 +223,13 @@ const SentenceQuiz = () => {
   useFocusEffect(
     useCallback(() => {
       restartGame();
-    }, []),
+    }, [])
   );
 
   // Function to handle speaking text
-  const handleSpeak = (transliteration: string) => {
-    console.log("speak-Pressed:", transliteration);
-    speakText(transliteration);
+  const handleSpeak = (sentence: string) => {
+    console.log("speak-Pressed:", sentence);
+    speakText(sentence);
   };
 
   return (

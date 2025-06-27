@@ -1,182 +1,150 @@
-import * as Speech from "expo-speech";
 import * as Haptics from "expo-haptics";
+import { Audio } from "expo-av";
+import * as FileSystem from "expo-file-system";
 
-// Define types for voice information
-export type VoiceInfo = {
-  identifier: string;
-  name: string;
-  quality: string;
-  language: string;
-};
-
-// Global state for voice settings
-let allVoices: VoiceInfo[] = [];
-let indianVoices: VoiceInfo[] = [];
-let selectedVoiceIndex: number = 0;
-// let currentLanguage: string = "hi-IN";
-let currentLanguage: string = "ka-IN";
-
+// Global state for the Expo Audio object to prevent overlap
+let soundObject: Audio.Sound | null = null;
 
 /**
- * Filters voices to only keep Indian languages (those with 'IN' in the language code)
+ * Initializes audio mode settings for playback.
+ * This should be called once, typically when your app starts.
  */
-const filterInLanguages = (voices: VoiceInfo[]): VoiceInfo[] => {
-  const filtered = voices.filter(voice => 
-    voice.language.includes('-IN') || 
-    // Include some other patterns that might represent Indian languages
-    voice.language === 'sa' || // Sanskrit
-    voice.language === 'hi' || // Hindi without region
-    voice.name.toLowerCase().includes('indian') ||
-    voice.name.toLowerCase().includes('hindi') ||
-    voice.name.toLowerCase().includes('tamil') ||
-    voice.name.toLowerCase().includes('telugu') ||
-    voice.name.toLowerCase().includes('kannada') ||
-    voice.name.toLowerCase().includes('malayalam') ||
-    voice.name.toLowerCase().includes('bengali') ||
-    voice.name.toLowerCase().includes('marathi')
-  );
-  
-  console.log(`Found ${filtered.length} Indian voices out of ${voices.length} total voices`);
-  
-  return filtered.length > 0 ? filtered : voices; // Fall back to all voices if no Indian voices found
-};
-
-/**
- * Initialize voice settings by loading available voices
- */
-export const initVoiceSettings = async (): Promise<void> => {
+export const initializeAudioMode = async (): Promise<void> => {
   try {
-    allVoices = await Speech.getAvailableVoicesAsync();
-    console.log(`Loaded ${allVoices.length} total voice options`);
-    
-    // Filter for Indian languages
-    indianVoices = filterInLanguages(allVoices);
-    
-    // Set default voice if available
-    if (indianVoices.length > 0) {
-      // Try to find Hindi voice first
-      const hindiVoice = indianVoices.findIndex(voice => 
-        voice.language.startsWith('hi-IN') || 
-        voice.language === 'hi' ||
-        voice.name.toLowerCase().includes('hindi')
-      );
-      
-      if (hindiVoice >= 0) {
-        selectedVoiceIndex = hindiVoice;
-        currentLanguage = indianVoices[hindiVoice].language;
-      } else {
-        // Fall back to first Indian voice
-        currentLanguage = indianVoices[0].language;
-      }
-      
-      console.log(`Selected default voice: ${indianVoices[selectedVoiceIndex].name} (${currentLanguage})`);
-    }
+    await Audio.setAudioModeAsync({
+      allowsRecordingIOS: false,
+      playsInSilentModeIOS: true,
+      staysActiveInBackground: false,
+      shouldDuckAndroid: true,
+      playThroughEarpieceAndroid: false,
+    });
+    console.log("Audio mode initialized successfully.");
   } catch (error) {
-    console.error("Error initializing voice settings:", error);
+    console.error("Error initializing audio mode:", error);
   }
 };
 
 /**
- * Get all available Indian speech voices
- * @returns Array of Indian voice objects
+ * Play a base64 encoded audio string using expo-av and expo-file-system.
+ * This is an internal helper function.
+ * @param base64Audio The base64 audio data
  */
-export const getAvailableVoices = (): VoiceInfo[] => {
-  return indianVoices;
-};
-
-/**
- * Get all available speech voices (including non-Indian)
- * @returns Array of all voice objects
- */
-export const getAllVoices = (): VoiceInfo[] => {
-  return allVoices;
-};
-
-/**
- * Get the currently selected voice
- * @returns Current voice info or undefined if not available
- */
-export const getCurrentVoice = (): VoiceInfo | undefined => {
-  if (indianVoices.length > 0 && selectedVoiceIndex < indianVoices.length) {
-    return indianVoices[selectedVoiceIndex];
+const playBase64Audio = async (base64Audio: string): Promise<void> => {
+  // Unload any existing sound object to prevent overlap
+  if (soundObject) {
+    await soundObject.unloadAsync();
+    soundObject = null;
   }
-  return undefined;
+
+  // Create a unique file path for the temporary audio file
+  const filePath = `${
+    FileSystem.documentDirectory
+  }sarvam_speech_${Date.now()}.wav`;
+
+  try {
+    // Write the base64 audio data to the temporary file
+    await FileSystem.writeAsStringAsync(filePath, base64Audio, {
+      encoding: FileSystem.EncodingType.Base64,
+    });
+
+    // Create and load the sound object from the temporary file URI
+    const { sound } = await Audio.Sound.createAsync(
+      { uri: filePath },
+      { shouldPlay: true } // Start playing immediately
+    );
+    soundObject = sound; // Store reference to the new sound object
+
+    // Set an event listener to unload the sound and delete the file when playback finishes
+    sound.setOnPlaybackStatusUpdate((status) => {
+      if (status.isLoaded && status.didJustFinish) {
+        sound.unloadAsync(); // Unload the sound from memory
+        soundObject = null; // Clear the reference
+        // Optionally delete the temporary file after playback to free up space
+        FileSystem.deleteAsync(filePath, { idempotent: true });
+        console.log("Playback finished and temporary file deleted.");
+      }
+    });
+  } catch (err) {
+    console.error("Error playing audio from file system:", err);
+  }
 };
 
 /**
- * Get the current language code
- * @returns Current language code
+ * Speak text using the Sarvam AI text-to-speech API.
+ * This function is simplified to always use Kannada (kn-IN) and the "Anushka" speaker.
+ * @param text The text to be converted to speech.
+ * @param withHaptic Whether to provide haptic feedback (default: true).
  */
-export const getCurrentLanguage = (): string => {
-  return currentLanguage;
-};
-
-/**
- * Cycle to the next available Indian language/voice
- * @returns The new selected voice info
- */
-export const cycleToNextVoice = (): VoiceInfo | undefined => {
-  if (indianVoices.length === 0) return undefined;
-
-  triggerHaptic(Haptics.ImpactFeedbackStyle.Heavy);
-  
-  const nextIndex = (selectedVoiceIndex + 1) % indianVoices.length;
-  selectedVoiceIndex = nextIndex;
-  currentLanguage = indianVoices[nextIndex].language;
-  
-  console.log(
-    `Language changed to: ${currentLanguage} (${indianVoices[nextIndex].name})`
-  );
-  
-  return indianVoices[nextIndex];
-};
-
-/**
- * Speak text using the device's text-to-speech engine
- * @param text The text to speak
- * @param customLanguage Override the global language (optional)
- * @param customVoice Override the global voice (optional)
- * @param withHaptic Whether to provide haptic feedback (default: true)
- */
-export const speakText = (
+export const speakText = async (
   text: string,
-  customLanguage?: string,
-  customVoice?: string,
   withHaptic: boolean = true
-): void => {
-  if (!text) return;
+): Promise<void> => {
+  if (!text) return; // Do nothing if text is empty
 
-  // Provide haptic feedback
+  // Provide haptic feedback if enabled
   if (withHaptic) {
     triggerHaptic(Haptics.ImpactFeedbackStyle.Medium);
   }
 
-  // Configure speech options
-  const options: Speech.SpeechOptions = {
-    language: customLanguage || currentLanguage,
-    pitch: 1.0,
-    rate: 0.9,
+  const apiKey = "3e80d1aa-6746-4af9-9e4f-46431c14b791"; // Your Sarvam AI API Subscription Key
+  const apiEndpoint = "https://api.sarvam.ai/text-to-speech";
+
+  // Define the request body with the corrected speaker name
+  const requestBody = {
+    text: text,
+    target_language_code: "kn-IN", // Always Kannada
+    speaker: "anushka", // ['meera', 'pavithra', 'maitreyi', 'arvind', 'amol', 'amartya', 'diya', 'neel', 'misha', 'vian', 'arjun', 'maya', 'anushka', 'abhilash', 'manisha', 'vidya', 'arya', 'karun' or 'hitesh']
+    pace: 1.0, // Default pace [0.3 - 1.0]
+    pitch: 0.0, // Default pitch
+    loudness: 1.0, // Default loudness
+    model: "bulbul:v2", // Specific model as per documentation
   };
 
-  // Add voice identifier if available
-  const voiceIdentifier = customVoice || 
-    (indianVoices.length > 0 && selectedVoiceIndex < indianVoices.length 
-      ? indianVoices[selectedVoiceIndex].identifier 
-      : undefined);
-      
-  if (voiceIdentifier) {
-    options.voice = voiceIdentifier;
-  }
+  console.log(
+    "Sending request body to Sarvam AI:",
+    JSON.stringify(requestBody, null, 2)
+  ); // Log the request body for debugging
 
-  // Speak the text
-  Speech.speak(text, options);
+  try {
+    const response = await fetch(apiEndpoint, {
+      method: "POST",
+      headers: {
+        "api-subscription-key": apiKey,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(requestBody),
+    });
+
+    // Check if the API call was successful
+    if (!response.ok) {
+      // If the response is not OK, read the error body for more details
+      const errorBody = await response.json();
+      console.error("Sarvam AI API returned an error:", errorBody); // Log the detailed error from the API
+      throw new Error(`API call failed with status: ${response.status}`);
+    }
+
+    const responseBody = await response.json();
+
+    // Check if audio data is present in the response
+    if (responseBody.audios && responseBody.audios.length > 0) {
+      const base64Audio = responseBody.audios[0]; // Get the first base64 audio string
+
+      // Play the received base64 audio data
+      await playBase64Audio(base64Audio);
+    } else {
+      console.warn("No audio data received from the Sarvam AI API.");
+    }
+  } catch (error) {
+    console.error("Error speaking text with Sarvam AI:", error);
+    // You might want to display a user-friendly error message here
+  }
 };
 
 /**
- * Creates a haptic impact feedback
+ * Creates a haptic impact feedback.
  * @param style Impact style (Light, Medium, Heavy)
  */
-export const triggerHaptic = (
+const triggerHaptic = (
   style: Haptics.ImpactFeedbackStyle = Haptics.ImpactFeedbackStyle.Medium
 ) => {
   Haptics.impactAsync(style);
