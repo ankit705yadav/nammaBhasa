@@ -18,7 +18,7 @@ import Modal from "react-native-modal";
 import CustomSwitch from "@/components/CustomSwitch";
 import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
 
-import { speakText } from "../../../utils/utils";
+import { speakText } from "../../../utils/speak";
 import { globalStyles } from "@/assets/theme/globalStyles";
 
 const { width } = Dimensions.get("window"); // Get screen width

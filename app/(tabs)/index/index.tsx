@@ -18,15 +18,15 @@ import Modal from "react-native-modal";
 
 import CustomSwitch from "@/components/CustomSwitch";
 import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
-import { speakText } from "../../../utils/utils";
+import { speakText } from "../../../utils/speak";
 import { globalStyles } from "@/assets/theme/globalStyles";
 
 const { width } = Dimensions.get("window"); // Get screen width
 
 type LetterItem = {
   letter: string;
+  speak: string;
   transliteration: string;
-  // add other properties if they exist in your data
 };
 
 export default function HomeScreen() {
@@ -68,7 +68,7 @@ export default function HomeScreen() {
   // Function to handle speaking text
   const handleSpeak = (letter: string) => {
     console.log("speak-Pressed:", letter);
-    speakText(letter);
+    speakText(letter, 0.5);
   };
 
   return (
@@ -108,7 +108,7 @@ export default function HomeScreen() {
               >
                 <Pressable
                   onPress={() => handleItemPress(item)}
-                  onLongPress={() => handleSpeak(item.letter)}
+                  onLongPress={() => handleSpeak(item.speak)}
                   style={styles.item} // Inner content
                 >
                   <View style={styles.itemContent}>
@@ -162,7 +162,7 @@ export default function HomeScreen() {
                 <View style={globalStyles.modalLetterContainer}>
                   {/* speech */}
                   <Pressable
-                    onPress={() => handleSpeak(selectedItem.letter)}
+                    onPress={() => handleSpeak(selectedItem.speak)}
                     style={globalStyles.speakerButton}
                   >
                     <AntDesign name="sound" size={28} color="#dad8de" />
@@ -234,6 +234,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 5,
     elevation: 3,
+  },
+  itemContent: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    padding: 5,
   },
   letter: {
     fontSize: 24,

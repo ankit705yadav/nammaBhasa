@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import kannadaLetters from "../../../data/kannada_letters.json";
-import { speakText } from "../../../utils/utils";
+import { speakText } from "../../../utils/speak";
 
 const KannadaQuiz = () => {
   const [question, setQuestion] = useState(null);
@@ -140,7 +140,7 @@ const KannadaQuiz = () => {
   // Function to handle speaking text
   const handleSpeak = (letter: string) => {
     console.log("speak-Pressed:", letter);
-    speakText(letter);
+    speakText(letter, 0.5);
   };
 
   return (
@@ -176,7 +176,7 @@ const KannadaQuiz = () => {
         ) : (
           <>
             <Pressable
-              onLongPress={() => handleSpeak(question?.letter)}
+              // onLongPress={() => handleSpeak(question?.letter)}
               style={{ width: "100%" }} // Inner content
             >
               <Text style={styles.question}>{question?.letter}</Text>

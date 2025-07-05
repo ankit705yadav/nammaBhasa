@@ -77,6 +77,7 @@ const playBase64Audio = async (base64Audio: string): Promise<void> => {
  */
 export const speakText = async (
   text: string,
+  pace: Number,
   withHaptic: boolean = true
 ): Promise<void> => {
   if (!text) return; // Do nothing if text is empty
@@ -94,7 +95,7 @@ export const speakText = async (
     text: text,
     target_language_code: "kn-IN", // Always Kannada
     speaker: "anushka", // ['meera', 'pavithra', 'maitreyi', 'arvind', 'amol', 'amartya', 'diya', 'neel', 'misha', 'vian', 'arjun', 'maya', 'anushka', 'abhilash', 'manisha', 'vidya', 'arya', 'karun' or 'hitesh']
-    pace: 1.0, // Default pace [0.3 - 1.0]
+    pace: pace || 0.7, // Default pace [0.3 - 1.0] .7 is perfect
     pitch: 0.0, // Default pitch
     loudness: 1.0, // Default loudness
     model: "bulbul:v2", // Specific model as per documentation

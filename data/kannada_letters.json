@@ -2,76 +2,91 @@
   "Vowels": [
     {
       "letter": "ಅ",
+      "speak": "ಅಅ",
       "transliteration": "a",
       "strokes": ["a_1.png"]
     },
     {
       "letter": "ಆ",
+      "speak": "ಆಆ",
       "transliteration": "aa",
       "strokes": ["aa_1.png"]
     },
     {
       "letter": "ಇ",
+      "speak": "ಇಇ",
       "transliteration": "i",
       "strokes": ["i_1.png"]
     },
     {
       "letter": "ಈ",
+      "speak": "ಈಈ",
       "transliteration": "ii",
       "strokes": ["ii_1.png"]
     },
     {
       "letter": "ಉ",
+      "speak": "ಉಉ",
       "transliteration": "u",
       "strokes": ["u_1.png"]
     },
     {
       "letter": "ಊ",
+      "speak": "ಊಊ",
       "transliteration": "uu",
       "strokes": ["uu_1.png"]
     },
     {
       "letter": "ಋ",
+      "speak": "ಋಋ",
       "transliteration": "ru",
       "strokes": ["ru_1.png"]
     },
     {
       "letter": "ಎ",
+      "speak": "ಎಎ",
       "transliteration": "e",
       "strokes": ["e_1.png"]
     },
     {
       "letter": "ಏ",
+      "speak": "ಏಏ",
       "transliteration": "ee",
       "strokes": ["ee_1.png"]
     },
     {
       "letter": "ಐ",
+      "speak": "ಐಐ",
       "transliteration": "ai",
       "strokes": ["ai_1.png"]
     },
     {
       "letter": "ಒ",
+      "speak": "ಒಒ",
       "transliteration": "o",
       "strokes": ["o_1.png"]
     },
     {
       "letter": "ಓ",
+      "speak": "ಓಓ",
       "transliteration": "oo",
       "strokes": ["oo_1.png"]
     },
     {
       "letter": "ಔ",
+      "speak": "ಔಔ",
       "transliteration": "au",
       "strokes": ["au_1.png"]
     },
     {
       "letter": "ಅಂ",
+      "speak": "ಅಂ",
       "transliteration": "am",
       "strokes": ["am_1.png"]
     },
     {
       "letter": "ಅಃ",
+      "speak": "ಅಃಅಃ",
       "transliteration": "ah",
       "strokes": ["ah_1.png"]
     }
@@ -79,171 +94,205 @@
   "Consonants": [
     {
       "letter": "ಕ",
+      "speak": "ಕಾ",
       "transliteration": "ka",
       "strokes": ["ka_1.png"]
     },
     {
       "letter": "ಖ",
+      "speak": "ಖಾ",
       "transliteration": "kha",
       "strokes": ["kha_1.png"]
     },
     {
       "letter": "ಗ",
+      "speak": "ಗಾ",
       "transliteration": "ga",
       "strokes": ["ga_1.png"]
     },
     {
       "letter": "ಘ",
+      "speak": "ಘಾ",
       "transliteration": "gha",
       "strokes": ["gha_1.png"]
     },
     {
       "letter": "ಙ",
+      "speak": "ಙಾ",
       "transliteration": "nga",
       "strokes": ["nga_1.png"]
     },
     {
       "letter": "ಚ",
+      "speak": "ಚ ಾ",
       "transliteration": "cha",
       "strokes": ["cha_1.png"]
     },
     {
       "letter": "ಛ",
+      "speak": "ಛ ಾ",
       "transliteration": "chha",
       "strokes": ["chha_1.png"]
     },
     {
       "letter": "ಜ",
+      "speak": "ಜ ಾ",
       "transliteration": "ja",
       "strokes": ["ja_1.png"]
     },
     {
       "letter": "ಝ",
+      "speak": "ಝ ಾ",
       "transliteration": "jha",
       "strokes": ["jha_1.png"]
     },
     {
       "letter": "ಞ",
+      "speak": "ಞ ಾ",
       "transliteration": "nya",
       "strokes": ["nya_1.png"]
     },
     {
       "letter": "ಟ",
+      "speak": "ಟ ಾ",
       "transliteration": "ṭa",
       "strokes": ["ṭa_1.png"]
     },
     {
       "letter": "ಠ",
+      "speak": "ಠ ಾ",
       "transliteration": "ṭha",
       "strokes": ["ṭha_1.png"]
     },
     {
       "letter": "ಡ",
+      "speak": "ಡ ಾ",
       "transliteration": "ḍa",
       "strokes": ["ḍa_1.png"]
     },
     {
       "letter": "ಢ",
+      "speak": "ಢ ಾ",
       "transliteration": "ḍha",
       "strokes": ["ḍha_1.png"]
     },
     {
       "letter": "ಣ",
+      "speak": "ಣ ಾ",
       "transliteration": "ṇa",
       "strokes": ["ṇa_1.png"]
     },
     {
       "letter": "ತ",
+      "speak": "ತ ಾ",
       "transliteration": "ta",
       "strokes": ["ta_1.png"]
     },
     {
       "letter": "ಥ",
+      "speak": "ಥ ಾ",
       "transliteration": "tha",
       "strokes": ["tha_1.png"]
     },
     {
       "letter": "ದ",
+      "speak": "ದ ಾ",
       "transliteration": "da",
       "strokes": ["da_1.png"]
     },
     {
       "letter": "ಧ",
+      "speak": "ಧ ಾ",
       "transliteration": "dha",
       "strokes": ["dha_1.png"]
     },
     {
       "letter": "ನ",
+      "speak": "ನ ಾ",
       "transliteration": "na",
       "strokes": ["na_1.png"]
     },
     {
       "letter": "ಪ",
+      "speak": "ಪ ಾ",
       "transliteration": "pa",
       "strokes": ["pa_1.png"]
     },
     {
       "letter": "ಫ",
+      "speak": "ಫ ಾ",
       "transliteration": "pha",
       "strokes": ["pha_1.png"]
     },
     {
       "letter": "ಬ",
+      "speak": "ಬ ಾ",
       "transliteration": "ba",
       "strokes": ["ba_1.png"]
     },
     {
       "letter": "ಭ",
+      "speak": "ಭ ಾ",
       "transliteration": "bha",
       "strokes": ["bha_1.png"]
     },
     {
       "letter": "ಮ",
+      "speak": "ಮ ಾ",
       "transliteration": "ma",
       "strokes": ["ma_1.png"]
     },
     {
       "letter": "ಯ",
+      "speak": "ಯ ಾ",
       "transliteration": "ya",
       "strokes": ["ya_1.png"]
     },
     {
       "letter": "ರ",
+      "speak": "ರ ಾ",
       "transliteration": "ra",
       "strokes": ["ra_1.png"]
     },
     {
       "letter": "ಲ",
+      "speak": "ಲ ಾ",
       "transliteration": "la",
       "strokes": ["la_1.png"]
     },
     {
       "letter": "ವ",
+      "speak": "ವ ಾ",
       "transliteration": "va",
       "strokes": ["va_1.png"]
     },
     {
       "letter": "ಶ",
+      "speak": "ಶ ಾ",
       "transliteration": "sha",
       "strokes": ["sha_1.png"]
     },
     {
       "letter": "ಷ",
+      "speak": "ಷ ಾ",
       "transliteration": "ṣa",
       "strokes": ["ṣa_1.png"]
     },
     {
       "letter": "ಸ",
+      "speak": "ಸ ಾ",
       "transliteration": "sa",
       "strokes": ["sa_1.png"]
     },
     {
       "letter": "ಹ",
+      "speak": "ಹ ಾ",
       "transliteration": "ha",
       "strokes": ["ha_1.png"]
     },
     {
       "letter": "ಳ",
+      "speak": "ಳ ಾ",
       "transliteration": "ḷa",
       "strokes": ["ḷa_1.png"]
     }

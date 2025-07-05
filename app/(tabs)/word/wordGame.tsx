@@ -8,10 +8,11 @@ import {
   Text,
   TouchableOpacity,
   View,
+  ToastAndroid,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import kannadaLetters from "../../../data/kannada_letters.json";
-import { speakText } from "../../../utils/utils";
+import { speakText } from "../../../utils/speak";
 
 // Define a type for the word objects in our data
 type WordItem = {
@@ -320,7 +321,14 @@ const WordQuiz = () => {
               {quizMode === "translation" ? "meaning" : "transliteration"} of:
             </Text>
             <Pressable
-              onLongPress={() => handleSpeak(question?.word)}
+              onLongPress={() => {
+                quizMode === "translation"
+                  ? handleSpeak(question?.word)
+                  : ToastAndroid.show(
+                      "Only available for translation!",
+                      ToastAndroid.SHORT
+                    );
+              }}
               style={{ width: "100%" }} // Inner content
             >
               <Text style={styles.question}>{question?.word}</Text>
