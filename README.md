@@ -25,6 +25,8 @@ In the output, you'll find options to open the app in a
 
 ## Screen-shots
 ![nammaBhasa_gif](https://github.com/user-attachments/assets/4502974f-be5c-4650-8f18-e4a2f17d5a11)
+![nammaBhasa_gif2](https://github.com/user-attachments/assets/3b420f7d-ef9f-43bc-84db-ecbeb952c77b)
+
 
 ![nammaBhasa_1](https://github.com/user-attachments/assets/28ffb717-df48-44bb-865c-f66b7700f55d)
 ![nammaBhasa_2](https://github.com/user-attachments/assets/86759e80-7251-4d16-a3e2-f28e89f4d24e)
