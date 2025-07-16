@@ -25,4 +25,4 @@ In the output, you'll find options to open the app in a
 
 ## Screen-shots
 
-![nammaBhasa_1](https://github.com/user-attachments/assets/4676fed7-8453-41e2-97f4-b0ca2c902d38){width=50% height=auto}
+![nammaBhasa_1](https://github.com/user-attachments/assets/28ffb717-df48-44bb-865c-f66b7700f55d)
