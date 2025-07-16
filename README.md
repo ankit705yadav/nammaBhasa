@@ -24,6 +24,7 @@ In the output, you'll find options to open the app in a
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
 ## Screen-shots
+![nammaBhasa_gif](https://github.com/user-attachments/assets/4502974f-be5c-4650-8f18-e4a2f17d5a11)
 
 ![nammaBhasa_1](https://github.com/user-attachments/assets/28ffb717-df48-44bb-865c-f66b7700f55d)
 ![nammaBhasa_2](https://github.com/user-attachments/assets/86759e80-7251-4d16-a3e2-f28e89f4d24e)
