@@ -60,4 +60,10 @@ public class UserService {
         user.setPasswordResetTokenExpiry(null);
         userRepository.save(user);
     }
+
+    public void deleteUser(String username) {
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new IllegalStateException("User not found."));
+        userRepository.delete(user);
+    }
 }

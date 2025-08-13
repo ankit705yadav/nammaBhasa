@@ -12,7 +12,7 @@ public class UserScore {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY) // Many scores can belong to one user
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL) // Many scores can belong to one user || CascadeType.ALL to automatically delete scores when a user is deleted
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 

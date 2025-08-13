@@ -80,4 +80,19 @@ public class UserController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @DeleteMapping("/me")
+    public ResponseEntity<?> deleteCurrentUser(Authentication authentication) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not authenticated.");
+        }
+
+        try {
+            String username = authentication.getName(); // Gets the username of the logged-in user
+            userService.deleteUser(username);
+            return ResponseEntity.ok("User account deleted successfully.");
+        } catch (IllegalStateException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 }
