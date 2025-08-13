@@ -22,7 +22,7 @@ public class UserService {
         // Create a new user object
         User user = new User(registrationDto);
 
-        // ⚠️ Hash the password before saving! Never store plain text passwords.
+        // ⚠️ Hash the password before saving!
         user.setPassword(passwordEncoder.encode(registrationDto.password()));
 
         return userRepository.save(user);
