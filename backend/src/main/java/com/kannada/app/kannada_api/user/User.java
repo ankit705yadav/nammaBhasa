@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @Entity
 @Table(name = "users")
@@ -22,6 +24,12 @@ public class User {
 
     @Column(nullable = false)
     private String password;
+
+    @Column
+    private String passwordResetToken;
+
+    @Column(columnDefinition = "TIMESTAMP")
+    private LocalDateTime passwordResetTokenExpiry;
 
     // Constructor for creating a user from a DTO
     public User(UserRegistrationDto dto) {

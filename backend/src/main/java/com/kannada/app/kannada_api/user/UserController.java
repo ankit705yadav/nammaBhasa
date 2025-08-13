@@ -11,6 +11,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api/users")
 @CrossOrigin(origins = "*")
@@ -54,6 +56,28 @@ public class UserController {
         } else {
             // This part is rarely reached as authenticate() throws an exception on failure
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+    }
+
+    @PostMapping("/forgot-password")
+    public ResponseEntity<?> forgotPassword(@RequestBody PasswordResetRequestDto request) {
+        try {
+            String token = userService.generatePasswordResetToken(request.email());
+            String responseMessage = "Password reset token generated. In a real app, this would be emailed.";
+            // For development, we include the token in the response for easy testing.
+            return ResponseEntity.ok().body(Map.of("message", responseMessage, "token", token));
+        } catch (IllegalStateException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @PostMapping("/reset-password")
+    public ResponseEntity<?> resetPassword(@RequestBody PasswordResetDto request) {
+        try {
+            userService.resetPassword(request.token(), request.newPassword());
+            return ResponseEntity.ok("Password has been reset successfully.");
+        } catch (IllegalStateException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 }
