@@ -14,7 +14,7 @@ public class WordController {
     private WordService wordService;
 
     @GetMapping
-    public List<Word> getWords(@RequestBody(required = false) Integer level){
+    public List<Word> getWords(@RequestParam(required = false) Integer level){
 
         return wordService.getWords(level);
     }

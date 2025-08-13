@@ -14,7 +14,7 @@ public class characterController {
     private CharacterService characterService;
 
     @GetMapping
-    public List<Character> getCharacters(@RequestBody(required = false) String type){
+    public List<Character> getCharacters(@RequestParam(required = false) String type){
 
         return characterService.getCharacters(type);
     }
