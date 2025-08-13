@@ -13,14 +13,12 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class SentenceController {
 
-    // The controller now depends on the service, not the repository
     @Autowired
     private SentenceService sentenceService;
 
     @GetMapping
     public List<Sentence> getSentences(@RequestParam(required = false) Integer level) {
-        // The controller simply calls the service and returns the result.
-        // All the if/else logic is gone!
+
         return sentenceService.getSentences(level);
     }
 }
