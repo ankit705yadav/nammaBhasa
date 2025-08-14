@@ -3,9 +3,11 @@ import React from "react";
 type User = Record<string, any> | null;
 
 interface AuthContextType {
-  signIn: () => void;
-  signOut: () => void;
+  signIn: (email: string, password: string) => Promise<void>;
+  signOut: () => Promise<void>;
   user: User;
+  isLoading: boolean;
+  error: string | null;
 }
 
 const AuthContext = React.createContext<AuthContextType | undefined>(undefined);
@@ -21,13 +23,61 @@ export function useAuth() {
 
 export function Provider(props: { children: React.ReactNode }) {
   const [user, setAuth] = React.useState<User>(null);
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
+
+  const signIn = async (email: string, password: string) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch("http://10.11.57.27:8080/api/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username: email, password }),
+      });
+
+      const data = await response.json();
+
+      console.log("login-token:", data);
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to login");
+      }
+
+      setAuth(data.user);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An error occurred");
+      throw err;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const signOut = async () => {
+    setIsLoading(true);
+    try {
+      await fetch("http://your-api-url/api/logout", {
+        method: "POST",
+      });
+      setAuth(null);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to logout");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <AuthContext.Provider
       value={{
-        signIn: () => setAuth({ name: "John Doe" }), // Mock user
-        signOut: () => setAuth(null),
+        signIn,
+        signOut,
         user,
+        isLoading,
+        error,
       }}
     >
       {props.children}
