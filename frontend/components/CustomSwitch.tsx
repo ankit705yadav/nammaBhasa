@@ -34,13 +34,21 @@ const animationConfig = {
 };
 // ---
 
+interface CustomSwitchProps {
+  options?: string[];
+  onSwitch?: (selectedOption: string) => void;
+  onLeft?: () => void;
+  onRight?: () => void;
+  initialIndex?: number;
+}
+
 const CustomSwitch = ({
   options = ["Lvl 1", "Lvl 2", "Lvl 3"],
   onSwitch,
   onLeft,
   onRight,
   initialIndex = 0,
-}) => {
+}: CustomSwitchProps) => {
   // Use a ref to track if it's the initial mount
   const isInitialMount = useRef(true);
 
@@ -64,7 +72,7 @@ const CustomSwitch = ({
   const pillVisualWidth = optionWidth > 0 ? optionWidth : 0;
 
   // --- Animation Trigger ---
-  const handleSwitch = (index) => {
+  const handleSwitch = (index: number) => {
     if (index !== selectedIndex && optionWidth > 0) {
       // 1. Store the *current* state index as the previous for the animation
       previousIndex.value = selectedIndex;
@@ -88,6 +96,17 @@ const CustomSwitch = ({
     animationProgress.value = 1; // Start settled
     isInitialMount.current = false; // Mark initial mount as done
   }, []); // Empty dependency array ensures this runs only once
+
+  // Effect to update internal state when initialIndex prop changes
+  useEffect(() => {
+    if (!isInitialMount.current) {
+      // Prevent running on initial mount, as it's handled by initial useState
+      setSelectedIndex(initialIndex);
+      targetIndex.value = initialIndex;
+      previousIndex.value = initialIndex;
+      animationProgress.value = 1; // Ensure pill is in correct position immediately
+    }
+  }, [initialIndex]); // Re-run this effect when initialIndex changes
 
   // --- Animated Style using Interpolation ---
   const animatedStyle = useAnimatedStyle(() => {

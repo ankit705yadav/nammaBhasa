@@ -30,7 +30,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/users/register", "/api/users/login").permitAll()
+                        .requestMatchers("/api/users/register", "/api/users/login","/api/characters","/api/words","/api/sentences").permitAll()
                         .anyRequest().authenticated()
                 )
                 // Tell Spring Security not to create sessions (we're using stateless JWTs)

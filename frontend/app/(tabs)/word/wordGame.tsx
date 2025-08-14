@@ -9,18 +9,21 @@ import {
   TouchableOpacity,
   View,
   ToastAndroid,
+  ActivityIndicator, // Import ActivityIndicator
+  Alert, // Import Alert
+  Button, // Import Button
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import kannadaLetters from "../../../data/kannada_letters.json";
+// import kannadaLetters from "../../../data/kannada_letters.json";
 import { speakText } from "../../../utils/speak";
 
 // Define a type for the word objects in our data
 type WordItem = {
-  word: string;
+  id: number;
+  kannadaWord: string;
   transliteration: string;
-  translation: string;
-  breakdown: string[];
-  strokes: string[];
+  englishTranslation: string;
+  level: number;
 };
 
 const WordQuiz = () => {
@@ -38,6 +41,9 @@ const WordQuiz = () => {
   const [difficulty, setDifficulty] = useState<"Level1" | "Level2" | "Level3">(
     "Level1"
   );
+  const [allWords, setAllWords] = useState<WordItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const navigation = useNavigation();
 
@@ -58,36 +64,52 @@ const WordQuiz = () => {
     useCallback(() => {
       const init = async () => {
         try {
-          // await AsyncStorage.removeItem("HIGH_SCORE_WORD");
+          await fetchAllWords(); // Fetch all words first
           const storedHighScore = await AsyncStorage.getItem("HIGH_SCORE_WORD");
           if (storedHighScore !== null) {
             setHighScore(parseInt(storedHighScore));
           }
         } catch (e) {
-          console.error("Error loading high score:", e);
+          console.error("Error loading high score or words:", e);
+          setError((e as Error).message);
         }
-        restartGame();
       };
       init();
     }, [])
   );
 
+  useEffect(() => {
+    if (allWords.length > 0 && !loading && !error) {
+      restartGame();
+    }
+  }, [allWords, loading, error, quizMode, difficulty]); // Depend on words, quizMode and difficulty to regenerate questions
+
+  const fetchAllWords = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch("http://10.11.57.27:8080/api/words"); // Fetch all words without level filter
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data: WordItem[] = await response.json();
+      setAllWords(data);
+    } catch (e: any) {
+      setError(e.message);
+      Alert.alert("Error", "Failed to fetch words for game: " + e.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   // Get a random word from the specified level
   const getRandomWord = (words: WordItem[]): WordItem =>
     words[Math.floor(Math.random() * words.length)];
 
-  // Get all words across all levels
-  const getAllWords = (): WordItem[] => {
-    return [
-      ...(kannadaLetters.Words?.Level1 || []),
-      ...(kannadaLetters.Words?.Level2 || []),
-      ...(kannadaLetters.Words?.Level3 || []),
-    ];
-  };
-
   // Get words for the current difficulty level
   const getWordsByLevel = (): WordItem[] => {
-    return kannadaLetters.Words?.[difficulty] || [];
+    const levelNum = parseInt(difficulty.replace("Level", ""));
+    return allWords.filter(word => word.level === levelNum);
   };
 
   const generateQuestion = () => {
@@ -100,34 +122,33 @@ const WordQuiz = () => {
     setShowCorrect(false);
 
     const wordsForLevel = getWordsByLevel();
-    const allWords = getAllWords();
 
     if (wordsForLevel.length === 0) {
-      console.error("No words found for the selected level");
+      setError("No words found for the selected level. Please check your backend data.");
       return;
     }
 
     const correct = getRandomWord(wordsForLevel);
 
     // Create incorrect options based on quiz mode
-    let incorrectPool = allWords.filter((w) => w.word !== correct.word);
+    let incorrectPool = allWords.filter((w) => w.id !== correct.id); // Use ID for uniqueness
     const incorrectOptions = incorrectPool
       .sort(() => Math.random() - 0.5)
       .slice(0, 3)
       .map((word) => {
         const option =
-          quizMode === "translation" ? word.translation : word.transliteration;
+          quizMode === "translation" ? word.englishTranslation : word.transliteration;
         return option.trim();
       });
 
     // Correct answer based on quiz mode - trim to avoid whitespace issues
     const correctAnswer = (
-      quizMode === "translation" ? correct.translation : correct.transliteration
+      quizMode === "translation" ? correct.englishTranslation : correct.transliteration
     ).trim();
 
     // ✅ Debug log
     console.log("Current mode:", quizMode);
-    console.log("Correct word:", correct.word);
+    console.log("Correct word:", correct.kannadaWord);
     console.log("Correct answer for this mode:", correctAnswer);
 
     // Combine and shuffle all options
@@ -145,7 +166,7 @@ const WordQuiz = () => {
       // Ensure we're comparing trimmed strings to avoid whitespace issues
       const correctAnswer = (
         quizMode === "translation"
-          ? question.translation
+          ? question.englishTranslation
           : question.transliteration
       ).trim();
       const trimmedAnswer = answer.trim();
@@ -205,7 +226,7 @@ const WordQuiz = () => {
     else if (difficulty === "Level2") setDifficulty("Level3");
     else setDifficulty("Level1");
 
-    restartGame();
+    // restartGame() will be called by useEffect due to difficulty dependency
   };
 
   // Toggle between translation and transliteration modes
@@ -217,27 +238,8 @@ const WordQuiz = () => {
       console.log("Switching quiz mode to:", newMode);
       return newMode;
     });
-    // Don't call restartGame() here - we'll use useEffect instead
+    // restartGame() will be called by useEffect due to quizMode dependency
   };
-
-  // Add effect to handle mode changes
-  useEffect(() => {
-    console.log("Quiz mode changed to:", quizMode);
-    if (score > 0 || wrongCount > 0) {
-      // Only restart if a game is already in progress
-      restartGame();
-    } else {
-      // Just generate a new question
-      generateQuestion();
-    }
-  }, [quizMode, difficulty]);
-
-  // 🚀 Reset the game each time the screen is visited
-  useFocusEffect(
-    useCallback(() => {
-      restartGame();
-    }, [])
-  );
 
   // Render options with better comparison logic
   const renderOptions = () => {
@@ -246,7 +248,7 @@ const WordQuiz = () => {
       const trimmedOption = option.trim();
       const correctAnswer = question
         ? (quizMode === "translation"
-            ? question.translation
+            ? question.englishTranslation
             : question.transliteration
           ).trim()
         : "";
@@ -276,11 +278,28 @@ const WordQuiz = () => {
     });
   };
 
-  // Function to handle speaking text
-  const handleSpeak = (sentence: string) => {
-    console.log("speak-Pressed:", sentence);
-    speakText(sentence);
+  const handleSpeak = (word: string) => {
+    console.log("speak-Pressed:", word);
+    speakText(word, 0.5); // Add pace argument, e.g., 0.5
   };
+
+  if (loading) {
+    return (
+      <SafeAreaView style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#e0be21" />
+        <Text style={styles.loadingText}>Loading word game data...</Text>
+      </SafeAreaView>
+    );
+  }
+
+  if (error) {
+    return (
+      <SafeAreaView style={styles.errorContainer}>
+        <Text style={styles.errorText}>{error}</Text>
+        <Button title="Retry" onPress={fetchAllWords} color="#e0be21" />
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
@@ -322,16 +341,18 @@ const WordQuiz = () => {
             </Text>
             <Pressable
               onLongPress={() => {
-                quizMode === "translation"
-                  ? handleSpeak(question?.word)
-                  : ToastAndroid.show(
-                      "Only available for translation!",
-                      ToastAndroid.SHORT
-                    );
+                if (question) {
+                  quizMode === "translation"
+                    ? handleSpeak(question.kannadaWord)
+                    : ToastAndroid.show(
+                        "Only available for translation!",
+                        ToastAndroid.SHORT
+                      );
+                }
               }}
               style={{ width: "100%" }} // Inner content
             >
-              <Text style={styles.question}>{question?.word}</Text>
+              <Text style={styles.question}>{question?.kannadaWord}</Text>
             </Pressable>
             <View style={styles.optionsContainer}>{renderOptions()}</View>
 
@@ -456,6 +477,28 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
     fontSize: 16,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
+  },
+  loadingText: {
+    color: 'white',
+    marginTop: 10,
+    fontSize: 18,
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
+  },
+  errorText: {
+    color: 'red',
+    marginBottom: 10,
+    fontSize: 18,
   },
 });
 

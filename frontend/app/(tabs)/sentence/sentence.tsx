@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   StyleSheet,
   Dimensions,
@@ -6,6 +6,9 @@ import {
   Text,
   View,
   Pressable,
+  ActivityIndicator, // Import ActivityIndicator for loading state
+  Alert, // Import Alert for error handling
+  Button, // Import Button
 } from "react-native";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -16,7 +19,7 @@ import { Searchbar } from "react-native-paper";
 import Modal from "react-native-modal";
 
 import CustomSwitch from "@/components/CustomSwitch";
-import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
+// import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
 
 import { speakText } from "../../../utils/speak";
 import { globalStyles } from "@/assets/theme/globalStyles";
@@ -24,29 +27,73 @@ import { globalStyles } from "@/assets/theme/globalStyles";
 const { width } = Dimensions.get("window"); // Get screen width
 
 type SentenceItem = {
-  sentence: string;
+  id: number;
+  kannadaSentence: string;
   transliteration: string;
-  translation: string;
-  breakdown: string[];
+  englishTranslation: string;
+  level: number;
 };
 
 export default function SentenceScreen() {
   const router = useRouter();
 
   const [activeLevel, setActiveLevel] = useState("Lvl 1");
-  // Get sentences from the updated structure
-  const level1Sentences = kannadaData.Sentences?.Level1 || [];
-  const level2Sentences = kannadaData.Sentences?.Level2 || [];
-  const level3Sentences = kannadaData.Sentences?.Level3 || [];
-
-  console.log("Sentences Level 1:", level1Sentences);
+  const [sentences, setSentences] = useState<SentenceItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const [searchQuery, setSearchQuery] = useState("");
+  const [filteredSentences, setFilteredSentences] = useState<SentenceItem[]>(
+    []
+  );
 
   const [isModalVisible, setModalVisible] = useState(false);
   const [selectedItem, setSelectedItem] = useState<SentenceItem | null>(null);
 
   const [showTranslation, setShowTranslation] = useState(true);
+
+  useEffect(() => {
+    fetchSentences();
+  }, [activeLevel]); // Refetch when activeLevel changes
+
+  useEffect(() => {
+    const levelNum = parseInt(activeLevel.replace("Lvl ", ""));
+    const dataToFilter = sentences.filter((item) => item.level === levelNum);
+    const filtered = dataToFilter.filter(
+      (item) =>
+        item.kannadaSentence
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase()) ||
+        item.transliteration
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase()) ||
+        item.englishTranslation
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase())
+    );
+    setFilteredSentences(filtered);
+  }, [searchQuery, activeLevel, sentences]);
+
+  const fetchSentences = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const levelParam = parseInt(activeLevel.replace("Lvl ", ""));
+      const response = await fetch(
+        `http://10.11.57.27:8080/api/sentences?level=${levelParam}`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data: SentenceItem[] = await response.json();
+      setSentences(data);
+    } catch (e: any) {
+      setError(e.message);
+      Alert.alert("Error", "Failed to fetch sentences: " + e.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleSwitch = (selectedOption: string) => {
     console.log("Selected:", selectedOption);
@@ -58,36 +105,29 @@ export default function SentenceScreen() {
     setModalVisible(true);
   };
 
-  // Get the active sentences based on the selected level
-  const getActiveSentences = () => {
-    switch (activeLevel) {
-      case "Lvl 1":
-        return level1Sentences;
-      case "Lvl 2":
-        return level2Sentences;
-      case "Lvl 3":
-        return level3Sentences;
-      default:
-        return level1Sentences;
-    }
-  };
-
-  // Filter sentences based on search query
-  const filteredSentences = getActiveSentences().filter(
-    (item) =>
-      item.sentence.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.transliteration.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (item.translation &&
-        item.translation.toLowerCase().includes(searchQuery.toLowerCase()))
-  );
-
-  console.log("filteredSentences:", filteredSentences);
-
   // Function to handle speaking text
   const handleSpeak = (sentence: string) => {
     console.log("speak-Pressed:", sentence);
     speakText(sentence);
   };
+
+  if (loading) {
+    return (
+      <SafeAreaView style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#e0be21" />
+        <Text style={styles.loadingText}>Loading sentences...</Text>
+      </SafeAreaView>
+    );
+  }
+
+  if (error) {
+    return (
+      <SafeAreaView style={styles.errorContainer}>
+        <Text style={styles.errorText}>{error}</Text>
+        <Button title="Retry" onPress={fetchSentences} color="#e0be21" />
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView
@@ -117,7 +157,7 @@ export default function SentenceScreen() {
         <View style={{ flex: 1 }}>
           <FlatList
             data={filteredSentences}
-            keyExtractor={(item, index) => index.toString()}
+            keyExtractor={(item) => item.id.toString()}
             numColumns={1}
             renderItem={({ item }) => (
               <LinearGradient
@@ -126,13 +166,15 @@ export default function SentenceScreen() {
               >
                 <Pressable
                   onPress={() => handleItemPress(item)}
-                  onLongPress={() => handleSpeak(item.sentence)}
+                  onLongPress={() => handleSpeak(item.kannadaSentence)}
                   style={styles.item} // Inner content
                 >
                   <View style={styles.itemContent}>
-                    <Text style={styles.sentence}>{item.sentence}</Text>
+                    <Text style={styles.sentence}>{item.kannadaSentence}</Text>
                     {showTranslation && (
-                      <Text style={styles.translation}>{item.translation}</Text>
+                      <Text style={styles.translation}>
+                        {item.englishTranslation}
+                      </Text>
                     )}
                   </View>
                 </Pressable>
@@ -149,6 +191,9 @@ export default function SentenceScreen() {
             onSwitch={handleSwitch}
             onLeft={() => router.push("/(tabs)/sentence/sentenceGame")}
             onRight={() => setShowTranslation(!showTranslation)}
+            initialIndex={
+              activeLevel === "Lvl 1" ? 0 : activeLevel === "Lvl 2" ? 1 : 2
+            }
           />
         </View>
 
@@ -178,20 +223,20 @@ export default function SentenceScreen() {
               {selectedItem && (
                 <View style={globalStyles.modalSentenceContainer}>
                   <Pressable
-                    onPress={() => handleSpeak(selectedItem.sentence)}
+                    onPress={() => handleSpeak(selectedItem.kannadaSentence)}
                     style={globalStyles.speakerButton}
                   >
                     <AntDesign name="sound" size={28} color="#dad8de" />
                   </Pressable>
 
                   <Text style={globalStyles.modalSentence}>
-                    {selectedItem.sentence}
+                    {selectedItem.kannadaSentence}
                   </Text>
                   <Text style={globalStyles.modalTransliteration}>
                     {selectedItem.transliteration}
                   </Text>
                   <Text style={globalStyles.modalTranslation}>
-                    {selectedItem.translation}
+                    {selectedItem.englishTranslation}
                   </Text>
                 </View>
               )}
@@ -269,5 +314,27 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "100%",
     padding: 5,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
+  },
+  loadingText: {
+    color: "white",
+    marginTop: 10,
+    fontSize: 18,
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
+  },
+  errorText: {
+    color: "red",
+    marginBottom: 10,
+    fontSize: 18,
   },
 });

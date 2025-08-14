@@ -7,6 +7,9 @@ import {
   Text,
   View,
   Pressable,
+  ActivityIndicator, // Import ActivityIndicator for loading state
+  Alert, // Import Alert for error handling
+  Button, // Import Button
 } from "react-native";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -17,27 +20,31 @@ import { Searchbar } from "react-native-paper";
 import Modal from "react-native-modal";
 
 import CustomSwitch from "@/components/CustomSwitch";
-import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
+// import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
 import { speakText } from "../../../utils/speak";
 import { globalStyles } from "@/assets/theme/globalStyles";
 
 const { width } = Dimensions.get("window"); // Get screen width
 
 type LetterItem = {
-  letter: string;
-  speak: string;
+  id: number;
+  kannadaChar: string;
   transliteration: string;
+  type: string; // "vowel" or "consonant"
 };
 
 export default function HomeScreen() {
   const router = useRouter();
 
   const [activeTab, setActiveTab] = useState("Vowels");
-  const vowels = kannadaData.Vowels;
-  const consonants = kannadaData.Consonants;
+  const [characters, setCharacters] = useState<LetterItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredVowels, setFilteredVowels] = useState<LetterItem[]>([]);
+  const [filteredCharacters, setFilteredCharacters] = useState<LetterItem[]>(
+    []
+  );
 
   const [isModalVisible, setModalVisible] = useState(false);
   const [selectedItem, setSelectedItem] = useState<LetterItem | null>(null);
@@ -45,18 +52,44 @@ export default function HomeScreen() {
   const [showTransliteration, setShowTransliteration] = useState(true);
 
   useEffect(() => {
-    const data = activeTab === "Vowels" ? vowels : consonants;
-    const filtered = data.filter(
+    fetchCharacters();
+  }, [activeTab]); // Refetch when activeTab changes
+
+  useEffect(() => {
+    const dataToFilter = characters.filter(
+      (item) => item.type === activeTab.toLowerCase().slice(0, -1)
+    ); // Adjust type to match backend ('vowel'/'consonant')
+    const filtered = dataToFilter.filter(
       (item) =>
-        item.letter.includes(searchQuery) ||
+        item.kannadaChar.includes(searchQuery) ||
         item.transliteration.toLowerCase().includes(searchQuery.toLowerCase())
     );
-    setFilteredVowels(filtered);
-  }, [searchQuery, activeTab]);
+    setFilteredCharacters(filtered);
+  }, [searchQuery, activeTab, characters]);
+
+  const fetchCharacters = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const typeParam = activeTab === "Vowels" ? "vowel" : "consonant";
+      const response = await fetch(
+        `http://10.11.57.27:8080/api/characters?type=${typeParam}`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data: LetterItem[] = await response.json();
+      setCharacters(data);
+    } catch (e: any) {
+      setError(e.message);
+      Alert.alert("Error", "Failed to fetch characters: " + e.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleSwitch = (selectedOption: string) => {
     console.log("Selected:", selectedOption);
-    // Update the active tab based on the selected option directly
     setActiveTab(selectedOption);
   };
 
@@ -70,6 +103,24 @@ export default function HomeScreen() {
     console.log("speak-Pressed:", letter);
     speakText(letter, 0.5);
   };
+
+  if (loading) {
+    return (
+      <SafeAreaView style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#e0be21" />
+        <Text style={styles.loadingText}>Loading characters...</Text>
+      </SafeAreaView>
+    );
+  }
+
+  if (error) {
+    return (
+      <SafeAreaView style={styles.errorContainer}>
+        <Text style={styles.errorText}>{error}</Text>
+        <Button title="Retry" onPress={fetchCharacters} color="#e0be21" />
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView
@@ -97,8 +148,8 @@ export default function HomeScreen() {
         {/* Container */}
         <View style={{ flex: 1 }}>
           <FlatList
-            data={filteredVowels}
-            keyExtractor={(item, index) => index.toString()}
+            data={filteredCharacters}
+            keyExtractor={(item) => item.id.toString()}
             numColumns={4}
             contentContainerStyle={styles.gridContainer}
             renderItem={({ item }) => (
@@ -108,11 +159,11 @@ export default function HomeScreen() {
               >
                 <Pressable
                   onPress={() => handleItemPress(item)}
-                  onLongPress={() => handleSpeak(item.speak)}
+                  onLongPress={() => handleSpeak(item.kannadaChar)}
                   style={styles.item} // Inner content
                 >
                   <View style={styles.itemContent}>
-                    <Text style={styles.letter}>{item.letter}</Text>
+                    <Text style={styles.letter}>{item.kannadaChar}</Text>
                     {showTransliteration && (
                       <Text style={styles.translit}>
                         {item.transliteration}
@@ -132,6 +183,7 @@ export default function HomeScreen() {
             onSwitch={handleSwitch}
             onLeft={() => router.push("/game")}
             onRight={() => setShowTransliteration(!showTransliteration)}
+            initialIndex={activeTab === "Vowels" ? 0 : 1}
           />
         </View>
 
@@ -162,14 +214,14 @@ export default function HomeScreen() {
                 <View style={globalStyles.modalLetterContainer}>
                   {/* speech */}
                   <Pressable
-                    onPress={() => handleSpeak(selectedItem.speak)}
+                    onPress={() => handleSpeak(selectedItem.kannadaChar)}
                     style={globalStyles.speakerButton}
                   >
                     <AntDesign name="sound" size={28} color="#dad8de" />
                   </Pressable>
 
                   <Text style={globalStyles.modalLetter}>
-                    {selectedItem.letter}
+                    {selectedItem.kannadaChar}
                   </Text>
 
                   <View style={globalStyles.modalBottomRow}>
@@ -250,5 +302,27 @@ const styles = StyleSheet.create({
   translit: {
     fontSize: 14,
     color: "#E2DFE0",
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
+  },
+  loadingText: {
+    color: "white",
+    marginTop: 10,
+    fontSize: 18,
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
+  },
+  errorText: {
+    color: "red",
+    marginBottom: 10,
+    fontSize: 18,
   },
 });

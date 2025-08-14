@@ -9,17 +9,21 @@ import {
   TouchableOpacity,
   View,
   ToastAndroid,
+  ActivityIndicator, // Import ActivityIndicator
+  Alert, // Import Alert
+  Button, // Import Button
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import kannadaLetters from "../../../data/kannada_letters.json";
+// import kannadaLetters from "../../../data/kannada_letters.json";
 import { speakText } from "../../../utils/speak";
 
 // Define a type for the sentence objects in our data
 type SentenceItem = {
-  sentence: string;
+  id: number;
+  kannadaSentence: string;
   transliteration: string;
-  translation: string;
-  breakdown: string[];
+  englishTranslation: string;
+  level: number;
 };
 
 const SentenceQuiz = () => {
@@ -37,6 +41,9 @@ const SentenceQuiz = () => {
   const [difficulty, setDifficulty] = useState<"Level1" | "Level2" | "Level3">(
     "Level1"
   );
+  const [allSentences, setAllSentences] = useState<SentenceItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const navigation = useNavigation();
 
@@ -57,7 +64,7 @@ const SentenceQuiz = () => {
     useCallback(() => {
       const init = async () => {
         try {
-          // await AsyncStorage.removeItem("HIGH_SCORE_SENTENCE");
+          await fetchAllSentences(); // Fetch all sentences first
           const storedHighScore = await AsyncStorage.getItem(
             "HIGH_SCORE_SENTENCE"
           );
@@ -65,30 +72,46 @@ const SentenceQuiz = () => {
             setHighScore(parseInt(storedHighScore));
           }
         } catch (e) {
-          console.error("Error loading high score:", e);
+          console.error("Error loading high score or sentences:", e);
+          setError((e as Error).message);
         }
-        restartGame();
       };
       init();
     }, [])
   );
 
+  useEffect(() => {
+    if (allSentences.length > 0 && !loading && !error) {
+      restartGame();
+    }
+  }, [allSentences, loading, error, quizMode, difficulty]);
+
+  const fetchAllSentences = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch("http://10.11.57.27:8080/api/sentences"); // Fetch all sentences without level filter
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data: SentenceItem[] = await response.json();
+      setAllSentences(data);
+    } catch (e: any) {
+      setError(e.message);
+      Alert.alert("Error", "Failed to fetch sentences for game: " + e.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   // Get a random sentence from the specified level
   const getRandomSentence = (sentences: SentenceItem[]): SentenceItem =>
     sentences[Math.floor(Math.random() * sentences.length)];
 
-  // Get all sentences across all levels
-  const getAllSentences = (): SentenceItem[] => {
-    return [
-      ...(kannadaLetters.Sentences?.Level1 || []),
-      ...(kannadaLetters.Sentences?.Level2 || []),
-      ...(kannadaLetters.Sentences?.Level3 || []),
-    ];
-  };
-
   // Get sentences for the current difficulty level
   const getSentencesByLevel = (): SentenceItem[] => {
-    return kannadaLetters.Sentences?.[difficulty] || [];
+    const levelNum = parseInt(difficulty.replace("Level", ""));
+    return allSentences.filter(sentence => sentence.level === levelNum);
   };
 
   const generateQuestionWithMode = (
@@ -103,10 +126,9 @@ const SentenceQuiz = () => {
     setShowCorrect(false);
 
     const sentencesForLevel = getSentencesByLevel();
-    const allSentences = getAllSentences();
 
     if (sentencesForLevel.length === 0) {
-      console.error("No sentences found for the selected level");
+      setError("No sentences found for the selected level. Please check your backend data.");
       return;
     }
 
@@ -114,18 +136,18 @@ const SentenceQuiz = () => {
 
     // Create incorrect options based on the passed mode parameter
     let incorrectPool = allSentences.filter(
-      (s) => s.sentence !== correct.sentence
+      (s) => s.id !== correct.id
     );
     const incorrectOptions = incorrectPool
       .sort(() => Math.random() - 0.5)
       .slice(0, 3)
       .map((sentence) =>
-        mode === "translation" ? sentence.translation : sentence.transliteration
+        mode === "translation" ? sentence.englishTranslation : sentence.transliteration
       );
 
     // Correct answer based on the passed mode parameter
     const correctAnswer =
-      mode === "translation" ? correct.translation : correct.transliteration;
+      mode === "translation" ? correct.englishTranslation : correct.transliteration;
 
     // ✅ Debug log
     console.log(
@@ -134,7 +156,7 @@ const SentenceQuiz = () => {
       " | Mode:",
       mode,
       " | Sentence:",
-      correct.sentence
+      correct.kannadaSentence
     );
 
     // Combine and shuffle all options
@@ -155,7 +177,7 @@ const SentenceQuiz = () => {
     if (question) {
       const correctAnswer =
         quizMode === "translation"
-          ? question.translation
+          ? question.englishTranslation
           : question.transliteration;
 
       if (answer === correctAnswer) {
@@ -202,7 +224,7 @@ const SentenceQuiz = () => {
     else if (difficulty === "Level2") setDifficulty("Level3");
     else setDifficulty("Level1");
 
-    restartGame();
+    // restartGame() will be called by useEffect due to difficulty dependency
   };
 
   // Toggle between translation and transliteration modes
@@ -220,18 +242,65 @@ const SentenceQuiz = () => {
     generateQuestionWithMode(newMode);
   };
 
-  // Reset the game each time the screen is visited
-  useFocusEffect(
-    useCallback(() => {
-      restartGame();
-    }, [])
-  );
+  // Render options with better comparison logic
+  const renderOptions = () => {
+    return options.map((option, index) => {
+      const isSelected = selectedAnswer === option;
+      const trimmedOption = option.trim();
+      const correctAnswer = question
+        ? (quizMode === "translation"
+            ? question.englishTranslation
+            : question.transliteration
+          ).trim()
+        : "";
 
-  // Function to handle speaking text
+      // Use the same comparison logic as handleAnswer
+      const isCorrect =
+        quizMode === "translation"
+          ? trimmedOption === correctAnswer
+          : trimmedOption.toLowerCase() === correctAnswer.toLowerCase();
+
+      const shouldHighlightCorrect = showCorrect && isCorrect;
+
+      return (
+        <TouchableOpacity
+          key={index}
+          style={[
+            styles.option,
+            isSelected && (isCorrect ? styles.correct : styles.wrong),
+            shouldHighlightCorrect && styles.flashCorrect,
+          ]}
+          onPress={() => handleAnswer(option)}
+          disabled={selectedAnswer !== null}
+        >
+          <Text style={styles.optionText}>{option}</Text>
+        </TouchableOpacity>
+      );
+    });
+  };
+
   const handleSpeak = (sentence: string) => {
     console.log("speak-Pressed:", sentence);
-    speakText(sentence);
+    speakText(sentence, 0.5); // Add pace argument, e.g., 0.5
   };
+
+  if (loading) {
+    return (
+      <SafeAreaView style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#e0be21" />
+        <Text style={styles.loadingText}>Loading sentence game data...</Text>
+      </SafeAreaView>
+    );
+  }
+
+  if (error) {
+    return (
+      <SafeAreaView style={styles.errorContainer}>
+        <Text style={styles.errorText}>{error}</Text>
+        <Button title="Retry" onPress={fetchAllSentences} color="#e0be21" />
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
@@ -272,48 +341,23 @@ const SentenceQuiz = () => {
               {quizMode === "translation" ? "meaning" : "transliteration"} of:
             </Text>
             <Pressable
-              // onLongPress={() => handleSpeak(question?.sentence)}
               onLongPress={() => {
-                quizMode === "translation"
-                  ? handleSpeak(question?.sentence)
-                  : ToastAndroid.show(
-                      "Only available for translation!",
-                      ToastAndroid.SHORT
-                    );
+                if (question) {
+                  quizMode === "translation"
+                    ? handleSpeak(question.kannadaSentence)
+                    : ToastAndroid.show(
+                        "Only available for translation!",
+                        ToastAndroid.SHORT
+                      );
+                }
               }}
               style={{ width: "100%" }} // Inner content
             >
-              <Text style={styles.question}>{question?.sentence}</Text>
+              <Text style={styles.question}>{question?.kannadaSentence}</Text>
             </Pressable>
 
             <View style={styles.optionsContainer}>
-              {options.map((option, index) => (
-                <TouchableOpacity
-                  key={index}
-                  style={[
-                    styles.option,
-                    selectedAnswer === option &&
-                      question &&
-                      (option ===
-                      (quizMode === "translation"
-                        ? question.translation
-                        : question.transliteration)
-                        ? styles.correct
-                        : styles.wrong),
-                    showCorrect &&
-                      question &&
-                      option ===
-                        (quizMode === "translation"
-                          ? question.translation
-                          : question.transliteration) &&
-                      styles.flashCorrect,
-                  ]}
-                  onPress={() => handleAnswer(option)}
-                  disabled={selectedAnswer !== null}
-                >
-                  <Text style={styles.optionText}>{option}</Text>
-                </TouchableOpacity>
-              ))}
+              {renderOptions()}
             </View>
 
             <View style={styles.controlsContainer}>
@@ -437,6 +481,28 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
     fontSize: 16,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
+  },
+  loadingText: {
+    color: 'white',
+    marginTop: 10,
+    fontSize: 18,
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
+  },
+  errorText: {
+    color: 'red',
+    marginBottom: 10,
+    fontSize: 18,
   },
 });
 

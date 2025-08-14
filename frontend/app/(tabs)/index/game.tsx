@@ -8,20 +8,33 @@ import {
   Text,
   TouchableOpacity,
   View,
+  ActivityIndicator, // Import ActivityIndicator
+  Alert, // Import Alert
+  Button, // Import Button
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import kannadaLetters from "../../../data/kannada_letters.json";
+// import kannadaLetters from "../../../data/kannada_letters.json";
 import { speakText } from "../../../utils/speak";
 
+type LetterItem = {
+  id: number;
+  kannadaChar: string;
+  transliteration: string;
+  type: string;
+};
+
 const KannadaQuiz = () => {
-  const [question, setQuestion] = useState(null);
-  const [options, setOptions] = useState([]);
+  const [question, setQuestion] = useState<LetterItem | null>(null);
+  const [options, setOptions] = useState<LetterItem[]>([]);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [wrongCount, setWrongCount] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [gameOver, setGameOver] = useState(false);
   const [showCorrect, setShowCorrect] = useState(false);
+  const [allCharacters, setAllCharacters] = useState<LetterItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const navigation = useNavigation();
 
@@ -42,21 +55,45 @@ const KannadaQuiz = () => {
     useCallback(() => {
       const init = async () => {
         try {
-          // await AsyncStorage.removeItem("HIGH_SCORE");
+          await fetchAllCharacters(); // Fetch all characters first
           const storedHighScore = await AsyncStorage.getItem("HIGH_SCORE");
           if (storedHighScore !== null) {
             setHighScore(parseInt(storedHighScore));
           }
         } catch (e) {
-          console.error("Error loading high score:", e);
+          console.error("Error loading high score or characters:", e);
+          setError((e as Error).message);
         }
-        restartGame();
       };
       init();
     }, [])
   );
 
-  const getRandomLetter = (list) =>
+  useEffect(() => {
+    if (allCharacters.length > 0 && !loading && !error) {
+      restartGame();
+    }
+  }, [allCharacters, loading, error]);
+
+  const fetchAllCharacters = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch("http://10.11.57.27:8080/api/characters");
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data: LetterItem[] = await response.json();
+      setAllCharacters(data);
+    } catch (e: any) {
+      setError(e.message);
+      Alert.alert("Error", "Failed to fetch characters for game: " + e.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getRandomLetter = (list: LetterItem[]) =>
     list[Math.floor(Math.random() * list.length)];
 
   const generateQuestion = () => {
@@ -68,21 +105,22 @@ const KannadaQuiz = () => {
     setSelectedAnswer(null);
     setShowCorrect(false);
 
-    const allLetters = [...kannadaLetters.Vowels, ...kannadaLetters.Consonants];
-    const correct = getRandomLetter(allLetters);
+    if (allCharacters.length === 0) {
+      setError("No characters available to generate questions.");
+      return;
+    }
 
-    // ✅ Debug log
+    const correct = getRandomLetter(allCharacters);
+
     console.log(
       "Correct Letter:",
-      correct.letter,
+      correct.kannadaChar,
       "| Transliteration:",
-      correct.transliteration,
-      "| Translation:",
-      correct.translation
+      correct.transliteration
     );
 
-    const incorrectOptions = allLetters
-      .filter((l) => l.letter !== correct.letter)
+    const incorrectOptions = allCharacters
+      .filter((l) => l.id !== correct.id) // Use id for unique identification
       .sort(() => Math.random() - 0.5)
       .slice(0, 3);
 
@@ -94,14 +132,13 @@ const KannadaQuiz = () => {
     setOptions(choices);
   };
 
-  const handleAnswer = async (answer) => {
+  const handleAnswer = async (answer: string) => {
     setSelectedAnswer(answer);
-    if (answer === question.transliteration) {
+    if (question && answer === question.transliteration) {
       const newScore = score + 1;
       setScore(newScore);
 
       if (newScore > highScore) {
-        // Update high score state & save it
         setHighScore(newScore);
         try {
           await AsyncStorage.setItem("HIGH_SCORE", newScore.toString());
@@ -130,18 +167,28 @@ const KannadaQuiz = () => {
     generateQuestion();
   };
 
-  // 🚀 Reset the game each time the screen is visited
-  useFocusEffect(
-    useCallback(() => {
-      restartGame();
-    }, [])
-  );
-
-  // Function to handle speaking text
   const handleSpeak = (letter: string) => {
     console.log("speak-Pressed:", letter);
     speakText(letter, 0.5);
   };
+
+  if (loading) {
+    return (
+      <SafeAreaView style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#e0be21" />
+        <Text style={styles.loadingText}>Loading game data...</Text>
+      </SafeAreaView>
+    );
+  }
+
+  if (error) {
+    return (
+      <SafeAreaView style={styles.errorContainer}>
+        <Text style={styles.errorText}>{error}</Text>
+        <Button title="Retry" onPress={fetchAllCharacters} color="#e0be21" />
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
@@ -176,23 +223,23 @@ const KannadaQuiz = () => {
         ) : (
           <>
             <Pressable
-              // onLongPress={() => handleSpeak(question?.letter)}
+              onLongPress={() => question && handleSpeak(question.kannadaChar)}
               style={{ width: "100%" }} // Inner content
             >
-              <Text style={styles.question}>{question?.letter}</Text>
+              <Text style={styles.question}>{question?.kannadaChar}</Text>
             </Pressable>
             <View style={styles.optionsContainer}>
               {options.map((option) => (
                 <TouchableOpacity
-                  key={option.transliteration}
+                  key={option.id} // Use id for key
                   style={[
                     styles.option,
                     selectedAnswer === option.transliteration &&
-                      (option.transliteration === question.transliteration
+                      (option.transliteration === question?.transliteration
                         ? styles.correct
                         : styles.wrong),
                     showCorrect &&
-                      option.transliteration === question.transliteration &&
+                      option.transliteration === question?.transliteration &&
                       styles.flashCorrect,
                   ]}
                   onPress={() => handleAnswer(option.transliteration)}
@@ -286,6 +333,28 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     color: "#fff",
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
+  },
+  loadingText: {
+    color: 'white',
+    marginTop: 10,
+    fontSize: 18,
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
+  },
+  errorText: {
+    color: 'red',
+    marginBottom: 10,
+    fontSize: 18,
   },
 });
 

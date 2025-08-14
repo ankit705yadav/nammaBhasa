@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   StyleSheet,
   Dimensions,
@@ -6,6 +6,9 @@ import {
   Text,
   View,
   Pressable,
+  ActivityIndicator, // Import ActivityIndicator for loading state
+  Alert, // Import Alert for error handling
+  Button, // Import Button
 } from "react-native";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -16,7 +19,7 @@ import { Searchbar } from "react-native-paper";
 import Modal from "react-native-modal";
 
 import CustomSwitch from "@/components/CustomSwitch";
-import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
+// import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
 
 import { speakText } from "../../../utils/speak";
 import { globalStyles } from "@/assets/theme/globalStyles";
@@ -24,28 +27,69 @@ import { globalStyles } from "@/assets/theme/globalStyles";
 const { width } = Dimensions.get("window"); // Get screen width
 
 type WordItem = {
-  word: string;
+  id: number;
+  kannadaWord: string;
   transliteration: string;
-  translation: string;
-  breakdown: string[];
-  strokes: string[];
+  englishTranslation: string;
+  level: number;
 };
 
 export default function WordScreen() {
   const router = useRouter();
 
   const [activeLevel, setActiveLevel] = useState("Lvl 1");
-  // Get words from the updated structure
-  const level1Words = kannadaData.Words?.Level1 || [];
-  const level2Words = kannadaData.Words?.Level2 || [];
-  const level3Words = kannadaData.Words?.Level3 || [];
+  const [words, setWords] = useState<WordItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const [searchQuery, setSearchQuery] = useState("");
+  const [filteredWords, setFilteredWords] = useState<WordItem[]>([]);
 
   const [isModalVisible, setModalVisible] = useState(false);
   const [selectedItem, setSelectedItem] = useState<WordItem | null>(null);
 
   const [showTranslation, setShowTranslation] = useState(true);
+
+  useEffect(() => {
+    fetchWords();
+  }, [activeLevel]); // Refetch when activeLevel changes
+
+  useEffect(() => {
+    const levelNum = parseInt(activeLevel.replace("Lvl ", ""));
+    const dataToFilter = words.filter((item) => item.level === levelNum);
+    const filtered = dataToFilter.filter(
+      (item) =>
+        item.kannadaWord.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.transliteration
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase()) ||
+        item.englishTranslation
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase())
+    );
+    setFilteredWords(filtered);
+  }, [searchQuery, activeLevel, words]);
+
+  const fetchWords = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const levelParam = parseInt(activeLevel.replace("Lvl ", ""));
+      const response = await fetch(
+        `http://10.11.57.27:8080/api/words?level=${levelParam}`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data: WordItem[] = await response.json();
+      setWords(data);
+    } catch (e: any) {
+      setError(e.message);
+      Alert.alert("Error", "Failed to fetch words: " + e.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleSwitch = (selectedOption: string) => {
     console.log("Selected:", selectedOption);
@@ -57,36 +101,29 @@ export default function WordScreen() {
     setModalVisible(true);
   };
 
-  // Get the active words based on the selected level
-  const getActiveWords = () => {
-    switch (activeLevel) {
-      case "Lvl 1":
-        return level1Words;
-      case "Lvl 2":
-        return level2Words;
-      case "Lvl 3":
-        return level3Words;
-      default:
-        return level1Words;
-    }
-  };
-
-  // Filter words based on search query
-  const filteredWords = getActiveWords().filter(
-    (item) =>
-      item.word.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.transliteration.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (item.translation &&
-        item.translation.toLowerCase().includes(searchQuery.toLowerCase()))
-  );
-
-  console.log("filteredWords:", filteredWords);
-
   // Function to handle speaking text
   const handleSpeak = (word: string) => {
     console.log("speak-Pressed:", word);
     speakText(word);
   };
+
+  if (loading) {
+    return (
+      <SafeAreaView style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#e0be21" />
+        <Text style={styles.loadingText}>Loading words...</Text>
+      </SafeAreaView>
+    );
+  }
+
+  if (error) {
+    return (
+      <SafeAreaView style={styles.errorContainer}>
+        <Text style={styles.errorText}>{error}</Text>
+        <Button title="Retry" onPress={fetchWords} color="#e0be21" />
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView
@@ -115,7 +152,7 @@ export default function WordScreen() {
         <View style={{ flex: 1 }}>
           <FlatList
             data={filteredWords}
-            keyExtractor={(item, index) => index.toString()}
+            keyExtractor={(item) => item.id.toString()}
             numColumns={2}
             renderItem={({ item }) => (
               <LinearGradient
@@ -124,11 +161,11 @@ export default function WordScreen() {
               >
                 <Pressable
                   onPress={() => handleItemPress(item)}
-                  onLongPress={() => handleSpeak(item.word)}
+                  onLongPress={() => handleSpeak(item.kannadaWord)}
                   style={styles.item} // Inner content
                 >
                   <View style={styles.itemContent}>
-                    <Text style={styles.word}>{item.word}</Text>
+                    <Text style={styles.word}>{item.kannadaWord}</Text>
                     {showTranslation && (
                       <Text style={styles.translation}>
                         {item.transliteration}
@@ -149,6 +186,9 @@ export default function WordScreen() {
             onSwitch={handleSwitch}
             onLeft={() => router.push("/(tabs)/word/wordGame")}
             onRight={() => setShowTranslation(!showTranslation)}
+            initialIndex={
+              activeLevel === "Lvl 1" ? 0 : activeLevel === "Lvl 2" ? 1 : 2
+            }
           />
         </View>
 
@@ -178,20 +218,20 @@ export default function WordScreen() {
               {selectedItem && (
                 <View style={globalStyles.modalWordContainer}>
                   <Pressable
-                    onPress={() => handleSpeak(selectedItem.word)}
+                    onPress={() => handleSpeak(selectedItem.kannadaWord)}
                     style={globalStyles.speakerButton}
                   >
                     <AntDesign name="sound" size={28} color="#dad8de" />
                   </Pressable>
 
                   <Text style={globalStyles.modalWord}>
-                    {selectedItem.word}
+                    {selectedItem.kannadaWord}
                   </Text>
                   <Text style={globalStyles.modalTransliteration}>
                     {selectedItem.transliteration}
                   </Text>
                   <Text style={globalStyles.modalTranslation}>
-                    {selectedItem.translation}
+                    {selectedItem.englishTranslation}
                   </Text>
                 </View>
               )}
@@ -267,5 +307,27 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "100%",
     padding: 5,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
+  },
+  loadingText: {
+    color: "white",
+    marginTop: 10,
+    fontSize: 18,
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
+  },
+  errorText: {
+    color: "red",
+    marginBottom: 10,
+    fontSize: 18,
   },
 });
