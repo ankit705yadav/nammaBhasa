@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "expo-router";
 
 type User = Record<string, any> | null;
 
@@ -25,6 +26,7 @@ export function Provider(props: { children: React.ReactNode }) {
   const [user, setAuth] = React.useState<User>(null);
   const [isLoading, setIsLoading] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
+  const router = useRouter();
 
   const signIn = async (email: string, password: string) => {
     setIsLoading(true);
@@ -47,6 +49,7 @@ export function Provider(props: { children: React.ReactNode }) {
         throw new Error(data.message || "Failed to login");
       }
 
+      // Set the user data. The navigation is handled in the root layout.
       setAuth(data.user);
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred");
