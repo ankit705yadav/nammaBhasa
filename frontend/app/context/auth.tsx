@@ -50,7 +50,7 @@ export function Provider(props: { children: React.ReactNode }) {
       }
 
       // Set the user data. The navigation is handled in the root layout.
-      setAuth(data.user);
+      setAuth(data);  // Set the entire response data as the user object
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred");
       throw err;

@@ -25,8 +25,7 @@ const InitialLayout = () => {
       router.replace("/(auth)/login");
     } else if (user && inAuthGroup) {
       // Redirect away from the sign-in page.
-      console.log("user:", user);
-      router.replace("/(tabs)/index");
+      router.replace("/(tabs)");
     }
   }, [user, segments]);
 
