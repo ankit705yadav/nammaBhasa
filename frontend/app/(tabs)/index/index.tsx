@@ -15,7 +15,7 @@ import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import AntDesign from "@expo/vector-icons/AntDesign";
-
+import { useAuth } from "../../context/auth";
 import { Searchbar } from "react-native-paper";
 import Modal from "react-native-modal";
 
@@ -35,6 +35,7 @@ type LetterItem = {
 
 export default function HomeScreen() {
   const router = useRouter();
+  const { signOut } = useAuth();
 
   const [activeTab, setActiveTab] = useState("Vowels");
   const [characters, setCharacters] = useState<LetterItem[]>([]);
@@ -128,14 +129,38 @@ export default function HomeScreen() {
     >
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
         {/* Header */}
-        <Pressable
-          style={{ width: "100%" }}
-          onLongPress={() => handleSpeak("ಕನ್ನಡ")}
-        >
-          <Text style={styles.headerText}>
-            ಕನ್ನಡ<Text style={{ fontSize: 14 }}>| kannada</Text>{" "}
-          </Text>
-        </Pressable>
+        <View style={styles.headerContainer}>
+          <Pressable
+            style={{ flex: 1 }}
+            onLongPress={() => handleSpeak("ಕನ್ನಡ")}
+          >
+            <Text style={styles.headerText}>
+              ಕನ್ನಡ<Text style={{ fontSize: 14 }}>| kannada</Text>{" "}
+            </Text>
+          </Pressable>
+
+          <Pressable
+            style={styles.logoutButton}
+            onPress={() => {
+              Alert.alert(
+                "Logout",
+                "Are you sure you want to logout?",
+                [
+                  {
+                    text: "Cancel",
+                    style: "cancel"
+                  },
+                  { 
+                    text: "Logout",
+                    onPress: () => signOut()
+                  }
+                ]
+              );
+            }}
+          >
+            <AntDesign name="logout" size={24} color="white" />
+          </Pressable>
+        </View>
 
         {/* search-bar */}
         <Searchbar
@@ -249,15 +274,26 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
+  headerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '100%',
+    paddingHorizontal: 24,
+    marginTop: '20%',
+    marginBottom: '5%',
+  },
+
+  logoutButton: {
+    padding: 8,
+    borderRadius: 20,
+    backgroundColor: 'rgba(0,0,0,0.3)',
+  },
+
   headerText: {
-    width: "100%",
-    marginTop: "20%",
-    marginBottom: "5%",
     textAlign: "left",
     fontSize: 44,
     fontWeight: "bold",
     color: "white",
-    paddingHorizontal: 24,
   },
 
   // container
