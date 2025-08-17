@@ -110,7 +110,6 @@ const WordQuiz = () => {
   const fetchUserHighScore = async () => {
     try {
       if (user?.token) {
-        console.log('Fetching with token:', user.token);
         const response = await fetch(`${baseUrl}/scores/me`, {
           method: 'GET',
           headers: {

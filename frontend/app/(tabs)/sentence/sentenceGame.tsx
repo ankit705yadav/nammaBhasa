@@ -9,15 +9,15 @@ import {
   TouchableOpacity,
   View,
   ToastAndroid,
-  ActivityIndicator, // Import ActivityIndicator
-  Alert, // Import Alert
-  Button, // Import Button
+  ActivityIndicator, 
+  Alert, 
+  Button, 
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-// import kannadaLetters from "../../../data/kannada_letters.json";
 import { speakText } from "../../../utils/speak";
+import { baseUrl } from "@/constants/config";
+import { useAuth } from "../../context/auth";
 
-// Define a type for the sentence objects in our data
 type SentenceItem = {
   id: number;
   kannadaSentence: string;
@@ -26,7 +26,14 @@ type SentenceItem = {
   level: number;
 };
 
+type UserScore = {
+  id: number;
+  quizType: string;
+  highScore: number;
+};
+
 const SentenceQuiz = () => {
+  const { user } = useAuth();
   const [question, setQuestion] = useState<SentenceItem | null>(null);
   const [options, setOptions] = useState<string[]>([]);
   const [score, setScore] = useState(0);
@@ -65,12 +72,7 @@ const SentenceQuiz = () => {
       const init = async () => {
         try {
           await fetchAllSentences(); // Fetch all sentences first
-          const storedHighScore = await AsyncStorage.getItem(
-            "HIGH_SCORE_SENTENCE"
-          );
-          if (storedHighScore !== null) {
-            setHighScore(parseInt(storedHighScore));
-          }
+          await fetchUserHighScore(); // Fetch high score
         } catch (e) {
           console.error("Error loading high score or sentences:", e);
           setError((e as Error).message);
@@ -90,7 +92,7 @@ const SentenceQuiz = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch("http://10.11.57.27:8080/api/sentences"); // Fetch all sentences without level filter
+      const response = await fetch(`${baseUrl}/sentences`); // Fetch all sentences without level filter
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -101,6 +103,50 @@ const SentenceQuiz = () => {
       Alert.alert("Error", "Failed to fetch sentences for game: " + e.message);
     } finally {
       setLoading(false);
+    }
+  };
+
+    const fetchUserHighScore = async () => {
+    try {
+      if (user?.token) {
+        const response = await fetch(`${baseUrl}/scores/me`, {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user.token}`
+          }
+        });
+
+        const responseText = await response.text();
+        console.log('Response body:', responseText);
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch high score: ${response.status} ${responseText}`);
+        }
+
+        const scores: UserScore[] = responseText ? JSON.parse(responseText) : [];
+        const sentenceQuizScore = scores.find((score: UserScore) => score.quizType === 'SENTENCE_QUIZ');
+        if (sentenceQuizScore) {
+          setHighScore(sentenceQuizScore.highScore);
+          await AsyncStorage.setItem('HIGH_SCORE_SENTENCE', sentenceQuizScore.highScore.toString());
+          return;
+        }
+      } else {
+        console.log('No user token available');
+      }
+
+      // If no user or no backend score, fall back to local storage
+      const storedHighScore = await AsyncStorage.getItem("HIGH_SCORE_SENTENCE");
+      if (storedHighScore !== null) {
+        setHighScore(parseInt(storedHighScore));
+      }
+    } catch (error) {
+      console.error('Error fetching high score:', error);
+      const storedHighScore = await AsyncStorage.getItem("HIGH_SCORE_SENTENCE");
+      if (storedHighScore !== null) {
+        setHighScore(parseInt(storedHighScore));
+      }
     }
   };
 
@@ -178,23 +224,12 @@ const SentenceQuiz = () => {
       const correctAnswer =
         quizMode === "translation"
           ? question.englishTranslation
-          : question.transliteration;
+          : question.transliteration;handleAnswer
 
       if (answer === correctAnswer) {
         const newScore = score + 1;
         setScore(newScore);
-
-        if (newScore > highScore) {
-          setHighScore(newScore);
-          try {
-            await AsyncStorage.setItem(
-              "HIGH_SCORE_SENTENCE",
-              newScore.toString()
-            );
-          } catch (e) {
-            console.error("Failed to save high score", e);
-          }
-        }
+        saveScore(newScore);
 
         setTimeout(() => generateQuestion(), 1000);
       } else {
@@ -282,6 +317,43 @@ const SentenceQuiz = () => {
   const handleSpeak = (sentence: string) => {
     console.log("speak-Pressed:", sentence);
     speakText(sentence, 0.5); // Add pace argument, e.g., 0.5
+  };
+
+      const saveScore = async (finalScore: number) => {
+    try {
+      if (user?.token) {
+        const response = await fetch(`${baseUrl}/scores/me`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user.token}`
+          },
+          body: JSON.stringify({
+            quizType: 'SENTENCE_QUIZ',
+            score: finalScore
+          })
+        });
+
+        const responseText = await response.text();
+        console.log('Response body:', responseText);
+
+        if (!response.ok) {
+          throw new Error(`Failed to save score: ${response.status} ${responseText}`);
+        }
+
+        const data = await response.json();
+        console.log('Score saved successfully:', data);
+      } else {
+        console.log('User not logged in, saving score locally only');
+      }
+
+      // Always update local storage as backup
+      await AsyncStorage.setItem('HIGH_SCORE_SENTENCE', finalScore.toString());
+    } catch (error) {
+      console.error('Error saving score:', error);
+      // Ensure local storage is updated even if backend fails
+      await AsyncStorage.setItem('HIGH_SCORE_SENTENCE', finalScore.toString());
+    }
   };
 
   if (loading) {
