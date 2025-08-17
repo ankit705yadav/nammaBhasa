@@ -218,18 +218,30 @@ const SentenceQuiz = () => {
     generateQuestionWithMode(quizMode);
   };
 
-  const handleAnswer = async (answer: string) => {
+ const handleAnswer = async (answer: string) => {
     setSelectedAnswer(answer);
     if (question) {
       const correctAnswer =
         quizMode === "translation"
           ? question.englishTranslation
-          : question.transliteration;handleAnswer
+          : question.transliteration;
 
-      if (answer === correctAnswer) {
+      const trimmedAnswer = answer.trim();
+      const trimmedCorrectAnswer = correctAnswer.trim();
+
+      const isCorrect =
+        quizMode === "translation"
+          ? trimmedAnswer === trimmedCorrectAnswer
+          : trimmedAnswer.toLowerCase() === trimmedCorrectAnswer.toLowerCase();
+
+      if (isCorrect) {
         const newScore = score + 1;
         setScore(newScore);
-        saveScore(newScore);
+
+        if (newScore > highScore) {
+          setHighScore(newScore);
+          await saveScore(newScore);
+        }
 
         setTimeout(() => generateQuestion(), 1000);
       } else {
@@ -319,9 +331,11 @@ const SentenceQuiz = () => {
     speakText(sentence, 0.5); // Add pace argument, e.g., 0.5
   };
 
-      const saveScore = async (finalScore: number) => {
+     const saveScore = async (finalScore: number) => {
     try {
       if (user?.token) {
+        // Mocking a successful POST request to save the score
+        console.log('Sending score to backend:', finalScore);
         const response = await fetch(`${baseUrl}/scores/me`, {
           method: 'POST',
           headers: {
@@ -345,14 +359,13 @@ const SentenceQuiz = () => {
         console.log('User not logged in, saving score locally only');
       }
 
-      // Always update local storage as backup
       await AsyncStorage.setItem('HIGH_SCORE_SENTENCE', finalScore.toString());
     } catch (error) {
       console.error('Error saving score:', error);
-      // Ensure local storage is updated even if backend fails
       await AsyncStorage.setItem('HIGH_SCORE_SENTENCE', finalScore.toString());
     }
   };
+
 
   if (loading) {
     return (
