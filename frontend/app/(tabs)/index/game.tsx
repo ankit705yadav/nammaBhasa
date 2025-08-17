@@ -16,6 +16,7 @@ import { useAuth } from "../../context/auth";
 import { SafeAreaView } from "react-native-safe-area-context";
 // import kannadaLetters from "../../../data/kannada_letters.json";
 import { speakText } from "../../../utils/speak";
+import { baseUrl } from "@/constants/config";
 
 type LetterItem = {
   id: number;
@@ -64,7 +65,7 @@ const KannadaQuiz = () => {
       const init = async () => {
         try {
           await fetchAllCharacters(); // Fetch all characters first
-          await fetchUserHighScore(); // Fetch high score from backend
+          await fetchUserHighScore(); // Fetch high score
         } catch (e) {
           console.error("Error loading high score or characters:", e);
           setError((e as Error).message);
@@ -84,7 +85,7 @@ const KannadaQuiz = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch("http://10.11.57.27:8080/api/characters");
+      const response = await fetch(`${baseUrl}/characters`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -101,10 +102,7 @@ const KannadaQuiz = () => {
   const fetchUserHighScore = async () => {
     try {
       if (user?.token) {
-        console.log('Fetching with token:', user.token);
-
-        // If user is logged in, try to fetch from backend
-        const response = await fetch('http://10.11.57.27:8080/api/scores/me', {
+        const response = await fetch(`${baseUrl}/scores/me`, {
           method: 'GET',
           headers: {
             'Accept': 'application/json',
@@ -113,7 +111,6 @@ const KannadaQuiz = () => {
           }
         });
 
-        console.log('Response status:', response.status);
         const responseText = await response.text();
         console.log('Response body:', responseText);
 
@@ -224,9 +221,8 @@ const KannadaQuiz = () => {
 
   const saveScore = async (finalScore: number) => {
     try {
-      // Only attempt to save to backend if user is logged in
       if (user?.token) {
-        const response = await fetch('http://10.11.57.27:8080/api/scores/me', {
+        const response = await fetch(`${baseUrl}/scores/me`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -238,7 +234,6 @@ const KannadaQuiz = () => {
           })
         });
 
-         console.log('Response status:', response.status);
         const responseText = await response.text();
         console.log('Response body:', responseText);
 

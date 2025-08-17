@@ -23,6 +23,7 @@ import CustomSwitch from "@/components/CustomSwitch";
 
 import { speakText } from "../../../utils/speak";
 import { globalStyles } from "@/assets/theme/globalStyles";
+import { baseUrl } from "@/constants/config";
 
 const { width } = Dimensions.get("window"); // Get screen width
 
@@ -76,7 +77,7 @@ export default function WordScreen() {
     try {
       const levelParam = parseInt(activeLevel.replace("Lvl ", ""));
       const response = await fetch(
-        `http://10.11.57.27:8080/api/words?level=${levelParam}`
+        `${baseUrl}/words?level=${levelParam}`
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

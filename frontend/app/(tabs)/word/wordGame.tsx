@@ -9,15 +9,16 @@ import {
   TouchableOpacity,
   View,
   ToastAndroid,
-  ActivityIndicator, // Import ActivityIndicator
-  Alert, // Import Alert
-  Button, // Import Button
+  ActivityIndicator, 
+  Alert, 
+  Button, 
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-// import kannadaLetters from "../../../data/kannada_letters.json";
 import { speakText } from "../../../utils/speak";
+import { baseUrl } from "@/constants/config";
+import { useAuth } from "../../context/auth";
 
-// Define a type for the word objects in our data
+
 type WordItem = {
   id: number;
   kannadaWord: string;
@@ -26,7 +27,14 @@ type WordItem = {
   level: number;
 };
 
+type UserScore = {
+  id: number;
+  quizType: string;
+  highScore: number;
+};
+
 const WordQuiz = () => {
+  const { user } = useAuth();
   const [question, setQuestion] = useState<WordItem | null>(null);
   const [options, setOptions] = useState<string[]>([]);
   const [score, setScore] = useState(0);
@@ -65,10 +73,7 @@ const WordQuiz = () => {
       const init = async () => {
         try {
           await fetchAllWords(); // Fetch all words first
-          const storedHighScore = await AsyncStorage.getItem("HIGH_SCORE_WORD");
-          if (storedHighScore !== null) {
-            setHighScore(parseInt(storedHighScore));
-          }
+          await fetchUserHighScore(); // Fetch high score
         } catch (e) {
           console.error("Error loading high score or words:", e);
           setError((e as Error).message);
@@ -82,13 +87,13 @@ const WordQuiz = () => {
     if (allWords.length > 0 && !loading && !error) {
       restartGame();
     }
-  }, [allWords, loading, error, quizMode, difficulty]); // Depend on words, quizMode and difficulty to regenerate questions
+  }, [allWords, loading, error, quizMode, difficulty]); 
 
   const fetchAllWords = async () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch("http://10.11.57.27:8080/api/words"); // Fetch all words without level filter
+      const response = await fetch(`${baseUrl}/words`); // Fetch all words without level filter
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -101,6 +106,52 @@ const WordQuiz = () => {
       setLoading(false);
     }
   };
+
+  const fetchUserHighScore = async () => {
+    try {
+      if (user?.token) {
+        console.log('Fetching with token:', user.token);
+        const response = await fetch(`${baseUrl}/scores/me`, {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user.token}`
+          }
+        });
+
+        const responseText = await response.text();
+        console.log('Response body:', responseText);
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch high score: ${response.status} ${responseText}`);
+        }
+
+        const scores: UserScore[] = responseText ? JSON.parse(responseText) : [];
+        const wordQuizScore = scores.find((score: UserScore) => score.quizType === 'WORD_QUIZ');
+        if (wordQuizScore) {
+          setHighScore(wordQuizScore.highScore);
+          await AsyncStorage.setItem('HIGH_SCORE_WORD', wordQuizScore.highScore.toString());
+          return;
+        }
+      } else {
+        console.log('No user token available');
+      }
+
+      // If no user or no backend score, fall back to local storage
+      const storedHighScore = await AsyncStorage.getItem("HIGH_SCORE_WORD");
+      if (storedHighScore !== null) {
+        setHighScore(parseInt(storedHighScore));
+      }
+    } catch (error) {
+      console.error('Error fetching high score:', error);
+      const storedHighScore = await AsyncStorage.getItem("HIGH_SCORE_WORD");
+      if (storedHighScore !== null) {
+        setHighScore(parseInt(storedHighScore));
+      }
+    }
+  };
+
 
   // Get a random word from the specified level
   const getRandomWord = (words: WordItem[]): WordItem =>
@@ -192,11 +243,7 @@ const WordQuiz = () => {
 
         if (newScore > highScore) {
           setHighScore(newScore);
-          try {
-            await AsyncStorage.setItem("HIGH_SCORE_WORD", newScore.toString());
-          } catch (e) {
-            console.error("Failed to save high score", e);
-          }
+          saveScore(newScore);
         }
 
         setTimeout(() => generateQuestion(), 1000);
@@ -280,8 +327,46 @@ const WordQuiz = () => {
 
   const handleSpeak = (word: string) => {
     console.log("speak-Pressed:", word);
-    speakText(word, 0.5); // Add pace argument, e.g., 0.5
+    speakText(word, 0.5); 
   };
+
+    const saveScore = async (finalScore: number) => {
+    try {
+      if (user?.token) {
+        const response = await fetch(`${baseUrl}/scores/me`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user.token}`
+          },
+          body: JSON.stringify({
+            quizType: 'WORD_QUIZ',
+            score: finalScore
+          })
+        });
+
+        const responseText = await response.text();
+        console.log('Response body:', responseText);
+
+        if (!response.ok) {
+          throw new Error(`Failed to save score: ${response.status} ${responseText}`);
+        }
+
+        const data = await response.json();
+        console.log('Score saved successfully:', data);
+      } else {
+        console.log('User not logged in, saving score locally only');
+      }
+
+      // Always update local storage as backup
+      await AsyncStorage.setItem('HIGH_SCORE_WORD', finalScore.toString());
+    } catch (error) {
+      console.error('Error saving score:', error);
+      // Ensure local storage is updated even if backend fails
+      await AsyncStorage.setItem('HIGH_SCORE_WORD', finalScore.toString());
+    }
+  };
+
 
   if (loading) {
     return (

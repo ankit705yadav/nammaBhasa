@@ -23,6 +23,7 @@ import CustomSwitch from "@/components/CustomSwitch";
 // import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
 import { speakText } from "../../../utils/speak";
 import { globalStyles } from "@/assets/theme/globalStyles";
+import { baseUrl } from "@/constants/config";
 
 const { width } = Dimensions.get("window"); // Get screen width
 
@@ -72,9 +73,10 @@ export default function HomeScreen() {
     setLoading(true);
     setError(null);
     try {
+      console.log("Fetching characters for:", activeTab);
       const typeParam = activeTab === "Vowels" ? "vowel" : "consonant";
       const response = await fetch(
-        `http://10.11.57.27:8080/api/characters?type=${typeParam}`
+        `${baseUrl}/characters?type=${typeParam}`
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

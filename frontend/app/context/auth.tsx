@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "expo-router";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { baseUrl } from "../../constants/config";
 
 type User = Record<string, any> | null;
 
@@ -51,7 +52,9 @@ export function Provider(props: { children: React.ReactNode }) {
     setError(null);
 
     try {
-      const response = await fetch("http://10.11.57.27:8080/api/users/login", {
+      console.log("Logging in with userName and pass:", email,password);
+      // Make the API call to login
+      const response = await fetch(`${baseUrl}/users/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
