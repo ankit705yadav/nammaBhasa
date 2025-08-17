@@ -344,11 +344,9 @@ const WordQuiz = () => {
           })
         });
 
-        const responseText = await response.text();
-        console.log('Response body:', responseText);
-
-        if (!response.ok) {
-          throw new Error(`Failed to save score: ${response.status} ${responseText}`);
+         if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`Failed to save score: ${response.status} ${errorText}`);
         }
 
         const data = await response.json();
