@@ -24,6 +24,12 @@ type LetterItem = {
   type: string;
 };
 
+type UserScore = {
+  id: number;
+  quizType: string;
+  highScore: number;
+};
+
 const KannadaQuiz = () => {
   const { user } = useAuth();
   const [question, setQuestion] = useState<LetterItem | null>(null);
@@ -98,7 +104,7 @@ const KannadaQuiz = () => {
         console.log('Fetching with token:', user.token);
 
         // If user is logged in, try to fetch from backend
-        const response = await fetch('http://10.11.57.27:8080/api/scores/best?quizType=CHARACTER_QUIZ', {
+        const response = await fetch('http://10.11.57.27:8080/api/scores/me', {
           method: 'GET',
           headers: {
             'Accept': 'application/json',
@@ -115,10 +121,11 @@ const KannadaQuiz = () => {
           throw new Error(`Failed to fetch high score: ${response.status} ${responseText}`);
         }
 
-        const highestScore = responseText ? JSON.parse(responseText) : null;
-        if (highestScore !== null) {
-          setHighScore(highestScore);
-          await AsyncStorage.setItem('HIGH_SCORE', highestScore.toString());
+        const scores: UserScore[] = responseText ? JSON.parse(responseText) : [];
+        const characterQuizScore = scores.find((score: UserScore) => score.quizType === 'CHARACTER_QUIZ');
+        if (characterQuizScore) {
+          setHighScore(characterQuizScore.highScore);
+          await AsyncStorage.setItem('HIGH_SCORE', characterQuizScore.highScore.toString());
           return;
         }
       } else {
@@ -219,7 +226,7 @@ const KannadaQuiz = () => {
     try {
       // Only attempt to save to backend if user is logged in
       if (user?.token) {
-        const response = await fetch('http://10.11.57.27:8080/api/scores/update', {
+        const response = await fetch('http://10.11.57.27:8080/api/scores/me', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
