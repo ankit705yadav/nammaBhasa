@@ -14,6 +14,7 @@ import { useAuth } from "../context/auth";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import { Link } from "expo-router";
 
 const { width, height } = Dimensions.get("window");
 
@@ -99,6 +100,12 @@ export default function Login() {
                 </Pressable>
               )}
             </View>
+            
+             <View >
+              <Text >Don't have an account? </Text>
+              <Link href="/signUp" >Sign Up</Link>
+              </View>
+
           </View>
         </LinearGradient>
       </SafeAreaView>
