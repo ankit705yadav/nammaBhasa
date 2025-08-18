@@ -9,55 +9,40 @@ import {
   Alert,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Link, useRouter } from 'expo-router';
+import { Link } from 'expo-router';
 import { useAuth } from "../context/auth";
-import { baseUrl } from '@/constants/config';
 
 const SignUp = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false);
-  const router = useRouter();
-  const { signIn } = useAuth();
+  const { signIn,signUp,isLoading } = useAuth();
 
-  const handleSignUp = async () => {
+   const handleSignUp = async () => {
+    
     if (!username || !email || !password) {
       Alert.alert('Error', 'Please fill in all fields');
       return;
     }
 
-    setLoading(true);
-    try {
-      const response = await fetch(`${baseUrl}/users/register`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, email, password }),
-      });
+    try {    
+      await signUp(username, email, password);
+ 
+      Alert.alert(
+        'Success',
+        'Account created successfully!',
+      );
 
-      const responseText = await response.text();
-      console.log('Sign Up Response Status:', response.status);
-      console.log('Sign Up Response Body:', responseText);
+      await signIn(username, password);
 
-    //   if (!response.ok) {
-    //     const errorData = responseText ? JSON.parse(responseText) : { message: 'Unknown error' };
-    //     throw new Error(errorData.message || `Failed to sign up: ${response.status}`);
-    //   }
-
-    //   const data = JSON.parse(responseText);
-      Alert.alert('Success', 'Account created successfully! Please log in.');
-      // Automatically sign in the user after successful registration
-    //   await signIn(email, password);
-    //   router.replace('/(tabs)'); // Navigate to the main app after sign up and login
     } catch (error: any) {
+      // 4. Handle errors thrown from the context
       console.error('Sign Up Error:', error);
       Alert.alert('Sign Up Failed', error.message || 'An unexpected error occurred.');
-    } finally {
-      setLoading(false);
     }
+    // Note: No need for setLoading(true/false) as the context's isLoading handles it globally.
   };
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -84,8 +69,8 @@ const SignUp = () => {
         onChangeText={setPassword}
         secureTextEntry
       />
-      <TouchableOpacity style={styles.button} onPress={handleSignUp} disabled={loading}>
-        {loading ? (
+      <TouchableOpacity style={styles.button} onPress={handleSignUp} disabled={isLoading}>
+        {isLoading ? (
           <ActivityIndicator color="#fff" />
         ) : (
           <Text style={styles.buttonText}>Sign Up</Text>
