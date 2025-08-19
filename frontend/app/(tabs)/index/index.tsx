@@ -37,6 +37,9 @@ export default function HomeScreen() {
   const router = useRouter();
   const { signOut } = useAuth();
 
+  const [placeholder, setPlaceholder] = useState(
+    "Long press any word to speak out loud"
+  );
   const [activeTab, setActiveTab] = useState("Vowels");
   const [characters, setCharacters] = useState<LetterItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -67,6 +70,14 @@ export default function HomeScreen() {
     );
     setFilteredCharacters(filtered);
   }, [searchQuery, activeTab, characters]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setPlaceholder("Search");
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const fetchCharacters = async () => {
     setLoading(true);
@@ -177,12 +188,13 @@ export default function HomeScreen() {
         </View>
 
         {/* search-bar */}
-        <Searchbar
-          placeholder="Search"
-          onChangeText={setSearchQuery}
-          value={searchQuery}
-          style={{ marginHorizontal: 30, marginBottom: 12 }}
-        />
+         <Searchbar
+        placeholder={placeholder} // 3. Use the state variable here
+        onChangeText={setSearchQuery}
+        value={searchQuery}
+        placeholderTextColor={"grey"}
+        style={{ marginHorizontal: 30, marginBottom: 12 }}
+      />
 
         {/* Container */}
         <View style={{ flex: 1 }}>
