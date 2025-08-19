@@ -110,6 +110,12 @@ export function Provider(props: { children: React.ReactNode }) {
     setIsLoading(true);
     try {
       await AsyncStorage.removeItem('userToken');
+
+      // Clear all user-scores data from AsyncStorage
+      await AsyncStorage.removeItem('HIGH_SCORE');
+      await AsyncStorage.removeItem('HIGH_SCORE_WORD');
+      await AsyncStorage.removeItem('HIGH_SCORE_SENTENCE');
+
       setAuth(null);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to logout");

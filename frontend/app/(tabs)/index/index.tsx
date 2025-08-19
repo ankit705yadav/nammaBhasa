@@ -74,9 +74,7 @@ export default function HomeScreen() {
     try {
       console.log("Fetching characters for:", activeTab);
       const typeParam = activeTab === "Vowels" ? "vowel" : "consonant";
-      const response = await fetch(
-        `${baseUrl}/characters?type=${typeParam}`
-      );
+      const response = await fetch(`${baseUrl}/characters?type=${typeParam}`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -129,9 +127,17 @@ export default function HomeScreen() {
       style={{ flex: 1, backgroundColor: "black", paddingBottom: 50 }}
     >
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
-
-        <View style={{ justifyContent: "center", alignItems: "center", flexDirection: "row", gap: 5, position: "absolute", right: 20, top: 5 }} >
-
+        <View
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "row",
+            gap: 5,
+            position: "absolute",
+            right: 20,
+            top: 5,
+          }}
+        >
           <Pressable
             style={styles.logoutButton}
             onPress={() => router.push("/LeaderboardScreen")}
@@ -142,26 +148,20 @@ export default function HomeScreen() {
           <Pressable
             style={styles.logoutButton}
             onPress={() => {
-              Alert.alert(
-                "Logout",
-                "Are you sure you want to logout?",
-                [
-                  {
-                    text: "Cancel",
-                    style: "cancel"
-                  },
-                  {
-                    text: "Logout",
-                    onPress: () => signOut()
-                  }
-                ]
-              );
+              Alert.alert("Logout", "Are you sure you want to logout?", [
+                {
+                  text: "Cancel",
+                  style: "cancel",
+                },
+                {
+                  text: "Logout",
+                  onPress: () => signOut(),
+                },
+              ]);
             }}
           >
             <AntDesign name="logout" size={24} color="white" />
           </Pressable>
-
-
         </View>
 
         {/* Header */}
@@ -174,8 +174,6 @@ export default function HomeScreen() {
               ಕನ್ನಡ<Text style={{ fontSize: 14 }}>| kannada</Text>{" "}
             </Text>
           </Pressable>
-
-
         </View>
 
         {/* search-bar */}
@@ -289,18 +287,18 @@ const styles = StyleSheet.create({
   },
 
   headerContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    width: '100%',
+    flexDirection: "row",
+    alignItems: "center",
+    width: "100%",
     paddingHorizontal: 24,
-    marginTop: '20%',
-    marginBottom: '5%',
+    marginTop: "20%",
+    marginBottom: "5%",
   },
 
   logoutButton: {
     padding: 8,
     borderRadius: 20,
-    backgroundColor: 'rgba(0,0,0,0.3)',
+    backgroundColor: "rgba(0,0,0,0.3)",
   },
 
   headerText: {

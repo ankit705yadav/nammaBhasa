@@ -9,9 +9,9 @@ import {
   TouchableOpacity,
   View,
   ToastAndroid,
-  ActivityIndicator, 
-  Alert, 
-  Button, 
+  ActivityIndicator,
+  Alert,
+  Button,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { speakText } from "../../../utils/speak";
@@ -19,7 +19,6 @@ import { baseUrl } from "@/constants/config";
 import { useAuth } from "../../context/auth";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-
 
 type WordItem = {
   id: number;
@@ -90,7 +89,7 @@ const WordQuiz = () => {
     if (allWords.length > 0 && !loading && !error) {
       restartGame();
     }
-  }, [allWords, loading, error, quizMode, difficulty]); 
+  }, [allWords, loading, error, quizMode, difficulty]);
 
   const fetchAllWords = async () => {
     setLoading(true);
@@ -114,30 +113,39 @@ const WordQuiz = () => {
     try {
       if (user?.token) {
         const response = await fetch(`${baseUrl}/scores/me`, {
-          method: 'GET',
+          method: "GET",
           headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${user.token}`
-          }
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
         });
 
         const responseText = await response.text();
-        console.log('Response body:', responseText);
+        console.log("Response body:", responseText);
 
         if (!response.ok) {
-          throw new Error(`Failed to fetch high score: ${response.status} ${responseText}`);
+          throw new Error(
+            `Failed to fetch high score: ${response.status} ${responseText}`
+          );
         }
 
-        const scores: UserScore[] = responseText ? JSON.parse(responseText) : [];
-        const wordQuizScore = scores.find((score: UserScore) => score.quizType === 'WORD_QUIZ');
+        const scores: UserScore[] = responseText
+          ? JSON.parse(responseText)
+          : [];
+        const wordQuizScore = scores.find(
+          (score: UserScore) => score.quizType === "WORD_QUIZ"
+        );
         if (wordQuizScore) {
           setHighScore(wordQuizScore.highScore);
-          await AsyncStorage.setItem('HIGH_SCORE_WORD', wordQuizScore.highScore.toString());
+          await AsyncStorage.setItem(
+            "HIGH_SCORE_WORD",
+            wordQuizScore.highScore.toString()
+          );
           return;
         }
       } else {
-        console.log('No user token available');
+        console.log("No user token available");
       }
 
       // If no user or no backend score, fall back to local storage
@@ -146,14 +154,13 @@ const WordQuiz = () => {
         setHighScore(parseInt(storedHighScore));
       }
     } catch (error) {
-      console.error('Error fetching high score:', error);
+      console.error("Error fetching high score:", error);
       const storedHighScore = await AsyncStorage.getItem("HIGH_SCORE_WORD");
       if (storedHighScore !== null) {
         setHighScore(parseInt(storedHighScore));
       }
     }
   };
-
 
   // Get a random word from the specified level
   const getRandomWord = (words: WordItem[]): WordItem =>
@@ -162,7 +169,7 @@ const WordQuiz = () => {
   // Get words for the current difficulty level
   const getWordsByLevel = (): WordItem[] => {
     const levelNum = parseInt(difficulty.replace("Level", ""));
-    return allWords.filter(word => word.level === levelNum);
+    return allWords.filter((word) => word.level === levelNum);
   };
 
   const generateQuestion = () => {
@@ -177,7 +184,9 @@ const WordQuiz = () => {
     const wordsForLevel = getWordsByLevel();
 
     if (wordsForLevel.length === 0) {
-      setError("No words found for the selected level. Please check your backend data.");
+      setError(
+        "No words found for the selected level. Please check your backend data."
+      );
       return;
     }
 
@@ -190,13 +199,17 @@ const WordQuiz = () => {
       .slice(0, 3)
       .map((word) => {
         const option =
-          quizMode === "translation" ? word.englishTranslation : word.transliteration;
+          quizMode === "translation"
+            ? word.englishTranslation
+            : word.transliteration;
         return option.trim();
       });
 
     // Correct answer based on quiz mode - trim to avoid whitespace issues
     const correctAnswer = (
-      quizMode === "translation" ? correct.englishTranslation : correct.transliteration
+      quizMode === "translation"
+        ? correct.englishTranslation
+        : correct.transliteration
     ).trim();
 
     // ✅ Debug log
@@ -329,44 +342,45 @@ const WordQuiz = () => {
 
   const handleSpeak = (word: string) => {
     console.log("speak-Pressed:", word);
-    speakText(word, 0.5); 
+    speakText(word, 0.5);
   };
 
-    const saveScore = async (finalScore: number) => {
+  const saveScore = async (finalScore: number) => {
     try {
       if (user?.token) {
         const response = await fetch(`${baseUrl}/scores/me`, {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${user.token}`
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
           },
           body: JSON.stringify({
-            quizType: 'WORD_QUIZ',
-            score: finalScore
-          })
+            quizType: "WORD_QUIZ",
+            score: finalScore,
+          }),
         });
 
-         if (!response.ok) {
+        if (!response.ok) {
           const errorText = await response.text();
-          throw new Error(`Failed to save score: ${response.status} ${errorText}`);
+          throw new Error(
+            `Failed to save score: ${response.status} ${errorText}`
+          );
         }
 
         const data = await response.json();
-        console.log('Score saved successfully:', data);
+        console.log("Score saved successfully:", data);
       } else {
-        console.log('User not logged in, saving score locally only');
+        console.log("User not logged in, saving score locally only");
       }
 
       // Always update local storage as backup
-      await AsyncStorage.setItem('HIGH_SCORE_WORD', finalScore.toString());
+      await AsyncStorage.setItem("HIGH_SCORE_WORD", finalScore.toString());
     } catch (error) {
-      console.error('Error saving score:', error);
+      console.error("Error saving score:", error);
       // Ensure local storage is updated even if backend fails
-      await AsyncStorage.setItem('HIGH_SCORE_WORD', finalScore.toString());
+      await AsyncStorage.setItem("HIGH_SCORE_WORD", finalScore.toString());
     }
   };
-
 
   if (loading) {
     return (
@@ -389,7 +403,6 @@ const WordQuiz = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
-
         {/* Scores */}
         <View
           style={{
@@ -408,12 +421,17 @@ const WordQuiz = () => {
             <MaterialIcons name="leaderboard" size={24} color="white" />
           </Pressable>
 
-          <Text style={{
-            backgroundColor: "rgba(0,0,0,0.7)",
-            paddingVertical: 6,
-            paddingHorizontal: 10,
-            borderRadius: 8, color: "white", fontWeight: "bold", fontSize: 14
-          }}>
+          <Text
+            style={{
+              backgroundColor: "rgba(0,0,0,0.7)",
+              paddingVertical: 6,
+              paddingHorizontal: 10,
+              borderRadius: 8,
+              color: "white",
+              fontWeight: "bold",
+              fontSize: 14,
+            }}
+          >
             Score: {score} | High Score: {highScore} | Wrong: {wrongCount}/4
           </Text>
         </View>
@@ -486,10 +504,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-    logoutButton: {
+  logoutButton: {
     padding: 8,
     borderRadius: 20,
-    backgroundColor: 'rgba(0,0,0,0.3)',
+    backgroundColor: "rgba(0,0,0,0.3)",
   },
   title: {
     fontSize: 24,
@@ -582,23 +600,23 @@ const styles = StyleSheet.create({
   },
   loadingContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'black',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
   },
   loadingText: {
-    color: 'white',
+    color: "white",
     marginTop: 10,
     fontSize: 18,
   },
   errorContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'black',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
   },
   errorText: {
-    color: 'red',
+    color: "red",
     marginBottom: 10,
     fontSize: 18,
   },

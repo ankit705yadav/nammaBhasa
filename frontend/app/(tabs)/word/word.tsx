@@ -6,9 +6,9 @@ import {
   Text,
   View,
   Pressable,
-  ActivityIndicator, 
-  Alert, 
-  Button, 
+  ActivityIndicator,
+  Alert,
+  Button,
 } from "react-native";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -23,7 +23,7 @@ import { speakText } from "../../../utils/speak";
 import { globalStyles } from "@/assets/theme/globalStyles";
 import { baseUrl } from "@/constants/config";
 
-const { width } = Dimensions.get("window"); 
+const { width } = Dimensions.get("window");
 
 type WordItem = {
   id: number;
@@ -74,9 +74,7 @@ export default function WordScreen() {
     setError(null);
     try {
       const levelParam = parseInt(activeLevel.replace("Lvl ", ""));
-      const response = await fetch(
-        `${baseUrl}/words?level=${levelParam}`
-      );
+      const response = await fetch(`${baseUrl}/words?level=${levelParam}`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

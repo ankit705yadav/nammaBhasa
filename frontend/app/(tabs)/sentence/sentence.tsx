@@ -80,9 +80,7 @@ export default function SentenceScreen() {
     setError(null);
     try {
       const levelParam = parseInt(activeLevel.replace("Lvl ", ""));
-      const response = await fetch(
-        `${baseUrl}/sentences?level=${levelParam}`
-      );
+      const response = await fetch(`${baseUrl}/sentences?level=${levelParam}`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

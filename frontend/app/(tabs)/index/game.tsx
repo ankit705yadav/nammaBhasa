@@ -105,30 +105,39 @@ const KannadaQuiz = () => {
     try {
       if (user?.token) {
         const response = await fetch(`${baseUrl}/scores/me`, {
-          method: 'GET',
+          method: "GET",
           headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${user.token}`
-          }
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
         });
 
         const responseText = await response.text();
-        console.log('Response body:', responseText);
+        console.log("Response body:", responseText);
 
         if (!response.ok) {
-          throw new Error(`Failed to fetch high score: ${response.status} ${responseText}`);
+          throw new Error(
+            `Failed to fetch high score: ${response.status} ${responseText}`
+          );
         }
 
-        const scores: UserScore[] = responseText ? JSON.parse(responseText) : [];
-        const characterQuizScore = scores.find((score: UserScore) => score.quizType === 'CHARACTER_QUIZ');
+        const scores: UserScore[] = responseText
+          ? JSON.parse(responseText)
+          : [];
+        const characterQuizScore = scores.find(
+          (score: UserScore) => score.quizType === "CHARACTER_QUIZ"
+        );
         if (characterQuizScore) {
           setHighScore(characterQuizScore.highScore);
-          await AsyncStorage.setItem('HIGH_SCORE', characterQuizScore.highScore.toString());
+          await AsyncStorage.setItem(
+            "HIGH_SCORE",
+            characterQuizScore.highScore.toString()
+          );
           return;
         }
       } else {
-        console.log('No user token available');
+        console.log("No user token available");
       }
 
       // If no user or no backend score, fall back to local storage
@@ -137,7 +146,7 @@ const KannadaQuiz = () => {
         setHighScore(parseInt(storedHighScore));
       }
     } catch (error) {
-      console.error('Error fetching high score:', error);
+      console.error("Error fetching high score:", error);
       // Fallback to local storage on error
       const storedHighScore = await AsyncStorage.getItem("HIGH_SCORE");
       if (storedHighScore !== null) {
@@ -225,34 +234,36 @@ const KannadaQuiz = () => {
     try {
       if (user?.token) {
         const response = await fetch(`${baseUrl}/scores/me`, {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${user.token}`
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
           },
           body: JSON.stringify({
-            quizType: 'CHARACTER_QUIZ',
-            score: finalScore
-          })
+            quizType: "CHARACTER_QUIZ",
+            score: finalScore,
+          }),
         });
 
         if (!response.ok) {
           const errorText = await response.text();
-          throw new Error(`Failed to save score: ${response.status} ${errorText}`);
+          throw new Error(
+            `Failed to save score: ${response.status} ${errorText}`
+          );
         }
 
         const data = await response.json();
-        console.log('Score saved successfully:', data);
+        console.log("Score saved successfully:", data);
       } else {
-        console.log('User not logged in, saving score locally only');
+        console.log("User not logged in, saving score locally only");
       }
 
       // Always update local storage as backup
-      await AsyncStorage.setItem('HIGH_SCORE', finalScore.toString());
+      await AsyncStorage.setItem("HIGH_SCORE", finalScore.toString());
     } catch (error) {
-      console.error('Error saving score:', error);
+      console.error("Error saving score:", error);
       // Ensure local storage is updated even if backend fails
-      await AsyncStorage.setItem('HIGH_SCORE', finalScore.toString());
+      await AsyncStorage.setItem("HIGH_SCORE", finalScore.toString());
     }
   };
 
@@ -277,7 +288,6 @@ const KannadaQuiz = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
-
         {/* Scores */}
         <View
           style={{
@@ -296,12 +306,17 @@ const KannadaQuiz = () => {
             <MaterialIcons name="leaderboard" size={24} color="white" />
           </Pressable>
 
-          <Text style={{
-            backgroundColor: "rgba(0,0,0,0.7)",
-            paddingVertical: 6,
-            paddingHorizontal: 10,
-            borderRadius: 8, color: "white", fontWeight: "bold", fontSize: 14
-          }}>
+          <Text
+            style={{
+              backgroundColor: "rgba(0,0,0,0.7)",
+              paddingVertical: 6,
+              paddingHorizontal: 10,
+              borderRadius: 8,
+              color: "white",
+              fontWeight: "bold",
+              fontSize: 14,
+            }}
+          >
             Score: {score} | High Score: {highScore} | Wrong: {wrongCount}/4
           </Text>
         </View>
@@ -331,12 +346,12 @@ const KannadaQuiz = () => {
                   style={[
                     styles.option,
                     selectedAnswer === option.transliteration &&
-                    (option.transliteration === question?.transliteration
-                      ? styles.correct
-                      : styles.wrong),
+                      (option.transliteration === question?.transliteration
+                        ? styles.correct
+                        : styles.wrong),
                     showCorrect &&
-                    option.transliteration === question?.transliteration &&
-                    styles.flashCorrect,
+                      option.transliteration === question?.transliteration &&
+                      styles.flashCorrect,
                   ]}
                   onPress={() => handleAnswer(option.transliteration)}
                   disabled={selectedAnswer !== null}
@@ -364,7 +379,7 @@ const styles = StyleSheet.create({
   logoutButton: {
     padding: 8,
     borderRadius: 20,
-    backgroundColor: 'rgba(0,0,0,0.3)',
+    backgroundColor: "rgba(0,0,0,0.3)",
   },
   title: {
     fontSize: 28,
@@ -431,23 +446,23 @@ const styles = StyleSheet.create({
   },
   loadingContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'black',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
   },
   loadingText: {
-    color: 'white',
+    color: "white",
     marginTop: 10,
     fontSize: 18,
   },
   errorContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'black',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
   },
   errorText: {
-    color: 'red',
+    color: "red",
     marginBottom: 10,
     fontSize: 18,
   },

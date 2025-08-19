@@ -113,30 +113,39 @@ const SentenceQuiz = () => {
     try {
       if (user?.token) {
         const response = await fetch(`${baseUrl}/scores/me`, {
-          method: 'GET',
+          method: "GET",
           headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${user.token}`
-          }
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
         });
 
         const responseText = await response.text();
-        console.log('Response body:', responseText);
+        console.log("Response body:", responseText);
 
         if (!response.ok) {
-          throw new Error(`Failed to fetch high score: ${response.status} ${responseText}`);
+          throw new Error(
+            `Failed to fetch high score: ${response.status} ${responseText}`
+          );
         }
 
-        const scores: UserScore[] = responseText ? JSON.parse(responseText) : [];
-        const sentenceQuizScore = scores.find((score: UserScore) => score.quizType === 'SENTENCE_QUIZ');
+        const scores: UserScore[] = responseText
+          ? JSON.parse(responseText)
+          : [];
+        const sentenceQuizScore = scores.find(
+          (score: UserScore) => score.quizType === "SENTENCE_QUIZ"
+        );
         if (sentenceQuizScore) {
           setHighScore(sentenceQuizScore.highScore);
-          await AsyncStorage.setItem('HIGH_SCORE_SENTENCE', sentenceQuizScore.highScore.toString());
+          await AsyncStorage.setItem(
+            "HIGH_SCORE_SENTENCE",
+            sentenceQuizScore.highScore.toString()
+          );
           return;
         }
       } else {
-        console.log('No user token available');
+        console.log("No user token available");
       }
 
       // If no user or no backend score, fall back to local storage
@@ -145,7 +154,7 @@ const SentenceQuiz = () => {
         setHighScore(parseInt(storedHighScore));
       }
     } catch (error) {
-      console.error('Error fetching high score:', error);
+      console.error("Error fetching high score:", error);
       const storedHighScore = await AsyncStorage.getItem("HIGH_SCORE_SENTENCE");
       if (storedHighScore !== null) {
         setHighScore(parseInt(storedHighScore));
@@ -160,7 +169,7 @@ const SentenceQuiz = () => {
   // Get sentences for the current difficulty level
   const getSentencesByLevel = (): SentenceItem[] => {
     const levelNum = parseInt(difficulty.replace("Level", ""));
-    return allSentences.filter(sentence => sentence.level === levelNum);
+    return allSentences.filter((sentence) => sentence.level === levelNum);
   };
 
   const generateQuestionWithMode = (
@@ -177,26 +186,30 @@ const SentenceQuiz = () => {
     const sentencesForLevel = getSentencesByLevel();
 
     if (sentencesForLevel.length === 0) {
-      setError("No sentences found for the selected level. Please check your backend data.");
+      setError(
+        "No sentences found for the selected level. Please check your backend data."
+      );
       return;
     }
 
     const correct = getRandomSentence(sentencesForLevel);
 
     // Create incorrect options based on the passed mode parameter
-    let incorrectPool = allSentences.filter(
-      (s) => s.id !== correct.id
-    );
+    let incorrectPool = allSentences.filter((s) => s.id !== correct.id);
     const incorrectOptions = incorrectPool
       .sort(() => Math.random() - 0.5)
       .slice(0, 3)
       .map((sentence) =>
-        mode === "translation" ? sentence.englishTranslation : sentence.transliteration
+        mode === "translation"
+          ? sentence.englishTranslation
+          : sentence.transliteration
       );
 
     // Correct answer based on the passed mode parameter
     const correctAnswer =
-      mode === "translation" ? correct.englishTranslation : correct.transliteration;
+      mode === "translation"
+        ? correct.englishTranslation
+        : correct.transliteration;
 
     // ✅ Debug log
     console.log(
@@ -299,9 +312,9 @@ const SentenceQuiz = () => {
       const trimmedOption = option.trim();
       const correctAnswer = question
         ? (quizMode === "translation"
-          ? question.englishTranslation
-          : question.transliteration
-        ).trim()
+            ? question.englishTranslation
+            : question.transliteration
+          ).trim()
         : "";
 
       // Use the same comparison logic as handleAnswer
@@ -338,37 +351,38 @@ const SentenceQuiz = () => {
     try {
       if (user?.token) {
         // Mocking a successful POST request to save the score
-        console.log('Sending score to backend:', finalScore);
+        console.log("Sending score to backend:", finalScore);
         const response = await fetch(`${baseUrl}/scores/me`, {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${user.token}`
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
           },
           body: JSON.stringify({
-            quizType: 'SENTENCE_QUIZ',
-            score: finalScore
-          })
+            quizType: "SENTENCE_QUIZ",
+            score: finalScore,
+          }),
         });
 
         if (!response.ok) {
           const errorText = await response.text();
-          throw new Error(`Failed to save score: ${response.status} ${errorText}`);
+          throw new Error(
+            `Failed to save score: ${response.status} ${errorText}`
+          );
         }
 
         const data = await response.json();
-        console.log('Score saved successfully:', data);
+        console.log("Score saved successfully:", data);
       } else {
-        console.log('User not logged in, saving score locally only');
+        console.log("User not logged in, saving score locally only");
       }
 
-      await AsyncStorage.setItem('HIGH_SCORE_SENTENCE', finalScore.toString());
+      await AsyncStorage.setItem("HIGH_SCORE_SENTENCE", finalScore.toString());
     } catch (error) {
-      console.error('Error saving score:', error);
-      await AsyncStorage.setItem('HIGH_SCORE_SENTENCE', finalScore.toString());
+      console.error("Error saving score:", error);
+      await AsyncStorage.setItem("HIGH_SCORE_SENTENCE", finalScore.toString());
     }
   };
-
 
   if (loading) {
     return (
@@ -391,7 +405,6 @@ const SentenceQuiz = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
-
         {/* Scores */}
         <View
           style={{
@@ -410,12 +423,17 @@ const SentenceQuiz = () => {
             <MaterialIcons name="leaderboard" size={24} color="white" />
           </Pressable>
 
-          <Text style={{
-            backgroundColor: "rgba(0,0,0,0.7)",
-            paddingVertical: 6,
-            paddingHorizontal: 10,
-            borderRadius: 8, color: "white", fontWeight: "bold", fontSize: 14
-          }}>
+          <Text
+            style={{
+              backgroundColor: "rgba(0,0,0,0.7)",
+              paddingVertical: 6,
+              paddingHorizontal: 10,
+              borderRadius: 8,
+              color: "white",
+              fontWeight: "bold",
+              fontSize: 14,
+            }}
+          >
             Score: {score} | High Score: {highScore} | Wrong: {wrongCount}/4
           </Text>
         </View>
@@ -444,9 +462,9 @@ const SentenceQuiz = () => {
                   quizMode === "translation"
                     ? handleSpeak(question.kannadaSentence)
                     : ToastAndroid.show(
-                      "Only available for translation!",
-                      ToastAndroid.SHORT
-                    );
+                        "Only available for translation!",
+                        ToastAndroid.SHORT
+                      );
                 }
               }}
               style={{ width: "100%" }} // Inner content
@@ -454,9 +472,7 @@ const SentenceQuiz = () => {
               <Text style={styles.question}>{question?.kannadaSentence}</Text>
             </Pressable>
 
-            <View style={styles.optionsContainer}>
-              {renderOptions()}
-            </View>
+            <View style={styles.optionsContainer}>{renderOptions()}</View>
 
             <View style={styles.controlsContainer}>
               <TouchableOpacity
@@ -494,7 +510,7 @@ const styles = StyleSheet.create({
   logoutButton: {
     padding: 8,
     borderRadius: 20,
-    backgroundColor: 'rgba(0,0,0,0.3)',
+    backgroundColor: "rgba(0,0,0,0.3)",
   },
   title: {
     fontSize: 24,
@@ -587,23 +603,23 @@ const styles = StyleSheet.create({
   },
   loadingContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'black',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
   },
   loadingText: {
-    color: 'white',
+    color: "white",
     marginTop: 10,
     fontSize: 18,
   },
   errorContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'black',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
   },
   errorText: {
-    color: 'red',
+    color: "red",
     marginBottom: 10,
     fontSize: 18,
   },
