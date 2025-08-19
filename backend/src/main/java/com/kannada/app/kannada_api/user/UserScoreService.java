@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class UserScoreService {
@@ -43,5 +44,15 @@ public class UserScoreService {
             newHighScore.setHighScore(newScore);
             return userScoreRepository.save(newHighScore);
         }
+    }
+
+    public List<LeaderboardDto> getLeaderboard(String quizType) {
+        // Fetch the top 10 scores from the repository
+        List<UserScore> topScores = userScoreRepository.findTop10ByQuizTypeOrderByHighScoreDesc(quizType);
+
+        // Convert the list of UserScore entities to a list of LeaderboardDto objects
+        return topScores.stream()
+                .map(LeaderboardDto::from)
+                .collect(Collectors.toList());
     }
 }

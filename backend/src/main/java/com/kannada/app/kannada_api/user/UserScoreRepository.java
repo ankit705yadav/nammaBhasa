@@ -13,4 +13,10 @@ public interface UserScoreRepository extends JpaRepository<UserScore, Long> {
 
     // Finds all scores for a given user.
     List<UserScore> findByUser(User user);
+
+    /**
+     * Finds the top 10 scores for a given quiz type, ordered by high score descending.
+     * Spring Data JPA automatically creates this complex query from the method name.
+     */
+    List<UserScore> findTop10ByQuizTypeOrderByHighScoreDesc(String quizType);
 }

@@ -29,4 +29,11 @@ public class UserScoreController {
         UserScore updatedScore = userScoreService.updateHighScore(username, scoreUpdate.quizType(), scoreUpdate.score());
         return ResponseEntity.ok(updatedScore);
     }
+
+    // Endpoint to get the leaderboard for a specific quiz type.
+    @GetMapping("/leaderboard")
+    public ResponseEntity<List<LeaderboardDto>> getLeaderboardByQuizType(@RequestParam String quizType) {
+        List<LeaderboardDto> leaderboard = userScoreService.getLeaderboard(quizType);
+        return ResponseEntity.ok(leaderboard);
+    }
 }

@@ -32,13 +32,13 @@ export default function Login() {
   };
 
   return (
-    <KeyboardAvoidingView 
+    <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={{ flex: 1 }}
     >
       <SafeAreaView style={{ flex: 1, backgroundColor: "black" }}>
-        <LinearGradient 
-          colors={["#e0be21", "black"]} 
+        <LinearGradient
+          colors={["#e0be21", "black"]}
           style={styles.wrapper}
         >
           <View style={styles.contentContainer}>
@@ -88,11 +88,11 @@ export default function Login() {
                   <Text style={styles.loadingText}>Signing in...</Text>
                 </View>
               ) : (
-                <Pressable 
+                <Pressable
                   style={({ pressed }) => [
                     styles.button,
                     pressed && styles.buttonPressed
-                  ]} 
+                  ]}
                   onPress={handleLogin}
                 >
                   <Text style={styles.buttonText}>Sign In</Text>
@@ -100,11 +100,20 @@ export default function Login() {
                 </Pressable>
               )}
             </View>
-            
-             <View >
-              <Text >Don't have an account? </Text>
-              <Link href="/signUp" >Sign Up</Link>
-              </View>
+
+            <View style={{
+              flexDirection: 'row',
+              justifyContent: 'center',
+              marginTop: 20
+            }}>
+              <Text style={{ color: '#666' }}>
+                Don't have an account?{'  '}
+              </Text>
+              <Link href="/signUp" style={{ color: '#d4f756ff', fontWeight: 'bold' }}>
+                  Sign Up
+              </Link>
+            </View>
+
 
           </View>
         </LinearGradient>
