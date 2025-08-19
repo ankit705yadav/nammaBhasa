@@ -7,25 +7,24 @@ import {
   Text,
   View,
   Pressable,
-  ActivityIndicator, // Import ActivityIndicator for loading state
-  Alert, // Import Alert for error handling
-  Button, // Import Button
+  ActivityIndicator,
+  Alert,
+  Button,
 } from "react-native";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import { AntDesign, MaterialIcons } from "@expo/vector-icons";
 import { useAuth } from "../../context/auth";
 import { Searchbar } from "react-native-paper";
 import Modal from "react-native-modal";
 
 import CustomSwitch from "@/components/CustomSwitch";
-// import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
 import { speakText } from "../../../utils/speak";
 import { globalStyles } from "@/assets/theme/globalStyles";
 import { baseUrl } from "@/constants/config";
 
-const { width } = Dimensions.get("window"); // Get screen width
+const { width } = Dimensions.get("window");
 
 type LetterItem = {
   id: number;
@@ -55,12 +54,12 @@ export default function HomeScreen() {
 
   useEffect(() => {
     fetchCharacters();
-  }, [activeTab]); // Refetch when activeTab changes
+  }, [activeTab]);
 
   useEffect(() => {
     const dataToFilter = characters.filter(
       (item) => item.type === activeTab.toLowerCase().slice(0, -1)
-    ); // Adjust type to match backend ('vowel'/'consonant')
+    );
     const filtered = dataToFilter.filter(
       (item) =>
         item.kannadaChar.includes(searchQuery) ||
@@ -130,15 +129,14 @@ export default function HomeScreen() {
       style={{ flex: 1, backgroundColor: "black", paddingBottom: 50 }}
     >
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
-        {/* Header */}
-        <View style={styles.headerContainer}>
+
+        <View style={{ justifyContent: "center", alignItems: "center", flexDirection: "row", gap: 5, position: "absolute", right: 20, top: 5 }} >
+
           <Pressable
-            style={{ flex: 1 }}
-            onLongPress={() => handleSpeak("ಕನ್ನಡ")}
+            style={styles.logoutButton}
+            onPress={() => router.push("/LeaderboardScreen")}
           >
-            <Text style={styles.headerText}>
-              ಕನ್ನಡ<Text style={{ fontSize: 14 }}>| kannada</Text>{" "}
-            </Text>
+            <MaterialIcons name="leaderboard" size={24} color="white" />
           </Pressable>
 
           <Pressable
@@ -152,7 +150,7 @@ export default function HomeScreen() {
                     text: "Cancel",
                     style: "cancel"
                   },
-                  { 
+                  {
                     text: "Logout",
                     onPress: () => signOut()
                   }
@@ -162,6 +160,22 @@ export default function HomeScreen() {
           >
             <AntDesign name="logout" size={24} color="white" />
           </Pressable>
+
+
+        </View>
+
+        {/* Header */}
+        <View style={styles.headerContainer}>
+          <Pressable
+            style={{ flex: 1 }}
+            onLongPress={() => handleSpeak("ಕನ್ನಡ")}
+          >
+            <Text style={styles.headerText}>
+              ಕನ್ನಡ<Text style={{ fontSize: 14 }}>| kannada</Text>{" "}
+            </Text>
+          </Pressable>
+
+
         </View>
 
         {/* search-bar */}
@@ -268,8 +282,6 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   wrapper: {
-    // borderWidth:4,
-    // borderColor:"yellow",
     flex: 1,
     backgroundColor: "#181C14",
     justifyContent: "center",

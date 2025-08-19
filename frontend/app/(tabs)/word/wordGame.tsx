@@ -17,6 +17,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { speakText } from "../../../utils/speak";
 import { baseUrl } from "@/constants/config";
 import { useAuth } from "../../context/auth";
+import { MaterialIcons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
 
 type WordItem = {
@@ -35,6 +37,7 @@ type UserScore = {
 
 const WordQuiz = () => {
   const { user } = useAuth();
+  const router = useRouter();
   const [question, setQuestion] = useState<WordItem | null>(null);
   const [options, setOptions] = useState<string[]>([]);
   const [score, setScore] = useState(0);
@@ -386,19 +389,31 @@ const WordQuiz = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
+
         {/* Scores */}
         <View
           style={{
             position: "absolute",
             top: 20,
-            right: 20,
+            width: "95%",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Pressable
+            style={styles.logoutButton}
+            onPress={() => router.push("/LeaderboardScreen")}
+          >
+            <MaterialIcons name="leaderboard" size={24} color="white" />
+          </Pressable>
+
+          <Text style={{
             backgroundColor: "rgba(0,0,0,0.7)",
             paddingVertical: 6,
             paddingHorizontal: 10,
-            borderRadius: 8,
-          }}
-        >
-          <Text style={{ color: "white", fontWeight: "bold", fontSize: 14 }}>
+            borderRadius: 8, color: "white", fontWeight: "bold", fontSize: 14
+          }}>
             Score: {score} | High Score: {highScore} | Wrong: {wrongCount}/4
           </Text>
         </View>
@@ -470,6 +485,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#181C14",
     justifyContent: "center",
     alignItems: "center",
+  },
+    logoutButton: {
+    padding: 8,
+    borderRadius: 20,
+    backgroundColor: 'rgba(0,0,0,0.3)',
   },
   title: {
     fontSize: 24,

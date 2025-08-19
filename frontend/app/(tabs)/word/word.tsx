@@ -6,9 +6,9 @@ import {
   Text,
   View,
   Pressable,
-  ActivityIndicator, // Import ActivityIndicator for loading state
-  Alert, // Import Alert for error handling
-  Button, // Import Button
+  ActivityIndicator, 
+  Alert, 
+  Button, 
 } from "react-native";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -19,13 +19,11 @@ import { Searchbar } from "react-native-paper";
 import Modal from "react-native-modal";
 
 import CustomSwitch from "@/components/CustomSwitch";
-// import kannadaData from "../../../data/kannada_letters.json"; // Importing JSON
-
 import { speakText } from "../../../utils/speak";
 import { globalStyles } from "@/assets/theme/globalStyles";
 import { baseUrl } from "@/constants/config";
 
-const { width } = Dimensions.get("window"); // Get screen width
+const { width } = Dimensions.get("window"); 
 
 type WordItem = {
   id: number;

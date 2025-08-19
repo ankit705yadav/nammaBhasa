@@ -9,14 +9,16 @@ import {
   TouchableOpacity,
   View,
   ToastAndroid,
-  ActivityIndicator, 
-  Alert, 
-  Button, 
+  ActivityIndicator,
+  Alert,
+  Button,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { speakText } from "../../../utils/speak";
 import { baseUrl } from "@/constants/config";
 import { useAuth } from "../../context/auth";
+import { MaterialIcons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
 type SentenceItem = {
   id: number;
@@ -34,6 +36,7 @@ type UserScore = {
 
 const SentenceQuiz = () => {
   const { user } = useAuth();
+  const router = useRouter();
   const [question, setQuestion] = useState<SentenceItem | null>(null);
   const [options, setOptions] = useState<string[]>([]);
   const [score, setScore] = useState(0);
@@ -106,7 +109,7 @@ const SentenceQuiz = () => {
     }
   };
 
-    const fetchUserHighScore = async () => {
+  const fetchUserHighScore = async () => {
     try {
       if (user?.token) {
         const response = await fetch(`${baseUrl}/scores/me`, {
@@ -218,7 +221,7 @@ const SentenceQuiz = () => {
     generateQuestionWithMode(quizMode);
   };
 
- const handleAnswer = async (answer: string) => {
+  const handleAnswer = async (answer: string) => {
     setSelectedAnswer(answer);
     if (question) {
       const correctAnswer =
@@ -296,9 +299,9 @@ const SentenceQuiz = () => {
       const trimmedOption = option.trim();
       const correctAnswer = question
         ? (quizMode === "translation"
-            ? question.englishTranslation
-            : question.transliteration
-          ).trim()
+          ? question.englishTranslation
+          : question.transliteration
+        ).trim()
         : "";
 
       // Use the same comparison logic as handleAnswer
@@ -331,7 +334,7 @@ const SentenceQuiz = () => {
     speakText(sentence, 0.5); // Add pace argument, e.g., 0.5
   };
 
-     const saveScore = async (finalScore: number) => {
+  const saveScore = async (finalScore: number) => {
     try {
       if (user?.token) {
         // Mocking a successful POST request to save the score
@@ -348,7 +351,7 @@ const SentenceQuiz = () => {
           })
         });
 
-         if (!response.ok) {
+        if (!response.ok) {
           const errorText = await response.text();
           throw new Error(`Failed to save score: ${response.status} ${errorText}`);
         }
@@ -388,19 +391,31 @@ const SentenceQuiz = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
+
         {/* Scores */}
         <View
           style={{
             position: "absolute",
             top: 20,
-            right: 20,
+            width: "95%",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Pressable
+            style={styles.logoutButton}
+            onPress={() => router.push("/LeaderboardScreen")}
+          >
+            <MaterialIcons name="leaderboard" size={24} color="white" />
+          </Pressable>
+
+          <Text style={{
             backgroundColor: "rgba(0,0,0,0.7)",
             paddingVertical: 6,
             paddingHorizontal: 10,
-            borderRadius: 8,
-          }}
-        >
-          <Text style={{ color: "white", fontWeight: "bold", fontSize: 14 }}>
+            borderRadius: 8, color: "white", fontWeight: "bold", fontSize: 14
+          }}>
             Score: {score} | High Score: {highScore} | Wrong: {wrongCount}/4
           </Text>
         </View>
@@ -429,9 +444,9 @@ const SentenceQuiz = () => {
                   quizMode === "translation"
                     ? handleSpeak(question.kannadaSentence)
                     : ToastAndroid.show(
-                        "Only available for translation!",
-                        ToastAndroid.SHORT
-                      );
+                      "Only available for translation!",
+                      ToastAndroid.SHORT
+                    );
                 }
               }}
               style={{ width: "100%" }} // Inner content
@@ -475,6 +490,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#181C14",
     justifyContent: "center",
     alignItems: "center",
+  },
+  logoutButton: {
+    padding: 8,
+    borderRadius: 20,
+    backgroundColor: 'rgba(0,0,0,0.3)',
   },
   title: {
     fontSize: 24,

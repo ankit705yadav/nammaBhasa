@@ -92,8 +92,8 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   const simplePillStyle = useAnimatedStyle(() => {
     // Log for debugging in development
     if (__DEV__ && tabLayouts.length > 0) {
-      console.log("Tab layouts:", tabLayouts);
-      console.log("Current index:", state.index);
+      // console.log("Tab layouts:", tabLayouts);
+      // console.log("Current index:", state.index);
     }
 
     // Basic positioning based on button width
@@ -221,7 +221,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
     if (tabLayouts.length === state.routes.length) {
       // Force a complete redraw with measured layouts
       if (__DEV__) {
-        console.log("All tab layouts measured:", tabLayouts);
+        // console.log("All tab layouts measured:", tabLayouts);
       }
 
       // Set animation to completed state (1) immediately for initial position
@@ -232,7 +232,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   // Log state changes in development
   useEffect(() => {
     if (__DEV__) {
-      console.log("Tab state changed:", state.index);
+      // console.log("Tab state changed:", state.index);
     }
   }, [state.index]);
 

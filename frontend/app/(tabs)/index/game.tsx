@@ -14,9 +14,10 @@ import {
 } from "react-native";
 import { useAuth } from "../../context/auth";
 import { SafeAreaView } from "react-native-safe-area-context";
-// import kannadaLetters from "../../../data/kannada_letters.json";
+import { useRouter } from "expo-router";
 import { speakText } from "../../../utils/speak";
 import { baseUrl } from "@/constants/config";
+import { MaterialIcons } from "@expo/vector-icons";
 
 type LetterItem = {
   id: number;
@@ -33,6 +34,7 @@ type UserScore = {
 
 const KannadaQuiz = () => {
   const { user } = useAuth();
+  const router = useRouter();
   const [question, setQuestion] = useState<LetterItem | null>(null);
   const [options, setOptions] = useState<LetterItem[]>([]);
   const [score, setScore] = useState(0);
@@ -244,7 +246,7 @@ const KannadaQuiz = () => {
       } else {
         console.log('User not logged in, saving score locally only');
       }
-      
+
       // Always update local storage as backup
       await AsyncStorage.setItem('HIGH_SCORE', finalScore.toString());
     } catch (error) {
@@ -275,19 +277,31 @@ const KannadaQuiz = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#e0be21" }}>
       <LinearGradient colors={["#e0be21", "black"]} style={styles.wrapper}>
+
         {/* Scores */}
         <View
           style={{
             position: "absolute",
             top: 20,
-            right: 20,
+            width: "95%",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Pressable
+            style={styles.logoutButton}
+            onPress={() => router.push("/LeaderboardScreen")}
+          >
+            <MaterialIcons name="leaderboard" size={24} color="white" />
+          </Pressable>
+
+          <Text style={{
             backgroundColor: "rgba(0,0,0,0.7)",
             paddingVertical: 6,
             paddingHorizontal: 10,
-            borderRadius: 8,
-          }}
-        >
-          <Text style={{ color: "white", fontWeight: "bold", fontSize: 14 }}>
+            borderRadius: 8, color: "white", fontWeight: "bold", fontSize: 14
+          }}>
             Score: {score} | High Score: {highScore} | Wrong: {wrongCount}/4
           </Text>
         </View>
@@ -317,12 +331,12 @@ const KannadaQuiz = () => {
                   style={[
                     styles.option,
                     selectedAnswer === option.transliteration &&
-                      (option.transliteration === question?.transliteration
-                        ? styles.correct
-                        : styles.wrong),
+                    (option.transliteration === question?.transliteration
+                      ? styles.correct
+                      : styles.wrong),
                     showCorrect &&
-                      option.transliteration === question?.transliteration &&
-                      styles.flashCorrect,
+                    option.transliteration === question?.transliteration &&
+                    styles.flashCorrect,
                   ]}
                   onPress={() => handleAnswer(option.transliteration)}
                   disabled={selectedAnswer !== null}
@@ -342,16 +356,15 @@ const KannadaQuiz = () => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    // flex: 1,
-    // justifyContent: "center",
-    // alignItems: "center",
-    // backgroundColor: "#181C14",
-    // borderWidth:4,
-    // borderColor:"yellow",
     flex: 1,
     backgroundColor: "#181C14",
     justifyContent: "center",
     alignItems: "center",
+  },
+  logoutButton: {
+    padding: 8,
+    borderRadius: 20,
+    backgroundColor: 'rgba(0,0,0,0.3)',
   },
   title: {
     fontSize: 28,
