@@ -16,69 +16,72 @@ const SignUp = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { signIn,signUp,isLoading } = useAuth();
+  const { signIn, signUp, isLoading } = useAuth();
 
-   const handleSignUp = async () => {
-    
+  const handleSignUp = async () => {
     if (!username || !email || !password) {
       Alert.alert('Error', 'Please fill in all fields');
       return;
     }
 
-    try {    
+    try {
       await signUp(username, email, password);
- 
-      Alert.alert(
-        'Success',
-        'Account created successfully!',
-      );
+
+      Alert.alert('Success', 'Account created successfully!');
 
       await signIn(username, password);
-
     } catch (error: any) {
-      // 4. Handle errors thrown from the context
       console.error('Sign Up Error:', error);
       Alert.alert('Sign Up Failed', error.message || 'An unexpected error occurred.');
     }
-    // Note: No need for setLoading(true/false) as the context's isLoading handles it globally.
   };
-
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Sign Up</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Username"
-        value={username}
-        onChangeText={setUsername}
-        autoCapitalize="none"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-        autoCapitalize="none"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
-      <TouchableOpacity style={styles.button} onPress={handleSignUp} disabled={isLoading}>
-        {isLoading ? (
-          <ActivityIndicator color="#fff" />
-        ) : (
-          <Text style={styles.buttonText}>Sign Up</Text>
-        )}
-      </TouchableOpacity>
-      <View style={styles.linkContainer}>
-        <Text style={styles.linkText}>Already have an account? </Text>
-        <Link href="/login" style={styles.link}>Log In</Link>
+      <View style={styles.card}>
+        <Text style={styles.title}>Create Account</Text>
+
+        <TextInput
+          style={styles.input}
+          placeholder="Username"
+          value={username}
+          onChangeText={setUsername}
+          autoCapitalize="none"
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          value={email}
+          onChangeText={setEmail}
+          keyboardType="email-address"
+          autoCapitalize="none"
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Password"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+        />
+
+        <TouchableOpacity
+          style={[styles.button, isLoading && styles.buttonDisabled]}
+          onPress={handleSignUp}
+          disabled={isLoading}
+        >
+          {isLoading ? (
+            <ActivityIndicator color="#fff" />
+          ) : (
+            <Text style={styles.buttonText}>Sign Up</Text>
+          )}
+        </TouchableOpacity>
+
+        <View style={styles.linkContainer}>
+          <Text style={styles.linkText}>Already have an account? </Text>
+          <Link href="/login" style={styles.link}>
+            Log In
+          </Link>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -89,49 +92,67 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#f0f2f5',
     padding: 20,
   },
+  card: {
+    width: '100%',
+    maxWidth: 400,
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    padding: 25,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    elevation: 4,
+  },
   title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    marginBottom: 30,
-    color: '#333',
+    fontSize: 28,
+    fontWeight: '700',
+    marginBottom: 25,
+    color: '#1e293b',
+    textAlign: 'center',
   },
   input: {
     width: '100%',
-    padding: 15,
+    padding: 14,
     borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 8,
+    borderColor: '#e2e8f0',
+    borderRadius: 12,
     marginBottom: 15,
-    backgroundColor: '#fff',
+    backgroundColor: '#f9fafb',
+    fontSize: 16,
+    color: '#1e293b',
   },
   button: {
     width: '100%',
     padding: 15,
-    backgroundColor: '#007bff',
-    borderRadius: 8,
+    backgroundColor: '#2563eb',
+    borderRadius: 12,
     alignItems: 'center',
-    marginBottom: 20,
+    marginTop: 10,
+  },
+  buttonDisabled: {
+    backgroundColor: '#93c5fd',
   },
   buttonText: {
     color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 17,
+    fontWeight: '600',
   },
   linkContainer: {
     flexDirection: 'row',
-    marginTop: 10,
+    marginTop: 18,
+    justifyContent: 'center',
   },
   linkText: {
-    fontSize: 16,
-    color: '#555',
+    fontSize: 15,
+    color: '#64748b',
   },
   link: {
-    fontSize: 16,
-    color: '#007bff',
-    fontWeight: 'bold',
+    fontSize: 15,
+    color: '#2563eb',
+    fontWeight: '600',
   },
 });
 
